@@ -87,7 +87,7 @@
     font-size:0.917rem; padding:0 1.25rem;
     list-style:none;
     padding:0 px;
-    
+    background-color: #fff;
   }
   .notice_rolling li a{
     display:block; 
