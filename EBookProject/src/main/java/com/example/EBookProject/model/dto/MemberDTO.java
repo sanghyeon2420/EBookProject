@@ -71,12 +71,20 @@ public class MemberDTO {
 		this.isAdmin = isAdmin;
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	@Override
 	public String toString() {
 		return "MemberDTO [user_no=" + user_no + ", userid=" + userid + ", userpw=" + userpw + ", nickname=" + nickname
-				+ ", email=" + email + ", birhdate=" + birhdate + ", cash=" + cash + ", login_class=" + login_class
-				+ ", isAdmin=" + isAdmin + "]";
+				+ ", username=" + username + ", email=" + email + ", birhdate=" + birhdate + ", cash=" + cash
+				+ ", login_class=" + login_class + ", isAdmin=" + isAdmin + "]";
 	}
+
+	
 
 	
 	
