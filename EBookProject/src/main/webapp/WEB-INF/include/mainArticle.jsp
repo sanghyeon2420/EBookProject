@@ -148,6 +148,15 @@
 			<span>딛듣</span>
 		</div>
 	</div>
+	<div class="book6">
+		<div class="cover">
+			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<b>룰루랄라송</b><br>
+			<span>딛듣선님입니다</span>
+		</div>
+	</div>
 </div>
 </section>
 
@@ -207,6 +216,15 @@
 		<div class="title">
 			<b>힐링방송 스트리머</b><br>
 			<span>딛듣</span>
+		</div>
+	</div>
+	<div class="book6">
+		<div class="cover">
+			<img src="resources/images/book4.jpg" alt="북커버 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<b>룰루랄라송</b><br>
+			<span>딛듣선님입니다</span>
 		</div>
 	</div>
 </div>
