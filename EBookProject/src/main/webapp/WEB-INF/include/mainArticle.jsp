@@ -175,7 +175,7 @@
 		</div>
 		<div class="title">
 			<b>기네비어가 되었다</b><br>
-			<span>둘리살해자</span>
+			<span>둘리살해자</span> 
 		</div>
 	</div>
 	<div class="book3">
