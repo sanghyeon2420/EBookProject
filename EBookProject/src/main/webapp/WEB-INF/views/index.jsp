@@ -22,7 +22,7 @@
   </header>
 
   <article id="mainArticle">
-	  <!-- Body -->
+	  <!-- Body123213213 -->
 	  <%@ include file="../include/mainArticle.jsp" %>
   </article>
   
