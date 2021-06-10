@@ -71,8 +71,7 @@ img {
       <%@ include file="../include/pageFooter.jsp" %>
   
   </footer>
-  
-
+   
 
 
 </body>
