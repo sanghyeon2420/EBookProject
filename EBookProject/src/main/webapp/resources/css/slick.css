@@ -97,7 +97,8 @@
     text-overflow:ellipsis;
     font-size:0.917rem; 
     color:#383838;
-    text-decoration:none
+    text-decoration:none;
+    background-color: #fff;
   }
   .notice_rolling li i{
     
