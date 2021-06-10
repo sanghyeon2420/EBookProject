@@ -62,7 +62,7 @@ img {
         <!-- Ads -->
         <%@ include file="../include/siteAds.jsp" %>
   </div>
-  
+   
    <a id="MOVE_TOP_BTN" href="#" ><!-- 상단으로 올리는 버튼  -->
    <img class="icon_img" src="resources/images/up_icon.png"/>
    </a>
