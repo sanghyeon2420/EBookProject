@@ -15,24 +15,11 @@
 
 <section id="section1" class="visual">
 	<!-- width=1200px; height=700px -> width=890px; height=450px -->
-	<div><img src="resources/images/banner1.jpg" width=890px; height=450px;></div>
-    <div><img src="resources/images/banner2.jpg" width=890px; height=450px;></div>
-    <div><img src="resources/images/banner3.jpg" width=890px; height=450px;></div>
-    <div><img src="resources/images/banner4.jpg" width=890px; height=450px;></div>
+	<div><img src="resources/images/banner1.jpg" width=1200px; height=700px;></div>
+    <div><img src="resources/images/banner2.jpg" width=1200px; height=700px;></div>
+    <div><img src="resources/images/banner3.jpg" width=1200px; height=700px;></div>
+    <div><img src="resources/images/banner4.jpg" width=1200px; height=700px;></div>
 </section>
-<script type="text/javascript">
-    $('.visual').slick({
-    infinity:true, // 무한 반복 옵션
-    slidesToShow: 1, // 한 화면에 보여질 컨텐츠 개수
-    slidesToScroll: 1, //스크롤 한번에 움직일 컨텐츠 개수
-    autoplay: true, // 자동 스크롤 사용 여부
-    autoplaySpeed: 2000, // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms) -> 2초
-    dots:true, // 스크롤바 아래 점으로 페이지네이션 여부
-    arrows:false, // 옆으로 이동하는 화살표 표시 여부
-    fade:true, // 사라지는 효과
-    });
-</script>
-
 
 <section id="section3">
 </section>
@@ -241,5 +228,29 @@
     </ul>
   </div>
 </section>
+<script type="text/javascript">
+    $('.visual').slick({
+    infinity:true, // 무한 반복 옵션
+    slidesToShow: 1, // 한 화면에 보여질 컨텐츠 개수
+    slidesToScroll: 1, //스크롤 한번에 움직일 컨텐츠 개수
+    autoplay: true, // 자동 스크롤 사용 여부
+    autoplaySpeed: 2000, // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms) -> 2초
+    dots:true, // 스크롤바 아래 점으로 페이지네이션 여부
+    arrows:false, // 옆으로 이동하는 화살표 표시 여부
+    fade:true, // 사라지는 효과
+    });
+    
+    $('.notice_rolling').each(function(){
+        let $this = $(this);
+        let that = $(this).children('li');
+
+        setInterval(function(){
+            $this.animate({top:'-=40px'},function(){
+                $this.children().first().appendTo($this);
+                $this.animate({top:'0px'},0);
+            });
+        },4000);
+    });
+</script>
 </body>
 </html>
