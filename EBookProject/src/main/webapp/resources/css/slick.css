@@ -86,7 +86,7 @@
   .notice_rolling li{
     font-size:0.917rem; padding:0 1.25rem;
     list-style:none;
-    padding:0px;
+    padding:0 px;
     
   }
   .notice_rolling li a{
