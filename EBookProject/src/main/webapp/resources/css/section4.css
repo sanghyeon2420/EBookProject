@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/* section4 */
+#section4 {
+	width: 100%;
+	height: 500px;
+}
+#section4 .todaybook {
+	width: 100%;
+	height: 20%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+#section4 .todaybook > h1 {
+	font-size: 40px;
+	font-weight: 900;
+	margin: 0;
+}
+#section4 .books {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+#section4 .book1 {
+	width: 16.5%;
+	height: 280px;
+	padding: 0;
+	margin: 0;
+}
+#section4 .book2 {
+	width: 16.5%;
+	height: 280px;
+	padding: 0;
+	margin: 0;
+}
+#section4 .book3 {
+	width: 16.5%;
+	height: 280px;
+	padding: 0;
+	margin: 0;
+}
+#section4 .book4 {
+	width: 16.5%;
+	height: 280px;
+	padding: 0;
+	margin: 0;
+}
+#section4 .book5 {
+	width: 16.5%;
+	height: 280px;
+	padding: 0;
+	margin: 0;
+}
+#section4 .book6 {
+	width: 16.5%;
+	height: 280px;
+	padding: 0;
+	margin: 0;
+}
+#section4 .cover {
+	width: 100%;
+	height: 210px;
+	margin: 0;
+	justify-content: center;
+}
+#section4 .cover >img {
+	width: 160px;
+	height: 210px;
+	display: block;
+	margin: auto;
+}
+#section4 .title {
+	color: #333;
+	padding-top: 10px;
+	line-height: 20px;
+	text-align: center;
+}
+#section4 .title > b {
+	letter-spacing: -2px;
+	display: inline-block;
+	
+}
+#section4 .title > span {
+	font-size: 14px;
+	color: #666;
+	font-weight: 400;
+	text-align: center;
+}
+
+
+/* section5 */
+#section5 {
+	width: 100%;
+	height: 500px;
+}
+#section5 .todaybook {
+	width: 100%;
+	height: 20%;
+	float: left;
+}
+#section5 .todaybook > h1 {
+	font-size: 40px;
+	font-weight: 900;
+	margin: 0 0 0 20px;
+}
+#section5 .todaybook > span {
+	color: blue;
+}
+#section5 .books {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+#section5 .book1 {
+	width: 20%;
+	height: 360px;
+	padding: 0;
+	margin: 0;
+}
+#section5 .book2 {
+	width: 20%;
+	height: 360px;
+	padding: 0;
+	margin: 0;
+}
+#section5 .book3 {
+	width: 20%;
+	height: 360px;
+	padding: 0;
+	margin: 0;
+}
+#section5 .book4 {
+	width: 20%;
+	height: 360px;
+	padding: 0;
+	margin: 0;
+}
+#section5 .book5 {
+	width: 20%;
+	height: 360px;
+	padding: 0;
+	margin: 0;
+}
+#section5 .cover {
+	width: 100%;
+	height: 284px;
+	margin: 0;
+	justify-content: center;
+}
+#section5 .cover >img {
+	width: 178px;
+	height: 284px;
+	display: block;
+	margin: auto;
+}
+#section5 .title {
+	color: #333;
+	padding-top: 10px;
+	line-height: 20px;
+	text-align: center;
+}
+#section5 .title > b {
+	letter-spacing: -2px;
+	display: inline-block;
+	
+}
+#section5 .title > span {
+	font-size: 14px;
+	color: #666;
+	font-weight: 400;
+	text-align: center;
+}
+
+
+/* 광고 배너 */
+#adverbanner {
+	width: 100%;
+	height: 300px;
+    margin: 10px 0;
+}
+#adverbanner .adver {
+	height: 300px;
+	background: linear-gradient( to right, blueviolet, #bbfc90);
+}
+#adverbanner .adver > p {
+	font-size: 40px;
+	color: #fff;
+	font-weight: 700;
+	
+}
+
+
+/* section6 */
+#section6 {
+	width: 100%;
+	height: 500px;
+}
+#section6 .todaybook {
+	width: 100%;
+	height: 20%;
+	float: left;
+}
+#section6 .todaybook > h1 {
+	font-size: 40px;
+	font-weight: 900;
+	margin: 0;
+}
+#section6 .books {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+#section6 .book1, .book2, .book3, .book4, .book5 {
+	width: 20%;
+	height: 360px;
+	padding: 0;
+	margin: 0;
+}
+#section6 .cover {
+	width: 100%;
+	height: 284px;
+	margin: 0;
+	justify-content: center;
+}
+#section6 .cover >img {
+	width: 178px;
+	height: 284px;
+	display: block;
+	margin: auto;
+}
+#section6 .title {
+	color: #333;
+	padding-top: 10px;
+	line-height: 20px;
+	text-align: center;
+}
+#section6 .title > b {
+	letter-spacing: -2px;
+	display: inline-block;
+	
+}
+#section6 .title > span {
+	font-size: 14px;
+	color: #666;
+	font-weight: 400;
+	text-align: center;
+}

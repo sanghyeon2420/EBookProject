@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+
+.visual{
+    top:0%;
+    left:0%;
+    transform: translate(0%,0%);
+    width: 60vw; /* 1200px -> 890px  */
+    height: 85vh; 
+    position: relative;
+}
+
+.visual img{
+	width: 100%;
+	height: 10%;
+}
+
+.slick-dots {
+    /* bottom: 0%; */
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    /* position: absolute; */
+    left: 15px;
+    padding: 0;
+  }
+  
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /*margin: 1px;*/
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 2.7rem;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .75;
+    color: #6D6968;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #c0c0c0;
+  }
+  
+ #notice {border-top:5px solid}
+  .notice_top {height:3.333rem; overflow:hidden; }
+  .notice_top:after {content:''; display:block; clear:both;}
+
+  .notice_warp{
+     border-bottom:1px solid #f3f3f3;
+     overflow: hidden;
+     line-height:3.333rem;
+  }
+
+  .notice_rolling{
+    position:relative;
+    overflow:hidden;
+    height:20px;
+  }
+  .notice_rolling li{
+    font-size:0.917rem; padding:0 1.25rem;
+    list-style:none;
+    padding:0px;
+    
+  }
+  .notice_rolling li a{
+    display:block; 
+    width:100%; 
+    overflow:hidden; 
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    font-size:0.917rem; 
+    color:#383838;
+    text-decoration:none
+  }
+  .notice_rolling li i{
+    
+    display:inline-block;
+    position:relative;
+    top:-0.083rem;
+    min-width:3.333rem;
+    height:1.5rem;
+    line-height: 1.5rem;
+    margin-right:0.583rem;
+    text-align:center;
+    border-radius:0.833rem;
+    color:#fff;
+    background:#ff0000;
+    vertical-align:middle;
+  }  
+
+  
+
+  

@@ -1,0 +1,124 @@
+/* #section2 */
+.clear {
+	clear: both;
+}
+* {
+	padding: 0;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.container { 
+	height: 100%;
+	padding: 100px 20px 0 20px;
+}
+
+
+
+#login{
+    height: 1100px;
+    padding: 250px 0 200px 0;
+    margin: 0 20%;
+}
+#login > .container > .loginBox{
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 1px solid #cbcbcb;
+}
+#login .loginBox > div{
+    width: 100%;
+    height: 320px;
+    border-bottom: 1px solid #cbcbcb;
+}
+#login .loginBox .box{
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 30px 30px;
+    border-right: 1px solid #cbcbcb;
+}
+#login .loginBox .box .logo{
+    height: 55px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+#login .loginBox .box form{
+    margin-top: 20px;
+}
+#login .loginBox .box input{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+#login .loginBox .bottombox {
+	width: 100%;
+	height: 320px;
+}
+#login .loginBox button{
+    width: 100%;
+    height: 40px;
+    background: #00bd39;
+    color: white;
+    
+    border: 0;
+    font-size: 16px;
+    outline: 0;
+    cursor: pointer;
+}
+#login .loginBox .box form > button{
+    margin-top: 30px;
+}
+#login .social{
+    margin-top: 0px;
+}
+#login .social > h1{
+    margin-bottom: 20px;
+}
+#login .social > button{
+    float: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+#login .social > button.facebook{
+    background: #3b5999;
+    margin-top: 33px;
+}
+#login .social > button.kakao{
+    background: #f4fb04;
+}
+#login .social > button.naver{
+    background: #00bd39;
+}
+
+#login .bottombox{
+    padding: 20px 30px;
+    height: 300px;
+   
+}
+#login .bottombox > h1 {
+	height: 55px;
+	padding: 20px 30px;
+	text-align: center;
+}
+#login .bottombox button{
+    width: calc(50% - 10px);
+    margin-top: 30px;
+    float: left;
+    background: white;
+    color: #00bd39;
+    border: 1px solid #00bd39;
+    font-size: 20px
+}
+#login .bottombox button:nth-child(1){
+    margin-right: 10px;
+}
+#login .bottombox button:last-child{
+    margin-left: 10px;
+}
+#login .bottombox button:hover{
+    color: white;
+    background: #00bd39;
+}
+
+/* //#section2 */
