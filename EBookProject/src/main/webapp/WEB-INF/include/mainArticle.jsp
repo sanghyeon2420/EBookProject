@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+<link rel="stylesheet" type="text/css" href="resources/css/modal.css"/>
 </head>
 <body>
 
@@ -33,8 +33,23 @@
 			<img src="resources/images/book1.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#open">
 			<b>용사 파티 때려치웁니다</b><br>
-			<span>NariaTa</span>
+			<span>NariaTa</span></a>	
+			    <div class="white_content" id="open">
+		        <div>
+		          <p><h3><b>용사 파티 때려치웁니다</b></h3><br>
+		           <img src="resources/images/book1.jpg" >
+		           <p> 판타지 / 모험  <br>
+		           <p> 줄거리 :  “새 시대엔, 새로운 주인공이 필요한 법!”  <br>
+		           			   저는 그만둡니다 ! 
+				   <p> 한줄 대사 : “잘 가, 에스텔라” <br>
+				   <p>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
+		    	
 		</div>
 	</div>
 	<div class="book2">
@@ -42,8 +57,19 @@
 			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#open1">
 			<b>기네비어가 되었다</b><br>
-			<span>둘리살해자</span>
+			<span>둘리살해자</span></a>
+				<div class="white_content" id="open1">
+		        <div>
+		          <p><h3><b>대충 간략한 내용</b></h3><br>
+		           <img src="resources/images/book2.jpg" >
+		           <p> 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 <br>
+		           가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 <br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book3">
@@ -51,8 +77,19 @@
 			<img src="resources/images/book3.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#open2">
 			<b>아팔루사는 부서지지 않는다</b><br>
-			<span>화력발전소</span>
+			<span>화력발전소</span></a>
+			<div class="white_content" id="open2">
+		        <div>
+		          <p><h3><b>대충 간략한 내용</b></h3><br>
+		           <img src="resources/images/book3.jpg" >
+		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book4">
@@ -60,8 +97,19 @@
 			<img src="resources/images/book4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#open3">
 			<b>자동사냥이 키운 마녀님</b><br>
-			<span>BEbreaker</span>
+			<span>BEbreaker</span></a>
+			<div class="white_content" id="open3">
+		        <div>
+		          <p><h3><b>대충 간략한 내용</b></h3><br>
+		           <img src="resources/images/book4.jpg" >
+		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book5">
@@ -69,8 +117,19 @@
 			<img src="resources/images/book5.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#open4">
 			<b>힐링방송 스트리머</b><br>
-			<span>딛듣</span>
+			<span>딛듣</span></a>
+			<div class="white_content" id="open4">
+		        <div>
+		          <p><h3><b>대충 간략한 내용</b></h3><br>
+		           <img src="resources/images/book5.jpg" >
+		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book6">
@@ -78,8 +137,19 @@
 			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+		<a href="#open5">
 			<b>룰루랄라송</b><br>
-			<span>딛듣선님입니다</span>
+			<span>딛듣선님입니다</span></a>
+			<div class="white_content" id="open5">
+		        <div>
+		          <p><h3><b>대충 간략한 내용</b></h3><br>
+		           <img src="resources/images/book5.jpg" >
+		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 </div>
