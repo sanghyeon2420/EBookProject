@@ -12,9 +12,7 @@
 	position: fixed;
 	justify-content: space-between;
 	background-color: #f6f6f6;
-	z-index: 500;
 	align-items: center;
-	top:0;
 }
 .center {
 	width: 700px;
@@ -22,6 +20,7 @@
 }
 
 .Ebook_logo {
+	margin-left: 80px;
 	width: 230px;
 	height: 100px;
 }
