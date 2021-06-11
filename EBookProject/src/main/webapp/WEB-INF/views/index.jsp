@@ -16,7 +16,7 @@ $(function() {
         }
     });
   
-    $("#MOVE_TOP_BTN").click(function() {//버튼 클릭 이벤트
+    $("#MOVE_TOP_BTN").click(function() {//버튼 클릭 이벤트 asdf
         $('html, body').animate({ // animation을 걸어서 화면 맨위로 이동하도록 설정
             scrollTop : 0
         }, 400);
