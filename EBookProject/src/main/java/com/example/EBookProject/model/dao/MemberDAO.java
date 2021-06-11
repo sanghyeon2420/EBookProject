@@ -1,7 +1,8 @@
 package com.example.EBookProject.model.dao;
 
-import java.util.Map;
+import com.example.EBookProject.model.dto.MemberDTO;
 
 public interface MemberDAO {
 	public int Id_Check(String userid);
+	public MemberDTO LoginInfo(MemberDTO dto);
 }

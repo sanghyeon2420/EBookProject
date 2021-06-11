@@ -11,7 +11,7 @@ public class MemberDTO {
 	private String nickname; // 닉네임
 	private String username; // 이름
 	private String email; // 이메일
-	private Date birhdate; // 생년월일
+	private Date birthdate; // 생년월일
 	private int cash; // 잔고
 	private int login_class; // 가입타입 1 = 일반, 2 = 네이버, 3 = 카카오   로그인
 	private int isAdmin; // 관리자여부, 1 = 일반회원, 2 = 관리자
@@ -46,12 +46,7 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getBirhdate() {
-		return birhdate;
-	}
-	public void setBirhdate(Date birhdate) {
-		this.birhdate = birhdate;
-	}
+
 	public int getCash() {
 		return cash;
 	}
@@ -77,12 +72,20 @@ public class MemberDTO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public Date getBirthdate() {
+		return birthdate;
+	}
+	public void setBirthdate(Date birthdate) {
+		this.birthdate = birthdate;
+	}
 	@Override
 	public String toString() {
 		return "MemberDTO [user_no=" + user_no + ", userid=" + userid + ", userpw=" + userpw + ", nickname=" + nickname
-				+ ", username=" + username + ", email=" + email + ", birhdate=" + birhdate + ", cash=" + cash
+				+ ", username=" + username + ", email=" + email + ", birthdate=" + birthdate + ", cash=" + cash
 				+ ", login_class=" + login_class + ", isAdmin=" + isAdmin + "]";
 	}
+	
+	
 
 	
 

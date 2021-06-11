@@ -4,10 +4,10 @@ import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,8 +29,14 @@ public class MemberController {
 	}
 	
 	@RequestMapping("login/proc") // 로그인
-	public String loin_proc(MemberDTO dto) {
+	public String loin_proc(HttpSession session,MemberDTO dto) {
+		
 		System.out.println(dto);
+
+		service.LoginInfo(dto);
+		System.out.println("db에서 가져온 회원정보 dto");
+		System.out.println(dto);
+		
 		if(dto.getIsAdmin() == 2) { // 관리자
 			return "admin"; // admin.jsp로 이동
 		} else { // 일반회원이면

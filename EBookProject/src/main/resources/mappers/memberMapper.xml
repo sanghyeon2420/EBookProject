@@ -4,6 +4,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
 <mapper namespace="member">
+	
+	
+	
+	
 	<resultMap type="HashMap" id="buyResultMap">
 		<id column="userid" property="userid" />
 		<id column="count(*)" property="count" />
@@ -12,4 +16,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from member where userid=#{userid}
 	</select>
 
+
+		
+		<select id="selectLoginInfo" resultType="com.example.EBookProject.model.dto.MemberDTO">
+		select * from member where userid=#{userid} and userpw=#{userpw}
+		</select>
+		
 </mapper>
