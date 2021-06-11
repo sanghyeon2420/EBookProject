@@ -30,7 +30,7 @@
 <div class="books">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/images/book1.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books1.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<a href="#open">
@@ -54,7 +54,7 @@
 	</div>
 	<div class="book2">
 		<div class="cover">
-			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<a href="#open1">
@@ -74,7 +74,7 @@
 	</div>
 	<div class="book3">
 		<div class="cover">
-			<img src="resources/images/book3.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books3.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<a href="#open2">
@@ -94,7 +94,7 @@
 	</div>
 	<div class="book4">
 		<div class="cover">
-			<img src="resources/images/book4.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<a href="#open3">
@@ -114,7 +114,7 @@
 	</div>
 	<div class="book5">
 		<div class="cover">
-			<img src="resources/images/book5.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<a href="#open4">
@@ -134,7 +134,7 @@
 	</div>
 	<div class="book6">
 		<div class="cover">
-			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 		<a href="#open5">
@@ -157,12 +157,12 @@
 
 <section id="section5">
 <div class="todaybook">
-		<h1><strong>북하우스의 오리지널 <span>무협지</span></strong></h1>
+		<h1><strong>북하우스의 오리지널 <span style=color:blueviolet;>&quot;무협지&quot;</span></strong></h1>
 	</div>
 <div class="books">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>용사 파티 때려치웁니다</b><br>
@@ -171,7 +171,7 @@
 	</div>
 	<div class="book2">
 		<div class="cover">
-			<img src="resources/images/book5.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>기네비어가 되었다</b><br>
@@ -180,7 +180,7 @@
 	</div>
 	<div class="book3">
 		<div class="cover">
-			<img src="resources/images/book4.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>아팔루사는 부서지지 않는다</b><br>
@@ -189,7 +189,7 @@
 	</div>
 	<div class="book4">
 		<div class="cover">
-			<img src="resources/images/book1.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books1.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>자동사냥이 키운 마녀님</b><br>
@@ -198,7 +198,7 @@
 	</div>
 	<div class="book5">
 		<div class="cover">
-			<img src="resources/images/book3.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books3.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>힐링방송 스트리머</b><br>
@@ -207,7 +207,7 @@
 	</div>
 	<div class="book6">
 		<div class="cover">
-			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>룰루랄라송</b><br>
@@ -232,7 +232,7 @@
 <div class="books">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/images/book5.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>용사 파티 때려치웁니다</b><br>
@@ -241,7 +241,7 @@
 	</div>
 	<div class="book2">
 		<div class="cover">
-			<img src="resources/images/book4.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>기네비어가 되었다</b><br>
@@ -250,7 +250,7 @@
 	</div>
 	<div class="book3">
 		<div class="cover">
-			<img src="resources/images/book3.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books3.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>아팔루사는 부서지지 않는다</b><br>
@@ -259,7 +259,7 @@
 	</div>
 	<div class="book4">
 		<div class="cover">
-			<img src="resources/images/book2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>자동사냥이 키운 마녀님</b><br>
@@ -268,7 +268,7 @@
 	</div>
 	<div class="book5">
 		<div class="cover">
-			<img src="resources/images/book1.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books1.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>힐링방송 스트리머</b><br>
@@ -277,7 +277,7 @@
 	</div>
 	<div class="book6">
 		<div class="cover">
-			<img src="resources/images/book4.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<b>룰루랄라송</b><br>
