@@ -41,6 +41,7 @@
 
    <!-- Login&Join icon -->
    <div class="Ebook_icons">
+   	<%=session.getAttribute("username") %>님 환영합니다 <button id="logout">로그아웃</button>
       <a href="<%=path%>/member/login" id="login" title="로그인"><i class="fas fa-user"></i></a>
       <a href="<%=path%>/member/join" id="join" title="회원가입"><i class="fas fa-id-card"></i></a>
    </div>

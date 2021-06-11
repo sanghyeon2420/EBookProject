@@ -36,4 +36,9 @@ public class MemberDAOImpl implements MemberDAO{
 //		map.put("userpw", dto.getUserpw());
 		return sqlSession.selectOne("member.selectLoginInfo", dto);
 	}
+
+	@Override
+	public int logincheck(MemberDTO dto) {
+		return sqlSession.selectOne("member.logincheck", dto);
+	}
 }

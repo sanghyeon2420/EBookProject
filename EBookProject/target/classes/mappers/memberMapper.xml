@@ -20,4 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member where userid=#{userid} and userpw=#{userpw}
 	</select>
 		
+		<select id="logincheck" resultType="int">
+		select count(*) from member where userid=#{userid} and userpw=#{userpw}
+	</select>
+	
 </mapper>

@@ -25,4 +25,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.LoginInfo(dto);
 		
 	}
+
+	@Override
+	public int logincheck(MemberDTO dto) {
+		return dao.logincheck(dto);
+	}
 }
