@@ -298,7 +298,7 @@
     </ul>
   </div>
 </section>
-<script type="text/javascript">
+<script type="text/javascript"> 
     $('.visual').slick({
     infinity:true, // 무한 반복 옵션
     slidesToShow: 1, // 한 화면에 보여질 컨텐츠 개수
