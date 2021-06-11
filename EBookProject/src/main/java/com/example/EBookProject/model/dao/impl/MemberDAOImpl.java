@@ -29,11 +29,11 @@ public class MemberDAOImpl implements MemberDAO{
 
 	@Override
 	public MemberDTO LoginInfo(MemberDTO dto) {
-		logger.info("LoginINfo 호출...");
 		System.out.println("daoimpl호출");
-		Map<String, String> map = new HashMap<>();
-		map.put("userid", dto.getUserid());
-		map.put("userpw", dto.getUserpw());
-		return sqlSession.selectOne("member.selectLoginInfo", map);
+		System.out.println("MemberDAOImpl : "+dto);
+//		Map<String, String> map = new HashMap<>();
+//		map.put("userid", dto.getUserid());
+//		map.put("userpw", dto.getUserpw());
+		return sqlSession.selectOne("member.selectLoginInfo", dto);
 	}
 }

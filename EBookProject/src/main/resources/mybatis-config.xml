@@ -10,7 +10,7 @@
 			/> -->
 		<!-- *Mapper.xml => resultType="sampleDTO" -->
 
-		<typeAlias type="memberDTO" alias="com.example.EBookProject.model.dto.MemberDTO" />
+		<typeAlias type="memberdto" alias="com.example.EBookProject.model.dto.MemberDTO" />
 
 	</typeAliases>
 

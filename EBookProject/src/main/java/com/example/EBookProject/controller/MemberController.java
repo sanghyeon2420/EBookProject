@@ -31,7 +31,6 @@ public class MemberController {
 	@RequestMapping("login/proc") // 로그인
 	public String loin_proc(HttpSession session,MemberDTO dto) {
 		
-		System.out.println(dto);
 
 		service.LoginInfo(dto);
 		System.out.println("db에서 가져온 회원정보 dto");
