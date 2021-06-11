@@ -99,4 +99,14 @@ public class MemberController {
 			
 		}
 	}
+	
+	
+	@RequestMapping("logout")
+	public String Logout(HttpServletRequest request) {
+		//"index";
+		//url http://localhost:8080/EBookProject/member/index.jsp
+		
+		request.getSession().invalidate(); // 세션 무효화
+		return "redirect:/"; 
+	};
 }
