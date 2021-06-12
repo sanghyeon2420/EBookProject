@@ -32,9 +32,12 @@
    <div class="menu">
       <ul class="menu_list">
          <li><a href="<%=path%>/">Home</a></li>
-         <li><a href="#">무협지</a></li>
-         <li><a href="#">판타지</a></li>
-         <li><a href="#">로맨스</a></li>
+         <c:forEach var="list" items="${list}">
+         
+         
+         <li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li>
+         </c:forEach>
+         
          <li><a href="<%=path%>/board/list">커뮤니티</a></li>
          <li><a href="#">공지사항</a></li>
       </ul>

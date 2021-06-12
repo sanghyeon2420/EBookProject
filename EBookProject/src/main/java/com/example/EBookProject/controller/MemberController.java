@@ -72,7 +72,7 @@ public class MemberController {
 	
 	@RequestMapping("join")
 	public String join(Locale locale, Model model) {
-
+		
 		return "member/join";
 	}
 	
