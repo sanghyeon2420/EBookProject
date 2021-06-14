@@ -456,7 +456,7 @@
   <div class="notice_wrap">
     <ul class="notice_rolling">
     	<c:forEach var="list" items="${noticlist}">
-      <li><a href="${pageContext.request.contextPath}/notic/detail/${list.notic_no}"><i>공지</i>${list.notic_content}</a></li>
+      <li><a href="${pageContext.request.contextPath}/notic/detail/${list.notic_no}"><i>공지</i>${list.notic_title}</a></li>
       </c:forEach>
 
     </ul>

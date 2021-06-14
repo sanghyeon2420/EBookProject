@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,5 +15,18 @@
 </head>
 <body>
 <!-- ${param.idx} => 장르번호 -->
+  <table>
+  <c:forEach var="list" items="${list}">
+	<tr>
+	<td><img src="resources/images/book${list.ebook_no}.jpg"></td>
+	<td>${list.ebook_no}</td>
+	<td>${list.b_category }</td>
+	<td>${list.w_name }</td>
+	<td>${list.b_name }</td>
+	<td>${list.b_intro }</td>
+	</tr>
+	  
+  </c:forEach>
+  </table>
 </body>
 </html>

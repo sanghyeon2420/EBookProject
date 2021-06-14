@@ -27,8 +27,8 @@
   
   <article id="mainArticle">
   <!-- 게시판 작성 -->
-  게시판
-  
+
+  </table>
   </article>
   
   
