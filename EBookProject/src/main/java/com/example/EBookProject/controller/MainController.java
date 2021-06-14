@@ -13,7 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.EBookProject.model.dto.BookcategoryDTO;
+import com.example.EBookProject.model.dto.NoticDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
+import com.example.EBookProject.model.service.impl.NoticServiceImpl;
 import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
 @Controller
@@ -24,7 +26,8 @@ public class MainController {
 	@Inject
 	BookServiceImpl bookservice;
 	
-
+	@Inject
+	NoticServiceImpl noticservice;
 	
 	
 	
@@ -33,12 +36,20 @@ public class MainController {
 		
 		List<BookcategoryDTO> list=bookservice.bookcategory();
 		
-		request.setAttribute("list", list);
+		
+		// application 객체 사용 
+		// getServletContext() -> Returns: The ServletContext object for the web application
+		request.getSession().getServletContext().setAttribute("list", list);
+		
 		return "index";
 	}
 	
 	@RequestMapping("notic")
 	public String notic() {
+		List<NoticDTO> list=noticservice.list();
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
 		return "notic";
 	}
 	
