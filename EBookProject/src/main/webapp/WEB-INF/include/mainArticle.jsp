@@ -39,7 +39,7 @@
 			<a href="#open">
 			<b style=font-size:18px;>굿 엔딩에 올인</b><br>
 			<span>루엘</span></a>	
-			    <div class="white_content" id="open">
+		    <div class="white_content" id="open">
 		        <div>
 		          <p><h3><b>굿 엔딩에 올인</b></h3><br>
 		           <img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" >
