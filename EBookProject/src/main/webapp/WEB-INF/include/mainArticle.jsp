@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/modal.css"/>
+<link href="//font.elice.io/EliceDigitalBaeum.css" rel="stylesheet">
 </head>
 <body>
 
@@ -26,26 +27,25 @@
 </section>
 <section id="section4">
 <div class="todaybook">
-		<h1><strong>오늘의 업데이트 책</strong></h1>
+		<h1><strong>오늘의 업데이트</strong></h1>
 	</div>
 <div class="books">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/images/books1.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#" style=color:green;>판타지</a><br>
 			<a href="#open">
-			<b>용사 파티 때려치웁니다</b><br>
-			<span>NariaTa</span></a>	
+			<b style=font-size:18px;>굿 엔딩에 올인</b><br>
+			<span>루엘</span></a>	
 			    <div class="white_content" id="open">
 		        <div>
-		          <p><h3><b>용사 파티 때려치웁니다</b></h3><br>
-		           <img src="resources/images/book1.jpg" >
-		           <p> 판타지 / 모험  <br>
-		           <p> 줄거리 :  “새 시대엔, 새로운 주인공이 필요한 법!”  <br>
-		           			   저는 그만둡니다 ! 
-				   <p> 한줄 대사 : “잘 가, 에스텔라” <br>
-				   <p>
+		          <p><h3><b>굿 엔딩에 올인</b></h3><br>
+		           <img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" >
+		           <p><b> 판타지 / 모험  </b><br>
+		           <p><b> 줄거리 </b>:  “ 엘레쥬에 빙의한 것 같다. 이거 진짜 현실이야?”  <br>
+				   <p><b> 한줄 대사 </b>: “누구 하나 잡아서 굿 엔딩을 보면 되는 거 아닐까?” <br><br>
 		          <a href="#close"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
@@ -55,18 +55,20 @@
 	</div>
 	<div class="book2">
 		<div class="cover">
-			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#" style=color:green;>로맨스</a><br>
 			<a href="#open1">
-			<b>기네비어가 되었다</b><br>
-			<span>둘리살해자</span></a>
+			<b style=font-size:18px;>굿!모닝 키스의 전설</b><br>
+			<span>석영아</span></a>
 				<div class="white_content" id="open1">
 		        <div>
-		          <p><h3><b>대충 간략한 내용</b></h3><br>
-		           <img src="resources/images/book2.jpg" >
-		           <p> 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 <br>
-		           가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 가나다라마바사 <br>
+		          <p><h3><b>굿!모닝 키스의 전설</b></h3><br>
+		           <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" >
+		           <p><b> 로맨스 </b><br>
+		           <p><b> 줄거리 </b>:  "키스 한 번에 전설의 용을 깨운 여자, 다연과 천 년 넘게 잠들어있던 본능을 각성한 남자, 용이의 신비롭고 이상야릇한 러브 판타지"<br>
+		           <p><b> 한줄 대사 </b>: "너에게 키스하는 순간부터, 우린 영원히, 끝도 없이 긴 사랑을 나누게 될 거야."<br><br>
 		          <a href="#close"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
@@ -75,18 +77,20 @@
 	</div>
 	<div class="book3">
 		<div class="cover">
-			<img src="resources/images/books3.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#" style=color:green;>로맨스</a><br>
 			<a href="#open2">
-			<b>아팔루사는 부서지지 않는다</b><br>
-			<span>화력발전소</span></a>
+			<b style=font-size:18px;>나의 소중한 소꿉친구</b><br>
+			<span>도톨</span></a>
 			<div class="white_content" id="open2">
 		        <div>
-		          <p><h3><b>대충 간략한 내용</b></h3><br>
-		           <img src="resources/images/book3.jpg" >
-		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
-		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <p><h3><b>나의 소중한 소꿉친구</b></h3><br>
+		           <img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" >
+		           <p><b> 로맨스 </b><br>
+		           <p><b> 줄거리 </b>:  "엉뚱발랄한 소녀 로해다와 티격태격 소꿉친구 허민우. 유쾌하고 따뜻하지만, 때론 씁쓸한.. 소중한 러브코미디" <br>
+		           <p><b> 한줄 대사 </b>:  " 티격태격하긴해도, 날 위해주려 노력하는모습이 슬며시 드러나니 미워할수 없는 녀석이다. 그런데 왜 일까?" <br><br>
 		          <a href="#close"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
@@ -95,18 +99,20 @@
 	</div>
 	<div class="book4">
 		<div class="cover">
-			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/다시태어난호박.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#" style=color:green;>판타지</a><br>
 			<a href="#open3">
-			<b>자동사냥이 키운 마녀님</b><br>
-			<span>BEbreaker</span></a>
+			<b style=font-size:18px;>싸움의 기술</b><br>
+			<span>델타포스</span></a>
 			<div class="white_content" id="open3">
 		        <div>
-		          <p><h3><b>대충 간략한 내용</b></h3><br>
-		           <img src="resources/images/book4.jpg" >
-		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
-		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <p><h3><b>싸움의 기술</b></h3><br>
+		           <img src="resources/css/bookCover/다시태어난호박.jpg" >
+		           <p><b> 판타지 </b><br>
+		           <p><b> 줄거리 </b>:  "타 학교 학생들과 싸움을 하게 되었고 도윤이는 싸움에서 위기를 맞게 되었다. 과연 도윤이의 운명은 어떻게 될것인가?"<br>
+		           <p><b> 한줄 대사 </b>: "믿어야 될 사람은 나 자신뿐" <br><br>
 		          <a href="#close"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
@@ -115,18 +121,20 @@
 	</div>
 	<div class="book5">
 		<div class="cover">
-			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/무림순경.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
+			<a href="#" style=color:green;>무협지</a><br>
 			<a href="#open4">
-			<b>힐링방송 스트리머</b><br>
-			<span>딛듣</span></a>
+			<b style=font-size:18px;>무림순경</b><br>
+			<span>지챤주</span></a>
 			<div class="white_content" id="open4">
 		        <div>
-		          <p><h3><b>대충 간략한 내용</b></h3><br>
-		           <img src="resources/images/book5.jpg" >
-		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
-		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <p><h3><b>무림순경</b></h3><br>
+		           <img src="resources/css/bookCover/무림순경.jpg" >
+		           <p><b> 액션 </b><br>
+		           <p><b> 줄거리 </b>:  "무림속에서 홀로 힘듬을 견뎌내는 무림순경의 액션무협" <br>
+		           <p><b> 한줄 대사 </b>:  "그 누구도 나를 이기기 전까지는 이 곳을 지나갈 수 없다. <br><br>
 		          <a href="#close"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
@@ -135,18 +143,20 @@
 	</div>
 	<div class="book6">
 		<div class="cover">
-			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/환골탈태하고 헌터되기.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-		<a href="#open5">
-			<b>룰루랄라송</b><br>
-			<span>딛듣선님입니다</span></a>
+			<a href="#" style=color:green;>무협지</a><br>
+			<a href="#open5">
+			<b style=font-size:18px;>환골탈태하고 헌터되기</b><br>
+			<span>기뮤치뮤</span></a>
 			<div class="white_content" id="open5">
 		        <div>
-		          <p><h3><b>대충 간략한 내용</b></h3><br>
-		           <img src="resources/images/book5.jpg" >
-		           <p> 도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
-		            도토리가 나무에서 떨어진다 도토리가 나무에서 떨어진다.<br>
+		          <p><h3><b>환골탈태하고 헌터되기</b></h3><br>
+		           <img src="resources/css/bookCover/환골탈태하고 헌터되기.jpg" >
+		           <p><b> 액션 / 판타지</b><br>
+		           <p><b> 줄거리 </b>:  "지긋지긋한 이 세상에서 헌터로 살아남기" <br>
+		           <p><b> 한줄 대사 </b>:  "내가 이 구역의 진정한 헌터야!"<br><br>
 		          <a href="#close"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
@@ -158,61 +168,139 @@
 
 <section id="section5">
 <div class="todaybook">
-		<h1><strong>북하우스의 오리지널 <span style=color:blueviolet;>&quot;무협지&quot;</span></strong></h1>
+		<h1><strong>북하우스의 오리지널 <span style=color:#ff00e1;>&quot;Romance&quot;</span></strong></h1>
 	</div>
 <div class="books">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>용사 파티 때려치웁니다</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open1">
+			<b style=font-size:18px;>용사 파티 때려치웁니다</b><br>
 			<span>NariaTa</span>
+			<div class="white_content" id="open1">
+		        <div>
+		          <p><h3><b>굿!모닝 키스의 전설</b></h3><br>
+		           <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" >
+		           <p><b> 로맨스 </b><br>
+		           <p><b> 줄거리 </b>:  "키스 한 번에 전설의 용을 깨운 여자, 다연과 천 년 넘게 잠들어있던 본능을 각성한 남자, 용이의 신비롭고 이상야릇한 러브 판타지"<br>
+		           <p><b> 한줄 대사 </b>: "너에게 키스하는 순간부터, 우린 영원히, 끝도 없이 긴 사랑을 나누게 될 거야."<br><br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book2">
 		<div class="cover">
-			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/크리스마스_러브스토리_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>기네비어가 되었다</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open6">
+			<b style=font-size:18px;>크리스마스 러브 스토리</b><br>
 			<span>둘리살해자</span>
+			<div class="white_content" id="open6">
+				<div>
+				  <p><h3><b>크리스마스 러브 스토리</b></h3>
+				  <img src="resources/css/bookCover/크리스마스_러브스토리_커버.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book3">
 		<div class="cover">
-			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/스타프로젝트_원영_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>아팔루사는 부서지지 않는다</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open7">
+			<b style=font-size:18px;>스타프로젝트 원영</b><br>
 			<span>화력발전소</span>
+			<div class="white_content" id="open7">
+				<div>
+				  <p><h3><b>스타프로젝트 원영</b></h3>
+				  <img src="resources/css/bookCover/스타프로젝트_원영_커버.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book4">
 		<div class="cover">
-			<img src="resources/images/books1.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/동화나라_발렌타인데이_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>자동사냥이 키운 마녀님</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open8">
+			<b style=font-size:18px;>자동사냥이 키운 마녀님</b><br>
 			<span>BEbreaker</span>
+			<div class="white_content" id="open8">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/동화나라_발렌타인데이_커버.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book5">
 		<div class="cover">
-			<img src="resources/images/books3.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>힐링방송 스트리머</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open2">
+			<b style=font-size:18px;>힐링방송 스트리머</b><br>
 			<span>딛듣</span>
+			<div class="white_content" id="open2">
+		        <div>
+		          <p><h3><b>나의 소중한 소꿉친구</b></h3><br>
+		           <img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" >
+		           <p><b> 로맨스 </b><br>
+		           <p><b> 줄거리 </b>:  "엉뚱발랄한 소녀 로해다와 티격태격 소꿉친구 허민우. 유쾌하고 따뜻하지만, 때론 씁쓸한.. 소중한 러브코미디" <br>
+		           <p><b> 한줄 대사 </b>:  " 티격태격하긴해도, 날 위해주려 노력하는모습이 슬며시 드러나니 미워할수 없는 녀석이다. 그런데 왜 일까?" <br><br>
+		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book6">
 		<div class="cover">
-			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>룰루랄라송</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>룰루랄라송</b><br>
 			<span>딛듣선님입니다</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 </div>
@@ -228,7 +316,7 @@
 
 <section id="section6">
 <div class="todaybook">
-		<h1><strong>지금 새로 나온 책</strong></h1>
+		<h1><strong>지금 새로 들어온 작품</strong></h1>
 	</div>
 <div class="books">
 	<div class="book1">
@@ -236,8 +324,21 @@
 			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>용사 파티 때려치웁니다</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>용사 파티 때려치웁니다</b><br>
 			<span>NariaTa</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book2">
@@ -245,8 +346,21 @@
 			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>기네비어가 되었다</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>기네비어가 되었다</b><br>
 			<span>둘리살해자</span> 
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book3">
@@ -254,8 +368,21 @@
 			<img src="resources/images/books3.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>아팔루사는 부서지지 않는다</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>아팔루사는 부서지지 않는다</b><br>
 			<span>화력발전소</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book4">
@@ -263,8 +390,21 @@
 			<img src="resources/images/books2.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>자동사냥이 키운 마녀님</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>자동사냥이 키운 마녀님</b><br>
 			<span>BEbreaker</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book5">
@@ -272,8 +412,21 @@
 			<img src="resources/images/books1.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>힐링방송 스트리머</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>힐링방송 스트리머</b><br>
 			<span>딛듣</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 	<div class="book6">
@@ -281,8 +434,21 @@
 			<img src="resources/images/books4.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<b>룰루랄라송</b><br>
+			<a href="#" style=color:green;>로맨스</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>룰루랄라송</b><br>
 			<span>딛듣선님입니다</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>동화나라 발렌타인데이</b></h3>
+				  <img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
 		</div>
 	</div>
 </div>
