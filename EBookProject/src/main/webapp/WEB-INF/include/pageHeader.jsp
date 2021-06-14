@@ -12,7 +12,7 @@
 <nav class="main_header">
    <!-- Header logo -->
    <div class="Ebook_logo">
-      <a href="<%=path%>/"> <img src="resources/images/logo_image.jpg" wclassth="100px" height="100px">
+      <a href="<%=path%>/"> <img src="resources/images/logo_image.jpg" width="100px" height="100px">
       </a>
    </div>
 
