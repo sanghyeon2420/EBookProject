@@ -20,7 +20,8 @@
 		<c:forEach var="list" items="${noticlist}">
 		<tr>
 		<td><a href="<%=path%>/notic/detail/${list.notic_no}">공지</a></td>
-		<td>${list.notic_content }</td>
+		<td>${list.notic_title }</td>
+		<td>${list.notic_regdate }</td>
 		</tr>
 		</c:forEach>
 	</table>
