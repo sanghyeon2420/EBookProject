@@ -308,8 +308,8 @@
 <section id="adverbanner">
 <div class="adver">
 	<p>광고입니다 <br>
-	당장 클릭하세요!<br>
-	이벤트가 광광광~</p>
+	광고는 내일 수정할거에요<br>
+	이번주에는 대충 끝나려나</p>
 </div>
 </section>
 
