@@ -5,6 +5,7 @@
 
 <!-- jQuery -->
 <script src="resources/js/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
 <!-- 외부 스타일시트 -->
 
