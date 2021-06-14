@@ -50,7 +50,6 @@
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
-		    	
 		</div>
 	</div>
 	<div class="book2">
