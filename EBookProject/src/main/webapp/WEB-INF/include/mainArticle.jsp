@@ -55,7 +55,7 @@
 	<div class="book2">
 		<div class="cover">
 			<img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" alt="북커버 이미지를 불러옵니다.">
-		</div>
+		</div> 
 		<div class="title">
 			<a href="#" style=color:green;>로맨스</a><br>
 			<a href="#open1">
