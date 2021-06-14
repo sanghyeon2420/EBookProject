@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -289,12 +290,10 @@
 <section id="section2" class="notice_top">
   <div class="notice_wrap">
     <ul class="notice_rolling">
-      <li><a href="#"><i>공지</i> Ebook 공식 SNS와 친구가 되어주세요!</a></li>
-      <li><a href="#"><i>공지</i> 지금 쿠키를 충전하면 1+1 !</a></li>
-      <li><a href="#"><i>공지</i> 고객센터 휴무안내</a></li>
-      <li><a href="#"><i>공지</i> Ebook 업데이트 변경사항</a></li>
-      <li><a href="#"><i>공지</i> Ebook 서비스 점검 안내 공지</a></li>
-      <li><a href="#"><i>공지</i> Ebook 서버 증설 안내 공지</a></li>
+    	<c:forEach var="list" items="${noticlist}">
+      <li><a href="${pageContext.request.contextPath}/notic/detail/${list.notic_no}"><i>공지</i>${list.notic_content}</a></li>
+      </c:forEach>
+
     </ul>
   </div>
 </section>
