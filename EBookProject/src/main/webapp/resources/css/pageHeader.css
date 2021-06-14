@@ -10,40 +10,39 @@
 	height: 15%;
 	display: flex;
 	position: fixed;
-	justify-content: space-between;
+	justify-content: space-around;
 	background-color: #f6f6f6;
 	align-items: center;
 }
-.center {
-	width: 700px;
-	margin-right: 150px
-}
 
 .Ebook_logo {
-	margin-left: 80px;
-	width: 230px;
-	height: 100px;
-}
-
-.Ebook_logo img {
-	border-radius: 50px 50px 50px 50px;
-	width: 210px;
-	height: 100px;
-}
-
-.Search {
+	width: 15vw;
+	height: 11vh;
 	text-align: center;
 }
 
+.Ebook_logo img {
+	border-radius: 50px;
+	width: 13vw;
+	height: 10vh;
+}
+
+.center {
+	width: 35vw;
+	height: 8vh;
+	text-align: center;
+	
+}
+
 .searchTerm {
-	width: 500px;
+	width: 25vw;
 	font-size: 20px;
 	border-radius: 50px;
 }
 
 .searchButton {
-	height: 30px;
-	width: 30px;
+	width: 1.5vw;
+	height: 3vh;
 	border-radius: 100%;
 	margin: 0 0 0 10px;
 	background-color: #eaeaea; 
@@ -60,7 +59,7 @@
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
-	margin: 10px 10px 10px 10px;
+	margin: 10px;
 }
 
 li {
@@ -69,6 +68,7 @@ li {
 	margin: 5px 5px 5px 5px;
 	padding: 0 5px 0 5px;
 	border-radius: 50px; 
+	font-size: 2vh;
 }
 
 li:hover {
@@ -81,8 +81,7 @@ a{
 }
 
 .Ebook_icons {
-	margin-right: 40px;	
-	height: 50px;
+	height: 5vh;
 }
 
 #login {
