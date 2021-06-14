@@ -42,6 +42,15 @@ $(function() {
         return false;
     });
 });
+
+
+// 로그아웃
+$(document).ready(function(){
+	$("#logout").click(function(){
+		location.href="${pageContext.request.contextPath}/member/logout";
+	});
+});
+
 </script>
 <style>
 a#MOVE_TOP_BTN {
