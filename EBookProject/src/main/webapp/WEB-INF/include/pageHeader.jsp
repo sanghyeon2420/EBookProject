@@ -32,7 +32,7 @@
    <div class="menu">
       <ul class="menu_list">
          <li><a href="<%=path%>/">Home</a></li>
-         <c:forEach var="list" items="${list}">
+         <c:forEach var="list" items="${booklist}">
          
          
          <li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li>

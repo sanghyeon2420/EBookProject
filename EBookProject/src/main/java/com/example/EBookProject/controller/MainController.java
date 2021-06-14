@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 import com.example.EBookProject.model.dto.NoticDTO;
@@ -34,23 +35,31 @@ public class MainController {
 	@RequestMapping("/")
 	public String index(HttpServletRequest request) {
 		
-		List<BookcategoryDTO> list=bookservice.bookcategory();
-		
+		List<BookcategoryDTO> booklist=bookservice.bookcategory(); // 상단 메뉴 목록
+		List<NoticDTO>	noticlist=	noticservice.list(); // 공지사항 목록 
 		
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
-		request.getSession().getServletContext().setAttribute("list", list);
+		request.getSession().getServletContext().setAttribute("booklist", booklist);
+		
+		request.getSession().getServletContext().setAttribute("noticlist", noticlist);
 		
 		return "index";
 	}
 	
 	@RequestMapping("notic")
-	public String notic() {
-		List<NoticDTO> list=noticservice.list();
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i));
-		}
-		return "notic";
+	public ModelAndView notic(ModelAndView mav) {
+		
+//		mav.setViewName("notic"); // view 페이지  notic.jsp
+//		
+//		List<NoticDTO> list=noticservice.list();
+//		for (int i = 0; i < list.size(); i++) {
+//			System.out.println(list.get(i));
+//		}
+//		
+//		mav.addObject("list", list); // ModelAndView 객체에 list(공지사항 목록)을 저장
+		
+		return mav;
 	}
 	
 }
