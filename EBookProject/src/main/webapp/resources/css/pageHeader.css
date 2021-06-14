@@ -45,8 +45,13 @@
 	height: 3vh;
 	border-radius: 100%;
 	margin: 0 0 0 10px;
+	padding: 0;
 	background-color: #eaeaea; 
 	transition: background-color .5s;
+}
+
+.fa-search {
+	font-size: 1vw;
 }
 
 .searchButton:hover {

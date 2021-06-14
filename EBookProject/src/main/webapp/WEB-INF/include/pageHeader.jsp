@@ -2,6 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 
 <link rel="stylesheet"
@@ -30,20 +32,51 @@
    <div class="menu">
       <ul class="menu_list">
          <li><a href="<%=path%>/">Home</a></li>
-         <li><a href="#">무협지</a></li>
-         <li><a href="#">판타지</a></li>
-         <li><a href="#">로맨스</a></li>
+         <c:forEach var="list" items="${list}">
+         
+         
+         <li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li>
+         </c:forEach>
+         
          <li><a href="<%=path%>/board/list">커뮤니티</a></li>
-         <li><a href="#">공지사항</a></li>
+         <li><a href="<%=path%>/notic">공지사항</a></li>
       </ul>
       </div>
 </div>
 
    <!-- Login&Join icon -->
    <div class="Ebook_icons">
-   	<%=session.getAttribute("username") %>님 환영합니다 <button id="logout">로그아웃</button>
-      <a href="<%=path%>/member/login" id="login" title="로그인"><i class="fas fa-user"></i></a>
+   <!-- 로그인 안했을때 -->
+   
+   <%
+   if(session.getAttribute("username") == null){
+	   
+   
+   %>
+     <a href="<%=path%>/member/login" id="login" title="로그인"><i class="fas fa-user"></i></a>
       <a href="<%=path%>/member/join" id="join" title="회원가입"><i class="fas fa-id-card"></i></a>
+    
+<%} else {
+
+	if(session.getAttribute("writer_no") != null){
+%>
+	
+	<li><a href="<%=path%>/writer/detail"/<%=session.getAttribute("writer_no")%>><%=session.getAttribute("w_name")%></a></li>
+	
+	<%}
+	%>
+	
+	
+	<%=session.getAttribute("username") %> 님 환영합니다. <button type="button" id="logout">로그아웃</button>
+	
+	<%
+}
+	%>   
+
+
+	
+
+      
    </div>
 
 </nav>

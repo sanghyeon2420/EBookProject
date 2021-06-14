@@ -3,6 +3,8 @@
 #pageFooter {
 	background-color: #112d4e;
 	padding: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .careful {
@@ -12,9 +14,11 @@
 }
 
 .footer {
+	width: 100%;
+	height: 80%;
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
+	justify-content: space-around;
 }
 
 .footer_logo img {
@@ -26,6 +30,9 @@
 
 .footer_center {
 	text-align: -webkit-left;
+	width: 25vw;
+	height: 20vh;
+	font-size: 1vh;
 }
 
 .footer_center p {

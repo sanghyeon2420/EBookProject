@@ -25,6 +25,9 @@ $(document).ready(function(){
 	});
 });
 
+function join(){
+	location.href="${pageContext.request.contextPath}/member/join";	
+}
 </script>
 <style>
 body {
@@ -116,7 +119,7 @@ body {
           로그인
         </button>
         
-        <button type="button" class="btn btn btn-primary">
+        <button type="button" onclick="join()" class="btn btn btn-primary">
           회원가입
         </button>
       </form>
