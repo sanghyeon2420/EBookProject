@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.EBookProject.model.dto.MemberDTO;
+import com.example.EBookProject.model.dto.WriterDTO;
 import com.example.EBookProject.model.service.impl.MemberServiceImpl;
+import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
 @Controller
 @RequestMapping("/member/*") // /member/ ()
@@ -21,6 +23,10 @@ public class MemberController {
 
 	@Inject
 	MemberServiceImpl service;
+	
+	@Inject
+	WriterServiceImpl writerservice;
+	
 	
 	@RequestMapping("login")
 	public String loin(Locale locale, Model model) {
@@ -36,24 +42,29 @@ public class MemberController {
 		// check가 1이면 로그인 성공
 		if(check == 1) {
 			System.out.println("로그인 성공");
-			MemberDTO dto2 =service.LoginInfo(dto);
+			MemberDTO login_success_DTO =service.LoginInfo(dto);
 			System.out.println("db에서 가져온 회원정보 dto");
-			System.out.println(dto2);
+			System.out.println(login_success_DTO);
 			
-			session.setAttribute("MemberDTO", dto2);
+			session.setAttribute("MemberDTO", login_success_DTO);
 			
-			session.setAttribute("user_no", dto2.getUser_no());
-			session.setAttribute("userid", dto2.getUserid());
-			session.setAttribute("userpw", dto2.getUserpw());
-			session.setAttribute("nickname", dto2.getNickname());
-			session.setAttribute("username", dto2.getUsername());
-			session.setAttribute("email", dto2.getEmail());
-			session.setAttribute("birthdate", dto2.getBirthdate());
-			session.setAttribute("cash", dto2.getCash());
+			session.setAttribute("user_no", login_success_DTO.getUser_no());
+			session.setAttribute("userid", login_success_DTO.getUserid());
+			session.setAttribute("userpw", login_success_DTO.getUserpw());
+			session.setAttribute("nickname", login_success_DTO.getNickname());
+			session.setAttribute("username", login_success_DTO.getUsername());
+			session.setAttribute("email", login_success_DTO.getEmail());
+			session.setAttribute("birthdate", login_success_DTO.getBirthdate());
+			session.setAttribute("cash", login_success_DTO.getCash());
 			
-
+			WriterDTO writerdto=writerservice.writerinfo(login_success_DTO.getUser_no());
 			
-			if(dto2.getIsAdmin() == 2) { // 관리자
+			session.setAttribute("writer_no", writerdto.getWriter_no());
+			session.setAttribute("w_name", writerdto.getW_name());
+			session.setAttribute("w_hits", writerdto.getW_hits());
+			
+			
+			if(login_success_DTO.getIsAdmin() == 2) { // 관리자
 				return "admin"; // admin.jsp로 이동
 			} else { // 일반회원이면
 				return "redirect:/"; // 메인페이지로 이동

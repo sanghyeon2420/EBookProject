@@ -13,6 +13,6 @@
 </style>
 </head>
 <body>
-<!-- ${param.idx} => 장르번호 도서장르테이블 -->
+<!-- ${param.idx} => 장르번호 -->
 </body>
 </html>

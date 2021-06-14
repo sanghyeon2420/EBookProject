@@ -3,6 +3,7 @@ package com.example.EBookProject.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
+import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
 @Controller
 public class MainController {
@@ -22,14 +24,22 @@ public class MainController {
 	@Inject
 	BookServiceImpl bookservice;
 	
+
+	
+	
+	
 	@RequestMapping("/")
 	public String index(HttpServletRequest request) {
 		
 		List<BookcategoryDTO> list=bookservice.bookcategory();
-		request.setAttribute("list", list);
 		
+		request.setAttribute("list", list);
 		return "index";
 	}
 	
+	@RequestMapping("notic")
+	public String notic() {
+		return "notic";
+	}
 	
 }
