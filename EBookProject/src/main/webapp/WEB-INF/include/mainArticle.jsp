@@ -46,7 +46,7 @@
 		           <p><b> 판타지 / 모험  </b><br>
 		           <p><b> 줄거리 </b>:  “ 엘레쥬에 빙의한 것 같다. 이거 진짜 현실이야?”  <br>
 				   <p><b> 한줄 대사 </b>: “누구 하나 잡아서 굿 엔딩을 보면 되는 거 아닐까?” <br><br>
-		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="resources/page/pageGoodEnding.jsp"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
@@ -68,7 +68,7 @@
 		           <p><b> 로맨스 </b><br>
 		           <p><b> 줄거리 </b>:  "키스 한 번에 전설의 용을 깨운 여자, 다연과 천 년 넘게 잠들어있던 본능을 각성한 남자, 용이의 신비롭고 이상야릇한 러브 판타지"<br>
 		           <p><b> 한줄 대사 </b>: "너에게 키스하는 순간부터, 우린 영원히, 끝도 없이 긴 사랑을 나누게 될 거야."<br><br>
-		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="resources/page/pageGoodMorning.jsp"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
