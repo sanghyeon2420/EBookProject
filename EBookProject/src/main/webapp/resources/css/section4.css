@@ -115,40 +115,42 @@
 	flex-wrap: wrap;
 	overflow: auto;
 	-ms-overflow-style: none;
+	flex-flow: row nowrap;
+	justify-content: space-around;
 }
 #section5 .book1 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section5 .book2 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section5 .book3 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section5 .book4 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section5 .book5 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section5 .book6 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
@@ -159,8 +161,8 @@
 	justify-content: center;
 }
 #section5 .cover >img {
-	width: 160px;
-	height: 210px;
+	width: 9vw;
+	height: 22vh;
 	display: block;
 	margin: auto;
 }
@@ -185,8 +187,8 @@
 
 /* 광고 배너 */
 #adverbanner {
-	width: 100%;
-	height: 300px;
+	width: 60vw;
+	height: 30vh;
     margin: 10px; 
 }
 #adverbanner .adver {
@@ -225,41 +227,42 @@
 	flex-wrap: wrap;
 	overflow: auto;
 	-ms-overflow-style: none;
-	flex
+	flex-flow: row nowrap;
+	justify-content: space-around;
 }
 #section6 .book1 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section6 .book2 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section6 .book3 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section6 .book4 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section6 .book5 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
 #section6 .book6 {
-	width: 16.5%;
-	height: 280px;
+	width: 9vw;
+	height: 25vh;
 	padding: 0;
 	margin: 0;
 }
@@ -270,8 +273,8 @@
 	justify-content: center;
 }
 #section6 .cover >img {
-	width: 160px;
-	height: 210px;
+	width: 9vw;
+	height: 22vh;
 	display: block;
 	margin: auto;
 }
