@@ -11,6 +11,7 @@
    crossorigin="anonymous">	
 </head>
 <body>
+	<!-- 그림 -->
     <nav id="navPicture">
         <img src="../css/bookCover/환골탈태하고 헌터되기.jpg" width="240px" height="300px">
     </nav>
