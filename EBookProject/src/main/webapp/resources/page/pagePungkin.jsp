@@ -12,15 +12,15 @@
 </head>
 <body>
     <nav id="navPicture">
-        <img src="resources/css/bookCover/다시태어난호박.jpg" width="240px" height="300px">
+        <img src="../css/bookCover/다시태어난호박.jpg" width="240px" height="300px">
     </nav>
     <header id="headTitle">
         <div class="name">
             <h1>다시 태어난 호박</h1>
             <h4>&nbsp;작가 썩은통통이</h4>
-            &nbsp;조회수 : <i class="fas fa-check-circle"></i> 12050
-            &nbsp;추천수 : <i class="far fa-heart"></i> 401
-            <br><br><br><br><br>
+            &nbsp;조회수  <i class="fas fa-check-circle"></i> 120503
+            &nbsp;추천수  <i class="far fa-heart"></i> 1731
+            <br><br><br><br>
         </div>
         <div class="container">
             <div class="item"> <i class="far fa-thumbs-up"></i><br> 랭킹<br>2위 </div>

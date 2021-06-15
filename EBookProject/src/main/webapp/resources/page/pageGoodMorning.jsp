@@ -12,15 +12,15 @@
 </head>
 <body>
     <nav id="navPicture">
-        <img src="css/bookCover/굿!모닝 키스의 전설.jpg" width="240px" height="300px">
+        <img src="../css/bookCover/굿!모닝 키스의 전설.jpg" width="240px" height="300px">
     </nav>
     <header id="headTitle">
         <div class="name">
             <h1>굿!모닝 키스의 전설</h1>
             <h4>&nbsp;작가 석영아</h4>
-            &nbsp;조회수 : <i class="fas fa-check-circle"></i> 8921
-            &nbsp;추천수 : <i class="far fa-heart"></i> 321
-            <br><br><br><br><br>
+            &nbsp;조회수  <i class="fas fa-check-circle"></i> 8921
+            &nbsp;추천수  <i class="far fa-heart"></i> 321
+            <br><br><br><br>
         </div>
         <div class="container">
             <div class="item"> <i class="far fa-thumbs-up"></i><br> 랭킹<br>5위 </div>

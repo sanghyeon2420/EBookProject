@@ -12,18 +12,18 @@
 </head>
 <body>
     <nav id="navPicture">
-        <img src="../css/bookCover/굿_엔딩에_올인_커버.jpg" width="240px" height="300px">
+        <img src="../css/bookCover/무림순경.jpg" width="240px" height="300px">
     </nav>
     <header id="headTitle">
         <div class="name">
-            <h1>굿 엔딩에 올인</h1>
-            <h4>&nbsp;작가 루엘</h4>
-            &nbsp;조회수  <i class="fas fa-check-circle"></i> 136375
-            &nbsp;추천수  <i class="far fa-heart"></i> 2461
+            <h1>무림순경</h1>
+            <h4>&nbsp;작가 지챤주</h4>
+            &nbsp;조회수  <i class="fas fa-check-circle"></i> 26678
+            &nbsp;추천수  <i class="far fa-heart"></i> 670
             <br><br><br><br>
         </div>
         <div class="container">
-            <div class="item"> <i class="far fa-thumbs-up"></i><br> 랭킹<br>1위 </div>
+            <div class="item"> <i class="far fa-thumbs-up"></i><br> 랭킹<br>4위 </div>
             <div class="item"> <i class="far fa-comments"></i><br> 첫 리뷰 작성시<br> +1쿠키</div>
             <div class="item"> <i class="fas fa-book-open"></i><br> 첫 포스트 작성시<br> +1쿠키</div>
         </div>
@@ -31,10 +31,7 @@
      <main id="mainDetail">
          <div class="detail">
              <h4>책 소개</h4>
-         <p>엘레쥬에 빙의한 것 같다,이거 현실이야? <br>
-         	루엘 작가의 데뷔작 굿 엔딩에 올인! 등판하자마자 1위 달성! 판타지계의 신드롬!<br>
-         	누구 하나를 골라 잡아 굿 엔딩을 만드려는 주인공의 노력이 담긴 판타지 <br>
-         	</p>
+         <p>무림속에서 홀로 힘듬을 견뎌내는 무림순경의 액션무협</p>
         </div>
      </main>
      <footer id="footerList">
@@ -43,7 +40,7 @@
             <li>
                 <a href="javascript://7" onclick="#">
                     <p class="text">
-                        <strong> 7. 벨제뷔트와의 만남</strong>
+                        <strong> 7. 고독</strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span></p>
@@ -52,7 +49,7 @@
             <li>
                 <a href="javascript://6" onclick="#">
                     <p class="text">
-                        <strong> 6. 정의로운 소녀</strong>
+                        <strong> 6. 추격 </strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span></p>
@@ -61,7 +58,7 @@
             <li>
                 <a href="javascript://5" onclick="#">
                     <p class="text">
-                        <strong> 5. 루드비히와의 만남</strong>
+                        <strong> 5. 협객사냥</strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span></p>
@@ -70,7 +67,7 @@
             <li>
                 <a href="javascript://4" onclick="#">
                     <p class="text">
-                        <strong> 4. 에리카가 쏘아 올린 배드 엔딩 플래그?</strong>
+                        <strong> 4. 도원정점</strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span></p>
@@ -79,7 +76,7 @@
             <li>
                 <a href="javascript://3" onclick="#">
                     <p class="text">
-                        <strong> 3. 풀리지 않은 떡밥을 조합해보자</strong>
+                        <strong> 3. 도주</strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="free_coin_info" style="margin-right: 0.01rem;">무료</span></p>
@@ -88,7 +85,7 @@
             <li>
                 <a href="javascript://2" onclick="#">
                     <p class="text">
-                        <strong> 2. 한국인은 밥심</strong>
+                        <strong> 2. 살신성인</strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="free_coin_info" style="margin-right: 0.01rem;">무료</span></p>
@@ -97,7 +94,7 @@
             <li>
                 <a href="javascript://1" onclick="#">
                     <p class="text">
-                        <strong> 1. Hell-레쥬</strong>
+                        <strong> 1. 중원의 순찰자</strong>
                         <span>2021.03.24</span></p>
                     <p class="approval">
                         <span class="free_coin_info" style="margin-right: 0.01rem;">무료</span></p>

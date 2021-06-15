@@ -90,7 +90,7 @@
 		           <p><b> 로맨스 </b><br>
 		           <p><b> 줄거리 </b>:  "엉뚱발랄한 소녀 로해다와 티격태격 소꿉친구 허민우. 유쾌하고 따뜻하지만, 때론 씁쓸한.. 소중한 러브코미디" <br>
 		           <p><b> 한줄 대사 </b>:  " 티격태격하긴해도, 날 위해주려 노력하는모습이 슬며시 드러나니 미워할수 없는 녀석이다. 그런데 왜 일까?" <br><br>
-		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="resources/page/pageMyfriend.jsp"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
@@ -112,7 +112,7 @@
 		           <p><b> 판타지 </b><br>
 		           <p><b> 줄거리 </b>:  "타 학교 학생들과 싸움을 하게 되었고 도윤이는 싸움에서 위기를 맞게 되었다. 과연 도윤이의 운명은 어떻게 될것인가?"<br>
 		           <p><b> 한줄 대사 </b>: "믿어야 될 사람은 나 자신뿐" <br><br>
-		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="resources/page/pagePungkin.jsp"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
@@ -134,7 +134,7 @@
 		           <p><b> 액션 </b><br>
 		           <p><b> 줄거리 </b>:  "무림속에서 홀로 힘듬을 견뎌내는 무림순경의 액션무협" <br>
 		           <p><b> 한줄 대사 </b>:  "그 누구도 나를 이기기 전까지는 이 곳을 지나갈 수 없다. <br><br>
-		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="resources/page/pagePolice.jsp"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
@@ -156,7 +156,7 @@
 		           <p><b> 액션 / 판타지</b><br>
 		           <p><b> 줄거리 </b>:  "지긋지긋한 이 세상에서 헌터로 살아남기" <br>
 		           <p><b> 한줄 대사 </b>:  "내가 이 구역의 진정한 헌터야!"<br><br>
-		          <a href="#close"><button>자세히보기</button></a>
+		          <a href="resources/page/pageBone.jsp"><button>자세히보기</button></a>
 		          <a href="#close"><button>닫기</button></a></p>
 		        </div>
 		    	</div>
