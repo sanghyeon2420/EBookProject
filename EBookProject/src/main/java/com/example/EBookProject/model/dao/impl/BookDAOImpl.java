@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.example.EBookProject.model.dao.BookDAO;
+import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 
 @Repository
@@ -20,6 +21,12 @@ public class BookDAOImpl implements BookDAO {
 	public List<BookcategoryDTO> bookcategory() {
 
 		return sqlSession.selectList("book.bookcategory");
+	}
+
+	@Override
+	public List<BookDTO> booklist(int category_no) {
+
+		return sqlSession.selectList("book.list",category_no);
 	}
 
 }

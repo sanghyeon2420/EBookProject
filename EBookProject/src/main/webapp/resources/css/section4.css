@@ -81,9 +81,9 @@
 	display: inline-block;
 	
 }
-#section4 .title > span {
+#section4 .title span {
 	font-size: 14px;
-	color: #666;
+	font-color: black;
 	font-weight: 400;
 	text-align: center;
 }

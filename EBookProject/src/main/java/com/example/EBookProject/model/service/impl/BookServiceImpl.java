@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.EBookProject.model.dao.BookDAO;
 import com.example.EBookProject.model.dao.impl.BookDAOImpl;
+import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 
 @Service
@@ -21,6 +22,12 @@ public class BookServiceImpl implements BookDAO {
 	public List<BookcategoryDTO> bookcategory() {
 
 		return dao.bookcategory();
+	}
+
+
+	@Override
+	public List<BookDTO> booklist(int category_no) {
+		return dao.booklist(category_no);
 	}
 
 }
