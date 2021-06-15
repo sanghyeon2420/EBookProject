@@ -51,29 +51,26 @@ $(document).ready(function(){
 	});
 });
 
-var vformtags = ["select", "input", "textarea" ];
-vformtags = vformtags.join("|");
+// 우측 클릭 방지 
+document.onmousedown=disableclick;
+status="마우스 우클릭 하지 말아주세요!!"; 
 
-function disableSelect(e)
-{
-	if (vformtags.indexOf(e.target.tagName.toLowerCase())==-1)
-	{
-		return false;
-	}
+function disableclick(event){ 
+    if (event.button==2) { 
+        alert(status); 
+        return false; 
+    } 
 }
-
-function enableSelect()
-{
-	return true;
-}
-
-if (typeof document.onselectstart!="undefined")
-	document.onselectstart=new Function ("return false");
-else{
-	document.onmousedown=disableSelect;
-	document.onmouseup=enableSelect;
-}
-	
+//F12 버튼 방지 
+/* $(document).ready(function(){ 
+$(document).bind('keydown',function(e){ 
+    if ( e.keyCode == 123 ) { //F12
+        e.preventDefault(); 
+        e.returnValue = false;
+        alert("F12버튼 누르지 말아주세요!!")
+    }
+});
+}); */
 </script>
 <style>
 a#MOVE_TOP_BTN {
