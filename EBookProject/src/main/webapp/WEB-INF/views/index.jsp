@@ -51,6 +51,29 @@ $(document).ready(function(){
 	});
 });
 
+var vformtags = ["select", "input", "textarea" ];
+vformtags = vformtags.join("|");
+
+function disableSelect(e)
+{
+	if (vformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+	{
+		return false;
+	}
+}
+
+function enableSelect()
+{
+	return true;
+}
+
+if (typeof document.onselectstart!="undefined")
+	document.onselectstart=new Function ("return false");
+else{
+	document.onmousedown=disableSelect;
+	document.onmouseup=enableSelect;
+}
+	
 </script>
 <style>
 a#MOVE_TOP_BTN {
@@ -69,7 +92,7 @@ img {
 </style>
 </head>
 <!-- 가로 스크롤 삭제 : style="overflow-x: hidden" -->
-<body style="overflow-x: hidden">
+<body style="overflow-x: hidden" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" >
 
   <header id="pageHeader">
      <!-- Header -->
