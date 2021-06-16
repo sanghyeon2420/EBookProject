@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../include/include.jsp" %>
+<%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script>
@@ -67,7 +66,6 @@ img {
   
   }
 }
-
 </style>
 </head>
 <!-- 가로 스크롤 삭제 : style="overflow-x: hidden" -->
@@ -75,46 +73,23 @@ img {
 
   <header id="pageHeader">
      <!-- Header -->
-   <%@ include file="../include/pageHeader.jsp" %>
+   <%@ include file="../../include/pageHeader.jsp" %>
   </header>
-<H2>공지 사항</H2>
+
   <article id="mainArticle">
-    <table cellpadding="0" cellspacing="0" style="text-align:center;" width="100%">
-		<tr height="50">
-			<th class="list1" width="5%">번호</th>
-			<th class="list1" width="60%">제목</th>
-			<th class="list1" width="15%">날짜</th>
-			<th class="list1" width="10%">조회수</th>
-		</tr>
-		<c:forEach var="list" items="${noticlist}">
-		<tr>
-		<td>${list.notic_no }</td>
-		<td><a href="notic/detail/${list.notic_no}">${list.notic_title }</a></td>
-		<td>${list.notic_regdate }</td>
-		<td>${list.notic_viewcnt }</td>
-		</tr>
-		</c:forEach>
-	</table>
-	<form action=notic class="noticsearch">
-					<select name="searchOption" id="searchOption">
-						<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+내용</option>
-						<option value="NOTIC_CONTENT" <c:out value="${map.searchOption=='NOTIC_CONTENT'?'selected':''}"/> >제목</option>
-						<option value="내용" <c:out value="${map.searchOption=='내용'?'selected':''}"/> >내용</option> <!-- 내용값 DB에 없어 임시  -->
-					</select> 
-				<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}">
-				<input type="hidden" name="search" id="search" value="s"/>
-				<input type="submit" class="check2" value="조회"/>
-			</form>	
+    <div align="center">
+		<h1>죄송합니다. 삭제된 게시물입니다.</h1>
+	</div>	
   </article>
   
   <nav id="mainNav">
      <!-- Nav -->
-       <%@ include file="../include/mainNav.jsp" %>
+       <%@ include file="../../include/mainNav.jsp" %>
   </nav>
   
   <div id="siteAds">
         <!-- Ads -->
-        <%@ include file="../include/siteAds.jsp" %>
+        <%@ include file="../../include/siteAds.jsp" %>
   </div>
         
    <a id="MOVE_TOP_BTN" href="#" ><!-- 상단으로 올리는 버튼  -->
@@ -122,11 +97,9 @@ img {
    </a>
   <footer id="pageFooter">
         <!-- Footer -->
-      <%@ include file="../include/pageFooter.jsp" %>
+      <%@ include file="../../include/pageFooter.jsp" %>
   
   </footer>
-   
-
 
 </body>
 </html>

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script>
-$(function(){
+$(function(){ // 헤더가리기
     var lastScrollTop = 0, delta = 15;
     $(window).scroll(function(event){
        var st = $(this).scrollTop();

@@ -1,7 +1,4 @@
 
-<!-- 게시판 글쓰는 사람의 ip주소 -->
-<% String ip=session.; %>
-<% System.out.println("접속한 사람의 ip : " + ip ); %>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -28,7 +25,6 @@
   <article id="mainArticle">
   <!-- 게시판 작성 -->
 
-  </table>
   </article>
   
   
