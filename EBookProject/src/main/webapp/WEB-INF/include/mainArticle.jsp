@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/modal.css"/>
 <link href="//font.elice.io/EliceDigitalBaeum.css" rel="stylesheet">
 </head>
-<body>
+<body>  
 
 <section id="section1" class="visual">
 	<!-- width=1200px; height=700px -> width=890px; height=450px -->
