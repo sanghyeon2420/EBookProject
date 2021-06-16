@@ -23,8 +23,17 @@
     <div><img src="resources/images/banner4.jpg" width=1200px; height=700px;></div>
 </section>
 
+
 <section id="section3">
+<div class="title">
+		<h1>TOP5</h1><hr>
+</div>
+<div class="rank">
+
+</div>
 </section>
+
+
 <section id="section4">
 <div class="todaybook">
 		<h1><strong>오늘의 업데이트</strong></h1>
@@ -307,9 +316,7 @@
 
 <section id="adverbanner">
 <div class="adver">
-	<p>광고입니다 <br>
-	광고는 내일 수정할거에요<br>
-	이번주에는 대충 끝나려나</p>
+	<img src="resources/images/1.png" width=60vw; height=30vh; alt="광고를 불러오고 있습니다">
 </div>
 </section>
 
