@@ -41,4 +41,10 @@ public class MemberDAOImpl implements MemberDAO{
 	public int logincheck(MemberDTO dto) {
 		return sqlSession.selectOne("member.logincheck", dto);
 	}
+
+	@Override
+	public int NickCheck(String nickname) {
+		System.out.println(nickname);
+		return sqlSession.selectOne("member.nicknameCheck",nickname);
+	}
 }

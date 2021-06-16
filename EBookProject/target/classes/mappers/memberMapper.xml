@@ -16,6 +16,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from member where userid=#{userid}
 	</select>
 		
+	<select id="nicknameCheck" resultType="int" parameterType="java.lang.String">
+		select count(*) from member where nickname=#{nickname}	
+	</select>	
+		
 	<select id="selectLoginInfo" resultType="com.example.EBookProject.model.dto.MemberDTO">
 		select * from member where userid=#{userid} and userpw=#{userpw}
 	</select>
