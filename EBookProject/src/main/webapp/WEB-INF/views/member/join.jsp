@@ -9,9 +9,273 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
-<script src="resources/js/join.js"></script>
-<link rel="stylesheet" href="resources/css/join.css">
+<script>
+var checkID = false;
+var checkPWD = false;
+var checkBIRTH = false;
+var checkNAME = false;
+var checkNICKNAME = false;
+var checkEMAIL = false;
+
+$(document).ready(function() {
+	
+	// 아이디 입력값 체크
+	$("#userid").keyup(function(){
+		var userid = $("#userid").val();
+		var oMsg = $("#userid_message");
+		var regExpId = /^[0-9a-z]+$/;
+		if (userid==false) {
+			oMsg.css("color", "red");
+			oMsg.text("아이디를 입력해주세요.");
+			checkID = false;
+		}else if(regExpId.test(userid)==false){
+			oMsg.css("color","red");
+			oMsg.text("숫자,영문만 입력가능합니다.")
+		} else {
+			$.ajax({	
+				type : "POST",	
+				url : "idcheck",
+				data : {
+					"userid" : userid
+				},
+				success : function(data) {
+					if (data == "use") {
+						oMsg.css("color", "green");
+						oMsg.text("사용 가능한 아이디입니다.");
+						checkID = true;
+					} else if (data == "notuse") {
+						oMsg.css("color", "red");
+						oMsg.text("이미 존재하는 아이디입니다.");
+						checkID = false;
+					} else if (userid==""){
+						oMsg.css("color", "red");
+						oMsg.text("아이디를 입력해주세요.");
+						checkID = false;
+					}
+				}
+			});
+		}
+	});
+	
+	// 비밀번호 입력값 체크
+	$("#userpw").keyup(function() {
+		var regExpPw = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{8,50}$/;
+		var userpw = $("#userpw").val();
+		var userpw_message = $("#userpw_message");
+		if(regExpPw.test(userpw) == false){
+			userpw_message.text("최소 8자리의 최소 한개의 숫자 혹은 특수문자를 포함하여주세요.");
+			userpw_message.css("color","red");
+		}else{
+			userpw_message.css("color","green");
+			userpw_message.text("사용가능한 비밀번호입니다.");
+		}
+	});	
+	
+	
+	// 비밀번호 확인 입력값 체크
+	$("#userpw_check").keyup(function() {
+		var userpw_check_message = $("#userpw_check_message");
+		
+		// 비밀번호란 또는 비밀번호 확인란이 공백일 때
+		if ($("#userpw").val() == "" || $("#userpw_check").val() == "") {
+			userpw_check_message.css("color", "red");
+			userpw_check_message.text("비밀번호를 입력해주세요.");
+			checkPWD = false;
+			
+			
+		} else if ($("#userpw").val() != $("#userpw_check").val()) {
+			checkPWD = false;
+			userpw_check_message.text("비밀번호가 동일하지 않습니다.");
+			userpw_check_message.css("color", "red");
+		}
+			else if ($("#userpw").val() == false){
+				userpw_check_message.css("color", "red");
+				userpw_check_message.text("비밀번호를 입력해주세요.");
+				checkPWD = false;
+		} else {
+			checkPWD = true;
+			userpw_check_message.text("비밀번호가 동일합니다.");
+			userpw_check_message.css("color", "green");
+		}
+	});	
+	
+	
+	// 이름 체크
+	$("#username").blur(function() {
+		checkName();
+	});
+	
+	// 닉네임 체크
+	$("#nickname").blur(function() {
+		checkNickName();
+	});
+	
+});
+
+function checkName() {
+	var username_message = $("#username_message");
+	var nonchar = /[^가-힣a-zA-Z]/gi;
+	
+	var username = $("#username").val();
+	if (username == false) {
+		username_message.css("color", "red");
+		username_message.text("필수정보입니다.");
+		return false;
+	}
+	
+	if (username != "" && nonchar.test(username)) {
+		username_message.css("color", "red");
+		username_message.text("한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)");
+		return false;
+	}
+	checkNAME = true;
+	username_message.css("color","green");
+	username_message.text("멋진이름이시군요!");
+	return true;
+}
+
+function checkNickName() {
+	var nickname = $("#nickname").val();
+	var nonchar = /[^가-힣a-zA-Z]/gi;
+	
+	var nickname_message = $("#nickname_message");
+	if (nickname == false) {
+		nickname_message.css("color", "red");
+		nickname_message.text("필수정보입니다.");
+		return false;
+	} else if (nickname != "" && nonchar.test(nickname)) {
+		nickname_message.css("color", "red");
+		nickname_message.text("한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)");
+		return false;
+	} else {
+		$.ajax({	
+		type : "POST",	
+		url : "nicknamecheck",
+		data : {
+			"nickname" : nickname
+		},
+		success : function(data) {
+			if (data == "use") {
+				nickname_message.css("color","green");
+				nickname_message.text("멋진 닉네임이시군요!");
+				checkNICKNAME = true;
+			} else if (data == "notuse") {
+				nickname_message.css("color", "red");
+				nickname_message.text("이미 존재하는 닉네임입니다.");
+				checkNICKNAME = false;
+			} else if (nickname==""){
+				nickname_message.css("color", "red");
+				nickname_message.text("닉네임을 입력해주세요.");
+				checkNICKNAME = false;
+			}
+		}
+	});
+		
+	}
+
+	return true;
+}
+
+function checkEmail(){
+	 var email = $("#email").val();
+	 var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+	 var email_message = $("#email_message");
+	
+	 
+	 	if(regExpEm.test(email)==false){
+		checkEMAIL = false;
+		email_message.css("color","red");
+		email_message.text("잘못된 형식의 이메일 주소입니다.")
+	}
+	else{
+		email_message.css("color","green");
+		email_message.text("사용하실 수 있는 이메일 주소입니다.")
+		checkEMAIL = true;
+		return true;
+	}
+	 	
+	 	if(email==false){
+	 		email_message.css("color","red");
+	 		email_message.text("필수정보입니다.");
+	 		checkEMAIL = false;
+	 	}
+}
+
+function checkBirth(){
+	var birthdate = $("#birthdate").val();
+	var regExpbirth = /^\d{6}$/;
+	var birthdate_message = $("#birthdate_message");
+	
+	if(regExpbirth.test(birthdate) == false){
+		birthdate_message.css("color","red");
+		birthdate_message.text("주민등록번호 앞 6자리를 입력해주세요.");
+		checkBIRTH = false;
+
+	}else{
+		birthdate_message.text("");
+		checkBIRTH = true;
+		return true;
+	}
+	
+	if(birthdate == false){
+		birthdate_message.css("color","red");
+		birthdate_message.text("필수정보입니다.");
+		checkBIRTH = false;
+	}
+}
+
+function Signup() {
+
+			console.log($("input:checkbox[id='req']").is(":checked"));
+	if($("input:checkbox[id='req']").is(":checked") == false){
+		alert("이용약관을 동의해 주세요");
+	} else {
+		
+	
+	var userid = $("#userid").val();
+	var userpw= $("#userpw").val();
+	var username = $("#username").val();
+	var nickname= $("#nickname").val();
+	var birthdate = $("#birthdate").val();
+	var email = $("#email").val();
+
+
+
+
+
+	
+	if (checkID == false) { console.log("아이디 중복검사 안함"); }
+	if (checkPWD == false) { console.log("비밀번호 다름"); }
+	if (checkNAME == false) { console.log("이름이 비어있음"); }
+	if (checkNICKNAME == false) { console.log("닉네임이 비어있음"); }
+	if (checkBIRTH == false) { console.log("생일이 비어있음"); }
+	if (checkEMAIL == false) { console.log("이메일이 비어있음"); }
+	if (checkID == false || checkPWD == false || checkNAME == false || checkBIRTH == false || checkNICKNAME == false || checkEMAIL == false) {
+		alert("빠진 정보가 있는지 확인해주세요.");
+	} else {
+		$.ajax({
+			type : "POST",
+			url : "join/proc",
+			data : {
+				"userid" : userid,
+				"userpw" : userpw,
+				"username" : username,
+				"nickname" : nickname,
+				"birthdate" : birthdate,
+				"email" : email
+			},
+			success : function(data) {
+				alert("회원가입을 축하드립니다.")
+				window.location.href="login";
+			}
+		});
+	}
+}
+}
+
+</script>
 </head>
 <body>
   <header id="pageHeader">
@@ -21,8 +285,7 @@
   
   <article id="mainArticle">
 	  <!-- Body -->
-
-<form name="form1" method="post" action="<%=path%>/member/join/proc">
+<h2>회원가입</h2>
 <div>
 <textarea rows="20" cols="90" style="resize: none;" readonly >
 제1조(목적)
@@ -187,17 +450,42 @@
 	</textarea>
 
     <p><span>이용약관에 동의합니다.
-		<input type="checkbox" name="req">
+		<input type="checkbox" id="req" name="req">
 		</span></p>
 
 </div>
-
 <div>
-
+	<form name="form1" method="post" action="#">
+		<p><label for="userid">아이디</label></p>
+		<p><input type="text" class="form-control" id="userid" name="userid" placeholder="아이디를 입력하세요."></p>
+		<p id="userid_message"></p>
+		<p><label for="userpw" >비밀번호</label></p>
+		<p><input type="password" class="form-control" id="userpw" name="userpw" placeholder="최소 8자리의 최소 한개의 숫자 혹은 특수문자를 포함하여주세요."></p>
+		<p id="userpw_message"></p>
+		<p><label for="userpw_check"  >비밀번호 확인</label></p>
+		<p><input type="password" id="userpw_check" name="userpw_check" class="form-control"></p>
+		<p id="userpw_check_message"></p>
+		<p><label for="username">이름</label></p>
+		<p><input type="text" id="username" name="username" class="form-control"></p>
+		<p id="username_message"></p>
+		<p><label for="nickname">닉네임</label></p>
+		<p><input type="text" id="nickname" name="nickname" class="form-control"></p>
+		<p id="nickname_message"></p>
+		<p><label for="email">이메일<em> 비밀번호 찾기 시 이메일로 비밀번호가 발송됩니다.</em></label></p>
+		<p><input type="text" id="email" name="email" class="form-control" oninput="checkEmail()" placeholder="ex) EBook2222@naver.com"></p>
+		<p id="email_message"></p>		
+		<p><label for="birthdate">생년월일</label></p>
+		<p><input type="text" id="birthdate" name="birthdate" class="form-control" oninput="checkBirth()" placeholder="ex) 931207"></p>
+		<p id="birthdate_message"></p>
+		<button type="button" class="btn btn-primary" onclick = "Signup()">회원가입</button>
+		<button type="button" class="btn btn-danger" onclick="cancel()">취소</button>
+	</form>
 
 </div>
 
-</form>
+
+
+
 </article>
 
   

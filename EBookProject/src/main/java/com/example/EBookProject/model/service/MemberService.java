@@ -6,4 +6,5 @@ public interface MemberService {
 	public int Id_Check(String userid);
 	public MemberDTO LoginInfo(MemberDTO dto);
 	public int logincheck(MemberDTO dto);
+	public int NickCheck(String nickname);
 }

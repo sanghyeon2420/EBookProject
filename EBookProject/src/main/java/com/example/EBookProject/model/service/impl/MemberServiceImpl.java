@@ -30,4 +30,9 @@ public class MemberServiceImpl implements MemberService {
 	public int logincheck(MemberDTO dto) {
 		return dao.logincheck(dto);
 	}
+
+	@Override
+	public int NickCheck(String nickname) {
+		return dao.NickCheck(nickname);
+	}
 }
