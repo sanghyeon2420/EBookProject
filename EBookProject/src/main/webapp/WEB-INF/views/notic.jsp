@@ -82,18 +82,20 @@ img {
     <table cellpadding="0" cellspacing="0" style="text-align:center;" width="100%">
 		<tr height="50">
 			<th class="list1" width="5%">번호</th>
-			<th class="list1" width="75%">제목</th>
+			<th class="list1" width="60%">제목</th>
 			<th class="list1" width="15%">날짜</th>
+			<th class="list1" width="10%">조회수</th>
 		</tr>
 		<c:forEach var="list" items="${noticlist}">
 		<tr>
 		<td>${list.notic_no }</td>
-		<td><a href="notic/detail/${list.notic_no}">${list.notic_content }</a></td>
+		<td><a href="notic/detail/${list.notic_no}">${list.notic_title }</a></td>
 		<td>${list.notic_regdate }</td>
+		<td>${list.notic_viewcnt }</td>
 		</tr>
 		</c:forEach>
 	</table>
-	<form action="board" class="boardsearch">
+	<form action=notic class="noticsearch">
 					<select name="searchOption" id="searchOption">
 						<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+내용</option>
 						<option value="NOTIC_CONTENT" <c:out value="${map.searchOption=='NOTIC_CONTENT'?'selected':''}"/> >제목</option>
