@@ -7,4 +7,5 @@ public interface MemberDAO {
 	public MemberDTO LoginInfo(MemberDTO dto);
 	public int logincheck(MemberDTO dto);
 	public int NickCheck(String nickname);
+	public void SignUp(MemberDTO dto);
 }

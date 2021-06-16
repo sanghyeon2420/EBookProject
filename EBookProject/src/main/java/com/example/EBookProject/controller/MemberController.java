@@ -1,18 +1,18 @@
 package com.example.EBookProject.controller;
 
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -96,10 +96,31 @@ public class MemberController {
 		return "member/join";
 	}
 	
+	@ResponseBody
 	@RequestMapping("join/proc") // 회원가입 
-	public String join_proc(MemberDTO dto) {
-		System.out.println(dto);
-		return "redirect:/";
+	public String join_proc(String userid, String userpw, String username, String nickname, String email, String birthdate) throws ParseException {
+		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
+		Date date = dateFormat.parse(birthdate);
+		System.out.println(date);
+		MemberDTO dto = new MemberDTO();
+		
+		dto.setUserid(userid);
+		dto.setUserpw(userpw);
+		dto.setUsername(username);
+		dto.setNickname(nickname);
+		dto.setEmail(email);
+		dto.setBirthdate(date);
+		
+		System.out.println(userid);
+		System.out.println(userpw);
+		System.out.println(username);
+		System.out.println(nickname);
+		System.out.println(email);
+		System.out.println(birthdate);
+		
+		service.SignUp(dto);
+		
+		return "";
 	}
 
 	
