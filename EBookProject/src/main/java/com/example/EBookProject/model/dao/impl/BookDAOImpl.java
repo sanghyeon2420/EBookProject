@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.EBookProject.model.dao.BookDAO;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
+import com.example.EBookProject.model.dto.ContentDTO;
 
 @Repository
 public class BookDAOImpl implements BookDAO {
@@ -29,4 +30,15 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectList("book.list",category_no);
 	}
 
+	@Override
+	public BookDTO Bookdetail(int ebook_no) {
+		return sqlSession.selectOne("book.bookdetail", ebook_no);
+	}
+
+	@Override
+	public List<ContentDTO> contentdetail(int ebook_no) {
+		return sqlSession.selectList("book.contentdetail", ebook_no);
+	}
+
+	
 }

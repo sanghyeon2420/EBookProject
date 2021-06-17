@@ -1,10 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
-<mapper namespace="notic">
-	<select id="list" resultType="com.example.EBookProject.model.dto.NoticDTO">
-	select * from notic order by notic_no desc
+<mapper namespace="NoticDAO">
+
+	<!-- 글쓰기 -->
+	<insert id="createNotic">
+		INSERT INTO NOTIC (
+			NOTIC_NO, 
+			NOTIC_TITLE, 
+			NOTIC_CONTENT, 
+		) VALUES(
+			NOTIC_SEQ.NEXTVAL, 
+			#{notic_title}, 
+			#{notic_content}, 
+		)
+	</insert>
+
+	<!-- 글 수정 -->
+	<update id="updateNotic">
+		UPDATE NOTIC
+		SET
+		NOTIC_TITLE = #{notic_title},
+		NOTIC_CONTENT = #{notic_content}
+		WHERE
+		NOTIC_NO = #{notic_no}
+	</update>
+
+	<!-- 글 삭제 -->
+	<delete id="deleteNotic">
+		UPDATE NOTIC SET SHOW='N' WHERE NOTIC_NO = #{notic_no}
+	</delete>
+
+	<!-- 글 삭제 체크 -->
+	<select id="checkNotic" resultType="java.lang.Integer"> 
+		SELECT COUNT(*) FROM NOTIC WHERE NOTIC_NO = #{notic_no} AND SHOW = 'Y' 
 	</select>
+
+	<!-- 조회수 -->
+	<update id="notic_viewCnt">
+		UPDATE NOTIC
+		SET
+		NOTIC_VIEWCNT = NOTIC_VIEWCNT+1
+		WHERE
+		NOTIC_NO = #{notic_no}
+	</update>
+
+	<!-- 게시글 보기 -->
+	<select id="readNotic" resultType="com.example.EBookProject.model.dto.NoticDTO">
+		SELECT 
+		*
+		FROM 
+		NOTIC
+		WHERE
+		NOTIC_NO = #{notic_no} AND SHOW = 'Y'
+	</select>
+	
+	<!-- 이전글 -->
+	<select id="previousB" resultType="com.example.EBookProject.model.dto.NoticDTO">
+	<![CDATA[
+	SELECT * FROM NOTIC WHERE NOTIC_NO = 
+	(SELECT MAX(NOTIC_NO) FROM NOTIC WHERE SHOW='Y' AND NOTIC_NO < #{notic_no})
+	]]>
+	</select>
+	
+	<!-- 다음글 -->
+	<select id="nextB" resultType="com.example.EBookProject.model.dto.NoticDTO">
+	<![CDATA[
+	SELECT * FROM NOTIC WHERE NOTIC_NO = 
+	(SELECT MIN(NOTIC_NO) FROM NOTIC WHERE SHOW='Y' AND NOTIC_NO > #{notic_no})
+	]]>
+	</select>
+
+	<!-- 목록 -->
+	<select id="listAllNotic" resultType="com.example.EBookProject.model.dto.NoticDTO">
+	<!-- 	SELECT * FROM 
+		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (
+		SELECT * FROM NOTIC <include refid="search"></include>
+		) ORDER BY NOTIC_NO DESC, NOTIC_REGDATE DESC) A ) 
+		WHERE RN BETWEEN #{start} AND #{end} -->
+		SELECT * FROM NOTIC ORDER BY NOTIC_REGDATE DESC
+		
+	</select>
+	
+	<!-- 게시글 갯수 -->
+	<select id="getCountNotic" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM NOTIC <include refid="search"></include>
+	</select>
+	
+	<!-- 검색조건 -->
+	<sql id="search">
+		<choose>
+			<when test="searchOption == 'ALL'">
+				WHERE SHOW='Y' AND ${searchOption} LIKE #{keyword}
+				
+			</when>
+			<otherwise>
+				WHERE SHOW='Y' AND 
+				(NOTIC_TITLE LIKE #{keyword} or NOTIC_CONTENT LIKE #{keyword})
+			</otherwise>
+		</choose>
+	</sql>
+	
 </mapper>

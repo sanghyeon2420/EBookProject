@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import com.example.EBookProject.model.dto.NoticDTO;
 
 public interface NoticService {
-	public List<NoticDTO> list();
 	void createNotic(NoticDTO vo) throws Exception;					// 게시글 쓰기 
 	void updateNotic(NoticDTO vo) throws Exception;					// 게시글 수정
 	void deleteNotic(int notic_no) throws Exception;						// 게시글 삭제
