@@ -11,6 +11,8 @@
 <script>
 $(document).ready(function(){
 	
+
+	
 	$("#btnLogin").click(function(){
 		var userid=$("#userid").val();
 	 	var userpw=$("#userpw").val();
@@ -108,13 +110,13 @@ body {
         <div class="form-group">
           <label for="userpw">비밀번호</label>
           <input type="password" class="form-control" id="userpw" name="userpw">
-          <a class="pull-right" href="#">Forgot password?</a>
+          <a class="pull-right" href="#">Forgot password?</a> <!-- 비밀번호 찾기 -->
         </div>
-        <div class="checkbox pull-right">
+<!--         <div class="checkbox pull-right">
           <label>
             <input type="checkbox">
             Remember me </label>
-        </div>
+        </div> -->
         <button type="button" id="btnLogin" name="btnLogin" class="btn btn btn-primary">
           로그인
         </button>

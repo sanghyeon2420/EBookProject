@@ -1,4 +1,30 @@
 @charset "UTF-8";
+/* section3 */
+#section3 {
+	width: 60vw;
+	height: 69vh;
+	margin: 0;
+}
+#section3 .title {
+	width: 60vw;
+	height: 9vh;
+	float: left;
+}
+#section3 .title h1 {
+	font-size: 40px;
+	font-weight: 900;
+	margin: 0 0 0 20px;
+}
+#section3 .title hr {
+	border: solid 0.5px gray;
+}
+#section3 .rank {
+	width: 60vw;
+	height: 69vh;
+}
+
+ 
+
 /* section4 */
 #section4 {
 	width: 60vw;
@@ -189,18 +215,18 @@
 #adverbanner {
 	width: 60vw;
 	height: 30vh;
-    margin: 10px; 
+    margin: 20px 10px; 
 }
-#adverbanner .adver {
+/* #adverbanner .adver {
 	height: 250px;
 	background: linear-gradient( to right, blueviolet, #bbfc90);
 	margin: 0 0 50px 0;
-} 
-#adverbanner .adver > p {
-	font-size: 40px;
-	color: #fff;
-	font-weight: 700;
-	
+}  */
+.adver img {
+	width: 60vw;
+	height: 30vh;
+	margin: 0;
+	padding: 0;
 }
 
 

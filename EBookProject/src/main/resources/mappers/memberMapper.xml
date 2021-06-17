@@ -28,4 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from member where userid=#{userid} and userpw=#{userpw}
 	</select>
 	
+	
+	<insert id="signup" parameterType="com.example.EBookProject.model.dto.MemberDTO">
+	insert into member(user_no,userid,userpw,username, nickname,email,birthdate,login_class) 
+	values (seq_userno.nextval,#{userid},#{userpw},#{username},#{nickname},#{email},#{birthdate},1)
+	</insert>
 </mapper>

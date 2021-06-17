@@ -18,7 +18,8 @@
   <table>
   <c:forEach var="list" items="${list}">
 	<tr>
-	<td><img src="resources/images/book${list.ebook_no}.jpg"></td>
+	<td><img src="resources/images/${list.b_category}/${list.imagefileName} "></td>
+	<!-- resources/images/무협지/무림순경.jpg -->
 	<td>${list.ebook_no}</td>
 	<td>${list.b_category }</td>
 	<td>${list.w_name }</td>

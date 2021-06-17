@@ -35,4 +35,9 @@ public class MemberServiceImpl implements MemberService {
 	public int NickCheck(String nickname) {
 		return dao.NickCheck(nickname);
 	}
+
+	@Override
+	public void SignUp(MemberDTO dto) {
+		dao.SignUp(dto);
+	}
 }
