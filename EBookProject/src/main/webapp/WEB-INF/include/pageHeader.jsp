@@ -67,9 +67,12 @@
 
 		<li><a href="<%=path%>/writer/detail"
 			/<%=session.getAttribute("writer_no")%>><%=session.getAttribute("w_name")%></a></li>
+			<%=session.getAttribute("username")%>
+			님 환영합니다.
+			<button type="button" id="logout">로그아웃</button>
 
 		<%
-			} else {
+			} else { System.out.println(session.getAttribute("username"));
 		%>
 
 
