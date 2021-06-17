@@ -8,21 +8,15 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.example.EBookProject.model.dao.NoticDAO;
 import com.example.EBookProject.model.dto.NoticDTO;
 import com.example.EBookProject.model.service.NoticService;
 
-@Repository
+@Service("NoticService")
 public class NoticDAOImpl  implements NoticService{
-
-	@Inject
-	SqlSession sqlSession;
 	
-	public List<NoticDTO> list() {
-		return sqlSession.selectList("notic.list");
-	}
-
 	@Autowired
 	private NoticDAO noticDAO;
 	
@@ -89,5 +83,4 @@ public class NoticDAOImpl  implements NoticService{
 		public int getCountNotic(String searchOption, String keyword) throws Exception {
 			return noticDAO.getCountNotic(searchOption, keyword);
 		}
-
 }
