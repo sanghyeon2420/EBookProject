@@ -121,17 +121,9 @@ img {
 					<c:when test="${not empty row}">
 					<tr>
 						<td class="list2">${row.notic_no}</td>
-						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&show=Y">${list.notic_title}</a>
-					<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
+						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&show=Y">${row.notic_title}</a>
 					<fmt:formatDate value="${row.notic_regdate}" pattern="yyyyMMdd" var="regDate"/>
-					<c:choose>
-					<c:when test="${today == notic_regDate}" >
-						<td class="list2" style="color:red;">오늘</td>					
-					</c:when>
-					<c:otherwise>
 						<td class="list2">${row.notic_regdate}</td>
-					</c:otherwise>
-					</c:choose>
 						<td class="list2">${row.notic_viewcnt}</td>
 					</tr>
 					</c:when>
