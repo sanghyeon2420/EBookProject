@@ -10,7 +10,9 @@
 
 </script>
 <style>
-
+	td img{
+	width:8vw;
+	height:10vh;}
 </style>
 </head>
 <body>
@@ -21,7 +23,7 @@
 	<td><img src="resources/images/${list.b_category}/${list.imagefileName} "></td>
 	<!-- resources/images/무협지/무림순경.jpg -->
 	<td>${list.ebook_no}</td>
-	<td>${list.b_category }</td>
+	<td>${list.b_category}</td>
 	<td>${list.w_name }</td>
 	<td>${list.b_name }</td>
 	<td>${list.b_intro }</td>
