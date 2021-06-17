@@ -39,56 +39,37 @@ public class MemberController {
 		return "member/login";
 	}
 	
-	@RequestMapping("login/proc") // 로그인
-	public ModelAndView loin_proc(ModelAndView mav,HttpServletRequest request, HttpSession session, MemberDTO dto) {
+	@ResponseBody
+	@RequestMapping("login/proc") // 로그인 성공여부
+	public String loin_proc(HttpServletRequest request, HttpSession session, String userid, String userpw) {
+		MemberDTO dto= new MemberDTO();
+		System.out.println(userid);
+		System.out.println(userpw);
+		dto.setUserid(userid);
+		dto.setUserpw(userpw);
 		int check = service.logincheck(dto);
-		// check가 1이면 로그인 성공
-		if(check == 1) {
-			System.out.println("로그인 성공");
-			MemberDTO login_success_DTO =service.LoginInfo(dto);
-			System.out.println("db에서 가져온 회원정보 dto");
-			System.out.println(login_success_DTO);
-			
-			session.setAttribute("MemberDTO", login_success_DTO);
-			
-			session.setAttribute("user_no", login_success_DTO.getUser_no());
-			session.setAttribute("userid", login_success_DTO.getUserid());
-			session.setAttribute("userpw", login_success_DTO.getUserpw());
-			session.setAttribute("nickname", login_success_DTO.getNickname());
-			session.setAttribute("username", login_success_DTO.getUsername());
-			session.setAttribute("email", login_success_DTO.getEmail());
-			session.setAttribute("birthdate", login_success_DTO.getBirthdate());
-			session.setAttribute("cash", login_success_DTO.getCash());
-			
-
-			
-			
-			if(login_success_DTO.getIsAdmin() == 2) { // 관리자
-				mav.setViewName("admin"); // admin.jsp로 이동
-			} else { // 일반회원이면
-				
-				WriterDTO writerdto=writerservice.writerinfo(login_success_DTO.getUser_no());
-				
-				session.setAttribute("writer_no", writerdto.getWriter_no());
-				session.setAttribute("w_name", writerdto.getW_name());
-				session.setAttribute("w_hits", writerdto.getW_hits());
-				
-				mav.setViewName("redirect:/"); // 메인페이지로 이동
-			}
-		} else { // check가 0이면 로그인 실패
-			
-			System.out.println("로그인 실패");
-			
-			mav.addObject("message","fail"); // 로그인 실패시 message에 fail 리턴
-			mav.setViewName("redirect:/member/login");
-		}
-		
-		
-		
-		return mav;
+		System.out.println(check);
+		String result=String.valueOf(check);
+		return result;
 	}
 	
 	
+	@RequestMapping("login/success") // 로그인 성공시 페이지 이동
+	public String login_success(MemberDTO dto, HttpSession session) {
+		System.out.println("dto:"+dto.getUserid());
+		System.out.println("dto:"+dto.getUserpw());
+		
+		MemberDTO loginDTO=service.LoginInfo(dto); 
+		session.setAttribute("member", loginDTO);
+		
+		WriterDTO writerdto=writerservice.writerinfo(loginDTO.getUser_no());
+		
+		if (dto != null) {
+			session.setAttribute("writer", writerdto);
+		}
+		
+		return "redirect:/";
+	}
 	
 	@RequestMapping("join")
 	public String join(Locale locale, Model model) {
@@ -99,6 +80,7 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping("join/proc") // 회원가입 
 	public String join_proc(String userid, String userpw, String username, String nickname, String email, String birthdate) throws ParseException {
+		// String 타입을 Date 타입으로 변환
 		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
 		Date date = dateFormat.parse(birthdate);
 		System.out.println(date);
@@ -165,5 +147,9 @@ public class MemberController {
 		return "redirect:/"; 
 	};
 	
-
+	
+	@RequestMapping("admin")
+	public String admin() {
+		return "member/admin";
+	}
 }

@@ -50,41 +50,24 @@
 
 	<!-- Login&Join icon -->
 	<div class="Ebook_icons">
-		<!-- 로그인 안했을때 -->
+			
+			<c:if test="${member.isAdmin == 2 }">
+				<a href="member/admin">관리자페이지로 전환</a>
+			</c:if>
+			
+			<c:if test="${writer != null}">
+				<a href="EBookProject/writer/detail?writernumber=${writer.writer_no}">${writer.w_name}</a>
+			</c:if>
+			<a href="<%=path%>/member/login" id="login" title="로그인"><i
+        	 class="fas fa-user"></i></a> <a href="<%=path%>/member/join" id="join"
+         	title="회원가입"><i class="fas fa-id-card"></i></a>
 
-		<%
-			if (session.getAttribute("username") == null) {
-		%>
-		<a href="<%=path%>/member/login" id="login" title="로그인"><i
-			class="fas fa-user"></i></a> <a href="<%=path%>/member/join" id="join"
-			title="회원가입"><i class="fas fa-id-card"></i></a>
-
-		<%
-			} else {
-
-				if (session.getAttribute("writer_no") != null) {
-		%>
-
-		<li><a href="<%=path%>/writer/detail"
-			/<%=session.getAttribute("writer_no")%>><%=session.getAttribute("w_name")%></a></li>
-			<%=session.getAttribute("username")%>
-			님 환영합니다.
-			<button type="button" id="logout">로그아웃</button>
-
-		<%
-			} else { System.out.println(session.getAttribute("username"));
-		%>
-
-
-		<%=session.getAttribute("username")%>
-		님 환영합니다.
-		<button type="button" id="logout">로그아웃</button>
-
-		<%
-			}
-			}
-		%>
-
+			<c:if test="${member != null}">
+				         ${member.username}님 환영합니다.
+         	<button type="button" id="logout">로그아웃</button>
+				
+			
+			</c:if>
 
 
 
