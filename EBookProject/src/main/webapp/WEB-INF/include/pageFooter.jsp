@@ -1,5 +1,7 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +14,7 @@
 <style>
 
 </style>
+
 </head>
 <body>
 	<section class="careful">
@@ -27,14 +30,14 @@
  		<!-- footer_center -->
  		<div class="footer_center">
  			<!-- 이용약관 -->
- 			<a onclick="" href="#">
+ 			<a href="terms">
  				<span style="width: 20px; display: inline-block; text-align: center; user-select: auto;">
  					<i class="fas fa-check-square"></i>
  				</span>
  				이용약관
  			</a>
  			<!-- 개인정보취급방침 -->
- 			<a onclick="" href="#">
+ 			<a href="privacy">
  				<span style="width: 20px; display: inline-block; text-align: center; user-select: auto;">
  					<i class="fas fa-clipboard-list"></i>
  				</span>
@@ -42,7 +45,7 @@
  			</a>
  			<br>
  			<!-- 회사정보 -->
- 			<span style="color: rgb(158, 158, 158); font-size: 14px; user-select: auto;">
+ 			<span style="color: rgb(158, 158, 158); font-size: 1.5vh; user-select: auto;">
 					주식회사 북 하우스 
 				<font style="color: rgb(51, 51, 51);">|</font>
 					 사업자등록번호 : 210-00-00000

@@ -25,6 +25,7 @@ public class BookController {
 			
 			List<BookDTO> list=service.booklist(idx);
 			
+			
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i));
 			}
@@ -32,6 +33,18 @@ public class BookController {
 			mav.addObject("list",list);
 			
 			return mav;
+	}
+	
+	@RequestMapping("detail") 
+	public ModelAndView detail(ModelAndView mav, int idx) {
+		int ebook_no=idx;
+		BookDTO dto =service.Bookdetail(ebook_no);
+		System.err.println(dto); 
+		mav.addObject("bookdto",dto);
+		//  EBookProject/WEB-INF/views/boardlist.jsp
+		mav.setViewName("book/pageBone");
+		
+		return mav;
 	}
 	
 }

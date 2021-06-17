@@ -3,7 +3,7 @@
 #section3 {
 	width: 60vw;
 	height: 77vh;
-	margin: 0 0 60px 0;
+	margin: 60px 0;
 }
 #section3 .rank {
 	width: 60vw;
@@ -29,15 +29,20 @@
 	clear: both;
 }
 #section3 .text {
-	height: 12vh;
+	height: 14vh;
 }
-#section3 .text h2, h4 {
-	margin: 6px 25px;
+#section3 .text h2 {
+	margin: 0 23px;
+	padding: 0;
+	align-items: center;
+}
+#section3 .text h4 {
+	margin: 5px 23px;
 	padding: 0;
 	align-items: center;
 }
 #section3 .text a {
-	margin: 12px 25px;
+	margin: 0px 25px;
 }
 #section3 .bookrank1, .bookrank2, .bookrank3, .bookrank4, .bookrank5 {
 	height: 14vh;
