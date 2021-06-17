@@ -2,12 +2,16 @@
 /* section3 */
 #section3 {
 	width: 60vw;
+	height: 77vh;
+	margin: 0 0 60px 0;
+}
+#section3 .rank {
+	width: 60vw;
 	height: 69vh;
-	margin: 0;
 }
 #section3 .title {
 	width: 60vw;
-	height: 9vh;
+	height: 6vh;
 	float: left;
 }
 #section3 .title h1 {
@@ -15,15 +19,85 @@
 	font-weight: 900;
 	margin: 0 0 0 20px;
 }
-#section3 .title hr {
-	border: solid 0.5px gray;
+#section3 .rank hr {
+	border: solid -0.8px gray;
+	margin: 0;
+	padding: 0;
 }
-#section3 .rank {
-	width: 60vw;
-	height: 69vh;
+#section3 .bookrank {
+	height: 61vh;
+	clear: both;
+}
+#section3 .text {
+	height: 14vh;
+}
+#section3 .text h2 {
+	margin: 0 23px;
+	padding: 0;
+	align-items: center;
+}
+#section3 .text h4 {
+	margin: 5px 23px;
+	padding: 0;
+	align-items: center;
+}
+#section3 .text a {
+	margin: 0px 25px;
+}
+#section3 .bookrank1, .bookrank2, .bookrank3, .bookrank4, .bookrank5 {
+	height: 14vh;
+	display: flex;
+	align-items: center;
+}
+#section3 .bookrank1 p {
+	font-size: 30px;
+	font-weight: 700;
+	margin: 10px 40px;
+}
+#section3 .bookrank2 p {
+	font-size: 30px;
+	font-weight: 700;
+	margin: 10px 40px;
+}
+#section3 .bookrank3 p {
+	font-size: 30px;
+	font-weight: 700;
+	margin: 10px 40px;
+}
+#section3 .bookrank4 p {
+	font-size: 30px;
+	font-weight: 700;
+	margin: 10px 40px;
+}
+#section3 .bookrank5 p {
+	font-size: 30px;
+	font-weight: 700;
+	margin: 10px 40px;
+}
+#section3 .bookrank1 img {
+	width: 7vw;
+	height: 14vh;
+}
+#section3 .bookrank2 img {
+	width: 7vw;
+	height: 14vh;
+}
+#section3 .bookrank3 img {
+	width: 7vw;
+	height: 14vh;
+}
+#section3 .bookrank4 img {
+	width: 7vw;
+	height: 14vh;
+}
+#section3 .bookrank5 img {
+	width: 7vw;
+	height: 14vh;
+}
+#section3 .bookrank1 hr {
+	border: solid 0.3pa gray;
 }
 
- 
 
 /* section4 */
 #section4 {
