@@ -25,7 +25,8 @@
 	<td>${list.ebook_no}</td>
 	<td>${list.b_category}</td>
 	<td>${list.w_name }</td>
-	<td>${list.b_name }</td>
+	<%-- <li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li> --%>
+	<td><a href="<%=request.getContextPath()%>/book/detail?idx=${list.ebook_no}">${list.b_name }</a></td>
 	<td>${list.b_intro }</td>
 	</tr>
 	  

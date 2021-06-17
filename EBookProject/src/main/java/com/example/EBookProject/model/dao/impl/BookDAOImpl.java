@@ -29,4 +29,10 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectList("book.list",category_no);
 	}
 
+	@Override
+	public BookDTO Bookdetail(int ebook_no) {
+		return sqlSession.selectOne("book.bookdetail", ebook_no);
+	}
+
+	
 }
