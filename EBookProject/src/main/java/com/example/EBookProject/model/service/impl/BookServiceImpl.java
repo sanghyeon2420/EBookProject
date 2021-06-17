@@ -30,4 +30,11 @@ public class BookServiceImpl implements BookDAO {
 		return dao.booklist(category_no);
 	}
 
+
+	@Override
+	public BookDTO Bookdetail(int ebook_no) {
+		// TODO Auto-generated method stub
+		return dao.Bookdetail(ebook_no);
+	}
+
 }

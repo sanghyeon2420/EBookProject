@@ -35,4 +35,16 @@ public class BookController {
 			return mav;
 	}
 	
+	@RequestMapping("detail") 
+	public ModelAndView detail(ModelAndView mav, int idx) {
+		int ebook_no=idx;
+		BookDTO dto =service.Bookdetail(ebook_no);
+		System.err.println(dto); 
+		mav.addObject("bookdto",dto);
+		//  EBookProject/WEB-INF/views/boardlist.jsp
+		mav.setViewName("book/pageBone");
+		
+		return mav;
+	}
+	
 }

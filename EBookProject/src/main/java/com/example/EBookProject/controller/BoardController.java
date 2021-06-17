@@ -12,4 +12,6 @@ public class BoardController {
 		//  EBookProject/WEB-INF/views/boardlist.jsp
 		return "board/boardlist";
 	}
+	
+
 }
