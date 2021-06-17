@@ -25,11 +25,53 @@
 
 
 <section id="section3">
-<div class="title">
-		<h1>TOP5</h1><hr>
-</div>
 <div class="rank">
-
+	<div class="title">
+			<h1>TOP5</h1>
+	</div>
+	<hr>
+	<div class="bookrank">
+		<div class="bookrank1">
+			<p>1</p><img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" >
+			<div class="text">
+				<br><a href="#" style=color:green;>로맨스</a>
+				<h2>나의 소중한 소꿉친구</h2>
+				<h4>도톨</h4>
+			</div>
+		</div><hr>
+		<div class="bookrank2">
+			<p>2</p><img src="resources/css/bookCover/포커스_인_투유_커버.jpg" >
+			<div class="text">
+				<a href="#" style=color:green;>로맨스</a>
+				<h2>나의 소중한 소꿉친구</h2>
+				<h4>도톨</h4>
+			</div>
+		</div><hr>
+		<div class="bookrank3">
+			<p>3</p><img src="resources/css/bookCover/환골탈태하고 헌터되기.jpg" >
+			<div class="text">
+				<a href="#" style=color:green;>로맨스</a>
+				<h2>나의 소중한 소꿉친구</h2>
+				<h4>도톨</h4>
+			</div>
+		</div><hr>
+		<div class="bookrank4">
+			<p>4</p><img src="resources/css/bookCover/스타프로젝트_원영_커버.jpg" >
+			<div class="text">
+				<a href="#" style=color:green;>로맨스</a>
+				<h2>나의 소중한 소꿉친구</h2>
+				<h4>도톨</h4>
+			</div>
+		</div><hr>
+		<div class="bookrank5">
+			<p>5</p><img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" >
+			<div class="text">
+				<a href="#" style=color:green;>로맨스</a>
+				<h2>나의 소중한 소꿉친구</h2>
+				<h4>도톨</h4>
+			</div>
+		</div><hr>
+	</div>
 </div>
 </section>
 
