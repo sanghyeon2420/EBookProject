@@ -56,4 +56,14 @@ public class MainController {
 		return mav;
 	}*/
 	
+	@RequestMapping("terms")
+	public String terms() {
+		return "member/termsOfMember";
+	}
+	
+	
+	@RequestMapping("privacy")
+	public String privacy() {
+		return "member/privacy_policy";
+	}
 }

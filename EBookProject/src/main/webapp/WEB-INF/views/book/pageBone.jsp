@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +54,20 @@
 			<div id="footerList">
 				<div class="detail_list">
 					<ol>
-						<li><a href="javascript://7" onclick="">
+						<c:forEach var="list" items="${contentlist}">
+							<li><a href="javascript://7" onclick="">
+								<p class="text">
+									<strong> ${list.contents_no}. ${list.content_name}</strong> <span>${list.content_date}</span>
+								</p>
+								<p class="approval">
+									<span class="coin_necessary" style="margin-right: 0.01rem;">${list.viewcontent_price}</span>
+								</p>
+						</a></li>
+							
+												
+						
+						</c:forEach>
+						<!-- <li><a href="javascript://7" onclick="">
 								<p class="text">
 									<strong> 7. 술로 보내는 고독의 밤</strong> <span>2021.03.24</span>
 								</p>
@@ -108,7 +122,7 @@
 								<p class="approval">
 									<span class="free_coin_info" style="margin-right: 0.01rem;">무료</span>
 								</p>
-						</a></li>
+						</a></li> -->
 					</ol>
 				</div>
 			</div>
