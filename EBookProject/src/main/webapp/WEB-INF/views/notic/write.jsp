@@ -54,16 +54,16 @@ $(document).ready(function(){
 </script>
 <script>
 function updateB() {
-	var bno=$("#bno").val();
-	var title=$("#title").val();
-	var content=CKEDITOR.instances.content.getData();
+	var notic_no=$("#notic_no").val();
+	var notic_title=$("#notic_title").val();
+	var notic_content=CKEDITOR.instances.notic_content.getData();
 	var titleLength=title.length;
-	if(!title) {
+	if(!notic_title) {
 		swal("error", "제목을 입력하세요.", "error");
 	} else if(titleLength>50) {
 		swal("", "제목이 너무 깁니다.", "error");
 	} 
-	else if(content == ""){ 
+	else if(notic_content == ""){ 
 		 swal("error", "글내용을 입력해 주세요!!.", "error");
 		 return false; 
 	} 
@@ -80,13 +80,13 @@ function updateB() {
 			    	{
 			    		$.ajax({
 							type : "POST",
-							url : "updateBoard",
+							url : "updateNotice",
 							data : {
-								"bno" : bno,
-								"title" : title,
-								"content" : content
+								"notic_no" : notic_no,
+								"notic_title" : notic_title,
+								"notic_content" : notic_content
 						}, success : function(data) {
-							location.href="view?bno="+bno+"&show=Y";
+							location.href="view?notic_no="+notic_no+"&show=Y";
 						}
 					});
 			    	});
@@ -147,7 +147,7 @@ img {
 
 		<br/><br/>
 	<form>
-		<input type="hidden" name="writer" id="writer" value="${member.member_id}"/>
+		<input type="hidden" name="writer" id="writer" value="${userid}"/>
 		<table class="textb" width="100%">
 			<tr>
 			<td class="asd" width="60">제목</td>
@@ -159,9 +159,9 @@ img {
 				
 			<tr>
 			<td colspan="2" align="left" height="500px">
-			<textarea name="content" id="content" cols="88" rows="80"></textarea>
+			<textarea name="notic_content" id="notic_content" cols="88" rows="80"></textarea>
 		<script>
-			CKEDITOR.replace( 'content', {} );
+			CKEDITOR.replace( 'notic_content', {} );
 		</script>
 			</td>
 			</tr>
@@ -169,8 +169,8 @@ img {
 		<br/><br/>
 		<input type="button" class="write" value="작성하기" onClick="createB()" />
 	</form>
-	
-		<button style="float:right;" class="listp"onClick="location.href='board'">목록</button>
+	 
+		<button style="float:right;" class="listp"onClick="location.href='notic'">목록</button>
 	</div>
   </article>
   

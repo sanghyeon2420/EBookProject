@@ -27,29 +27,23 @@ public class MainController {
 	@Inject
 	BookServiceImpl bookservice;
 	
-	@Inject
-	NoticServiceImpl noticservice;
-	
 	
 	
 	@RequestMapping("/")
 	public String index(HttpServletRequest request) {
 		
 		List<BookcategoryDTO> booklist=bookservice.bookcategory(); // 상단 메뉴 목록
-		List<NoticDTO>	noticlist=	noticservice.list(); // 공지사항 목록 
 		
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
 		request.getSession().getServletContext().setAttribute("booklist", booklist);
 		
-		request.getSession().getServletContext().setAttribute("noticlist", noticlist);
-		
 		return "index";
 	}
 	
-	@RequestMapping("notic")
+/*	@RequestMapping("notic")
 	public ModelAndView notic(ModelAndView mav) {
-		
+		mav.setViewName("notic/list");
 //		mav.setViewName("notic"); // view 페이지  notic.jsp
 //		
 //		List<NoticDTO> list=noticservice.list();
@@ -60,6 +54,6 @@ public class MainController {
 //		mav.addObject("list", list); // ModelAndView 객체에 list(공지사항 목록)을 저장
 		
 		return mav;
-	}
+	}*/
 	
 }

@@ -2,12 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>공지사항</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 $(function(){
     var lastScrollTop = 0, delta = 15;
@@ -36,7 +38,7 @@ $(function() {
             $('#MOVE_TOP_BTN').fadeOut();
         }
     });
-  
+ 
     $("#MOVE_TOP_BTN").click(function() {//버튼 클릭 이벤트
         $('html, body').animate({ // animation을 걸어서 화면 맨위로 이동하도록 설정
             scrollTop : 0
@@ -77,17 +79,40 @@ img {
   <header id="pageHeader">
      <!-- Header -->
    <%@ include file="../../include/pageHeader.jsp" %>
+   <input type="hidden" id="curPage" value="${curPage }"/>
   </header>
-<H2>공지 사항</H2>
+
     <article id="mainArticle">
-    <table cellpadding="0" cellspacing="0" style="text-align:center;" width="100%">
-		<tr height="50">
-			<th class="list1" width="5%">번호</th>
-			<th class="list1" width="70%">제목</th>
-			<th class="list1" width="15%">날짜</th>
-			<th class="list1" width="10%">조회수</th>
-		</tr>
-		<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
+    <H2>공지 사항</H2>
+   <div style="width:800px;">
+			<div style="float: right;">
+			
+			<!-- 검색했을 때 카운트-->
+				<c:if test="${map.search eq 's'}">
+					<c:choose>
+						<c:when test="${map.count == 0 }">
+						<br/><span style="font-family:'돋움';">게시글이 없습니다. 검색을 다시 확인해주세요.&nbsp;</span>
+						</c:when>
+						<c:otherwise>
+						<span style="font-family:'돋움';">${map.count}개의 게시물이 있습니다.&nbsp;</span>
+						</c:otherwise>
+					</c:choose>
+				</c:if>
+				
+			<!-- 관리자일 때만 쓰기버튼 활성화-->
+				<c:if test="${userid eq 'admin'}">
+					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
+				</c:if>
+			</div>
+			<br/><br/><br/>
+			<table cellpadding="0" cellspacing="0" style="text-align:center;" width="100%">
+				<tr height="50">
+					<th class="list1" width="5%">번호</th>
+					<th class="list1" width="55%">제목</th>
+					<th class="list1" width="15%">작성일</th>
+					<th class="list1" width="5%">조회수</th>
+				</tr>
+				<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
 						<input type="hidden" id="notic_no" name="notic_no" value="${row.notic_no}"/>
 				<!--	<input type="hidden" id="show" value="${row.show}"/>	 -->
@@ -95,8 +120,8 @@ img {
 					<%-- 검색결과가 있을 때 --%>
 					<c:when test="${not empty row}">
 					<tr>
-						<td class="list2">${row.bno}</td>
-						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&notic_show=Y">${row.notic_title}</a>
+						<td class="list2">${row.notic_no}</td>
+						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&show=Y">${list.notic_title}</a>
 					<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
 					<fmt:formatDate value="${row.notic_regdate}" pattern="yyyyMMdd" var="regDate"/>
 					<c:choose>
@@ -154,8 +179,8 @@ img {
 			<form action="notic" class="noticsearch" align="left">
 					<select name="searchOption" id="searchOption">
 						<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+이름+내용</option>
-						<option value="TITLE" <c:out value="${map.searchOption=='TITLE'?'selected':''}"/> >제목</option>
-						<option value="CONTENT" <c:out value="${map.searchOption=='CONTENT'?'selected':''}"/> >내용</option>
+						<option value="NOTIC_TITLE" <c:out value="${map.searchOption=='NOTIC_TITLE'?'selected':''}"/> >제목</option>
+						<option value="NOTIC_CONTENT" <c:out value="${map.searchOption=='NOTIC_CONTENT'?'selected':''}"/> >내용</option>
 					</select> 
 				<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}">
 				<input type="hidden" name="search" id="search" value="s"/>
@@ -172,6 +197,9 @@ img {
 							&searchOption=${searchOption}&keyword=${keyword}
 							&search=${search}">[끝]</a>
 				</c:if>
+			</div>
+		</div>
+		</div>
   </article>
   <nav id="mainNav">
      <!-- Nav -->
