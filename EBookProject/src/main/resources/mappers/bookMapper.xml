@@ -16,4 +16,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="bookdetail" resultType="com.example.EBookProject.model.dto.BookDTO">
 		select * from bookinfo where ebook_no=#{ebook_no}
 	</select>
+	
+	<select id="contentdetail" resultType="com.example.EBookProject.model.dto.ContentDTO">
+		select * from content where ebook_no=#{ebook_no}
+	</select>
 </mapper>

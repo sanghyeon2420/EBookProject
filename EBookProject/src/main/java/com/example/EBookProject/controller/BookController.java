@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookDTO;
+import com.example.EBookProject.model.dto.ContentDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
 
 @Controller
@@ -44,7 +45,16 @@ public class BookController {
 		//  EBookProject/WEB-INF/views/boardlist.jsp
 		mav.setViewName("book/pageBone");
 		
+		//content 불러오기
+		List<ContentDTO> list = service.contentdetail(ebook_no);
+		mav.addObject("contentlist",list);
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		
 		return mav;
 	}
+	
+	
 	
 }
