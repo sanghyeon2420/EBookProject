@@ -8,6 +8,7 @@
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 $(function(){
     var lastScrollTop = 0, delta = 15;
@@ -108,7 +109,7 @@ img {
 		<br/><br/>
 	<form>
 		<!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->
-		<input type="hidden" name="bno" value="${notic.notic_no}">
+		<input type="hidden" name="notic_no" value="${notic.notic_no}">
 		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 			<td width="70">제목</td>
@@ -139,7 +140,7 @@ img {
 			</c:if>
 			&nbsp;&nbsp;&nbsp;게시글 번호 : ${notic.notic_no}
 		</div>
-
+ 
 		<div style="float:right;">
 		<!-- 관리자만 공지 -->
 		<c:if test="${member.userid eq 'Admin'}">

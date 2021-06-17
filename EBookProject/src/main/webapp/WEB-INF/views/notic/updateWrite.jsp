@@ -54,16 +54,16 @@ $(document).ready(function(){
 </script>
 <script>
 function updateB() {
-	var bno=$("#bno").val();
-	var title=$("#title").val();
-	var content=CKEDITOR.instances.content.getData();
-	var titleLength=title.length;
-	if(!title) {
+	var notic_no=$("#notic_no").val();
+	var notic_title=$("#notic_title").val();
+	var notic_content=CKEDITOR.instances.notic_content.getData();
+	var notic_titleLength=notic_title.length;
+	if(!notic_title) {
 		swal("error", "제목을 입력하세요.", "error");
-	} else if(titleLength>50) {
+	} else if(notic_titleLength>50) {
 		swal("", "제목이 너무 깁니다.", "error");
 	} 
-	else if(content == ""){ 
+	else if(notic_content == ""){ 
 		 swal("error", "글내용을 입력해 주세요!!.", "error");
 		 return false; 
 	} 
@@ -80,13 +80,13 @@ function updateB() {
 			    	{
 			    		$.ajax({
 							type : "POST",
-							url : "updateBoard",
+							url : "updatenotic",
 							data : {
-								"bno" : bno,
-								"title" : title,
-								"content" : content
+								"notic_no" : notic_no,
+								"notic_title" : notic_title,
+								"notic_content" : notic_content
 						}, success : function(data) {
-							location.href="view?bno="+bno+"&show=Y";
+							location.href="view?notic_no="+notic_no+"&show=Y";
 						}
 					});
 			    	});
@@ -149,37 +149,32 @@ img {
 		<br/><br/>
 
 	<form>
-		<input type="hidden" name="bno" id="bno" value="${board.bno}"/>
+		<input type="hidden" name="bno" id="bno" value="${notic.notic_no}"/>
 		<table border="1" bordercolor="#E1DCDC" cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 			<td width="70">제목</td>
 			<td align="left">
 			<input type="text" name="title" id="title" size="70%" maxlength="100" 
-			value="${board.title}" />
+			value="${notic.notic_title}" />
 			<span id="titleCount" style="color:green;">50</span><span>/50</span>
 			</td>
 			</tr>
 				
 			<tr>
-			<td>작성자</td>
-			<td align="left">${board.writer}</td>
-			</tr>
-				
-			<tr>
 			<td>작성일</td>
-			<td align="left">${board.regdate}</td>
+			<td align="left">${notic.notic_regdate}</td>
 			</tr>
 				
 			<tr>
 			<td>조회수</td>
-			<td align="left">${board.viewcnt}</td>
+			<td align="left">${notic.notic_viewcnt}</td>
 			</tr>
 				
 			<tr>
 			<td colspan="2" align="left" height="500px">
-			<textarea name="content" id="content" cols="88" rows="80">${board.content}</textarea>
+			<textarea name="notic_content" id="notic_content" cols="88" rows="80">${notic.notic_content}</textarea>
 		<script>
-   		 	CKEDITOR.replace( 'content', {} );
+   		 	CKEDITOR.replace( 'notic_content', {} );
 		</script>
 			</td>
 			</tr>
@@ -187,10 +182,10 @@ img {
 		<br/><br/>
 		<input id="list_btn" type="button" value="저장" onclick="updateB()" />
 	</form>
-		<button id="list_btn" style="float:right;" onclick="location.href='board'">목록</button>
+		<button id="list_btn" style="float:right;" onclick="location.href='notic'">목록</button>
 	</div>	
   </article>
-  
+   
   <nav id="mainNav">
      <!-- Nav -->
        <%@ include file="../../include/mainNav.jsp" %>

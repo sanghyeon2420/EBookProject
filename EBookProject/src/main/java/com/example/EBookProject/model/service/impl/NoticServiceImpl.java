@@ -3,12 +3,10 @@ package com.example.EBookProject.model.service.impl;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,21 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.EBookProject.Pager;
-import com.example.EBookProject.model.dao.impl.NoticDAOImpl;
 import com.example.EBookProject.model.dto.NoticDTO;
 import com.example.EBookProject.model.service.NoticService;
 
 @Controller
 @SessionAttributes("notic")
-@Service
+
 public class NoticServiceImpl{
-
-	@Inject
-	NoticDAOImpl dao;
-
-	public List<NoticDTO> list() {
-		return dao.list();
-	}
 	
 	@Autowired
 	private NoticService noticService;
@@ -74,9 +64,9 @@ public class NoticServiceImpl{
 	}
 
 	// 게시글 목록 + 검색 + 페이징
-	@RequestMapping("/Notic")
+	@RequestMapping("/notic")
 	public String listAllNotic(Model model, HttpSession session,
-			@RequestParam(defaultValue = "TITLE") String searchOption, 
+			@RequestParam(defaultValue = "notic_title") String searchOption, 
 			@RequestParam(defaultValue = "") String keyword,
 			@RequestParam(defaultValue = "") String search, 
 			@RequestParam(defaultValue = "1") int curPage)
@@ -112,8 +102,8 @@ public class NoticServiceImpl{
 	// 게시글 상세보기
 	@RequestMapping("/view")
 	public String readNotic(@RequestParam("notic_no") int notic_no, 
-							@RequestParam("notic_show") String notic_show, Model model, HttpSession session, 
-							@RequestParam(defaultValue = "TITLE") String searchOption,
+							@RequestParam("show") String show, Model model, HttpSession session, 
+							@RequestParam(defaultValue = "notic_title") String searchOption,
 							@RequestParam(defaultValue = "") String keyword, 
 							@RequestParam(defaultValue = "") String search,
 							@RequestParam(defaultValue = "1") int curPage) throws Exception {
@@ -122,15 +112,15 @@ public class NoticServiceImpl{
 		// 삭제된 게시글울 읽으려고 하는 경우
 		int checkNotic = noticService.checkNotic(notic_no);
 
-		if (checkNotic == 0 && notic_show.equals("N")) {
+		if (checkNotic == 0 && show.equals("N")) {
 			return "notic/checkDel";
 		}
 
 		// 존재하지 않는 게시글에 접근하려는 경우
-		else if (checkNotic == 0 && notic_show.equals("Y")) {
+		else if (checkNotic == 0 && show.equals("Y")) {
 			return "notic/checkNone";
 
-		} else if (checkNotic == 1 && notic_show.equals("N")) {
+		} else if (checkNotic == 1 && show.equals("N")) {
 			return "notic/checkNone";
 		}
 

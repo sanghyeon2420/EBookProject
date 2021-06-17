@@ -4,9 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
-
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,12 +15,6 @@ public class NoticDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
-	@Inject
-	SqlSession sqlSession;
-	
-	public List<NoticDTO> list() {
-		return sqlSession.selectList("notic.list");
-	};
 	// 게시글 쓰기
 	public void createNotic(NoticDTO vo) {
 		mybatis.insert("NoticDAO.createBoard", vo);
@@ -71,15 +62,14 @@ public class NoticDAO {
 
 	// 조회수
 	public void notic_viewCnt(int notic_no) {
-		mybatis.update("NoticDAO.viewCnt", notic_no);
+		mybatis.update("NoticDAO.notic_viewCnt", notic_no);
 	}
 	// 게시글 갯수
-		public int getCountNotic(String searchOption, String keyword) throws Exception {
+		public int getCountNotic (String searchOption, String keyword) throws Exception {
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("searchOption", searchOption);
 			map.put("keyword", keyword);
 			return mybatis.selectOne("NoticDAO.getCountNotic", map);
 		}
-	
 	
 }
