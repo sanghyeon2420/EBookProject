@@ -17,27 +17,27 @@ public class NoticDAO {
 
 	// 게시글 쓰기
 	public void createNotic(NoticDTO vo) {
-		mybatis.insert("NoticDAO.createBoard", vo);
+		mybatis.insert("NoticDAO.createNotic", vo);
 	}
 
 	// 게시글 수정
 	public void updateNotic(NoticDTO vo) {
-		mybatis.update("NoticDAO.updateBoard", vo);
+		mybatis.update("NoticDAO.updateNotic", vo);
 	}
 
 	// 게시글 삭제
 	public void deleteNotic(int notic_no) {
-		mybatis.update("NoticDAO.deleteBoard", notic_no);
+		mybatis.update("NoticDAO.deleteNotic", notic_no);
 	}
 	
 	// 게시글 삭제 체크
 	public int checkNotic(int notic_no) throws Exception {
-		return mybatis.selectOne("NoticDAO.checkBoard", notic_no);
+		return mybatis.selectOne("NoticDAO.checkNotic", notic_no);
 	}
 
 	// 게시글 읽기
 	public NoticDTO readNotic(int notic_no) {
-		return (NoticDTO) mybatis.selectOne("NoticDAO.readBoard", notic_no);
+		return (NoticDTO) mybatis.selectOne("NoticDAO.readNotic", notic_no);
 	}
 	
 	// 이전글

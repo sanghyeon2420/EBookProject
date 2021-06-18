@@ -9,20 +9,36 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 </head>
 <script>
-$(document).ready(function(){
+
+
 	
+$(document).ready(function(){
+
 
 	
 	$("#btnLogin").click(function(){
 		var userid=$("#userid").val();
-	 	var userpw=$("#userpw").val();
+		var userpw=$("#userpw").val();
 		if(userid == ""){
 			alert("아이디를 입력하세요");
 		} else if(userpw == ""){
 			alert("비밀번호를 입력하세요");
 		} else {
-		document.form1.submit();
-			
+			$.ajax({
+				type:"post",
+				url:"login/proc",
+				data:{"userid":userid,
+					"userpw":userpw
+				},
+				success:function(data){
+					console.log(data); // 로그인 성공여부
+					if(data == 1){ // 로그인성공
+						document.form1.submit();
+					} else { // 로그인실패
+						alert("아이디 또는 비밀번호가 맞지 않습니다. 다시 확인해주세요");
+					}
+				}
+			});			
 		}
 	});
 });
@@ -102,7 +118,7 @@ body {
         <span class="span-or">or</span>
       </div>
 
-      <form name="form1" method="post" action="<%=path %>/member/login/proc">
+      <form name="form1" method="post" action="<%=path%>/member/login/success">
         <div class="form-group">
           <label for="userid">아이디</label>
           <input type="text" class="form-control" id="userid" name="userid">
