@@ -13,11 +13,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from bookinfo where category_no=#{category_no} order by ebook_no desc
 	</select>
 	
+	<!-- 도서번호로 책 조회 -->
 	<select id="bookdetail" resultType="com.example.EBookProject.model.dto.BookDTO">
 		select * from bookinfo where ebook_no=#{ebook_no}
 	</select>
 	
+	<!-- 도서 번호로 콘텐츠 조회 -->
 	<select id="contentdetail" resultType="com.example.EBookProject.model.dto.ContentDTO">
-		select * from content where ebook_no=#{ebook_no}
+		select * from content where ebook_no=#{ebook_no} order by contentlist desc
+	</select>
+	
+	<!-- 도서번호 최대값으로 새로 들어온 작품 조회 -->
+	<select id="newbook" resultType="com.example.EBookProject.model.dto.BookDTO">
+		select * from bookinfo where ebook_no between (select max(ebook_no)-5 from bookinfo) and (select max(ebook_no) from bookinfo)
+	</select>
+	
+	<!-- 랭킹 리스트 출력 -->
+	<select id="ranklist" resultType="com.example.EBookProject.model.dto.BookDTO">
+		select * from bookinfo
+	</select>
+	
+	<!-- 조회수 최대값 -->
+	<select id="maxrank" resultType="int">
+	select max(book_get) from bookinfo
 	</select>
 </mapper>

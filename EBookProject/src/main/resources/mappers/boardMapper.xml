@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
+<mapper namespace="board">
+
+<select id="listAll" resultType="com.example.EBookProject.model.dto.BoardDTO">
+	select * from board order by board_no desc
+</select>
+	<insert id="insert">
+		insert into board (,,,) values
+		( )
+	</insert>
+</mapper>

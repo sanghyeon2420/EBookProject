@@ -57,16 +57,26 @@
 			<c:if test="${writer != null}">
 				<a href="EBookProject/writer/detail?writernumber=${writer.writer_no}">${writer.w_name}</a>
 			</c:if>
+			<c:if test="${member != null}">
+				<a href="EBookProject/member/detail?membernumber=${member.user_no}">${member.nickname}</a>
+			</c:if>
+			
+			
+			
+			<c:if test="${member == null}">
 			<a href="<%=path%>/member/login" id="login" title="로그인"><i
         	 class="fas fa-user"></i></a> <a href="<%=path%>/member/join" id="join"
          	title="회원가입"><i class="fas fa-id-card"></i></a>
-
+			</c:if>
+			
 			<c:if test="${member != null}">
-				         ${member.username}님 환영합니다.
+			<a href="<%=path%>/member/setting" id="setting" title="회원정보"><i class="fas fa-cog"></i></a>
+			</c:if>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;
          	<button type="button" id="logout">로그아웃</button>
 				
 			
-			</c:if>
 
 
 

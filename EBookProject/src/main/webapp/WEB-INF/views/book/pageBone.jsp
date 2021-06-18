@@ -54,10 +54,10 @@
 			<div id="footerList">
 				<div class="detail_list">
 					<ol>
-						<c:forEach var="list" items="${contentlist}">
+						<c:forEach var="list" items="${list}">
 							<li><a href="javascript://7" onclick="">
 								<p class="text">
-									<strong> ${list.contents_no}. ${list.content_name}</strong> <span>${list.content_date}</span>
+									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>
 								<p class="approval">
 									<span class="coin_necessary" style="margin-right: 0.01rem;">${list.viewcontent_price}</span>
