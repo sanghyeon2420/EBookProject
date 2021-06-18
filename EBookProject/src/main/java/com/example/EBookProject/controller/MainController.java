@@ -9,11 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
+import com.example.EBookProject.model.dto.ContentDTO;
 import com.example.EBookProject.model.dto.NoticDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
 import com.example.EBookProject.model.service.impl.NoticServiceImpl;
@@ -34,10 +37,24 @@ public class MainController {
 		
 		List<BookcategoryDTO> booklist=bookservice.bookcategory(); // 상단 메뉴 목록
 		
+		
+		List<BookDTO> newbook = bookservice.newbook(); //새로운 책 목록
+		
+//		for(int i=0; i<newbook.size(); i++) {
+//			System.out.println(newbook.get(i));
+//		}
+		
+
+		
+		
+		bookservice.ranklist();
+	
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
 		request.getSession().getServletContext().setAttribute("booklist", booklist);
-		
+		request.getSession().getServletContext().setAttribute("newbook", newbook);
+//		request.getSession().getServletContext().setAttribute("updatecontent", updatecontent);
+		//     /WEB-INF/views/index.jsp
 		return "index";
 	}
 	

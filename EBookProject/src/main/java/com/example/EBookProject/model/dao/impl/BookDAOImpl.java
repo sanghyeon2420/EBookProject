@@ -37,7 +37,24 @@ public class BookDAOImpl implements BookDAO {
 
 	@Override
 	public List<ContentDTO> contentdetail(int ebook_no) {
-		return sqlSession.selectList("book.contentdetail", ebook_no);
+		return sqlSession.selectList("book.contentdetail", ebook_no);  //sqlSession.selectList(namespace.select id)
+	}
+
+	@Override
+	public List<BookDTO> newbook() {
+		return sqlSession.selectList("book.newbook");
+	}
+
+
+
+	@Override
+	public List<BookDTO> ranklist() {
+		return sqlSession.selectList("book.ranklist");
+	}
+
+	@Override
+	public int maxrank() {
+		return sqlSession.selectOne("book.maxrank");
 	}
 
 	

@@ -9,6 +9,13 @@ public class ContentDTO {
 	private Date content_date;
 	private int completion;
 	private String content_name;
+	private int contentlist;
+	public int getContentlist() {
+		return contentlist;
+	}
+	public void setContentlist(int contentlist) {
+		this.contentlist = contentlist;
+	}
 	public int getContents_no() {
 		return contents_no;
 	}
@@ -49,9 +56,7 @@ public class ContentDTO {
 	public String toString() {
 		return "ContentDTO [contents_no=" + contents_no + ", ebook_no=" + ebook_no + ", viewcontent_price="
 				+ viewcontent_price + ", content_date=" + content_date + ", completion=" + completion
-				+ ", content_name=" + content_name + "]";
-	}
-	
-	
+				+ ", content_name=" + content_name + ", contentlist=" + contentlist + "]";
+	}	
 	
 }
