@@ -74,13 +74,13 @@
 
 	<!-- 목록 -->
 	<select id="listAllNotic" resultType="com.example.EBookProject.model.dto.NoticDTO">
-	<!-- 	SELECT * FROM 
+	 <!-- SELECT * FROM 
 		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (
 		SELECT * FROM NOTIC <include refid="search"></include>
 		) ORDER BY NOTIC_NO DESC, NOTIC_REGDATE DESC) A ) 
-		WHERE RN BETWEEN #{start} AND #{end} -->
-		SELECT * FROM NOTIC ORDER BY NOTIC_REGDATE DESC
-		
+		WHERE RN BETWEEN #{start} AND #{end}  -->
+		 SELECT * FROM NOTIC
+		ORDER BY NOTIC_REGDATE DESC 
 	</select>
 	
 	<!-- 게시글 갯수 -->
@@ -91,13 +91,17 @@
 	<!-- 검색조건 -->
 	<sql id="search">
 		<choose>
+			<!-- 전체 검색인경우  -->
 			<when test="searchOption == 'ALL'">
-				WHERE SHOW='Y' AND ${searchOption} LIKE #{keyword}
-				
+				WHERE SHOW='Y' AND (						
+				NOTIC_CONTENT LIKE #{keyword} <!-- 내용 검색시 검색키워드를 대문자로 변경검색-->
+				OR NOTIC_TITLE LIKE#{keyword}
+				)
 			</when>
 			<otherwise>
+				<!-- 검색키워드(content, title)을 선택 검색인경우  -->
 				WHERE SHOW='Y' AND 
-				(NOTIC_TITLE LIKE #{keyword} or NOTIC_CONTENT LIKE #{keyword})
+				(${searchOption} LIKE #{keyword})
 			</otherwise>
 		</choose>
 	</sql>

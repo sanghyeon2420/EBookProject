@@ -113,7 +113,7 @@ img {
 		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 			<td width="70">제목</td>
-			<td colspan='3' align="left">${notic.notic_content}</td>
+			<td colspan='3' align="left">${notic.notic_title}</td>
 			</tr>
 				
 			<tr>
@@ -121,6 +121,9 @@ img {
 			<td colspan='3' align="left">
 			<div style="width:150px;float:left;">
 			${notic.regdate}  
+			</div>
+			<div>
+			|&nbsp;&nbsp;&nbsp;조회수 : ${notic.notic_viewCnt}
 			</div>
 			</td>
 			</tr>

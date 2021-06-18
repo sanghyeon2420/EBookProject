@@ -78,10 +78,35 @@
 
 <section id="section4">
 <div class="todaybook">
-		<h1><strong>오늘의 업데이트</strong></h1>
+		<h1><strong>작가 소개</strong></h1>
 	</div>
 <div class="books">
-	<div class="book1">
+
+<%-- <c:forEach var="updatecontent" items="${updatecontent }">
+<div class="book1">
+		<div class="cover">
+			<img src="resources/css/images/${updatecontent.b_category }/${updatecontent.imagefileName}" alt="북커버 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#" style=color:green;>${updatecontent.b_category }</a><br>
+			<a href="#open">
+			<b style=font-size:18px;>${updatecontent.b_name }</b><br>
+			<span>${updatecontent.w_name }</span></a>	
+		    <div class="white_content" id="open">
+		        <div>
+		          <p><h3><b>${updatecontent.b_name }</b></h3><br>
+		           <img src="resources/css/images/${updatecontent.b_category }/${updatecontent.imagefileName}" >
+		           <p><b>${updatecontent.b_category }</b><br>
+		           <p><b> 줄거리 </b>:  “ 엘레쥬에 빙의한 것 같다. 이거 진짜 현실이야?”  <br>
+				   <p><b> 한줄 대사 </b>: “누구 하나 잡아서 굿 엔딩을 보면 되는 거 아닐까?” <br><br>
+		          <a href="resources/page/pageGoodEnding.jsp"><button>자세히보기</button></a>
+		          <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
+		</div>
+</c:forEach> --%>
+
+	<!-- <div class="book1">
 		<div class="cover">
 			<img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
@@ -212,7 +237,7 @@
 		        </div>
 		    	</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 </section>
 
@@ -367,7 +392,32 @@
 		<h1><strong>지금 새로 들어온 작품</strong></h1>
 	</div>
 <div class="books">
-	<div class="book1">
+
+<c:forEach var="newbook" items="${newbook}" >
+	 <div class="book1">
+		<div class="cover">
+			<img src="resources/images/${newbook.b_category }/${newbook.imagefileName }" alt="북커버 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#" style=color:green;>${newbook.b_category }</a><br>
+			<a href="#open9">
+			<b style=font-size:18px;>${newbook.b_name }</b><br>
+			<span>${newbook.w_name }</span>
+			<div class="white_content" id="open9">
+				<div>
+				  <p><h3><b>${newbook.b_name }</b></h3>
+				  <img src="resources/images/${newbook.b_category }/${newbook.imagefileName }">
+				  <p><b> 로맨스 </b><br>
+		          <p><b> 줄거리 </b>:
+		          <p><b> 한줄 대사 </b>:
+		         <a href="#close"><button>자세히보기</button></a>
+		         <a href="#close"><button>닫기</button></a></p>
+		        </div>
+		    	</div>
+		</div>
+	</div>
+</c:forEach>
+	<!-- <div class="book1">
 		<div class="cover">
 			<img src="resources/images/books5.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div>
@@ -498,7 +548,7 @@
 		        </div>
 		    	</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 </section>
 <section id="section2" class="notice_top">

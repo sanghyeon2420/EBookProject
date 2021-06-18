@@ -47,7 +47,7 @@ public class BookController {
 		
 		//content 불러오기
 		List<ContentDTO> list = service.contentdetail(ebook_no);
-		mav.addObject("contentlist",list);
+		mav.addObject("list",list);
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
@@ -55,6 +55,5 @@ public class BookController {
 		return mav;
 	}
 	
-	
-	
+
 }
