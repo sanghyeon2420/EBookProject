@@ -148,6 +148,16 @@ public class MemberController {
 	};
 	
 	
+	@RequestMapping("setting")
+	public String setting() {
+		return "member/setting";
+	}
+	
+	@RequestMapping("writer")
+	public String writer() {
+		return "member/writer"; 
+	}
+	
 	@RequestMapping("admin")
 	public String admin() {
 		return "member/admin";
