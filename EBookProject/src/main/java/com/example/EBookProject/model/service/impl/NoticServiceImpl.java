@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.EBookProject.Pager;
@@ -46,7 +47,7 @@ public class NoticServiceImpl{
 
 	// 게시글 수정
 	@RequestMapping(value = "/updateNotic", method = RequestMethod.POST)
-	public String updateBoard(NoticDTO vo) throws Exception {
+	public String updateNotic(NoticDTO vo) throws Exception {
 		if (vo.getNotic_title() != null) {
 			noticService.updateNotic(vo);
 			return "notic/view";
@@ -66,9 +67,9 @@ public class NoticServiceImpl{
 	// 게시글 목록 + 검색 + 페이징
 	@RequestMapping("/notic")
 	public String listAllNotic(Model model, HttpSession session,
-			@RequestParam(defaultValue = "notic_title") String searchOption, 
-			@RequestParam(defaultValue = "") String keyword,
-			@RequestParam(defaultValue = "") String search, 
+			@RequestParam(defaultValue = "notic_title") String searchOption,  // 기본값 제목
+			@RequestParam(defaultValue = "") String keyword,				  // 기본값 null 
+			@RequestParam(defaultValue = "") String search, 				
 			@RequestParam(defaultValue = "1") int curPage)
 			throws Exception {
 
