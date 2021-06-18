@@ -124,7 +124,7 @@ img {
 						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&show=Y">${row.notic_title}</a>
 					<fmt:formatDate value="${row.notic_regdate}" pattern="yyyyMMdd" var="regDate"/>
 						<td class="list2">${row.notic_regdate}</td>
-						<td class="list2">${row.notic_viewcnt}</td>
+						<td class="list2">${row.notic_viewCnt}</td>
 					</tr>
 					</c:when>
 					<%-- 검색결과가 없을 떄 --%>
