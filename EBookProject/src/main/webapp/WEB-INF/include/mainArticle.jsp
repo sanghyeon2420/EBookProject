@@ -33,7 +33,6 @@
 	</div>
 	<hr>
 	<div class="bookrank">
-<<<<<<< HEAD
 	<c:forEach var="list" items="${ranklist}"  varStatus="i" begin="0" end="4">
 			<div class="bookrank${i.count}">
 			<p>${i.count}</p><img src="resources/images/${list.b_category}/${list.imagefileName}" >
@@ -54,7 +53,7 @@
 			<p>1</p><img src="resources/css/bookCover/${ranklist.imagefileName }">
 			<div class="text">
 				<br><a href="#" style="color:green;>${ranklist.b_category }"></a>
-				<a href="<%=request.getContextPath()%>/book/detail?idx=${ranklist.ebook_no}"><h2>${ranklist.b_name }</h2>
+				<a href="<%-- <%=request.getContextPath()%> --%>/book/detail?idx=${ranklist.ebook_no}"><h2>${ranklist.b_name }</h2>
 				<h4>${ranklist.w_name }</h4></a>
 			</div>
 		</div>

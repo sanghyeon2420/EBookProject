@@ -57,27 +57,12 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<BookDTO> ranklist() {
 		
-<<<<<<< HEAD
 		List<BookDTO> list=dao.ranklist();
-=======
-		/*List<BookDTO> list=dao.ranklist();
-		BookDTO dto=new BookDTO();
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		
-		for (int i = 0; i < 5; i++) {
-			System.err.println(list.get(i));
-	
-		}
-<<<<<<< HEAD
-=======
-		System.out.println(dto.getBook_get());*/
-		
-List<BookDTO> list=dao.ranklist();
 		
 		for (int i = 0; i < 5; i++) {
 			System.err.println(list.get(i));
 		}
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		
 		return list;
 	}
