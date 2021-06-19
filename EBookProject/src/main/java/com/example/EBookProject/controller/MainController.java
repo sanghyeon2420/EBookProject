@@ -45,11 +45,18 @@ public class MainController {
 //			System.out.println(newbook.get(i));
 //		}
 		
-
+		List<BookDTO> ranklist = bookservice.ranklist();
 		
+<<<<<<< HEAD
 		
 		List<BookDTO> ranklist=bookservice.ranklist();
 	
+=======
+//		for(int i=0; i<5; i++) {
+//			System.out.println(ranklist.get(i));
+//		}
+//	
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
 		
@@ -58,6 +65,7 @@ public class MainController {
 		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
 //		request.getSession().getServletContext().setAttribute("updatecontent", updatecontent);
 		//     /WEB-INF/views/index.jsp
+		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
 		return "index";
 	}
 	

@@ -12,8 +12,9 @@
 	display: flex;
 	position: fixed;
 	justify-content: space-around;
-	background-color: #f6f6f6;
+	background-color: #379956;
 	align-items: center;
+	padding: 9.9px;
 }
 
 .Ebook_logo {
@@ -38,7 +39,7 @@
 .searchTerm {
 	width: 25vw;
 	font-size: 20px;
-	border-radius: 50px;
+	/* border-radius: 50px; */
 }
 
 .searchButton {
@@ -73,7 +74,7 @@ li {
 	transition: background-color .5s;
 	margin: 5px 5px 5px 5px;
 	padding: 0 5px 0 5px;
-	border-radius: 50px; 
+	/* border-radius: 50px; */ 
 	font-size: 2vh;
 }
 
