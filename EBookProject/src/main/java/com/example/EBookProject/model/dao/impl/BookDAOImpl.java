@@ -52,10 +52,7 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectList("book.ranklist");
 	}
 
-	@Override
-	public int maxrank() {
-		return sqlSession.selectOne("book.maxrank");
-	}
+
 
 	
 }

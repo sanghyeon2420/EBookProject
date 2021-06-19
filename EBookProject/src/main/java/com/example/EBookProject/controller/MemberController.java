@@ -101,7 +101,6 @@ public class MemberController {
 		System.out.println(birthdate);
 		
 		service.SignUp(dto);
-		
 		return "";
 	}
 
@@ -147,16 +146,6 @@ public class MemberController {
 		return "redirect:/"; 
 	};
 	
-	
-	@RequestMapping("setting")
-	public String setting() {
-		return "member/setting";
-	}
-	
-	@RequestMapping("writer")
-	public String writer() {
-		return "member/writer"; 
-	}
 	
 	@RequestMapping("admin")
 	public String admin() {

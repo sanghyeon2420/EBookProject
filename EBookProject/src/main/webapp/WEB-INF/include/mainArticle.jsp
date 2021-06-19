@@ -1,3 +1,5 @@
+<%@page import="com.example.EBookProject.model.dto.BookDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -31,7 +33,20 @@
 	</div>
 	<hr>
 	<div class="bookrank">
-		<div class="bookrank1">
+	<c:forEach var="list" items="${ranklist}"  varStatus="i" begin="0" end="4">
+			<div class="bookrank${i.count}">
+			<p>${i.count}</p><img src="resources/images/${list.b_category}/${list.imagefileName}" >
+			<div class="text">
+				<br><a href="#" style=color:green;>${list.b_category}</a>
+				<a href="resources/page/pageGoodEnding.jsp"><h2>${list.b_name}</h2>
+				<h4>${list.w_name}</h4></a>
+			</div>
+		</div><hr>
+	</c:forEach>
+	
+	
+	
+<!-- 		<div class="bookrank1">
 			<p>1</p><img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" >
 			<div class="text">
 				<br><a href="#" style=color:green;>로맨스</a>
@@ -70,7 +85,7 @@
 				<a href="resources/page/pageGoodEnding.jsp"><h2>굿 엔딩에 올인</h2>
 				<h4>루엘</h4></a>
 			</div>
-		</div><hr>
+		</div><hr> -->
 	</div>
 </div>
 </section>

@@ -30,11 +30,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 랭킹 리스트 출력 -->
 	<select id="ranklist" resultType="com.example.EBookProject.model.dto.BookDTO">
-		select * from bookinfo
+		select * from bookinfo order by book_get desc
 	</select>
 	
-	<!-- 조회수 최대값 -->
-	<select id="maxrank" resultType="int">
-	select max(book_get) from bookinfo
-	</select>
+
+	
+	
 </mapper>

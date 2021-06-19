@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -33,7 +34,7 @@ public class MainController {
 	
 	
 	@RequestMapping("/")
-	public String index(HttpServletRequest request) {
+	public String index(HttpServlet request2,HttpServletRequest request) {
 		
 		List<BookcategoryDTO> booklist=bookservice.bookcategory(); // 상단 메뉴 목록
 		
@@ -47,12 +48,14 @@ public class MainController {
 
 		
 		
-		bookservice.ranklist();
+		List<BookDTO> ranklist=bookservice.ranklist();
 	
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
+		
 		request.getSession().getServletContext().setAttribute("booklist", booklist);
 		request.getSession().getServletContext().setAttribute("newbook", newbook);
+		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
 //		request.getSession().getServletContext().setAttribute("updatecontent", updatecontent);
 		//     /WEB-INF/views/index.jsp
 		return "index";

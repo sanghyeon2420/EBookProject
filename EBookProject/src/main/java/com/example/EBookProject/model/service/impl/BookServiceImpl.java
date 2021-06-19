@@ -58,16 +58,13 @@ public class BookServiceImpl implements BookService {
 	public List<BookDTO> ranklist() {
 		
 		List<BookDTO> list=dao.ranklist();
-		BookDTO dto=new BookDTO();
 		
-		for (int i = 0; i < list.size(); i++) {
-			dto = list.get(i);
+		for (int i = 0; i < 5; i++) {
 			System.err.println(list.get(i));
 	
 		}
-		System.out.println(dto.getBook_get());
 		
-		return null;
+		return list;
 	}
 
 
