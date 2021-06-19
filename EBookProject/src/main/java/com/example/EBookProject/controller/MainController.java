@@ -44,17 +44,19 @@ public class MainController {
 //			System.out.println(newbook.get(i));
 //		}
 		
-
+		List<BookDTO> ranklist = bookservice.ranklist();
 		
-		
-		bookservice.ranklist();
-	
+//		for(int i=0; i<5; i++) {
+//			System.out.println(ranklist.get(i));
+//		}
+//	
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
 		request.getSession().getServletContext().setAttribute("booklist", booklist);
 		request.getSession().getServletContext().setAttribute("newbook", newbook);
 //		request.getSession().getServletContext().setAttribute("updatecontent", updatecontent);
 		//     /WEB-INF/views/index.jsp
+		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
 		return "index";
 	}
 	

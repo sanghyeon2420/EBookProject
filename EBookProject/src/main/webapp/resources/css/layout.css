@@ -12,11 +12,11 @@ body {
   height: 100vh;
   margin: 0;
   }
-#pageHeader, #pageFooter, #mainArticle, #mainNav, #siteAds {
+/* #pageHeader, #pageFooter, #mainArticle, #mainNav, #siteAds {
   padding:10px;
   border:1px dotted;
 }
-
+ */
 #pageHeader {
   grid-area: header;
   position:fixed;

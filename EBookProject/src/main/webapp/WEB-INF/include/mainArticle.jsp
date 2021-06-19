@@ -31,7 +31,17 @@
 	</div>
 	<hr>
 	<div class="bookrank">
+	<c:forEach var="ranklist" items="${ranklist}" >
 		<div class="bookrank1">
+			<p>1</p><img src="resources/css/bookCover/${ranklist.imagefileName }">
+			<div class="text">
+				<br><a href="#" style="color:green;>${ranklist.b_category }"></a>
+				<a href="<%=request.getContextPath()%>/book/detail?idx=${ranklist.ebook_no}"><h2>${ranklist.b_name }</h2>
+				<h4>${ranklist.w_name }</h4></a>
+			</div>
+		</div>
+	</c:forEach>
+		<!-- <div class="bookrank1">
 			<p>1</p><img src="resources/css/bookCover/나의_소중한_소꿉친구_커버.jpg" >
 			<div class="text">
 				<br><a href="#" style=color:green;>로맨스</a>
@@ -70,7 +80,7 @@
 				<a href="resources/page/pageGoodEnding.jsp"><h2>굿 엔딩에 올인</h2>
 				<h4>루엘</h4></a>
 			</div>
-		</div><hr>
+		</div><hr> -->
 	</div>
 </div>
 </section>
@@ -106,29 +116,55 @@
 		</div>
 </c:forEach> --%>
 
-	<!-- <div class="book1">
+	<div class="book1">
 		<div class="cover">
-			<img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" alt="북커버 이미지를 불러옵니다.">
+			<img src="resources/css/bookCover/작가1.png" alt="작가 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<a href="#" style=color:green;>판타지</a><br>
-			<a href="#open">
-			<b style=font-size:18px;>굿 엔딩에 올인</b><br>
-			<span>루엘</span></a>	
-		    <div class="white_content" id="open">
-		        <div>
-		          <p><h3><b>굿 엔딩에 올인</b></h3><br>
-		           <img src="resources/css/bookCover/굿_엔딩에_올인_커버.jpg" >
-		           <p><b> 판타지 / 모험  </b><br>
-		           <p><b> 줄거리 </b>:  “ 엘레쥬에 빙의한 것 같다. 이거 진짜 현실이야?”  <br>
-				   <p><b> 한줄 대사 </b>: “누구 하나 잡아서 굿 엔딩을 보면 되는 거 아닐까?” <br><br>
-		          <a href="resources/page/pageGoodEnding.jsp"><button>자세히보기</button></a>
-		          <a href="#close"><button>닫기</button></a></p>
-		        </div>
-		    	</div>
+			<a href="#"><b style=font-size:18px;>기뮤치뮤</b></a><br>
 		</div>
 	</div>
 	<div class="book2">
+		<div class="cover">
+			<img src="resources/css/bookCover/작가2.png" alt="작가 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#"><b style=font-size:18px;>예드니</b></a><br>
+		</div>
+	</div>
+	<div class="book3">
+		<div class="cover">
+			<img src="resources/css/bookCover/작가3.png" alt="작가 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#"><b style=font-size:18px;>루엘</b></a><br>
+		</div>
+	</div>
+	<div class="book4">
+		<div class="cover">
+			<img src="resources/css/bookCover/작가4.png" alt="작가 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#"><b style=font-size:18px;>호박과세계수</b></a><br>
+		</div>
+	</div>
+	<div class="book5">
+		<div class="cover">
+			<img src="resources/css/bookCover/작가5.png" alt="작가 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#"><b style=font-size:18px;>제로페</b></a><br>
+		</div>
+	</div>
+	<div class="book6">
+		<div class="cover">
+			<img src="resources/css/bookCover/작가6.png" alt="작가 이미지를 불러옵니다.">
+		</div>
+		<div class="title">
+			<a href="#"><b style=font-size:18px;>스타프로젝트</b></a><br>
+		</div>
+	</div>
+	<!-- <div class="book2">
 		<div class="cover">
 			<img src="resources/css/bookCover/굿!모닝 키스의 전설.jpg" alt="북커버 이미지를 불러옵니다.">
 		</div> 

@@ -57,7 +57,7 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<BookDTO> ranklist() {
 		
-		List<BookDTO> list=dao.ranklist();
+		/*List<BookDTO> list=dao.ranklist();
 		BookDTO dto=new BookDTO();
 		
 		for (int i = 0; i < list.size(); i++) {
@@ -65,7 +65,13 @@ public class BookServiceImpl implements BookService {
 			System.err.println(list.get(i));
 	
 		}
-		System.out.println(dto.getBook_get());
+		System.out.println(dto.getBook_get());*/
+		
+List<BookDTO> list=dao.ranklist();
+		
+		for (int i = 0; i < 5; i++) {
+			System.err.println(list.get(i));
+		}
 		
 		return null;
 	}
