@@ -19,10 +19,10 @@
 
 <section id="section1" class="visual">
 	<!-- width=1200px; height=700px -> width=890px; height=450px -->
-	<div><img src="resources/images/banner1.jpg" width=1200px; height=700px;></div>
-    <div><img src="resources/images/banner2.jpg" width=1200px; height=700px;></div>
-    <div><img src="resources/images/banner3.jpg" width=1200px; height=700px;></div>
+	<div><img src="resources/images/banner3.jpg" width=1200px; height=700px;></div>
     <div><img src="resources/images/banner4.jpg" width=1200px; height=700px;></div>
+    <div><img src="resources/images/banner1.jpg" width=1200px; height=700px;></div>
+    <div><img src="resources/images/banner2.jpg" width=1200px; height=700px;></div>
 </section>
 
 
