@@ -24,8 +24,8 @@
 					<div class="name">
 						<h1>${bookdto.b_name }</h1>
 						<h4>&nbsp;${bookdto.w_name }</h4>
-						&nbsp;조회수 <i class="fas fa-check-circle"></i> 8318 &nbsp;추천수 <i
-							class="far fa-heart"></i> 309
+						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수 <i
+							class="far fa-heart"></i>${bookdto.book_hits }
 					</div>
 					<div class="blank"></div>
 					<div class="container">
@@ -45,9 +45,7 @@
 				<div class="detail">
 					<h4>책 소개</h4>
 					<p>
-						베테랑 기뮤치뮤 작가님의 신작 무협소설!<br> 지긋지긋한 이 세상에서 헌터로 살아남기위한 중년의 이야기!<br>
-						환골탈태, 그리고 현경이라는 경지에 도달했다. 그것도 나이 30으로.<br> 하지만 그와 동시에 그는 낭심을
-						잃었고, 뭐라도 해보겠다는 마음으로 비급을 읽고 수련하더니 이세계 소환을 했다. <br>
+						${bookdto.b_intro } <br>
 					</p>
 				</div>
 			</div>
@@ -60,7 +58,7 @@
 									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>
 								<p class="approval">
-									<span class="coin_necessary" style="margin-right: 0.01rem;">${list.viewcontent_price}</span>
+									<span class="coin_necessary" style="margin-right: 0.01rem;">${list.viewcontent_price}쿠키</span>
 								</p>
 						</a></li>
 							
