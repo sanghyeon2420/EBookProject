@@ -11,7 +11,7 @@
 	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 	crossorigin="anonymous">
 </head>
-<body>
+<body> 
 	<header id="pageHeader">fixed 때문에 고정송출!</header>
 	<article id="mainArticle">
 		<div class="frame">
