@@ -54,9 +54,7 @@
 				<a href="member/admin">관리자페이지로 전환</a>
 			</c:if>
 			
-			<c:if test="${writer != null}">
-				<a href="EBookProject/writer/detail?writernumber=${writer.writer_no}">${writer.w_name}</a>
-			</c:if>
+			
 			<c:if test="${member != null}">
 				<a href="EBookProject/member/detail?membernumber=${member.user_no}">${member.nickname}</a>
 			</c:if>
@@ -70,7 +68,7 @@
 			</c:if>
 			
 			<c:if test="${member != null}">
-			<a href="<%=path%>/member/setting" id="setting" title="회원정보"><i class="fas fa-cog"></i></a>
+			<a href="member/setting" title="회원정보"><i class="fas fa-cog"></i></a>
 			</c:if>
 			
 			&nbsp;&nbsp;&nbsp;&nbsp;

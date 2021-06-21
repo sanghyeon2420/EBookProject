@@ -84,4 +84,5 @@ public class MainController {
 	public String privacy() {
 		return "member/privacy_policy";
 	}
+	
 }
