@@ -26,51 +26,38 @@ public class BookServiceImpl implements BookService {
 		return dao.bookcategory();
 	}
 
-
 	@Override
 	public List<BookDTO> booklist(int category_no) {
 		return dao.booklist(category_no);
 	}
-
 
 	@Override
 	public BookDTO Bookdetail(int ebook_no) {
 		return dao.Bookdetail(ebook_no);
 	}
 
-
 	@Override
 	public List<ContentDTO> contentdetail(int ebook_no) {
 		return dao.contentdetail(ebook_no);
 	}
-
 
 	@Override
 	public List<BookDTO> newbook() {
 		return dao.newbook();
 	}
 
-
-
-
-
 	@Override
 	public List<BookDTO> ranklist() {
 		
-		List<BookDTO> list=dao.ranklist();
-		
-		
+		List<BookDTO> list=dao.ranklist();				
 		for (int i = 0; i < 5; i++) {
 			System.err.println(list.get(i));
-		}
-		
+		}		
 		return list;
 	}
 
-
-
-
-
-
-
+	@Override
+	public List<BookDTO> romancebook() {
+		return dao.romancebook();
+	}
 }

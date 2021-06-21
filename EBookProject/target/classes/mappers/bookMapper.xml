@@ -33,7 +33,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from bookinfo order by book_get desc
 	</select>
 	
-
-	
+	<!-- 로맨스 책 불러오기 -->
+	<select id="romancebook" resultType="com.example.EBookProject.model.dto.BookDTO">
+		select * from bookinfo where category_no=3
+	</select>
 	
 </mapper>

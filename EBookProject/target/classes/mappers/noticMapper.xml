@@ -85,7 +85,7 @@
 	
 	<!-- 게시글 갯수 -->
 	<select id="getCountNotic" resultType="java.lang.Integer">
-		SELECT COUNT(*) FROM NOTIC <include refid="search"></include>
+		SELECT COUNT(*) FROM NOTIC<!--  <include refid="search"></include> -->
 	</select>
 	
 	<!-- 검색조건 -->

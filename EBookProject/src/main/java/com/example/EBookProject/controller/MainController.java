@@ -38,15 +38,11 @@ public class MainController {
 		
 		List<BookcategoryDTO> booklist=bookservice.bookcategory(); // 상단 메뉴 목록
 		
-		
 		List<BookDTO> newbook = bookservice.newbook(); //새로운 책 목록
-		
-//		for(int i=0; i<newbook.size(); i++) {
-//			System.out.println(newbook.get(i));
-//		}
 		
 		List<BookDTO> ranklist = bookservice.ranklist();
 		
+		List<BookDTO> romancebook = bookservice.romancebook();
 
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
@@ -54,6 +50,7 @@ public class MainController {
 		request.getSession().getServletContext().setAttribute("booklist", booklist);
 		request.getSession().getServletContext().setAttribute("newbook", newbook);
 		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
+		request.getSession().getServletContext().setAttribute("romancebook", romancebook);
 //		request.getSession().getServletContext().setAttribute("updatecontent", updatecontent);
 		//     /WEB-INF/views/index.jsp
 		return "index";
@@ -84,4 +81,5 @@ public class MainController {
 	public String privacy() {
 		return "member/privacy_policy";
 	}
+	
 }

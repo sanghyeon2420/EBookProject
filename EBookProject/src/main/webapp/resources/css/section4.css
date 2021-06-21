@@ -95,14 +95,14 @@
 	height: 14vh;
 }
 #section3 .bookrank1 hr {
-	border: solid 0.3pa gray;
+	border: solid 0.3px gray;
 }
 
 
 /* section4 */
 #section4 {
 	width: 60vw;
-	height: 45vh;
+	height: 40vh;
 }
 #section4 .todaybook {
 	width: 60vw;
@@ -116,7 +116,7 @@
 }
 #section4 .books {
 	width: 60vw;
-	height: 35vh;
+	height: 27vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

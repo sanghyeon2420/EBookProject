@@ -149,6 +149,11 @@ public class MemberController {
 		return "redirect:/"; 
 	};
 	
+	@RequestMapping("setting")
+	public String setting() {
+		return "member/setting";
+	}
+	
 	
 	@RequestMapping("admin")
 	public String admin() {
