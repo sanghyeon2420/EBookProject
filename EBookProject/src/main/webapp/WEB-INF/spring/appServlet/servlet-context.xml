@@ -22,12 +22,7 @@
 	<!-- 인터셉터 선언 -->
 	<beans:bean id="loginInterceptor" class="com.example.EBookProject.interceptor.LoginInterceptor" />
 	
-	<interceptors>
-		<interceptor>
-			
-			<beans:ref bean="loginInterceptor"/>
-		</interceptor>
-	</interceptors>	
+	
 	
 	<resources mapping="/notic/resources/**" location="/resources/" />
 
