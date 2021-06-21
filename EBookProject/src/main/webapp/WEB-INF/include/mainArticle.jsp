@@ -14,6 +14,11 @@
 <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/modal.css"/>
 <link href="//font.elice.io/EliceDigitalBaeum.css" rel="stylesheet">
+<style type="text/css">
+a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+</style>
 </head>
 <body>  
 
@@ -63,46 +68,6 @@
 		</div>
 	</div>
 </c:forEach>
-	<!-- <div class="book2">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가2.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>예드니</b></a><br>
-		</div>
-	</div>
-	<div class="book3">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가3.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>루엘</b></a><br>
-		</div>
-	</div>
-	<div class="book4">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가4.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>호박과세계수</b></a><br>
-		</div>
-	</div>
-	<div class="book5">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가5.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>제로페</b></a><br>
-		</div>
-	</div>
-	<div class="book6">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가6.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>스타프로젝트</b></a><br>
-		</div>
-	</div> -->
 </div>
 </section>
 
