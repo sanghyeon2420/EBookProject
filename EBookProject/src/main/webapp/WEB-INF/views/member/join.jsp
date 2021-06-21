@@ -469,7 +469,7 @@ function Signup() {
 		<p><input type="text" id="username" name="username" class="form-control"></p>
 		<p id="username_message"></p>
 		<p><label for="nickname">닉네임</label></p>
-		<p><input type="text" id="nickname" name="nickname" class="form-control"></p>
+		<p><input type="text" id="nickname" name="nickname" class="form-control" placeholder="글 등록시 작가 이름으로 사용됩니다."></p>
 		<p id="nickname_message"></p>
 		<p><label for="email">이메일<em> 비밀번호 찾기 시 이메일로 비밀번호가 발송됩니다.</em></label></p>
 		<p><input type="text" id="email" name="email" class="form-control" oninput="checkEmail()" placeholder="ex) EBook2222@naver.com"></p>

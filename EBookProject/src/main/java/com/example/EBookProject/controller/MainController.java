@@ -73,7 +73,7 @@ public class MainController {
 	}*/
 	
 	@RequestMapping("terms")
-	public String terms() {
+	public String terms() { 
 		return "member/termsOfMember";
 	}
 	
