@@ -18,7 +18,17 @@
 	<resources mapping="/board/resources/**" location="/resources/" />
 	<resources mapping="/book/resources/**" location="/resources/" />
 	<resources mapping="/page/resources/**" location="/resources/" />
-
+	
+	<!-- 인터셉터 선언 -->
+	<beans:bean id="loginInterceptor" class="com.example.EBookProject.interceptor.LoginInterceptor" />
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/book/*"/>
+			<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+	</interceptors>	
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />

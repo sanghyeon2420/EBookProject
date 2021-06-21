@@ -19,4 +19,10 @@ public class WriterServiceImpl implements WriterService {
 		return dao.writerinfo(user_no);
 	}
 
+	@Override
+	public void writerinsert(String w_name) {
+		dao.writerinsert(w_name);
+		
+	}
+
 }
