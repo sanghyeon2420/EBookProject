@@ -64,7 +64,7 @@ a:link { color: black; text-decoration: none;}
 			<img src="resources/images/writer/${writer_enter.imagefile_no }.png" alt="작가 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<a href="#"><b style=font-size:18px;>${writer_enter.w_name }</b></a><br>
+			<a href="<%=request.getContextPath()%>/writer/viewdetail?writer_no=${writer_enter.writer_no}"><b style=font-size:18px;>${writer_enter.w_name }</b></a><br>
 		</div>
 	</div>
 </c:forEach>
