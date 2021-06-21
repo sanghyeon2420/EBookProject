@@ -38,8 +38,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from bookinfo where category_no=3
 	</select>
 	
-	<!-- 랭킹 rownum 불러오기 -->
-	<!-- <select id="bookrank" resultType="com.example.EBookProject.model.dto.BookDTO">
-		SELECT ROWNUM, x.ebook_no FROM (select ebook_no, book_get from bookinfo order by book_get desc) x, bookinfo b where x.ebook_no = b.ebook_no
-	</select> -->
+	<!-- 도서별 랭크순위 불러오기 -->
+	<select id="bookrank" resultType="int">
+		 select rank from (SELECT RANK() OVER(ORDER BY a.book_get desc) rank, a.*
+  		FROM bookinfo a
+ 		ORDER BY a.book_get desc)
+ 		where ebook_no=#{ebook_no}
+	</select>
 </mapper>

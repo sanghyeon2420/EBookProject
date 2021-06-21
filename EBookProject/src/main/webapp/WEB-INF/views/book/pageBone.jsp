@@ -36,7 +36,7 @@
 					<div class="blank"></div>
 					<div class="container">
 						<div class="item">
-							<i class="far fa-thumbs-up"></i><br> 랭킹<br>6위
+							<i class="far fa-thumbs-up"></i><br> 랭킹<br>${rank}위
 						</div>
 						<div class="item">
 							<i class="far fa-comments"></i><br> 첫 리뷰 작성시<br> +1쿠키

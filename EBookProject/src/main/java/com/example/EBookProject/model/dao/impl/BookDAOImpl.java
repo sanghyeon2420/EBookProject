@@ -1,6 +1,7 @@
 package com.example.EBookProject.model.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -55,6 +56,11 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public List<BookDTO> romancebook() {
 		return sqlSession.selectList("book.romancebook");
+	}
+
+	@Override
+	public int detail_rank(int ebook_no) {
+		return sqlSession.selectOne("book.bookrank",ebook_no);
 	}
 
 

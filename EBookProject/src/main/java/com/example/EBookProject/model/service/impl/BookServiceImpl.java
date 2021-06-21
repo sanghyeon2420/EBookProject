@@ -1,6 +1,7 @@
 package com.example.EBookProject.model.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -59,5 +60,11 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<BookDTO> romancebook() {
 		return dao.romancebook();
+	}
+
+	@Override
+	public int detail_rank(int ebook_no) {
+		
+		return dao.detail_rank(ebook_no);
 	}
 }
