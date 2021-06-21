@@ -30,7 +30,6 @@
 				<i class="fas fa-search"></i>
 			</button>
 		</div>
-
 		<!-- Menuber -->
 		<div class="menu">
 			<ul class="menu_list">
