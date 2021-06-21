@@ -34,15 +34,20 @@
 		<!-- Menuber -->
 		<div class="menu">
 			<ul class="menu_list">
-				<li><a href="<%=path%>/">Home</a></li>
+				<div class="col-md-3 col-sm-3 col-xs-6"> 
+				<li><a href="<%=path%>/" class="btn btn-sm animated-button victoria-three">Home</a></li>
+				</div>
 				<c:forEach var="list" items="${booklist}">
-
-
-					<li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li>
+					<div class="col-md-3 col-sm-3 col-xs-6"> 
+					<li><a href="/EBookProject/book/list?idx=${list.category_no}" class="btn btn-sm animated-button victoria-three">${list.category_name}</a></li>
+					</div>
 				</c:forEach>
-
-				<li><a href="<%=path%>/board/list">커뮤니티</a></li>
-				<li><a href="<%=path%>/notic">공지사항</a></li>
+				<div class="col-md-3 col-sm-3 col-xs-6"> 
+				<li><a href="<%=path%>/board/list" class="btn btn-sm animated-button victoria-three">커뮤니티</a></li>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6"> 
+				<li><a href="<%=path%>/notic" class="btn btn-sm animated-button victoria-three">공지사항</a></li>
+				</div>
 			</ul>
 		</div>
 	</div>
@@ -54,7 +59,9 @@
 				<a href="member/admin">관리자페이지로 전환</a>
 			</c:if>
 			
-			
+			<c:if test="${writer != null}">
+				<a href="EBookProject/writer/detail?writernumber=${writer.writer_no}">${writer.w_name}</a>
+			</c:if>
 			<c:if test="${member != null}">
 				<a href="EBookProject/member/detail?membernumber=${member.user_no}">${member.nickname}</a>
 			</c:if>
@@ -68,7 +75,7 @@
 			</c:if>
 			
 			<c:if test="${member != null}">
-			<a href="member/setting" title="회원정보"><i class="fas fa-cog"></i></a>
+			<a href="<%=path%>/member/setting" id="setting" title="회원정보"><i class="fas fa-cog"></i></a>
 			</c:if>
 			
 			&nbsp;&nbsp;&nbsp;&nbsp;
