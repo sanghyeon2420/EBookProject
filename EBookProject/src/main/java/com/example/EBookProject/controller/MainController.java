@@ -1,26 +1,22 @@
 package com.example.EBookProject.controller;
 
+import java.io.Writer;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 import com.example.EBookProject.model.dto.ContentDTO;
-import com.example.EBookProject.model.dto.NoticDTO;
+import com.example.EBookProject.model.dto.WriterDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
-import com.example.EBookProject.model.service.impl.NoticServiceImpl;
 import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
 @Controller
@@ -31,6 +27,8 @@ public class MainController {
 	@Inject
 	BookServiceImpl bookservice;
 	
+	@Inject
+	WriterServiceImpl writerservice;
 	
 	
 	@RequestMapping("/")
@@ -40,10 +38,12 @@ public class MainController {
 		
 		List<BookDTO> newbook = bookservice.newbook(); //새로운 책 목록
 		
-		List<BookDTO> ranklist = bookservice.ranklist();
+		List<BookDTO> ranklist = bookservice.ranklist();  //랭킹 목록
 		
-		List<BookDTO> romancebook = bookservice.romancebook();
-
+		List<BookDTO> romancebook = bookservice.romancebook();  //로맨스 책 목록
+		
+		List<WriterDTO> writer_enter = writerservice.writer_enter();
+		
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
 		
@@ -51,6 +51,7 @@ public class MainController {
 		request.getSession().getServletContext().setAttribute("newbook", newbook);
 		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
 		request.getSession().getServletContext().setAttribute("romancebook", romancebook);
+		request.getSession().getServletContext().setAttribute("writer_enter", writer_enter);
 //		request.getSession().getServletContext().setAttribute("updatecontent", updatecontent);
 		//     /WEB-INF/views/index.jsp
 		return "index";

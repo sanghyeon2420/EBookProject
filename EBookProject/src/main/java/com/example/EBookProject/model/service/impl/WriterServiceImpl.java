@@ -1,5 +1,7 @@
 package com.example.EBookProject.model.service.impl;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +19,11 @@ public class WriterServiceImpl implements WriterService {
 	@Override
 	public WriterDTO writerinfo(int user_no) {
 		return dao.writerinfo(user_no);
+	}
+
+	@Override
+	public List<WriterDTO> writer_enter() {
+		return dao.writer_enter();
 	}
 
 }

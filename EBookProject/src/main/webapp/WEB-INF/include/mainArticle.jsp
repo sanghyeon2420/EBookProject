@@ -53,15 +53,17 @@
 		<h1><strong>작가 소개</strong></h1>
 	</div>
 <div class="books">
+<c:forEach var="writer_enter" items="${writer_enter }" varStatus="i" begin="0" end="5">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/css/bookCover/작가1.png" alt="작가 이미지를 불러옵니다.">
+			<img src="resources/images/writer/${writer_enter.imagefile_no }.png" alt="작가 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<a href="#"><b style=font-size:18px;>기뮤치뮤</b></a><br>
+			<a href="#"><b style=font-size:18px;>${writer_enter.w_name }</b></a><br>
 		</div>
 	</div>
-	<div class="book2">
+</c:forEach>
+	<!-- <div class="book2">
 		<div class="cover">
 			<img src="resources/css/bookCover/작가2.png" alt="작가 이미지를 불러옵니다.">
 		</div>
@@ -100,7 +102,7 @@
 		<div class="title">
 			<a href="#"><b style=font-size:18px;>스타프로젝트</b></a><br>
 		</div>
-	</div>
+	</div> -->
 </div>
 </section>
 

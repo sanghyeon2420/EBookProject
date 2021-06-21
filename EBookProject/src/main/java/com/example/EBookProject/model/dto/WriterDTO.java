@@ -5,7 +5,14 @@ public class WriterDTO {
 	private String w_name;
 	private int w_hits;
 	private int user_no;
+	private String imagefile_no;
 	
+	public String getImagefile_no() {
+		return imagefile_no;
+	}
+	public void setImagefile_no(String imagefile_no) {
+		this.imagefile_no = imagefile_no;
+	}
 	public int getWriter_no() {
 		return writer_no;
 	}
@@ -30,12 +37,13 @@ public class WriterDTO {
 	public void setUser_no(int user_no) {
 		this.user_no = user_no;
 	}
-	
 	@Override
 	public String toString() {
 		return "WriterDTO [writer_no=" + writer_no + ", w_name=" + w_name + ", w_hits=" + w_hits + ", user_no="
-				+ user_no + "]";
+				+ user_no + ", imagefile_no=" + imagefile_no + "]";
 	}
+	
+	
 	
 	
 }
