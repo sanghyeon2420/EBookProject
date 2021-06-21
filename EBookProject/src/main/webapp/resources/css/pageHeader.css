@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 /*  */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Cute+Font&family=Gugi&display=swap');
+/* font-family: 'Black And White Picture', sans-serif;
+font-family: 'Cute Font', cursive;
+font-family: 'Gugi', cursive; */
 #pageHeader {
 	padding: 0;
 	z-index: 100;
@@ -8,7 +13,7 @@
 
 .main_header {
 	width: 100%;
-	height: 15%;
+	height: 17%;
 	display: flex;
 	position: fixed;
 	justify-content: space-around;
@@ -51,7 +56,6 @@
 	background-color: #eaeaea; 
 	transition: background-color .5s;
 }
-
 .fa-search {
 	font-size: 1vw;
 }
@@ -69,23 +73,89 @@
 	margin: 10px;
 }
 
-li {
-	background-color: #eaeaea; 
-	transition: background-color .5s;
-	margin: 5px 5px 5px 5px;
-	padding: 0 5px 0 5px;
-	/* border-radius: 50px; */ 
-	font-size: 2vh;
+
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	color: #000;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	font-size:14px;
+	font-family: 'Gugi', cursive;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+a.animated-button:link:after, a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color: #00AF5B;
+	text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+	height: 20%;
+  
+}
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
 }
 
-li:hover {
-	background-color: gold;
+/* Victoria Buttons */
+
+
+a.animated-button.victoria-three {
+	border: 2px solid #fff;
+}
+a.animated-button.victoria-three:after {
+	background: #fff;
+    font-color:00AF5B; 
+	opacity: .5;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+a.animated-button.victoria-three:hover:after {
+	height: 140%;
+	opacity: 1;
 }
 
-a{
-	text-decoration:none;
-	color: black;
-}
 
 .Ebook_icons {
 	height: 5vh;

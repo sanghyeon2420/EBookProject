@@ -30,19 +30,23 @@
 				<i class="fas fa-search"></i>
 			</button>
 		</div>
-
 		<!-- Menuber -->
 		<div class="menu">
 			<ul class="menu_list">
-				<li><a href="<%=path%>/">Home</a></li>
+				<div class="col-md-3 col-sm-3 col-xs-6"> 
+				<li><a href="<%=path%>/" class="btn btn-sm animated-button victoria-three">Home</a></li>
+				</div>
 				<c:forEach var="list" items="${booklist}">
-
-
-					<li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li>
+					<div class="col-md-3 col-sm-3 col-xs-6"> 
+					<li><a href="/EBookProject/book/list?idx=${list.category_no}" class="btn btn-sm animated-button victoria-three">${list.category_name}</a></li>
+					</div>
 				</c:forEach>
-
-				<li><a href="<%=path%>/board/list">커뮤니티</a></li>
-				<li><a href="<%=path%>/notic">공지사항</a></li>
+				<div class="col-md-3 col-sm-3 col-xs-6"> 
+				<li><a href="<%=path%>/board/list" class="btn btn-sm animated-button victoria-three">커뮤니티</a></li>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6"> 
+				<li><a href="<%=path%>/notic" class="btn btn-sm animated-button victoria-three">공지사항</a></li>
+				</div>
 			</ul>
 		</div>
 	</div>
