@@ -115,13 +115,12 @@ img {
 				<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
 						<input type="hidden" id="notic_no" name="notic_no" value="${row.notic_no}"/>
-				<!--	<input type="hidden" id="show" value="${row.show}"/>	 -->
 					<c:choose>
 					<%-- 검색결과가 있을 때 --%>
 					<c:when test="${not empty row}">
 					<tr>
 						<td class="list2">${row.notic_no}</td>
-						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&show=Y">${row.notic_title}</a>
+						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}">${row.notic_title}</a>
 					<fmt:formatDate value="${row.notic_regdate}" pattern="yyyyMMdd" var="regDate"/>
 						<td class="list2">${row.notic_regdate}</td>
 						<td class="list2">${row.notic_viewCnt}</td>

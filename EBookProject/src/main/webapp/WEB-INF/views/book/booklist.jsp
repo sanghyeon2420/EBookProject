@@ -6,31 +6,43 @@
 <head>
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="resources/css/servPage.css" rel="stylesheet">
 <title>Insert title here</title>
 <script>
-
 </script>
 <style>
 	td img{
-	width:8vw;
-	height:10vh;
-	}
-	#mainArticle {
-		margin: 40px 0;
-	}
+	 width:8vw;
+	height:auto; }
+	 table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  	text-align: center;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+  }
 </style>
 </head>
 <body>
-
   <header id="pageHeader">
      <!-- Header -->
    <%@ include file="../../include/pageHeader.jsp" %>
   </header>
-  
-	<article id="mainArticle">
-	<!-- ${param.idx} => 장르번호 -->
-  	<table>
- 	 <c:forEach var="list" items="${list}">
+<!-- ${param.idx} => 장르번호 -->
+ <article id="mainArticle">
+  <table>
+  	<tr style="background-color: #5FD184">
+  	<td width="8%">일러스트</td>
+  	<td width="5%">순위</td>
+  	<td width="10%">장르</td>
+  	<td width="10%">작가명</td>
+  	<td width="20%">제목</td>
+  	<td width="30%">간략줄거리</td>
+  	
+  <c:forEach var="list" items="${list}">
 	<tr>
 	<td><img src="resources/images/${list.b_category}/${list.imagefileName} "></td>
 	<!-- resources/images/무협지/무림순경.jpg -->
@@ -45,8 +57,8 @@
   </c:forEach>
   </table>
   </article>
-  
-  <nav id="mainNav">
+
+    <nav id="mainNav">
      <!-- Nav -->
        <%@ include file="../../include/mainNav.jsp" %>
   </nav>
@@ -55,8 +67,7 @@
         <!-- Ads -->
         <%@ include file="../../include/siteAds.jsp" %>
   </div>
-  
-  <footer id="pageFooter">
+   <footer id="pageFooter">
         <!-- Footer -->
       <%@ include file="../../include/pageFooter.jsp" %>
   
