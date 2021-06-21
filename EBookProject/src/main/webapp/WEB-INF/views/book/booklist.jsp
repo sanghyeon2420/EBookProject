@@ -8,7 +8,6 @@
 <link href="resources/css/servPage.css" rel="stylesheet">
 <title>Insert title here</title>
 <script>
-
 </script>
 <style>
 	td img{

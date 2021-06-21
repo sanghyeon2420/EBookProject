@@ -11,6 +11,7 @@
 	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 	crossorigin="anonymous">
 </head>
+
 <body>
 	<header id="pageHeader">
 	 <%@ include file="../../include/pageHeader.jsp" %>
