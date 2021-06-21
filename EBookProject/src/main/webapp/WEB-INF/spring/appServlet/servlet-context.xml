@@ -24,7 +24,7 @@
 	
 	<interceptors>
 		<interceptor>
-			<mapping path="/book/*"/>
+			
 			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 	</interceptors>	
