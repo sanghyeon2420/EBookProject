@@ -52,6 +52,11 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectList("book.ranklist");
 	}
 
+	@Override
+	public List<BookDTO> romancebook() {
+		return sqlSession.selectList("book.romancebook");
+	}
+
 
 
 	
