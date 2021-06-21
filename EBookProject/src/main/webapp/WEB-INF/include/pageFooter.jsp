@@ -45,11 +45,11 @@
  			</a>
  			<br>
  			<!-- 회사정보 -->
- 			<span style="color: rgb(158, 158, 158); font-size: 1.5vh; user-select: auto;">
+ 			<span style="color: black; font-size: 1.5vh; user-select: auto;">
 					주식회사 북 하우스 
-				<font style="color: rgb(51, 51, 51);">|</font>
+				<font style="color: black;">|</font>
 					 사업자등록번호 : 210-00-00000
-				<font style="color: rgb(51, 51, 51);">|</font>
+				<font style="color: black;">|</font>
 					 대표 : 김OO
 				<br>
 					통신판매업신고 : 제2021-서울왕십리-01010호 
