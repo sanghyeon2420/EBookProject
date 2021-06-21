@@ -102,52 +102,11 @@ public class NoticController {
 		// 게시글 상세보기
 		@RequestMapping("/view")
 		public String readNotic(@RequestParam("notic_no") int notic_no, 
-								@RequestParam("show") String show, Model model, HttpSession session, 
+								
 								@RequestParam(defaultValue = "notic_title") String searchOption,
 								@RequestParam(defaultValue = "") String keyword, 
 								@RequestParam(defaultValue = "") String search,
 								@RequestParam(defaultValue = "1") int curPage) throws Exception {
-
-			/* 게시글 예외처리 */
-			// 삭제된 게시글울 읽으려고 하는 경우
-			int checkNotic = noticService.checkNotic(notic_no);
-
-			if (checkNotic == 0 && show.equals("N")) {
-				return "notic/checkDel";
-			}
-
-			// 존재하지 않는 게시글에 접근하려는 경우
-			else if (checkNotic == 0 && show.equals("Y")) {
-				return "notic/checkNone";
-
-			} else if (checkNotic == 1 && show.equals("N")) {
-				return "notic/checkNone";
-			}
-
-			noticService.notic_viewCnt(notic_no, session); // 조회수
-			model.addAttribute("notic", noticService.readNotic(notic_no)); // 게시글 읽기
-
-			// 세션 저장
-			searchOption = (String) session.getAttribute("searchOption");
-			session.setAttribute("searchOption", searchOption);
-
-			keyword = (String) session.getAttribute("keyword");
-			session.setAttribute("keyword", keyword);
-
-			search = (String) session.getAttribute("search");
-			session.setAttribute("search", search);
-
-//			curPage = (int) session.getAttribute("curPage");
-			curPage = (Integer) session.getAttribute("curPage");
-			session.setAttribute("curPage", curPage);
-
-			NoticDTO plist = noticService.previousB(notic_no);
-			NoticDTO nlist = noticService.nextB(notic_no);
-
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("previousB", plist);
-			map.put("nextB", nlist);
-			model.addAttribute("map", map);
 
 			return "notic/view";
 		}
