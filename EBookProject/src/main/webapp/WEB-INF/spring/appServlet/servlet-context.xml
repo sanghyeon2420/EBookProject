@@ -18,7 +18,6 @@
 	<resources mapping="/board/resources/**" location="/resources/" />
 	<resources mapping="/book/resources/**" location="/resources/" />
 	<resources mapping="/page/resources/**" location="/resources/" />
-<<<<<<< HEAD
 	
 	<!-- 인터셉터 선언 -->
 	<beans:bean id="loginInterceptor" class="com.example.EBookProject.interceptor.LoginInterceptor" />
@@ -30,10 +29,8 @@
 		</interceptor>
 	</interceptors>	
 	
-=======
 	<resources mapping="/notic/resources/**" location="/resources/" />
 
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />

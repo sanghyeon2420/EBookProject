@@ -8,7 +8,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from writer where user_no=#{user_no}
 	</select>
 	
-<<<<<<< HEAD
 	
 	<select id="maxuserno" resultType="int">
 	select max(user_no) from member
@@ -17,8 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="writerinsert" parameterType="java.util.HashMap">
 	insert into writer (writer_no,user_no,w_name) values ((select nvl(max(writer_no),0) from writer)+1,#{user_no},#{w_name})
 	</insert>
-=======
+	
 	<!-- 작가 조회 -->
 	
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 </mapper>
