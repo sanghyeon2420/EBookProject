@@ -19,33 +19,33 @@ import com.example.EBookProject.model.service.impl.MemberServiceImpl;
 import com.example.EBookProject.model.service.impl.NoticServiceImpl;
 
 @Controller
-@RequestMapping("notic") // /member/ ()
+@RequestMapping("/notic/*") // /member/ ()
 public class NoticController {
 
 	@Inject
 	NoticServiceImpl noticService;
 	
 	// 게시글 등록 뷰
-		@RequestMapping("/write")
+		@RequestMapping("write")
 		public String write(NoticDTO vo) throws Exception {
 			return "notic/write";
 		}
 
 		// 게시글 등록
-		@RequestMapping(value = "/createNotic", method = RequestMethod.POST)
+		@RequestMapping(value = "createNotic", method = RequestMethod.POST)
 		public String createNotic(NoticDTO vo) throws Exception {
 			noticService.createNotic(vo);
 			return "notic/list";
 		}
 
 		// 게시글 수정 뷰
-		@RequestMapping("/updateWrite")
+		@RequestMapping("updateWrite")
 		public String updateWrite(NoticDTO vo) throws Exception {
 			return "notic/updateWrite";
 		}
 
 		// 게시글 수정
-		@RequestMapping(value = "/updateNotic", method = RequestMethod.POST)
+		@RequestMapping(value = "updateNotic", method = RequestMethod.POST)
 		public String updateNotic(NoticDTO vo) throws Exception {
 			if (vo.getNotic_title() != null) {
 				noticService.updateNotic(vo);
@@ -64,7 +64,7 @@ public class NoticController {
 		}
 
 		// 게시글 목록 + 검색 + 페이징
-		@RequestMapping("/notic")
+		@RequestMapping("list")
 		public String listAllNotic(Model model, HttpSession session,
 				@RequestParam(defaultValue = "notic_title") String searchOption,  // 기본값 제목
 				@RequestParam(defaultValue = "") String keyword,				  // 기본값 null 
@@ -100,7 +100,7 @@ public class NoticController {
 		}
 
 		// 게시글 상세보기
-		@RequestMapping("/view")
+		@RequestMapping("view")
 		public String readNotic(@RequestParam("notic_no") int notic_no, 
 								
 								@RequestParam(defaultValue = "notic_title") String searchOption,

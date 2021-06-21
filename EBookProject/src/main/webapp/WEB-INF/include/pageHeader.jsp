@@ -48,7 +48,7 @@
 				<li><a href="<%=path%>/board/list" class="btn btn-sm animated-button victoria-three">커뮤니티</a></li>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6"> 
-				<li><a href="<%=path%>/notic" class="btn btn-sm animated-button victoria-three">공지사항</a></li>
+				<li><a href="<%=path%>/notic/list" class="btn btn-sm animated-button victoria-three">공지사항</a></li>
 				</div>
 			</ul>
 		</div>
