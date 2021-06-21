@@ -72,7 +72,7 @@
 				<a href="EBookProject/member/detail?membernumber=${member.user_no}">${member.nickname}</a>
 			<a href="<%=path%>/member/setting" id="setting" title="회원정보"><i class="fas fa-cog"></i></a>
 			&nbsp;&nbsp;&nbsp;&nbsp;
-         	<button type="button" id="logout">로그아웃</button>
+         	<button type="button" id="logout" onclick="location.href='${pageContext.request.contextPath}/member/logout';">로그아웃</button>
 			</c:if>
 			
 				

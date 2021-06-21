@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,17 +46,6 @@ $(function() {
 });
 
 
-// 로그아웃
-$(document).ready(function(){
-	$("#logout").click(function(){
-		location.href="${pageContext.request.contextPath}/member/logout";
-	});
-	
-	$("#change").click(function(){
-		var userpw=prompt("비밀번호를 입력해주세요","");
-		console.log(userpw);
-	});
-});
 
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
@@ -161,7 +152,8 @@ $(document).bind('keydown',function(e){
                     <li>&nbsp;아이디 :${member.userid}</li>
                     <li>&nbsp;이메일 :${member.email}</li>
                     <li>&nbsp;닉네임 :${member.nickname}</li>
-                    <li>&nbsp;생년월일 :${member.birthdate}</li>
+                    <li>&nbsp;생년월일 :<fmt:formatDate value="${member.birthdate}" pattern="yyyy년MM월dd일"/>
+                    </li>
                     <li>&nbsp;내 쿠키 정보 :&nbsp;${member.cash}&nbsp;<button type="button" onclick="#">충전</button></li>
                     <li><a href="#">내가 봐온 소설</a></li>
                     <li><a href="#">신규 소설등록</a></li>
