@@ -1,6 +1,5 @@
 package com.example.EBookProject.controller;
 
-import java.io.Writer;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,11 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
-import com.example.EBookProject.model.dto.ContentDTO;
 import com.example.EBookProject.model.dto.WriterDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
 import com.example.EBookProject.model.service.impl.WriterServiceImpl;

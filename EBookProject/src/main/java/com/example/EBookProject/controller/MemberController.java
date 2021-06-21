@@ -102,8 +102,7 @@ public class MemberController {
 		System.out.println(birthdate);
 		
 		service.SignUp(dto);
-		writerservice.writerinsert(nickname);
-		
+
 		return "";
 	}
 
