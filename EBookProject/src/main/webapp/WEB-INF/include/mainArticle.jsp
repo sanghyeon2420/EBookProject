@@ -14,6 +14,11 @@
 <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/modal.css"/>
 <link href="//font.elice.io/EliceDigitalBaeum.css" rel="stylesheet">
+<style type="text/css">
+a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+</style>
 </head>
 <body>  
 
@@ -33,12 +38,16 @@
 	</div>
 	<hr>
 	<div class="bookrank">
+	<c:forEach var="list" items="${ranklist}"  varStatus="i">
+	<input type="hidden" value="${i.count}" id="rank" name="rank">
+	</c:forEach>
 	<c:forEach var="list" items="${ranklist}"  varStatus="i" begin="0" end="4">
 			<div class="bookrank${i.count}">
+			
 			<p>${i.count}</p><img src="resources/images/${list.b_category}/${list.imagefileName}" >
 			<div class="text">
 				<br><a href="/EBookProject/book/list?idx=${list.category_no }" style=color:green;>${list.b_category}</a>
-				<a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h2>${list.b_name}</h2>
+				<a href="/EBookProject/book/detail?idx=${list.ebook_no }&rank=${i.count}"><h2>${list.b_name}</h2>
 				<h4>${list.w_name}</h4></a>
 			</div>
 		</div><hr>
@@ -59,50 +68,10 @@
 			<img src="resources/images/writer/${writer_enter.imagefile_no }.png" alt="작가 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
-			<a href="#"><b style=font-size:18px;>${writer_enter.w_name }</b></a><br>
+			<a href="<%=request.getContextPath()%>/writer/viewdetail?writer_no=${writer_enter.writer_no}"><b style=font-size:18px;>${writer_enter.w_name }</b></a><br>
 		</div>
 	</div>
 </c:forEach>
-	<!-- <div class="book2">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가2.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>예드니</b></a><br>
-		</div>
-	</div>
-	<div class="book3">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가3.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>루엘</b></a><br>
-		</div>
-	</div>
-	<div class="book4">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가4.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>호박과세계수</b></a><br>
-		</div>
-	</div>
-	<div class="book5">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가5.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>제로페</b></a><br>
-		</div>
-	</div>
-	<div class="book6">
-		<div class="cover">
-			<img src="resources/css/bookCover/작가6.png" alt="작가 이미지를 불러옵니다.">
-		</div>
-		<div class="title">
-			<a href="#"><b style=font-size:18px;>스타프로젝트</b></a><br>
-		</div>
-	</div> -->
 </div>
 </section>
 

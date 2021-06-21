@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="resources/css/servPage.css" rel="stylesheet">
 <title>Insert title here</title>
@@ -56,6 +57,7 @@
   </c:forEach>
   </table>
   </article>
+
     <nav id="mainNav">
      <!-- Nav -->
        <%@ include file="../../include/mainNav.jsp" %>
