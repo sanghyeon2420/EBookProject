@@ -24,12 +24,15 @@
 	<div class="center">
 
 		<!-- Search -->
-		<div class="Search">
-			<input type="text" class="searchTerm" placeholder="Search">
-			<button type="submit" class="searchButton">
-				<i class="fas fa-search"></i>
-			</button>
-		</div>
+	<div class="wrap">
+	   <div class="search">
+	      <input type="text" class="searchTerm" placeholder="search">
+	      <button type="submit" class="searchButton">
+	        <i class="fa fa-search"></i>
+	     </button>
+	   </div>
+	</div>
+
 		<!-- Menuber -->
 		<div class="menu">
 			<ul class="menu_list">
