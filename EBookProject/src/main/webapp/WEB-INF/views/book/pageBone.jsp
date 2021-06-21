@@ -12,7 +12,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<header id="pageHeader">fixed 때문에 고정송출!</header>
+	<header id="pageHeader">
+	 <%@ include file="../../include/pageHeader.jsp" %>
+	 </header>
 	<article id="mainArticle">
 		<div class="frame">
 			<div class="setTitle">
@@ -126,8 +128,14 @@
 			</div>
 		</div>
 	</article>
-	<nav id="mainNav">Nav</nav>
-	<div id="siteAds">Ads</div>
-	<footer id="pageFooter">Footer</footer>
+	<nav id="mainNav">
+ 	<%@ include file="../../include/mainNav.jsp" %>
+ 	</nav>
+	<div id="siteAds">
+	<%@ include file="../../include/siteAds.jsp" %>
+	</div>
+	<footer id="pageFooter">
+	<%@ include file="../../include/pageFooter.jsp" %>
+	</footer>
 </body>
 </html>
