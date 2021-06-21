@@ -38,12 +38,16 @@ a:link { color: black; text-decoration: none;}
 	</div>
 	<hr>
 	<div class="bookrank">
+	<c:forEach var="list" items="${ranklist}"  varStatus="i">
+	<input type="hidden" value="${i.count}" id="rank" name="rank">
+	</c:forEach>
 	<c:forEach var="list" items="${ranklist}"  varStatus="i" begin="0" end="4">
 			<div class="bookrank${i.count}">
+			
 			<p>${i.count}</p><img src="resources/images/${list.b_category}/${list.imagefileName}" >
 			<div class="text">
 				<br><a href="/EBookProject/book/list?idx=${list.category_no }" style=color:green;>${list.b_category}</a>
-				<a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h2>${list.b_name}</h2>
+				<a href="/EBookProject/book/detail?idx=${list.ebook_no }&rank=${i.count}"><h2>${list.b_name}</h2>
 				<h4>${list.w_name}</h4></a>
 			</div>
 		</div><hr>

@@ -11,6 +11,6 @@ public class WriterController {
 	public String viewWriter(int writer_no) {
 		System.out.println("작가번호 : "+writer_no);
 		// localhost:8080/EBookProject/writer/resoureces/image/image.jpg
-		return "member/writer";		
+		return "member/writerintro";		
 	}
 }

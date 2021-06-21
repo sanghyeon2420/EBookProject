@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 <link href="resources/css/servPage.css" rel="stylesheet">
@@ -12,12 +13,16 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<header id="pageHeader">fixed 때문에 고정송출!</header>
-	<article id="mainArticle">
+<header id="pageHeader">
+     <!-- Header -->
+   <%@ include file="../../include/pageHeader.jsp" %>
+  </header>
+  
+  <article id="mainArticle">
 		<div class="frame">
 			<div class="setTitle">
 				<nav id="navPicture">
-					<img src="../css/bookCover/images/${bookdto.imagefileName}" width="240px"
+					<img src="resources/images/${bookdto.b_category}/${bookdto.imagefileName}" width="240px"
 						height="300px">
 				</nav>
 				<div id="headTitle">
@@ -65,69 +70,24 @@
 												
 						
 						</c:forEach>
-						<!-- <li><a href="javascript://7" onclick="">
-								<p class="text">
-									<strong> 7. 술로 보내는 고독의 밤</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span>
-								</p>
-						</a></li>
-						<li><a href="javascript://6" onclick="">
-								<p class="text">
-									<strong> 6. 청아</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span>
-								</p>
-						</a></li>
-						<li><a href="javascript://5" onclick="">
-								<p class="text">
-									<strong> 5. 갈등의 시작</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span>
-								</p>
-						</a></li>
-						<li><a href="javascript://4" onclick="">
-								<p class="text">
-									<strong> 4. 소환수의 몸부림</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="coin_necessary" style="margin-right: 0.01rem;">3쿠키</span>
-								</p>
-						</a></li>
-						<li><a href="javascript://3" onclick="">
-								<p class="text">
-									<strong> 3. 문둔병환자</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="free_coin_info" style="margin-right: 0.01rem;">무료</span>
-								</p>
-						</a></li>
-						<li><a href="javascript://2" onclick="">
-								<p class="text">
-									<strong> 2. 도태되어버린 추억</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="free_coin_info" style="margin-right: 0.01rem;">무료</span>
-								</p>
-						</a></li>
-						<li><a href="javascript://1" onclick="">
-								<p class="text">
-									<strong> 1. 현경</strong> <span>2021.03.24</span>
-								</p>
-								<p class="approval">
-									<span class="free_coin_info" style="margin-right: 0.01rem;">무료</span>
-								</p>
-						</a></li> -->
 					</ol>
 				</div>
 			</div>
 		</div>
 	</article>
-	<nav id="mainNav">Nav</nav>
-	<div id="siteAds">Ads</div>
-	<footer id="pageFooter">Footer</footer>
+	<nav id="mainNav">
+     <!-- Nav -->
+       <%@ include file="../../include/mainNav.jsp" %>
+  </nav>
+  
+  <div id="siteAds">
+        <!-- Ads -->
+        <%@ include file="../../include/siteAds.jsp" %>
+  </div>
+  
+  <footer id="pageFooter">
+        <!-- Footer -->
+      <%@ include file="../../include/pageFooter.jsp" %>
+  </footer>
 </body>
 </html>
