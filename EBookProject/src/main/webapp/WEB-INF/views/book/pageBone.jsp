@@ -31,12 +31,8 @@
 				<div id="headTitle">
 					<div class="name">
 						<h1>${bookdto.b_name }</h1>
-<<<<<<< HEAD
-						<a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no }">
-						<h4>&nbsp;${bookdto.w_name }</h4></a>
-=======
 						<h4><a href="../writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
+
 						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수 <i
 							class="far fa-heart"></i>${bookdto.book_hits }
 					</div>
