@@ -49,7 +49,6 @@ $(function() {
 });
 
 
-
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
 status="마우스 우클릭 하지 말아주세요!!"; 
