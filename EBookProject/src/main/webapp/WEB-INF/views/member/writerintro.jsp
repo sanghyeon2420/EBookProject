@@ -133,7 +133,7 @@ function disableclick(event){
      <%-- ${writer.w_name}작가님의 페이지 --%>
      <div class="writerintro">
      	<div class="writerpic">
-     		<img src="resources/images/writer/${dto.imagefile_no }.png" alt="작가 이미지 불러옵니다.">
+     		<img src="resources/images/writer/${dto.imagefile_no }" alt="작가 이미지 불러옵니다.">
      	</div>
      	<div class="writerid">
      		<h3><strong style=font-size:25px;>${dto.w_name }</strong>님<strong>&nbsp;&nbsp;&nbsp;추천수 : </strong> <span id="span_hits">${dto.w_hits }</span>&nbsp;&nbsp;&nbsp; <button id="hits" name="hits">추천</button></h3>
