@@ -49,19 +49,31 @@ a:link { color: black; text-decoration: none;}
 	<td colspan="5" style="text-align: left; font-size: 30px;  border-top: 1px solid #ffff;"> ${category}</td>
   	<tr style="background-color: #5FD184">
   	<th width="8%">일러스트</th>
-  	<th width="5%">순위</th>
   	<th width="10%">작가명</th>
   	<th width="20%">제목</th>
   	<th width="30%">간략줄거리</th>
   	
   <c:forEach var="list" items="${list}">
 	<tr>
-	<td><img src="resources/images/${list.b_category}/${list.imagefileName} "></td>
+	<td>
+		<a href="<%=request.getContextPath()%>/book/detail?idx=${list.ebook_no}">
+		<img src="resources/images/${list.b_category}/${list.imagefileName} ">
+		</a>
+	</td>
 	<!-- resources/images/무협지/무림순경.jpg -->
-	<td>${list.ebook_no}</td>
-	<td>${list.w_name }</td>
+	<td>
+		<a href="../writer/viewdetail?writer_no=${list.writer_no}">
+		${list.w_name }
+		</a>
+	</td>
 	<%-- <li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li> --%>
-	<td><a href="<%=request.getContextPath()%>/book/detail?idx=${list.ebook_no}"><strong>${list.b_name }</strong></a></td>
+	
+	<td>	
+	<a href="<%=request.getContextPath()%>/book/detail?idx=${list.ebook_no}">
+		<strong>${list.b_name}</strong>
+		<br><blink style="color:#5F9EA0">조회수:${list.book_get }</blink>
+	</a>
+	</td>
 	<td>${list.b_intro }</td>
 	</tr>	  
 	 </c:forEach>
