@@ -28,4 +28,9 @@ public class WriterDAOImpl implements WriterDAO {
 		return sqlSession.selectList("writer.writer_enter");
 
 	}
+
+	@Override
+	public WriterDTO writerbring(int writer_no) {
+		return sqlSession.selectOne("writer.writerbring",writer_no);
+	}
 }

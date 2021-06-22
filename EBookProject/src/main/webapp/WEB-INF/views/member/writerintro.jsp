@@ -29,6 +29,61 @@ function disableclick(event){
     } 
 }
 </script>
+<style>
+#mainArticle {
+	margin:0;
+	padding:0;
+}
+.writerintro {
+	 align-items: center;
+}
+#mainArticle .writerpic {
+	margin: 20px 20px;
+	float: left;
+	
+}
+#mainArticle .wrtierpic img {
+	width: 15vw;
+	height: 17vh;
+	margin: 0;
+	padding: 0;
+}
+#mainArticle .writerid {
+	float: left;
+	margin: 20px 20px;
+	
+}
+#mainArticle .writerbooklist {
+	height: 50vh;
+	display: flex;
+	margin: 0;
+	clear: both;
+	justify-content: space-around;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	overflow: auto;
+	-ms-overflow-style: none;
+	flex-flow: row nowrap;
+}
+#mainArticle .writerbookcover {
+	width: 14vw;
+	height: 25vh;
+	padding: 0;
+	margin: 0;
+}
+#mainArticle .writerbookcover img{
+	width: 14vw;
+	height: 22vh;
+	display: block;
+	margin: auto;
+}
+.writerbookcover p {
+	margin: 10px 0;
+	font-weight: 400;
+	text-align: center;
+}
+</style>
 </head>
 <body>
   <header id="pageHeader">
@@ -36,27 +91,48 @@ function disableclick(event){
    <%@ include file="../../include/pageHeader.jsp" %>
   </header>
   
+  
   <article id="mainArticle">
      <!-- Body -->
+     <%-- ${writer.w_name}작가님의 페이지 --%>
      <div class="writerintro">
-     	${writer.w_name}작가님의 페이지
-     </div>
+     	<div class="writerpic">
+     		<img src="resources/images/writer/${dto.imagefile_no }.png" alt="작가 이미지 불러옵니다.">
+     	</div>
+     	<div class="writerid">
+     		<p>${dto.w_name }작가님</p>
+     		<p>${dto.w_name }작가님의 주요 연재 </p>
+     		<p>${dto.w_name }작가님의 주요 연재 소설</p>
+     	</div>
+     	</div>
+     	<br>
+     	<div class="writerbooklist">
+     		<c:forEach var="list" items="${list }">
+	 	<div class="writerbookcover">
+			<div class="cover">
+				<img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
+				<p><b>${list.b_name }</b></p>
+			</div>
+		</div>
+	</c:forEach>
   </article>
+
 
  <nav id="mainNav">
      <!-- Nav -->
        <%@ include file="../../include/mainNav.jsp" %>
   </nav>
   
+  
   <div id="siteAds">
         <!-- Ads -->
         <%@ include file="../../include/siteAds.jsp" %>
   </div>
   
+  
   <footer id="pageFooter">
         <!-- Footer -->
       <%@ include file="../../include/pageFooter.jsp" %>
-  
   </footer>
 </body>
 </html>

@@ -30,7 +30,9 @@ public class BookController {
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i));
 			}
-			
+			String category=list.get(0).getB_category();
+			System.out.println("카테고리: =====>>>>>"+category);
+			mav.addObject("category", category);
 			mav.addObject("list",list);
 			
 			return mav;
@@ -60,5 +62,11 @@ public class BookController {
 		return mav;
 	}
 	
+	
+	@RequestMapping("contentview")
+	public String viewaaaaaaaaaaaaaaaaaaaaa(int contents_no) {
+		System.out.println(contents_no);
+		return "book/sdfasddsf";
+	}
 
 }

@@ -11,6 +11,10 @@
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 	crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -59,7 +63,7 @@
 				<div class="detail_list">
 					<ol>
 						<c:forEach var="list" items="${list}">
-							<li><a href="javascript://7" onclick="">
+							<li><a href="<%=request.getContextPath()%>/book/contentview/?contents_no=${list.contents_no}">
 								<p class="text">
 									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>

@@ -45,4 +45,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		ORDER BY a.book_get desc)
  		where ebook_no=#{ebook_no}
 	</select>
+	
+	<!-- 작가번호로 책 조회 -->
+	<select id="writerbook" resultType="com.example.EBookProject.model.dto.BookDTO">
+		select * from bookinfo where writer_no=${writer_no}
+	</select>
 </mapper>

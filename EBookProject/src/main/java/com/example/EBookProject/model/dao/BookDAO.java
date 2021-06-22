@@ -16,5 +16,5 @@ public interface BookDAO {
 	public List<BookDTO> ranklist(); //랭킹 리스트 불러오기
 	public List<BookDTO> romancebook(); //로맨스 책 불러오기
 	public int detail_rank(int ebook_no); // 도서별 랭크순위 출력
-
+	public List<BookDTO> writerbook(int writer_no); //작가번호로 책 불러오기
 }

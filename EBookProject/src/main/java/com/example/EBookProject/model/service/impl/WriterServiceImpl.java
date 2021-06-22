@@ -26,4 +26,9 @@ public class WriterServiceImpl implements WriterService {
 		return dao.writer_enter();
 	}
 
+	@Override
+	public WriterDTO writerbring(int writer_no) {
+		return dao.writerbring(writer_no);
+	}
+
 }
