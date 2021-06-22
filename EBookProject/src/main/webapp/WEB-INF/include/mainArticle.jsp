@@ -18,6 +18,7 @@
 a:link { color: black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
  a:hover { color: black; text-decoration: none;}
+body{font-family: 'Jua', sans-serif;}
 </style>
 </head>
 <body>  

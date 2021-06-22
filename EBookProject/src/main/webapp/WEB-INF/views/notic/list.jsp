@@ -124,7 +124,7 @@ img {
 			<br/>
 			<table>
 				<tr>
-					<th colspan="4" style="text-align: left; font-size: 25px;"> 공지사항</th>
+					<th colspan="4" style="text-align: left; font-size: 30px;"> 공지사항</th>
 				<tr height="50" style="background-color: #5FD184;">
 					<th class="list1" width="10%">번호</th>
 					<th class="list1" width="60%">제목</th>
