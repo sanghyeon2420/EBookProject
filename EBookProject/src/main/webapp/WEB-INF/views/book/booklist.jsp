@@ -20,7 +20,6 @@ a:link { color: black; text-decoration: none;}
 <script>
 </script>
 <style>
-
 	td img{
 	 width:8vw;
 	height:auto; }
