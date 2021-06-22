@@ -38,23 +38,23 @@ function disableclick(event){
 	 align-items: center;
 }
 #mainArticle .writerpic {
-	margin: 20px 20px;
+	margin: 65px 60px;
 	float: left;
 	
 }
 #mainArticle .wrtierpic img {
-	width: 15vw;
-	height: 17vh;
+	width: 25vw;
+	height: 30vh;
 	margin: 0;
 	padding: 0;
 }
 #mainArticle .writerid {
 	float: left;
-	margin: 20px 20px;
+	margin: 87px 60px;
 	
 }
 #mainArticle .writerbooklist {
-	height: 50vh;
+	height: 30vh;
 	display: flex;
 	margin: 0;
 	clear: both;
@@ -73,8 +73,8 @@ function disableclick(event){
 	margin: 0;
 }
 #mainArticle .writerbookcover img{
-	width: 14vw;
-	height: 22vh;
+	width: 12vw;
+	height: 18vh;
 	display: block;
 	margin: auto;
 }
@@ -100,9 +100,9 @@ function disableclick(event){
      		<img src="resources/images/writer/${dto.imagefile_no }.png" alt="작가 이미지 불러옵니다.">
      	</div>
      	<div class="writerid">
-     		<p>${dto.w_name }작가님</p>
-     		<p>${dto.w_name }작가님의 주요 연재 </p>
-     		<p>${dto.w_name }작가님의 주요 연재 소설</p>
+     		<p><strong>${dto.w_name }</strong>님</p>
+     		<p><strong>${dto.w_name }</strong>님의 주요 연재 </p>
+     		<p><strong>${dto.w_name }</strong>님의 주요 연재 소설</p>
      	</div>
      	</div>
      	<br>
