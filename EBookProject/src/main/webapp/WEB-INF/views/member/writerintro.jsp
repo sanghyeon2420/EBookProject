@@ -21,6 +21,22 @@ $(document).ready(function(){
 		var userpw=prompt("비밀번호를 입력해주세요","");
 		console.log(userpw);
 	});
+	
+	$("#hits").click(function(){
+		var writer_no=${dto.writer_no};
+/* 		console.log(writer_no);
+ */		
+ 		$.ajax({
+			type:"post", // 전송방식
+			url:"${pageContext.request.contextPath}/writer/hits", // 요청주소
+			data:{"writer_no":writer_no}, // 보내줄 데이터
+			success: function(data){ // 비동기 통신 성공시, data ->  리턴받은 데이터
+					console.log(data); // f12 개발자도구 - > console창에 data가 출력됨
+					document.getElementById("span_hits").innerHTML=data;
+			}
+			
+		}); 
+	});
 });
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
@@ -119,7 +135,7 @@ function disableclick(event){
      		<img src="resources/images/writer/${dto.imagefile_no }.png" alt="작가 이미지 불러옵니다.">
      	</div>
      	<div class="writerid">
-     		<h3><strong>${dto.w_name }</strong>님<strong>&nbsp;&nbsp;&nbsp;추천수 : </strong> ${dto.w_hits }&nbsp;&nbsp;&nbsp; <button id="button" name="hits">추천</button></h3>
+     		<h3><strong style=font-size:25px;>${dto.w_name }</strong>님<strong>&nbsp;&nbsp;&nbsp;추천수 : </strong> <span id="span_hits">${dto.w_hits }</span>&nbsp;&nbsp;&nbsp; <button id="hits" name="hits">추천</button></h3>
      	</div>
      </div>
      <div class="back">

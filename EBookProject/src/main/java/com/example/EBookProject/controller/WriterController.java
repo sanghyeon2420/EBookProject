@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.WriterDTO;
@@ -33,5 +34,15 @@ public class WriterController {
 		
 		// localhost:8080/EBookProject/writer/resoureces/image/image.jpg
 		return "member/writerintro";		
+	}
+	
+	@ResponseBody
+	@RequestMapping("hits")
+	public String hits(String writer_no) {
+		int writer_num = Integer.parseInt(writer_no);
+		System.out.println("writer controller writer_no :====>>>"+writer_no);
+		writerservice.updateHits(writer_num); // 추천수 증가
+		WriterDTO dto=writerservice.writerbring(writer_num);
+		return String.valueOf(dto.getW_hits());
 	}
 }
