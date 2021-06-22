@@ -33,4 +33,10 @@ public class WriterDAOImpl implements WriterDAO {
 	public WriterDTO writerbring(int writer_no) {
 		return sqlSession.selectOne("writer.writerbring",writer_no);
 	}
+
+	@Override
+	public void updateHits(int writer_no) {
+		sqlSession.update("writer.updateHits",writer_no);
+		
+	}
 }

@@ -31,4 +31,10 @@ public class WriterServiceImpl implements WriterService {
 		return dao.writerbring(writer_no);
 	}
 
+	@Override
+	public void updateHits(int writer_no) {
+		dao.updateHits(writer_no);
+		
+	}
+
 }

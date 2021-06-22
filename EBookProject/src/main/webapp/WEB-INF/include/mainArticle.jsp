@@ -30,7 +30,6 @@ a:link { color: black; text-decoration: none;}
     <div><img src="resources/images/banner2.jpg" width=1200px; height=700px;></div>
 </section>
 
-
 <section id="section3">
 <div class="rank">
 	<div class="title">
@@ -47,8 +46,8 @@ a:link { color: black; text-decoration: none;}
 			<p>${i.count}</p><img src="resources/images/${list.b_category}/${list.imagefileName}" >
 			<div class="text">
 				<br><a href="/EBookProject/book/list?idx=${list.category_no }" style=color:green;>${list.b_category}</a>
-				<a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h2>${list.b_name}</h2>
-				<h4>${list.w_name}</h4></a>
+				<a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h2> <b>${list.b_name}</b> </h2>
+				<h5>${list.w_name}</h5></a>
 			</div>
 		</div><hr>
 	</c:forEach>
@@ -59,13 +58,13 @@ a:link { color: black; text-decoration: none;}
 
 <section id="section4">
 <div class="todaybook">
-		<h1><strong>작가 소개</strong></h1>
+		<h1><strong>베스트 작가</strong></h1>
 	</div>
 <div class="books">
 <c:forEach var="writer_enter" items="${writer_enter }" varStatus="i" begin="0" end="5">
 	<div class="book1">
 		<div class="cover">
-			<img src="resources/images/writer/${writer_enter.imagefile_no }.png" alt="작가 이미지를 불러옵니다.">
+			<img src="resources/images/writer/${writer_enter.imagefile_no }" alt="작가 이미지를 불러옵니다.">
 		</div>
 		<div class="title">
 			<a href="<%=request.getContextPath()%>/writer/viewdetail?writer_no=${writer_enter.writer_no}"><b style=font-size:18px;>${writer_enter.w_name }</b></a><br>
