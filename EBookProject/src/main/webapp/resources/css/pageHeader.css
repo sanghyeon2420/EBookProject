@@ -2,10 +2,12 @@
 
 /*  */
 
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Cute+Font&family=Gugi&display=swap');
-/* font-family: 'Black And White Picture', sans-serif;
-font-family: 'Cute Font', cursive;
-font-family: 'Gugi', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&family=Poor+Story&family=Sunflower:wght@500&display=swap');
+/* font-family: 'Gugi', cursive;
+font-family: 'Jua', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Poor Story', cursive;
+font-family: 'Sunflower', sans-serif; */
 #pageHeader {
 	padding: 0;
 	z-index: 100;
@@ -51,7 +53,7 @@ font-family: 'Gugi', cursive; */
   width: 100%;
   border: 3px solid #61dea2;
   border-right: none;
-  padding: 5px;
+  padding: 15px;
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
@@ -76,10 +78,10 @@ font-family: 'Gugi', cursive; */
 
 /*검색창 */
 .wrap{
-  width: 45%;
+  width: 40%;
   position: absolute;
   top: 30%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
 }
 
@@ -93,6 +95,7 @@ font-family: 'Gugi', cursive; */
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
+	width: 66%;
 }
 
 
@@ -120,9 +123,9 @@ a.animated-button:link:after, a.animated-button:visited:after {
 	content: "";
 	position: absolute;
 	height: 0%;
-	left: 70%;
+	left: 50%;
 	top: 50%;
-	width: 150%;
+	width: 100%;
 	z-index: -1;
 	-webkit-transition: all 0.75s ease 0s;
 	-moz-transition: all 0.75s ease 0s;
