@@ -67,7 +67,14 @@
 									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>
 								<p class="approval">
-									<span class="coin_necessary" style="margin-right: 0.01rem;">${list.viewcontent_price}쿠키</span>
+									<span class="coin_necessary" style="margin-right: 0.01rem;">
+									<c:if test="${list.viewcontent_price == 0}">
+									무료
+									</c:if>
+									<c:if test="${list.viewcontent_price != 0}">
+									${list.viewcontent_price}쿠키
+									</c:if>
+									</span>
 								</p>
 						</a></li>
 							
