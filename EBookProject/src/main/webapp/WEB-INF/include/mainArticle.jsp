@@ -59,7 +59,7 @@ a:link { color: black; text-decoration: none;}
 
 <section id="section4">
 <div class="todaybook">
-		<h1><strong>작가 소개</strong></h1>
+		<h1><strong>베스트 작가</strong></h1>
 	</div>
 <div class="books">
 <c:forEach var="writer_enter" items="${writer_enter }" varStatus="i" begin="0" end="5">

@@ -6,6 +6,10 @@
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>writerIntro</title>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 //로그아웃
 $(document).ready(function(){
@@ -33,28 +37,44 @@ function disableclick(event){
 #mainArticle {
 	margin:0;
 	padding:0;
+	font-family: 'Jua', sans-serif;
 }
 .writerintro {
 	 align-items: center;
 }
-#mainArticle .writerpic {
-	margin: 65px 60px;
-	float: left;
-	
+.writerpic {
+	margin: 65px 60px 30px 60px;
+	display: flex;
+	justify-content: center;
 }
-#mainArticle .wrtierpic img {
-	width: 25vw;
-	height: 30vh;
-	margin: 0;
+.writerpic img {
+	width: 22vw;
+	height: 38vh;
+	margin: 10px 10px;
 	padding: 0;
 }
 #mainArticle .writerid {
-	float: left;
-	margin: 87px 60px;
-	
+	clear: both;
+	margin: 0 0 60px 0;
+    text-align: center;
+}
+.back {
+	background-color: #d9e7ff;
+}
+.text {
+	margin: 0;
+	padding: 0;
+	height: 8vh;
+}
+.text p {
+	clear: both;
+	margin: 20px 20px;
+	height: 3vh;
+	font-size: 18px;
+	align-items: center;
 }
 #mainArticle .writerbooklist {
-	height: 30vh;
+	height: 35vh;
 	display: flex;
 	margin: 0;
 	clear: both;
@@ -63,22 +83,21 @@ function disableclick(event){
 	flex-direction: row;
 	flex-wrap: wrap;
 	overflow: auto;
-	-ms-overflow-style: none;
 	flex-flow: row nowrap;
 }
 #mainArticle .writerbookcover {
 	width: 14vw;
-	height: 25vh;
+	height: 22vh;
 	padding: 0;
 	margin: 0;
 }
 #mainArticle .writerbookcover img{
 	width: 12vw;
-	height: 18vh;
+	height: 22vh;
 	display: block;
 	margin: auto;
 }
-.writerbookcover p {
+.writerbookcover a {
 	margin: 10px 0;
 	font-weight: 400;
 	text-align: center;
@@ -100,23 +119,24 @@ function disableclick(event){
      		<img src="resources/images/writer/${dto.imagefile_no }.png" alt="작가 이미지 불러옵니다.">
      	</div>
      	<div class="writerid">
-     		<p><strong>${dto.w_name }</strong>님</p>
-     		<p><strong>${dto.w_name }</strong>님의 주요 연재 </p>
+     		<h3><strong>${dto.w_name }</strong>님<strong>&nbsp;&nbsp;&nbsp;추천수 : </strong> ${dto.w_hits }&nbsp;&nbsp;&nbsp; <button id="button" name="hits">추천</button></h3>
      	</div>
-     	</div>
-     	<br>
-     	<div class="booklist">
+     </div>
+     <div class="back">
+     	<div class="text">
      		<p><strong>${dto.w_name }</strong>님의 주요 연재 소설</p>
      	</div>
      	<div class="writerbooklist">
      		<c:forEach var="list" items="${list }">
-	 	<div class="writerbookcover">
-			<div class="cover">
-				<img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
-				<p><b>${list.b_name }</b></p>
+	 		<div class="writerbookcover">
+				<div class="cover">
+					<img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
+					<a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4>
+				</div>
 			</div>
+			</c:forEach>
 		</div>
-	</c:forEach>
+	</div>
   </article>
 
 
