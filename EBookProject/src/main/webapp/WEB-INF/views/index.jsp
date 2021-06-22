@@ -71,6 +71,13 @@ $(document).bind('keydown',function(e){
 }); */
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&family=Poor+Story&family=Sunflower:wght@500&display=swap');
+/* font-family: 'Gugi', cursive;
+font-family: 'Jua', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Poor Story', cursive;
+font-family: 'Sunflower', sans-serif; */
+
 a#MOVE_TOP_BTN {
     position: fixed;/*화면에 고정 */
     right: 2%;
@@ -83,7 +90,10 @@ img {
   height: 50px;
   
   }
+body{
+font-family: 'Sunflower', sans-serif;
 }
+
 </style>
 </head>
 <!-- 가로 스크롤 삭제 : style="overflow-x: hidden" -->
