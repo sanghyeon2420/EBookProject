@@ -13,7 +13,6 @@
 	crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -32,7 +31,7 @@
 				<div id="headTitle">
 					<div class="name">
 						<h1>${bookdto.b_name }</h1>
-						<h4>&nbsp;${bookdto.w_name }</h4>
+						<h4><a href="../writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
 						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수 <i
 							class="far fa-heart"></i>${bookdto.book_hits }
 					</div>

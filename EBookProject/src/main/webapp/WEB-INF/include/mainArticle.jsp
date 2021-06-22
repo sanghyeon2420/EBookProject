@@ -30,7 +30,6 @@ a:link { color: black; text-decoration: none;}
     <div><img src="resources/images/banner2.jpg" width=1200px; height=700px;></div>
 </section>
 
-
 <section id="section3">
 <div class="rank">
 	<div class="title">
