@@ -115,7 +115,6 @@ img {
 						</c:otherwise>
 					</c:choose>
 				</c:if>
-				
 			<!-- 관리자일 때만 쓰기버튼 활성화-->
 				<c:if test="${userid eq 'admin'}">
 					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
