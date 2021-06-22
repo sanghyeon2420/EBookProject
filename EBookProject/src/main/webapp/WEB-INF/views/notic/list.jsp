@@ -6,7 +6,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="resources/css/layout.css" rel="stylesheet">
+<link href="resources/css/servPage.css" rel="stylesheet">
 <%@ include file="../../include/include.jsp" %>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>공지사항</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -71,6 +78,22 @@ img {
   }
 }
 
+	 table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  	text-align: center;
+
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+	font-family: 'Jua', sans-serif;
+	font-size: 20px;
+	text-align: center;
+  }
+  
+
 </style>
 </head>
 <!-- 가로 스크롤 삭제 : style="overflow-x: hidden" -->
@@ -83,10 +106,8 @@ img {
   </header>
 
     <article id="mainArticle">
-    <H2>공지 사항</H2>
-   <div style="width:800px;">
-			<div style="float: right;">
-			
+
+			<div align="center">
 			<!-- 검색했을 때 카운트-->
 				<c:if test="${map.search eq 's'}">
 					<c:choose>
@@ -98,19 +119,19 @@ img {
 						</c:otherwise>
 					</c:choose>
 				</c:if>
-				
 			<!-- 관리자일 때만 쓰기버튼 활성화-->
 				<c:if test="${userid eq 'admin'}">
 					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
 				</c:if>
-			</div>
 			<br/>
-			<table cellpadding="0" cellspacing="0" style="text-align:center;" width="100%">
+			<table>
+				<tr>
+					<th colspan="4" style="text-align: left; font-size: 25px;"> 공지사항</th>
 				<tr height="50" style="background-color: #5FD184;">
 					<th class="list1" width="10%">번호</th>
-					<th class="list1" width="50%">제목</th>
-					<th class="list1" width="15%">작성일</th>
-					<th class="list1" width="10%">조회수</th>
+					<th class="list1" width="60%">제목</th>
+					<th class="list1" width="20%">작성일</th>
+					<th class="list1" width="9%">조회수</th>
 				</tr>
 				<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
@@ -137,9 +158,7 @@ img {
 			</table>
 			<br />
 			<br />
-			
 			<!-- 페이지 네비게이션 출력 -->
-			<div align="center">
 				<c:if test="${map.pager.curBlock > 1}">
 					<a href="notic?curPage=1
 							&searchOption=${searchOption}&keyword=${keyword}
@@ -167,29 +186,6 @@ img {
 					</c:choose>
 				</c:forEach>
 			<!-- 검색 조건 뷰 -->
-			<form action="notic" class="noticsearch" align="center">
-					<select name="searchOption" id="searchOption">
-						<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+이름+내용</option>
-						<option value="NOTIC_TITLE" <c:out value="${map.searchOption=='NOTIC_TITLE'?'selected':''}"/> >제목</option>
-						<option value="NOTIC_CONTENT" <c:out value="${map.searchOption=='NOTIC_CONTENT'?'selected':''}"/> >내용</option>
-					</select> 
-				<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}">
-				<input type="hidden" name="search" id="search" value="s"/>
-				<input type="submit" class="check2" value="조회"/>
-			</form>				
-				<c:if test="${map.pager.curBlock < map.pager.totBlock}">
-					<a href="notic?curPage=${map.pager.nextPage}
-							&searchOption=${searchOption}&keyword=${keyword}
-							&search=${search}">[다음]</a>
-				</c:if>
-				<c:if test="${(map.pager.totPage > 5) && 
-				(map.pager.totPage != map.pager.curPage)}">
-					<a href="notic?curPage=${map.pager.totPage}
-							&searchOption=${searchOption}&keyword=${keyword}
-							&search=${search}">[끝]</a>
-				</c:if>
-			</div>
-		</div>
 		</div>
   </article>
   <nav id="mainNav">
@@ -202,9 +198,6 @@ img {
         <%@ include file="../../include/siteAds.jsp" %>
   </div>
         
-   <a id="MOVE_TOP_BTN" href="#" ><!-- 상단으로 올리는 버튼  -->
-   <img class="icon_img" src="resources/images/up_icon.png"/>
-   </a>
   <footer id="pageFooter">
         <!-- Footer -->
       <%@ include file="../../include/pageFooter.jsp" %>
