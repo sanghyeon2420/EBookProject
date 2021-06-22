@@ -55,9 +55,16 @@ a:link { color: black; text-decoration: none;}
   	
   <c:forEach var="list" items="${list}">
 	<tr>
-	<td><img src="resources/images/${list.b_category}/${list.imagefileName} "></td>
+	<td>
+		<a href="<%=request.getContextPath()%>/book/detail?idx=${list.ebook_no}">
+		<img src="resources/images/${list.b_category}/${list.imagefileName} ">
+		</a>
+	</td>
 	<!-- resources/images/무협지/무림순경.jpg -->
-	<td>${list.w_name }
+	<td>
+		<a href="../writer/viewdetail?writer_no=${list.writer_no}">
+		${list.w_name }
+		</a>
 	</td>
 	<%-- <li><a href="/EBookProject/book/list?idx=${list.category_no}">${list.category_name}</a></li> --%>
 	
