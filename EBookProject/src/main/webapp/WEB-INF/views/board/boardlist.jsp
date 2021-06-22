@@ -12,8 +12,10 @@
 <script>
 
 </script>
-<style>
-
+<style type="text/css">
+a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
 </style>
 </head>
 <body>

@@ -7,4 +7,5 @@ import com.example.EBookProject.model.dto.WriterDTO;
 public interface WriterService {
 	public WriterDTO writerinfo(int user_no);
 	public List<WriterDTO> writer_enter();
+	public WriterDTO writerbring(int writer_no);
 }

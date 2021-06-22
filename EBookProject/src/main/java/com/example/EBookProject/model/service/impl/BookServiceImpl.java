@@ -23,7 +23,6 @@ public class BookServiceImpl implements BookService {
 	
 	@Override
 	public List<BookcategoryDTO> bookcategory() {
-
 		return dao.bookcategory();
 	}
 
@@ -64,7 +63,11 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public int detail_rank(int ebook_no) {
-		
 		return dao.detail_rank(ebook_no);
+	}
+
+	@Override
+	public List<BookDTO> writerbook(int writer_no) {
+		return dao.writerbook(writer_no);
 	}
 }

@@ -21,13 +21,11 @@ public class BookDAOImpl implements BookDAO {
 	
 	@Override
 	public List<BookcategoryDTO> bookcategory() {
-
 		return sqlSession.selectList("book.bookcategory");
 	}
 
 	@Override
 	public List<BookDTO> booklist(int category_no) {
-
 		return sqlSession.selectList("book.list",category_no);
 	}
 
@@ -46,8 +44,6 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectList("book.newbook");
 	}
 
-
-
 	@Override
 	public List<BookDTO> ranklist() {
 		return sqlSession.selectList("book.ranklist");
@@ -61,6 +57,11 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public int detail_rank(int ebook_no) {
 		return sqlSession.selectOne("book.bookrank",ebook_no);
+	}
+
+	@Override
+	public List<BookDTO> writerbook(int writer_no) {
+		return sqlSession.selectList("book.writerbook", writer_no);
 	}
 
 

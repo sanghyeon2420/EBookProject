@@ -30,7 +30,9 @@ public class BookController {
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i));
 			}
-			
+			String category=list.get(0).getB_category();
+			System.out.println("카테고리: =====>>>>>"+category);
+			mav.addObject("category", category);
 			mav.addObject("list",list);
 			
 			return mav;

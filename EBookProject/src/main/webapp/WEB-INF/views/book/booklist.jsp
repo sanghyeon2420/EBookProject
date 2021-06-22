@@ -8,6 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="resources/css/servPage.css" rel="stylesheet">
 <title>Insert title here</title>
+<style type="text/css">
+a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+</style>
 <script>
 </script>
 <style>
