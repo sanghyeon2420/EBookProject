@@ -49,7 +49,7 @@ body{font-family: 'Jua', sans-serif;}
 			<div class="text">
 				<br><a href="/EBookProject/book/list?idx=${list.category_no }" style=color:green;>${list.b_category}</a>
 				<a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h2> <b>${list.b_name}</b> </h2>
-				<h4>${list.w_name}</h4></a>
+				<h5>${list.w_name}</h5></a>
 			</div>
 		</div><hr>
 	</c:forEach>

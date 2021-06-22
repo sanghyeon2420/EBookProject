@@ -102,10 +102,12 @@ function disableclick(event){
      	<div class="writerid">
      		<p><strong>${dto.w_name }</strong>님</p>
      		<p><strong>${dto.w_name }</strong>님의 주요 연재 </p>
-     		<p><strong>${dto.w_name }</strong>님의 주요 연재 소설</p>
      	</div>
      	</div>
      	<br>
+     	<div class="booklist">
+     		<p><strong>${dto.w_name }</strong>님의 주요 연재 소설</p>
+     	</div>
      	<div class="writerbooklist">
      		<c:forEach var="list" items="${list }">
 	 	<div class="writerbookcover">
