@@ -8,7 +8,7 @@ public class NoticDTO {
 	private String notic_title;					//제목
 	private Date notic_regdate;					// 작성일 java.util.Date
 	private int notic_viewCnt;					//조회수
-	private String show;						// 화면 표시 여부
+
 	
 	
 	public int getNotic_no() {
@@ -50,18 +50,10 @@ public class NoticDTO {
 		this.notic_viewCnt = notic_viewCnt;
 	}
 
-	public String getshow() {
-		return show;
-	}
-
-	public void setshow(String show) {
-		this.show = show;
-	}
-
 	@Override
 	public String toString() {
 		return "NoticDTO [notic_no=" + notic_no + ", notic_content=" + notic_content + ", notic_title=" + notic_title
-				+ ", notic_regdate=" + notic_regdate + ", notic_viewCnt=" + notic_viewCnt +",show=" + show + "]" ;
+				+ ", notic_regdate=" + notic_regdate + ", notic_viewCnt=" + notic_viewCnt + "]" ;
 	}
 	
 	

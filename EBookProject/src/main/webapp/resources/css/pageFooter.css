@@ -2,7 +2,7 @@
 
 /*  */
 #pageFooter {
-	background-color: #112d4e;
+	background-color: #00AF5B;
 	padding: 0;
 	width: 100%;
 	height: 100%;
@@ -10,7 +10,7 @@
 
 .careful {
 	text-align: center;
-	color: red;
+	color: #234C63;
 	margin-bottom: 10px;
 }
 

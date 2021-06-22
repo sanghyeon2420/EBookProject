@@ -1,6 +1,7 @@
 package com.example.EBookProject.model.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -26,54 +27,44 @@ public class BookServiceImpl implements BookService {
 		return dao.bookcategory();
 	}
 
-
 	@Override
 	public List<BookDTO> booklist(int category_no) {
 		return dao.booklist(category_no);
 	}
-
 
 	@Override
 	public BookDTO Bookdetail(int ebook_no) {
 		return dao.Bookdetail(ebook_no);
 	}
 
-
 	@Override
 	public List<ContentDTO> contentdetail(int ebook_no) {
 		return dao.contentdetail(ebook_no);
 	}
-
 
 	@Override
 	public List<BookDTO> newbook() {
 		return dao.newbook();
 	}
 
-
-
-
-
 	@Override
 	public List<BookDTO> ranklist() {
 		
-		List<BookDTO> list=dao.ranklist();
-		BookDTO dto=new BookDTO();
-		
-		for (int i = 0; i < list.size(); i++) {
-			dto = list.get(i);
+		List<BookDTO> list=dao.ranklist();				
+		for (int i = 0; i < 5; i++) {
 			System.err.println(list.get(i));
-	
-		}
-		System.out.println(dto.getBook_get());
-		
-		return null;
+		}		
+		return list;
 	}
 
+	@Override
+	public List<BookDTO> romancebook() {
+		return dao.romancebook();
+	}
 
-
-
-
-
-
+	@Override
+	public int detail_rank(int ebook_no) {
+		
+		return dao.detail_rank(ebook_no);
+	}
 }

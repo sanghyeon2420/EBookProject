@@ -7,7 +7,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>pageWriter.jsp</title>
 <script>
-
+//로그아웃
+$(document).ready(function(){
+	$("#logout").click(function(){
+		location.href="${pageContext.request.contextPath}/member/logout";
+	});
+	
+	$("#change").click(function(){
+		var userpw=prompt("비밀번호를 입력해주세요","");
+		console.log(userpw);
+	});
+});
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
 status="마우스 우클릭 하지 말아주세요!!"; 

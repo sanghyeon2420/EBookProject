@@ -95,14 +95,15 @@
 	height: 14vh;
 }
 #section3 .bookrank1 hr {
-	border: solid 0.3pa gray;
+	border: solid 0.3px gray;
 }
 
 
 /* section4 */
 #section4 {
 	width: 60vw;
-	height: 45vh;
+	height: 36vh;
+	margin: 60px 0 0 0;
 }
 #section4 .todaybook {
 	width: 60vw;
@@ -116,7 +117,7 @@
 }
 #section4 .books {
 	width: 60vw;
-	height: 35vh;
+	height: 27vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -163,7 +164,7 @@
 }
 #section4 .cover {
 	width: 100%;
-	height: 210px;
+	height: 22vh;
 	margin: 0;
 	justify-content: center;
 }
@@ -195,7 +196,8 @@
 /* section5 */
 #section5 {
 	width: 100%;
-	height: 400px;
+	height: 43vh;
+	margin: 60px 0 0 0;
 }
 #section5 .todaybook {
 	width: 60vw;
@@ -209,7 +211,7 @@
 }
 #section5 .books {
 	width: 60vw;
-	height: 35vh;
+	height: 43vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -256,7 +258,7 @@
 }
 #section5 .cover {
 	width: 100%;
-	height: 210px;
+	height: 22vh;
 	margin: 0;
 	justify-content: center;
 }
@@ -289,7 +291,7 @@
 #adverbanner {
 	width: 60vw;
 	height: 30vh;
-    margin: 20px 10px; 
+    margin: 15px 0 30px 0; 
 }
 /* #adverbanner .adver {
 	height: 250px;
@@ -307,7 +309,8 @@
 /* section6 */
 #section6 {
 	width: 100%;
-	height: 400px;
+	height: 43vh;
+	margin: 60px 0;
 }
 #section6 .todaybook {
 	width: 60vw;
@@ -321,7 +324,7 @@
 }
 #section6 .books {
 	width: 60vw;
-	height: 35vh;
+	height: 43vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -368,7 +371,7 @@
 }
 #section6 .cover {
 	width: 100%;
-	height: 210px;
+	height: 22vh;
 	margin: 0;
 	justify-content: center;
 }

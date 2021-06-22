@@ -104,24 +104,23 @@ img {
 					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
 				</c:if>
 			</div>
-			<br/><br/><br/>
+			<br/>
 			<table cellpadding="0" cellspacing="0" style="text-align:center;" width="100%">
-				<tr height="50">
-					<th class="list1" width="5%">번호</th>
-					<th class="list1" width="55%">제목</th>
+				<tr height="50" style="background-color: #5FD184;">
+					<th class="list1" width="10%">번호</th>
+					<th class="list1" width="50%">제목</th>
 					<th class="list1" width="15%">작성일</th>
-					<th class="list1" width="5%">조회수</th>
+					<th class="list1" width="10%">조회수</th>
 				</tr>
 				<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
 						<input type="hidden" id="notic_no" name="notic_no" value="${row.notic_no}"/>
-				<!--	<input type="hidden" id="show" value="${row.show}"/>	 -->
 					<c:choose>
 					<%-- 검색결과가 있을 때 --%>
 					<c:when test="${not empty row}">
 					<tr>
 						<td class="list2">${row.notic_no}</td>
-						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}&show=Y">${row.notic_title}</a>
+						<td  class="list2" style="text-align:left;"><a href="view?notic_no=${row.notic_no}">${row.notic_title}</a>
 					<fmt:formatDate value="${row.notic_regdate}" pattern="yyyyMMdd" var="regDate"/>
 						<td class="list2">${row.notic_regdate}</td>
 						<td class="list2">${row.notic_viewCnt}</td>
@@ -168,7 +167,7 @@ img {
 					</c:choose>
 				</c:forEach>
 			<!-- 검색 조건 뷰 -->
-			<form action="notic" class="noticsearch" align="left">
+			<form action="notic" class="noticsearch" align="center">
 					<select name="searchOption" id="searchOption">
 						<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+이름+내용</option>
 						<option value="NOTIC_TITLE" <c:out value="${map.searchOption=='NOTIC_TITLE'?'selected':''}"/> >제목</option>

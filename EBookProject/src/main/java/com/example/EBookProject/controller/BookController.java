@@ -45,6 +45,11 @@ public class BookController {
 		//  EBookProject/WEB-INF/views/boardlist.jsp
 		mav.setViewName("book/pageBone");
 		
+		// 랭크 순위 불러오기	
+		int rank=service.detail_rank(idx);
+		System.out.println("랭크순위"+rank);
+		mav.addObject("rank",rank);	
+			
 		//content 불러오기
 		List<ContentDTO> list = service.contentdetail(ebook_no);
 		mav.addObject("list",list);

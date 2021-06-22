@@ -30,11 +30,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 랭킹 리스트 출력 -->
 	<select id="ranklist" resultType="com.example.EBookProject.model.dto.BookDTO">
-		select * from bookinfo
+		select * from bookinfo order by book_get desc
 	</select>
 	
-	<!-- 조회수 최대값 -->
-	<select id="maxrank" resultType="int">
-	select max(book_get) from bookinfo
+	<!-- 로맨스 책 불러오기 -->
+	<select id="romancebook" resultType="com.example.EBookProject.model.dto.BookDTO">
+		select * from bookinfo where category_no=3
+	</select>
+	
+	<!-- 도서별 랭크순위 불러오기 -->
+	<select id="bookrank" resultType="int">
+		 select rank from (SELECT RANK() OVER(ORDER BY a.book_get desc) rank, a.*
+  		FROM bookinfo a
+ 		ORDER BY a.book_get desc)
+ 		where ebook_no=#{ebook_no}
 	</select>
 </mapper>
