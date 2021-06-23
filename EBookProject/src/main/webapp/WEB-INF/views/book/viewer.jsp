@@ -188,6 +188,7 @@
         }
 //F12 버튼 방지
         $(document).ready(function(){
+        	textview();
         $(document).bind('keydown',function(e){
             if ( e.keyCode == 123 ) { //F12
                 e.preventDefault();
@@ -280,6 +281,26 @@
         }
         function tcbeige() {
             document.getElementById("bookview").style.color = "beige";
+        }
+        
+        
+        function textview(){
+        	var xhr = new XMLHttpRequest();
+
+        	xhr.onreadystatechange = function() {
+        		console.log("readyState : "+xhr.readyState);
+        		console.log("status : "+xhr.status);
+        		if (xhr.readyState == 4 && xhr.status == 200) {
+        			document.getElementById("bookview").innerHTML = xhr.responseText;
+        		}
+        	}
+        	
+        	
+        	xhr.open("GET","resources/text/${b_category}/${b_name}/${content}.txt", "true");
+        	
+        	xhr.setRequestHeader("Content-Type", "text/plain;charset=euc-kr");
+        	
+        	xhr.send();
         }
     </script>
 </head>
@@ -387,14 +408,6 @@
         </div>
         <div class="viewline">
             <div class="bookview" id="bookview">
-				${content }
-                1바보<br>바보<br>바보<br>바보<br>바보<br>
-                바보<br>바보<br>바보<br>바보<br>바보<br>
-                바보<br>바보<br>바보<br>바보<br>바보<br>
-                바보<br>바보<br>바보<br>바보<br>바보<br>
-                바보<br>바보<br>바보<br>바보<br>바보<br>
-                바보<br>바보<br>바보<br>바보<br>바보<br>
-                바보<br>바보<br>바보<br>바보<br>너바보<br>
 
             </div>
         </div>
