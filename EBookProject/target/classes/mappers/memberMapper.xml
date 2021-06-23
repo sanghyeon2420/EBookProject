@@ -28,7 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from member where userid=#{userid} and userpw=#{userpw}
 	</select>
 	
-	<select id="memberlist" resultType="int">
+	
+	<!-- 회원목록 출력 -->
+	<select id="memberlist" resultType="com.example.EBookProject.model.dto.MemberDTO">
 		select * from member order by user_no
 	</select>
 	

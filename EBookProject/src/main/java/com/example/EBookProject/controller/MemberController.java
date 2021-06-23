@@ -154,8 +154,5 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping("admin")
-	public String admin() {
-		return "member/admin";
-	}
+
 }
