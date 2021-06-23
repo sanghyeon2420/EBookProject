@@ -36,6 +36,16 @@ function disableclick(event){
         return false; 
     } 
 }
+
+function deleteMember(var i){
+	$.ajax({
+		type:"get",
+		url:"<%=request.getContextPath() %>/admin/deleteMember?user_no=i",
+		success:function(data){
+			console.log(data);
+		};
+	});
+}
 //F12 버튼 방지 
 /* $(document).ready(function(){ 
 $(document).bind('keydown',function(e){ 
@@ -115,7 +125,7 @@ $(document).bind('keydown',function(e){
 	            <p>
 	              ${memberlist.nickname }님을 탈회 처리 하시겠습니까?
 	              <p><br>
-	       		 <a href="#close"><button>탈회</button></a>
+	       		 <a href="javascript:deleteMember('${memberlist.user_no }')" id=""><button>탈회</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>

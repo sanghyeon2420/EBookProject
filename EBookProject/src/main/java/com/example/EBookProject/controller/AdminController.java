@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.EBookProject.model.dto.BoardDTO;
 import com.example.EBookProject.model.dto.BookDTO;
@@ -31,9 +32,25 @@ public class AdminController {
 			List<BoardDTO> boardlist=service.booadlist();
 			request.setAttribute("board_list", boardlist);
 			
+			
 			request.setAttribute("listtype", listtype);
+		
 		return "member/admin";
 	}
+
+	@ResponseBody
+	@RequestMapping("deleteMember")
+	public List<MemberDTO> deleteMember(int user_no){
+		MemberDTO dto=new MemberDTO();
+		dto.setUser_no(user_no);
+		
+		service.delectMember(dto);
+		List<MemberDTO> list=service.memberlist();
+		return list;
+	}
+	
+	
+
 	
 
 }
