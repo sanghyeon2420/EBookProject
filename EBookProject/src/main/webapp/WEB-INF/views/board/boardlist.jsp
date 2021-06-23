@@ -37,6 +37,11 @@ $(function(){
 		location.href="<%=path%>/board/write";
 	});
 });
+
+function list(page){
+	location.href="<%=path%>/board/list?curPage="+page+"&search_option=${map.search_option}"
+			+"&keyword=${map.keyword}";
+}
 </script>
   
   <table border="1" width=600px>
@@ -56,16 +61,74 @@ $(function(){
 	<!-- 조회수 --><td>${row.board_get}</td>
 </tr>
 
-<!-- 페이지 네비게이션 -->
 </c:forEach>
+<!-- 페이지 네비게이션 -->
 	<tr>
 		<td colspan="5" align="center">
-			<c:forEach var="num" begin="1" end="${map.pager.totPage }">
-				<a href="javascript:list('${num}')">${num}</a>
+			<c:if test="${map.pager.curBlock > 1}">
+			<a href="javascript:list('1')">[처음]</a>
+			</c:if>
+			<c:if test="${map.pager.curBlock > 1}">
+			<a href="javascript:list('${map.pager.prevPage }')">[이전]</a>
+			</c:if>
+			<c:forEach var="num" begin="${map.pager.blockBegin }" end="${map.pager.blockEnd }">
+				<c:choose>
+					<c:when test="${num == map.pager.curPage}">
+						<span style="color:red;">${num}</span>&nbsp;
+					</c:when>
+					<c:otherwise>
+					<a href="javascript:list('${num}')">${num}</a>&nbsp;
+					</c:otherwise>
+				</c:choose>
 			</c:forEach>
+			<c:if test="${map.pager.curBlock <= map.pager.totBlock}">
+			<a href="javascript:list('${map.pager.nextPage}')">[다음]</a>
+			</c:if>
+			<c:if test="${map.pager.curBlock <= map.pager.totBlock}">
+			<a href="javascript:list('${map.pager.totPage}')">[끝]</a>
+			</c:if>
 		</td>
 	</tr>
   </table>
+	
+	
+	
+<!-- 검색 -->
+<form method="post" name="form1" action="<%=path%>/board/list">
+<select name="search_option">
+<c:choose>
+	<c:when test="${map.search_option == 'all' }">
+		<option value="all" selected>전체</option>
+		<option value="nickname">작성자</option>
+		<option value="b_title">제목</option>
+		<option value="b_content">내용</option>
+	</c:when>
+		<c:when test="${map.search_option == 'nickname' }">
+		<option value="all">전체</option>
+		<option value="nickname" selected>작성자</option>
+		<option value="b_title">제목</option>
+		<option value="b_content">내용</option>
+	</c:when>
+		<c:when test="${map.search_option == 'b_title' }">
+		<option value="all">전체</option>
+		<option value="nickname">작성자</option>
+		<option value="b_title" selected>제목</option>
+		<option value="b_content">내용</option>
+	</c:when>
+		<c:when test="${map.search_option == 'b_content' }">
+		<option value="all">전체</option>
+		<option value="nickname">작성자</option>
+		<option value="b_title">제목</option>
+		<option value="b_content" selected>내용</option>
+	</c:when>
+</c:choose>
+
+</select>
+<input name="keyword" value="${map.keyword}">
+<input type="submit" value="검색">
+</form>	
+
+
 
   </article>
   
