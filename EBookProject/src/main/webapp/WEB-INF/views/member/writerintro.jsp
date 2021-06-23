@@ -49,6 +49,16 @@ function disableclick(event){
         return false; 
     } 
 }
+//F12 버튼 방지 
+/* $(document).ready(function(){ 
+$(document).bind('keydown',function(e){ 
+    if ( e.keyCode == 123 ) { //F12
+        e.preventDefault(); 
+        e.returnValue = false;
+        alert("F12버튼 누르지 말아주세요!!")
+    }
+});
+}); */
 </script>
 <style>
 #mainArticle {

@@ -17,6 +17,7 @@ public interface BookDAO {
 	public int detail_rank(int ebook_no); // 도서별 랭크순위 출력
 	public List<BookDTO> writerbook(int writer_no); //작가번호로 책 불러오기
 	public void bookhits(int ebook_no); //책 번호로 조회수 증가
+	public List<BookDTO> searchbook(String keyword); //검색창에서 검색 불러오기
 	public int contentCount(int ebook_no); // 책 번호로 컨텐츠 최대값 출력
 	public String contentName(int ebook_no,int contentlist); // 책 번호와 컨텐트리스트번호로 컨텐트 제목 출력
 }

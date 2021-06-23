@@ -88,17 +88,6 @@ public class BookController {
 		return mav;
 	}
 	
-
-	/*@ResponseBody
-	@RequestMapping("hits")
-	public String hits(String writer_no) {
-		int writer_num = Integer.parseInt(writer_no);
-		System.out.println("writer controller writer_no :====>>>"+writer_no);
-		writerservice.updateHits(writer_num); // 추천수 증가
-		WriterDTO dto=writerservice.writerbring(writer_num);
-		return String.valueOf(dto.getW_hits());
-	}*/
-	
 	@ResponseBody
 	@RequestMapping("hits")
 	public String hits(String ebook_no) {

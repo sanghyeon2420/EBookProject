@@ -75,6 +75,10 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
+	public List<BookDTO> searchbook(String keyword) {
+		return dao.searchbook(keyword);
+	}
+	
 	public int contentCount(int ebook_no) {
 		return dao.contentCount(ebook_no);
 	}
