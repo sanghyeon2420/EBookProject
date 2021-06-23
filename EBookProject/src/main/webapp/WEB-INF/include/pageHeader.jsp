@@ -5,23 +5,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
-
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/pageHeader.css">
 
-<nav class="main_header">
+<nav class="main_header" style="width: 100%">
 	<!-- Header logo -->
-	<div class="Ebook_logo">
+	<div class="Ebook_logo" style="width: 15%">
 		<a href="<%=path%>/"> <img src="resources/images/logo_image.jpg"
 			width="100px" height="100px">
 		</a>
 	</div>
 
-	<div class="center">
+	<div class="center" style="width: 60%">
 
 		<!-- Search -->
 	<div class="wrap">
@@ -55,7 +53,7 @@
 	</div>
 
 	<!-- Login&Join icon -->
-	<div class="Ebook_icons">
+	<div class="Ebook_icons" style="width: 15%">
 			
 			<c:if test="${member.isAdmin == 2 }">
 				<a href="member/admin">관리자페이지로 전환</a>

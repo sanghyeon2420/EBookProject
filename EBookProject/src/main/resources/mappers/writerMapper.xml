@@ -19,6 +19,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 작가 조회 -->
 	<select id="writer_enter" resultType="com.example.EBookProject.model.dto.WriterDTO">
-	select * from writer where writer_no in (select distinct writer_no from bookinfo)
+	select * from writer where writer_no in (select distinct writer_no from bookinfo) order by w_hits desc
 	</select>
+	
+	<!-- 작가 상세 조회 -->
+	<select id="writerbring" resultType="com.example.EBookProject.model.dto.WriterDTO">
+		select * from writer where writer_no=#{writer_no}
+	</select>
+	
+	<update id="updateHits">
+	update writer set w_hits= w_hits + 1 where writer_no=#{writer_no}
+	</update>
 </mapper>

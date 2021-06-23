@@ -28,4 +28,15 @@ public class WriterDAOImpl implements WriterDAO {
 		return sqlSession.selectList("writer.writer_enter");
 
 	}
+
+	@Override
+	public WriterDTO writerbring(int writer_no) {
+		return sqlSession.selectOne("writer.writerbring",writer_no);
+	}
+
+	@Override
+	public void updateHits(int writer_no) {
+		sqlSession.update("writer.updateHits",writer_no);
+		
+	}
 }

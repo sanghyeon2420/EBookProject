@@ -11,10 +11,11 @@
    crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/pageFooter.css">
 <title>pageFooter</title>
-<style>
-
+<style type="text/css">
+a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
 </style>
-
 </head>
 <body>
 	<section class="careful">
