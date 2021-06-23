@@ -1,6 +1,4 @@
-
-
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,25 +33,32 @@ $(function(){
 });
 </script>
   
-  <button type="button" id="btnWrite">글쓰기</button>
   <table border="1" width=600px>
   <tr>
   	<th>번호</th>
   	<th>제목</th>
-  	<th>이름</th>
-  	<th>조회수</th>
+  	<th>작성자</th>
   	<th>날짜</th>
+  	<th>조회수</th>
   </tr>
-  <c:forEach var="row" items="${map.blist}">
+  <c:forEach var="row" items="${map.list}">
 <tr>
 	<td>${row.board_no}</td>
-	<td>${row.b_title}</td>
-	<td>${row.b_write_date}</td>
-	<td><fmt:formatDate value="${row.b_write_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+	<td><a href="#" >${row.b_title}</a></td>
+	<td>${row.nickname}</td>
+	<td><fmt:formatDate value="${row.b_write_date}" pattern="MM/dd" /></td>
 	<!-- 조회수 --><td>${row.board_get}</td>
 </tr>
+
+<!-- 페이지 네비게이션 -->
 </c:forEach>
-  
+	<tr>
+		<td colspan="5" align="center">
+			<c:forEach var="num" begin="1" end="${map.pager.totPage }">
+				<a href="javascript:list('${num}')">${num}</a>
+			</c:forEach>
+		</td>
+	</tr>
   </table>
 
   </article>

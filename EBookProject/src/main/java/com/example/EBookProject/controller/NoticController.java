@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.EBookProject.Pager;
+import com.example.EBookProject.common.Pager;
 import com.example.EBookProject.model.dto.NoticDTO;
-import com.example.EBookProject.model.service.impl.MemberServiceImpl;
 import com.example.EBookProject.model.service.impl.NoticServiceImpl;
 
 @Controller

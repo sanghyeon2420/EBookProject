@@ -40,10 +40,17 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardDTO> listAll(int start, int end, String search_option, String keyword) throws Exception {
 		return boardDao.listAll(start, end, search_option, keyword);
 	}
-
+	
+	@Override
+	public int countArticle(String search_option, String keyword) {
+		return boardDao.countArticle(search_option, keyword);
+	}
+	
 	@Override
 	public void board_View_cnt(int board_no) throws Exception {
 
 	}
+
+
 
 }

@@ -11,6 +11,8 @@ public interface BoardService {
 	public void deleteBoard(int board_no) throws Exception;	//글삭제
 	public BoardDTO read(int board_no);
 	
+	public int countArticle(String search_option, String keyword); // 레코드 갯수 계산
+	
 	//(start, end 페이지나누기 , 검색기능)
 	public List<BoardDTO> listAll(int start, int end, String search_option, String keyword) throws Exception;
 	
