@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,6 +21,8 @@ public class BookController {
 	
 	@Inject
 	BookServiceImpl service;
+	
+	
 	
 	@RequestMapping("list")
 	public ModelAndView BookList(ModelAndView mav,int idx) {
@@ -93,6 +96,22 @@ public class BookController {
 		service.bookhits(ebook_num); //추천수 증가
 		BookDTO dto=service.Bookdetail(ebook_num);
 		return String.valueOf(dto.getBook_hits());
+	}
+	
+	@RequestMapping("contentview")
+	public String contentview(Model model,int book,int content) {
+		System.out.println("book = ebook_no =>"+book);
+		System.out.println("content = contentlist =>"+content);
+		
+		int contentCount=service.contentCount(book);
+		BookDTO dto =service.Bookdetail(book);
+		
+		model.addAttribute("book",book);
+		model.addAttribute("content",content);
+		model.addAttribute("contentCount", contentCount);
+		model.addAttribute("b_name",dto.getB_name());
+		model.addAttribute("content_name", service.contentName(book, content));
+		return "book/viewer"; // 이동할 페이지 지정
 	}
 
 }

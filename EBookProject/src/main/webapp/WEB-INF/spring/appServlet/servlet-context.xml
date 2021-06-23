@@ -20,6 +20,8 @@
 	<resources mapping="/page/resources/**" location="/resources/" />
 	<resources mapping="/writer/resources/**" location="/resources/" />
 	<resources mapping="/web/resources/**" location="/resources/" />
+	<resources mapping="/admin/resources/**" location="/resources/" />
+
 	
 	<!-- 인터셉터 선언 -->
 	<beans:bean id="loginInterceptor" class="com.example.EBookProject.interceptor.LoginInterceptor" />

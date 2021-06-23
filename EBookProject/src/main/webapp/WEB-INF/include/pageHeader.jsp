@@ -56,7 +56,7 @@
 	<div class="Ebook_icons" style="width: 15%">
 			
 			<c:if test="${member.isAdmin == 2 }">
-				<a href="member/admin">관리자페이지로 전환</a>
+				<a href="<%=path%>/admin/list?listtype=member"">관리자페이지로 전환</a>
 			</c:if>
 			
 

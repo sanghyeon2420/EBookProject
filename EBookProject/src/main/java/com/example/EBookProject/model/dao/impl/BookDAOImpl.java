@@ -1,6 +1,8 @@
 package com.example.EBookProject.model.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -69,8 +71,25 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	@Override
+
 	public List<BookDTO> searchbook(String keyword) {
 		return sqlSession.selectList("book.searchbook", keyword);
 		
 	}
+
+	public int contentCount(int ebook_no) {
+		return sqlSession.selectOne("book.contentCount",ebook_no);
+	}
+
+	@Override
+	public String contentName(int ebook_no, int contentlist) {
+		Map<String, Object> map=new HashMap<String, Object>();
+		map.put("ebook_no", ebook_no);
+		map.put("contentlist", contentlist);
+		
+		
+		
+		return sqlSession.selectOne("book.contentName", map);
+	}
+
 }
