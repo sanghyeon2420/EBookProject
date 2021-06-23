@@ -32,7 +32,7 @@ public class WriterController {
 		request.setAttribute("list", list);
 		request.setAttribute("dto", dto);
 		
-		// localhost:8080/EBookProject/writer/resoureces/image/image.jpg
+		// localhost:8080/EBookProject/writer/resources/image/image.jpg
 		return "member/writerintro";		
 	}
 	

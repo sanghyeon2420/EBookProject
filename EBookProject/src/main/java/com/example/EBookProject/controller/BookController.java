@@ -12,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.ContentDTO;
-import com.example.EBookProject.model.dto.WriterDTO;
-import com.example.EBookProject.model.service.BookService;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
 
 @Controller
@@ -86,16 +84,6 @@ public class BookController {
 		}*/
 		return mav;
 	}
-	
-	/*@ResponseBody
-	@RequestMapping("hits")
-	public String hits(String writer_no) {
-		int writer_num = Integer.parseInt(writer_no);
-		System.out.println("writer controller writer_no :====>>>"+writer_no);
-		writerservice.updateHits(writer_num); // 추천수 증가
-		WriterDTO dto=writerservice.writerbring(writer_num);
-		return String.valueOf(dto.getW_hits());
-	}*/
 	
 	@ResponseBody
 	@RequestMapping("hits")

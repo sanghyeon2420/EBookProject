@@ -17,4 +17,5 @@ public interface BookService {
 	public int detail_rank(int ebook_no); // 도서별 랭크순위 출력
 	public List<BookDTO> writerbook(int writer_no); //작가번호로 책 불러오기
 	public void bookhits(int ebook_no); //책 조회수 증가
+	public List<BookDTO> searchbook(String keyword);  //검색창에서 검색 불러오기
 }

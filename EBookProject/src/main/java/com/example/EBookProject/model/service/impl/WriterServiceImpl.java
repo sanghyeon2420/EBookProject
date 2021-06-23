@@ -37,4 +37,9 @@ public class WriterServiceImpl implements WriterService {
 		
 	}
 
+	@Override
+	public List<WriterDTO> searchwriter(String keyword) {
+		return dao.searchwriter(keyword);
+	}
+
 }

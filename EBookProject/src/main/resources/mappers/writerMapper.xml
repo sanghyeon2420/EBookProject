@@ -31,4 +31,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateHits">
 	update writer set w_hits= w_hits + 1 where writer_no=#{writer_no}
 	</update>
+	
+	<!-- 검색  -->
+	<select id="searchwriter" resultType="com.example.EBookProject.model.dto.WriterDTO">
+		select * from writer where w_name like '%${keyword}%'
+	</select>
 </mapper>

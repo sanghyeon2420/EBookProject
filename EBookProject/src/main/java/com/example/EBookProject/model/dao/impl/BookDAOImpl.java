@@ -68,7 +68,9 @@ public class BookDAOImpl implements BookDAO {
 		sqlSession.update("book.bookhits", ebook_no);
 	}
 
-
-
-	
+	@Override
+	public List<BookDTO> searchbook(String keyword) {
+		return sqlSession.selectList("book.searchbook", keyword);
+		
+	}
 }

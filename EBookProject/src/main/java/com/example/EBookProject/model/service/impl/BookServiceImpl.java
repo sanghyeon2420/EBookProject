@@ -73,4 +73,10 @@ public class BookServiceImpl implements BookService {
 	public void bookhits(int ebook_no) {
 		dao.bookhits(ebook_no);
 	}
+
+	@Override
+	public List<BookDTO> searchbook(String keyword) {
+		return dao.searchbook(keyword);
+	}
+	
 }
