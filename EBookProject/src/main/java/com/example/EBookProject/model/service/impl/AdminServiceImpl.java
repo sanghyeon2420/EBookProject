@@ -44,6 +44,7 @@ public class AdminServiceImpl implements AdminService {
 	// 회원 탈퇴 
 	public int delectMember(MemberDTO dto) {
 		return dao.deleteMember(dto);
+		
 	}
 	
 }

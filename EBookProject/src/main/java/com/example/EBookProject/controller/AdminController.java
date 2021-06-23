@@ -37,7 +37,6 @@ public class AdminController {
 		
 		return "member/admin";
 	}
-
 	@ResponseBody
 	@RequestMapping("deleteMember")
 	public List<MemberDTO> deleteMember(int user_no){

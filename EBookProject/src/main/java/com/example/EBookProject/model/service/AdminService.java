@@ -11,5 +11,4 @@ public interface AdminService {
 	public List<BookDTO> booklist();
 	public List<BoardDTO> booadlist();
 	int delectMember(MemberDTO dto);
-	
 }

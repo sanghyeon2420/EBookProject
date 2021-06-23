@@ -118,6 +118,7 @@ $(document).bind('keydown',function(e){
 	<td>${memberlist.nickname }</td>
 	<td>${memberlist.cash }</td>
 	<td>
+	
 		  <a href="#open${memberlist.user_no }"><button>삭제</button></a>
 	         <div class="white_content" id="open${memberlist.user_no }">
 	            <div>

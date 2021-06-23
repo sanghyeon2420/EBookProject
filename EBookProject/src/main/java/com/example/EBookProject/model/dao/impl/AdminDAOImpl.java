@@ -41,7 +41,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public int deleteMember(MemberDTO dto) {
 		return sqlSession.delete("member.deletemember", dto);
-		
+	
 	}
 
 
