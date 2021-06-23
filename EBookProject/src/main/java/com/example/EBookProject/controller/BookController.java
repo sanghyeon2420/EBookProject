@@ -87,13 +87,7 @@ public class BookController {
 		return mav;
 	}
 	
-<<<<<<< HEAD
-	
-	@RequestMapping("contentview")
-	public String viewaaaaaaaaaaaaaaaaaaaaa(int contents_no) {
-		System.out.println(contents_no);
-		return "book/sdfasddsf";
-=======
+
 	/*@ResponseBody
 	@RequestMapping("hits")
 	public String hits(String writer_no) {
@@ -112,7 +106,6 @@ public class BookController {
 		service.bookhits(ebook_num); //추천수 증가
 		BookDTO dto=service.Bookdetail(ebook_num);
 		return String.valueOf(dto.getBook_hits());
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	}
 
 }
