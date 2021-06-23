@@ -48,6 +48,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 작가번호로 책 조회 -->
 	<select id="writerbook" resultType="com.example.EBookProject.model.dto.BookDTO">
-		select * from bookinfo where writer_no=${writer_no}
+		select * from bookinfo where writer_no=#{writer_no}
 	</select>
+	
+	<!-- 책 조회수 증가 -->
+	<update id="bookhits">
+		update bookinfo set book_hits= book_hits + 1 where ebook_no=#{ebook_no}
+	</update>
 </mapper>

@@ -1,8 +1,6 @@
 package com.example.EBookProject.model.dao.impl;
 
 import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.inject.Inject;
 

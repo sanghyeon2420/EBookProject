@@ -3,15 +3,17 @@ package com.example.EBookProject.controller;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.ContentDTO;
+import com.example.EBookProject.model.dto.WriterDTO;
+import com.example.EBookProject.model.service.BookService;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
 
 @Controller
@@ -61,6 +63,8 @@ public class BookController {
 			System.out.println(list.get(i));
 		}
 		
+			
+		
 		// 조회수 증가 처리
 		
 /*		// 쿠키 생성
@@ -80,11 +84,27 @@ public class BookController {
 				}
 			}
 		}*/
-		
-		
-		
 		return mav;
 	}
 	
+	/*@ResponseBody
+	@RequestMapping("hits")
+	public String hits(String writer_no) {
+		int writer_num = Integer.parseInt(writer_no);
+		System.out.println("writer controller writer_no :====>>>"+writer_no);
+		writerservice.updateHits(writer_num); // 추천수 증가
+		WriterDTO dto=writerservice.writerbring(writer_num);
+		return String.valueOf(dto.getW_hits());
+	}*/
+	
+	@ResponseBody
+	@RequestMapping("hits")
+	public String hits(String ebook_no) {
+		int ebook_num = Integer.parseInt(ebook_no);
+		System.out.println("book controller ebook_no :====>>>"+ebook_no);
+		service.bookhits(ebook_num); //추천수 증가
+		BookDTO dto=service.Bookdetail(ebook_num);
+		return String.valueOf(dto.getBook_hits());
+	}
 
 }
