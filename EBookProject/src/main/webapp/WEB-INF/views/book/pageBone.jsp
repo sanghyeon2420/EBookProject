@@ -80,7 +80,7 @@ $(document).ready(function(){
 				<div class="detail_list">
 					<ol>
 						<c:forEach var="list" items="${list}">
-							<li><a href="<%=request.getContextPath()%>/book/contentview/?contents_no=${list.contents_no}">
+							<li><a href="<%=request.getContextPath()%>/book/contentview/?book=${bookdto.ebook_no}&content=${list.contentlist}">
 								<p class="text">
 									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>

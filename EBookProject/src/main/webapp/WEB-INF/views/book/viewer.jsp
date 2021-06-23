@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -288,12 +289,12 @@
         <div class="headline" id="headline">
             <div class="fixline">
                 <div class="homeline">
-                    <i class="fas fa-home fa-2x" onclick="location.href='http://www.naver.com'"
+                    <i class="fas fa-home fa-2x" onclick="location.href='<%=request.getContextPath() %>/'"
                         style="cursor:pointer;"></i>
                 </div>
                 <div class="titlename">
-                    <h2>굿 엔딩에 올인</h2>
-                    <h4>1. 티바트대륙으로 모험을 떠나자</h4>
+                    <h2>${b_name }</h2>
+                    <h4>${content}. ${content_name}</h4>
                 </div>
                 <div class="setting">
                     <label class="menu" for="menu"><i class="fas fa-cog fa-2x" style="cursor:pointer"></i></label>
@@ -386,7 +387,7 @@
         </div>
         <div class="viewline">
             <div class="bookview" id="bookview">
-
+				${content }
                 1바보<br>바보<br>바보<br>바보<br>바보<br>
                 바보<br>바보<br>바보<br>바보<br>바보<br>
                 바보<br>바보<br>바보<br>바보<br>바보<br>
@@ -403,14 +404,20 @@
         </div>
         <div class="footline" id="footline">
             <div class="fixline">
-                <div class="lefticon">
-                    <i class="fas fa-arrow-circle-left fa-2x"></i><span> 이전화 </span>
-                </div>
+				<c:if test="${content > 1 }">
+				<div class="lefticon">
+                    <a href="<%=request.getContextPath()%>/book/contentview/?book=${book}&content=${content-1}"><i class="fas fa-arrow-circle-left fa-2x"></i><span> 이전화 </span></a>
+                </div>				
+				
+				</c:if>
+
                 <div class="foottitle">
                 </div>
+				<c:if test="${contentCount > content}">				
                 <div class="righticon">
-                    <span> 다음화 </span><i class="fas fa-arrow-circle-right fa-2x"></i>
+                    <a href="<%=request.getContextPath()%>/book/contentview/?book=${book}&content=${content+1}"><span> 다음화 </span><i class="fas fa-arrow-circle-right fa-2x"></i></a>
                 </div>
+				</c:if>
             </div>
         </div>
     </div>

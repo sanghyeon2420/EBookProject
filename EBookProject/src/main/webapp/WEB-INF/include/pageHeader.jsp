@@ -6,9 +6,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
+<script src="resources/js/search.js"></script>
 <link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-	crossorigin="anonymous">
+	  href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	  crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/pageHeader.css">
 
 <nav class="main_header" style="width: 100%">
@@ -18,14 +19,13 @@
 			width="100px" height="100px">
 		</a>
 	</div>
-
 	<div class="center" style="width: 60%">
 
 		<!-- Search -->
 	<div class="wrap">
 	   <div class="search">
-	      <input type="text" class="searchTerm" placeholder="search">
-	      <button type="submit" class="searchButton">
+	      <input type="text" class="searchTerm" name="keyword" id="keyword" placeholder="search" >
+	      <button type="button" class="searchButton" id="searchButton">
 	        <i class="fa fa-search"></i>
 	     </button>
 	   </div>
