@@ -29,6 +29,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	
+	<!-- 회원목록 출력 -->
+	<select id="memberlist" resultType="com.example.EBookProject.model.dto.MemberDTO">
+		select * from member order by user_no
+	</select>
+	
+	
 	<insert id="signup" parameterType="com.example.EBookProject.model.dto.MemberDTO">
 	insert into member(user_no,userid,userpw,username, nickname,email,birthdate,login_class) 
 	values (seq_userno.nextval,#{userid},#{userpw},#{username},#{nickname},#{email},#{birthdate},1)

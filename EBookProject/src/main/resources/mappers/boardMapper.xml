@@ -5,11 +5,52 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
 <mapper namespace="board">
 
-<select id="listAll" resultType="com.example.EBookProject.model.dto.BoardDTO">
-	select * from board order by board_no desc
-</select>
+	<select id="listAll" resultType="com.example.EBookProject.model.dto.BoardDTO">
+		<include refid="paging_header" />
+		select rownum, board_no, b_title, b_write_date, board_get, nickname
+		from board 
+		<!-- where -->
+		<include refid="search" />
+		order by board_no desc
+		<include refid="paging_footer" />
+	</select>
 	<insert id="insert">
-		insert into board (,,,) values
-		( )
+			insert into board (,,,) values
+			( )
 	</insert>
+	
+	<select id="boardlist" resultType="com.example.EBookProject.model.dto.BoardDTO">
+	select * from board order by board_no
+	</select>
+	
+	<!-- 레코드 갯수 계산 -->
+	<select id="countArticle" resultType="int">
+	select count(*) from board
+	<include refid="search" />
+	</select>
+
+	<sql id="search">
+		<choose>
+			<when test="search_option == 'all'">
+				where (nickname like '%'||#{keyword}||'%'
+				or b_title like '%'||#{keyword}||'%'
+				or b_content like '%'||#{keyword}||'%')
+			</when>
+			<otherwise>
+				where ${search_option} like '%'|| #{keyword} ||'%'
+			</otherwise>
+		</choose>
+	</sql>
+	
+	<sql id="paging_header">
+	select *
+	from (
+		select rownum as rn, A.*
+		from (
+	</sql>
+	
+	<sql id="paging_footer">
+	) A
+	) where rn between #{start} and #{end}
+	</sql>
 </mapper>

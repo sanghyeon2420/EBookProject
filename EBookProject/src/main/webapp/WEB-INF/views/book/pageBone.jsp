@@ -14,6 +14,23 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+<script>
+$(document).ready(function(){
+	$("#hits").click(function(){
+		var ebook_no=${bookdto.ebook_no};
+		
+		$.ajax({
+			type:"post", //전송 방식
+			url:"${pageContext.request.contextPath}/book/hits", //요청주소
+			data:{"ebook_no":ebook_no}, //보내줄 데이터
+			success: function(data){  //비동기 통신 성공시, data -> 리턴받은 데이터
+				console.log(data);  //console창에 data가 출력됨
+				document.getElementById("span_hits").innerHTML=data;
+			}
+		});
+	});
+});
+</script>
 </head>
 <body>
 <header id="pageHeader">
@@ -35,7 +52,7 @@
 						<h4>&nbsp;${bookdto.w_name }</h4></a> --%>
 						<h4><a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
 						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수 <i
-							class="far fa-heart"></i>${bookdto.book_hits }
+							class="far fa-heart"></i><span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;<button id="hits" name="hits">추천</button>
 					</div>
 					<div class="blank"></div>
 					<div class="container">

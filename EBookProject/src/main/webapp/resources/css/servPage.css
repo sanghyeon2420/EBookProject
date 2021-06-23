@@ -35,7 +35,7 @@
 .setTitle {
     display: flex;
     justify-content: flex-start;
-    margin:10px;
+    margin: 20px 0 40px 0;
 }
 #headTitle {
     margin-left:20px;
@@ -62,7 +62,7 @@
 	flex: 1 1 0;
     display:inline-block;
     position: relative;
-    margin:1vh;
+    margin: 7px 14px;
     color:gray;
     font-size: 1.5vh;
 }

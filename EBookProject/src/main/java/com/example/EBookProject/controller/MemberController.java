@@ -78,7 +78,7 @@ public class MemberController {
 	
 	@ResponseBody
 	@RequestMapping("join/proc") // 회원가입 
-	public String join_proc(String userid, String userpw, String username, String nickname, String email, String birthdate) throws ParseException {
+	public void join_proc(String userid, String userpw, String username, String nickname, String email, String birthdate) throws ParseException {
 		// String 타입을 Date 타입으로 변환
 		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
 		Date date = dateFormat.parse(birthdate);
@@ -103,7 +103,7 @@ public class MemberController {
 		
 		service.SignUp(dto);
 
-		return "";
+
 	}
 
 	
@@ -154,8 +154,5 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping("admin")
-	public String admin() {
-		return "member/admin";
-	}
+
 }
