@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <link href="resources/css/layout.css" rel="stylesheet">
 <link href="resources/css/servPage.css" rel="stylesheet">
+<link href="resources/css/modal.css" rel="stylesheet">
 <title>관리자 페이지 </title>
 <script>
 //로그아웃
@@ -74,19 +75,19 @@ $(document).bind('keydown',function(e){
    <div style="width:100%; display:inline;"></div>
 		<c:choose>
 			<c:when test="${listtype eq 'member'}">
-				<button style="width:30%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
-				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
-				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
+				<button style="width:32%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
+				<button  style="width:32%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
+				<button  style="width:32%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
 			</c:when>
 			<c:when test="${listtype eq 'book'}">
-				<button style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
-				<button  style="width:30%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
-				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
+				<button style="width:32%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
+				<button  style="width:32%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
+				<button  style="width:32%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
 			</c:when>
 			<c:when test="${listtype eq 'board'}">
-				<button style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
-				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
-				<button  style="width:30%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
+				<button style="width:32%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
+				<button  style="width:32%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
+				<button  style="width:32%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
 			</c:when>		
 		</c:choose>
 		
@@ -107,18 +108,40 @@ $(document).bind('keydown',function(e){
 	<td>${memberlist.nickname }</td>
 	<td>${memberlist.cash }</td>
 	<td>
-		<button>탈퇴관리</button>
-		<button>쿠키관리</button>
+		  <a href="#open${memberlist.user_no }"><button>삭제</button></a>
+	         <div class="white_content" id="open${memberlist.user_no }">
+	            <div>
+	            <br>
+	            <p>
+	              ${memberlist.nickname }님을 탈회 처리 하시겠습니까?
+	              <p>
+	       		 <a href="#close"><button>탈회</button></a>
+				 <a href="#close"><button>닫기</button></a>
+	           </div>
+        	 </div>
+		 <a href="#open1${memberlist.user_no }"><button>쿠키관리</button></a>
+		 	<div class="white_content" id="open1${memberlist.user_no }">
+	            <div>
+	            <br>
+	            <p>
+	              ${memberlist.nickname }님 <br>
+	           	    현재 쿠키 ${memberlist.cash }입니다. <br> 
+	        <textarea rows="1" cols="4"></textarea>으로 수정합니다.
+	              <p>
+	       		 <a href="#close"><button>수정</button></a>
+				 <a href="#close"><button>닫기</button></a>
+	           </div>
+        	 </div>
 	</td>
 	</tr>	  
 	 </c:forEach>
  	</c:when>
  	<c:when test="${listtype eq 'book'}">
  		<tr style="background-color: #5FD184">
-	  	<th width="20%">책이름</th>
+	  	<th width="30%">책이름</th>
 	  	<th width="10%">장르</th>
 	  	<th width="10%">작가이름</th>
-	  	<th width="20%">관리</th>
+	  	<th width="10%">관리</th>
    </tr>	
  		<c:forEach var="booklist" items="${book_list}">
 	<tr>
@@ -126,8 +149,19 @@ $(document).bind('keydown',function(e){
 		<td>${booklist.b_category }</td>
 		<td>${booklist.w_name }</td>
 		<td>
-			<button>삭제</button>
-			<button>쿠키관리</button>
+			 <a href="#open${booklist.ebook_no}"><button>삭제</button></a>
+	         <div class="white_content" id="open${booklist.ebook_no}">
+	            <div>
+	            <br>
+	            <p>
+	              ${booklist.b_name }을 삭제 처리 하시겠습니까?
+	              <p>
+	       		 <a href="#close"><button>삭제</button></a>
+				 <a href="#close"><button>닫기</button></a>
+	           </div>
+        	 </div>
+        	 
+<!-- 			<button>쿠키관리</button> -->
 		</td>
 	</tr>
 		 </c:forEach>
@@ -136,6 +170,7 @@ $(document).bind('keydown',function(e){
  		<tr style="background-color: #5FD184">
 	  	<th width="10%">게시글제목</th>
 	  	<th width="10%">글쓴이</th>
+	  	<th width="20%">회원IP</th>
 	  	<th width="10%">작성날짜</th>
 	  	<th width="10%">관리</th>
    </tr>	
@@ -143,9 +178,20 @@ $(document).bind('keydown',function(e){
 	<tr>
 		<td>${boardlist.b_title }</td>
 		<td>${boardlist.nickname }</td>
+		<td>${boardlist.user_ip }</td>
 		<td>${boardlist.b_write_date }</td>
 		<td>
-			<button>삭제</button>
+			<a href="#open${boardlist.board_no }"><button>삭제</button></a>
+	         <div class="white_content" id="open${boardlist.board_no }">
+	            <div>
+	            <br>
+	              <p>
+	              	해당 게시글을 삭제 처리 하시겠습니까?
+	              <p>
+	       		 <a href="#close"><button>삭제</button></a>
+				 <a href="#close"><button>닫기</button></a>
+	           </div>
+        	 </div>
 		</td>
 		 </c:forEach>
  	</c:when>
