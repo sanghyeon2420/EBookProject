@@ -1,7 +1,6 @@
 package com.example.EBookProject.model.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
@@ -17,4 +16,5 @@ public interface BookDAO {
 	public List<BookDTO> romancebook(); //로맨스 책 불러오기
 	public int detail_rank(int ebook_no); // 도서별 랭크순위 출력
 	public List<BookDTO> writerbook(int writer_no); //작가번호로 책 불러오기
+	public void bookhits(int ebook_no); //책 번호로 조회수 증가
 }

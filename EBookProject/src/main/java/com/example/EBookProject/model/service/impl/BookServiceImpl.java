@@ -1,13 +1,11 @@
 package com.example.EBookProject.model.service.impl;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.example.EBookProject.model.dao.BookDAO;
 import com.example.EBookProject.model.dao.impl.BookDAOImpl;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
@@ -69,5 +67,10 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<BookDTO> writerbook(int writer_no) {
 		return dao.writerbook(writer_no);
+	}
+
+	@Override
+	public void bookhits(int ebook_no) {
+		dao.bookhits(ebook_no);
 	}
 }
