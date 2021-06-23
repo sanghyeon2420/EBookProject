@@ -24,7 +24,7 @@
   
   <article id="mainArticle">
   <!-- 여기서 write.jsp space -->
-  
+<script src="<%=request.getContextPath() %>/resources/ckeditor/ckeditor.js"></script>
 <script>
 $(function(){
 	$("#btnSave").click(function(){
@@ -41,6 +41,11 @@ $(function(){
 <div style="width:800px">
 	내용<textarea id="content" name="content" row="3" cols="80" placeholder="내용입력"></textarea>
 </div>
+<script>
+CKEDITOR.replace("content", {
+	height:"300px"
+});
+</script>
 <div style="width:700px; text-align:center">
 	<button type="button" id="btnSave">확인</button>
 </div>
