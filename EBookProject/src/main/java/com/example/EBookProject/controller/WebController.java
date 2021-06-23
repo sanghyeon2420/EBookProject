@@ -32,11 +32,11 @@ public class WebController {
 		
 		List<WriterDTO> searchwriter = writerservice.searchwriter(keyword);
 		
-		if (searchbook.get(0) != null) {
+		if (searchbook != null) {
 			request.getSession().getServletContext().setAttribute("searchbook", searchbook);
 		}
 		
-		if (searchwriter.get(0) != null) {			
+		if (searchwriter != null) {			
 			request.getSession().getServletContext().setAttribute("searchwriter", searchwriter);
 		}
 		

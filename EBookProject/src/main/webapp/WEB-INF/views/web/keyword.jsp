@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +22,7 @@ $(document).ready(function(){
 		var userpw=prompt("비밀번호를 입력해주세요","");
 		console.log(userpw);
 	});
-	
+});	
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
 status="마우스 우클릭 하지 말아주세요!!"; 
@@ -127,7 +128,15 @@ function disableclick(event){
    
    <section id="section2"> 
    	  <div class="writerresult">
-    	<p><h4>작가 검색 : 0건</h4></p>
+   	  <c:choose>
+   	  	<c:when test="${ empty searchwrite }">
+   	  		검색 결과가 없습니다!
+   	  	</c:when>
+   	  	<c:when test="${ not empty searchwriter }">
+   	  	<p><h4>작가 검색 : 0건</h4></p>
+   	  	</c:when>
+   	  </c:choose>
+    	
       </div>
       <div class="writerlist">
     	<div class="writerimg">
