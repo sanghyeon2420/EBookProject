@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.example.EBookProject.model.dao.impl.AdminDAOImpl;
+import com.example.EBookProject.model.dto.BoardDTO;
+import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.service.AdminService;
 
@@ -21,6 +23,18 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<MemberDTO> memberlist() {
 		return dao.memberlist();
+	}
+
+
+	@Override
+	public List<BookDTO> booklist() {
+		return dao.booklist();
+	}
+
+
+	@Override
+	public List<BoardDTO> booadlist() {
+		return dao.booadlist();
 	}
 
 }

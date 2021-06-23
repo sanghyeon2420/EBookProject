@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.example.EBookProject.model.dao.AdminDAO;
+import com.example.EBookProject.model.dto.BoardDTO;
+import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.MemberDTO;
 
 @Repository // Spring bean으로 등록 서버가 올라올때 객체 생성
@@ -21,6 +23,18 @@ public class AdminDAOImpl implements AdminDAO {
 	public List<MemberDTO> memberlist() {
 		
 		return sqlSession.selectList("member.memberlist"); // namespace.id
+	}
+
+
+	@Override
+	public List<BookDTO> booklist() {
+		return sqlSession.selectList("book.booklist");
+	}
+
+
+	@Override
+	public List<BoardDTO> booadlist() {
+		return sqlSession.selectList("board.boardlist");
 	}
 
 }

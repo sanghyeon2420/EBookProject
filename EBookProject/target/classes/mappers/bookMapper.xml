@@ -55,4 +55,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="bookhits">
 		update bookinfo set book_hits= book_hits + 1 where ebook_no=#{ebook_no}
 	</update>
+	
+	<!-- 도서목록 출력 -->
+	<select id="booklist" resultType="com.example.EBookProject.model.dto.BookDTO">
+	select * from bookinfo order by ebook_no
+	</select>
 </mapper>

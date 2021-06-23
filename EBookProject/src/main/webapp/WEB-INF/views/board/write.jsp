@@ -33,13 +33,13 @@ $(function(){
 }); 
 </script>
 
-<h2>글쓰기ㅋㅋ</h2>
+<h2>글등록</h2>
 <form id="form1" name="" method="post" action="${path}/board/insert.do">
 <div>
 	제목<input name="title" id="title" size="80" placeholder="제목입력">
 </div>
 <div style="width:800px">
-	내영<textarea id="content" name="content" row="3" cols="80" placeholder="내용입력"></textarea>
+	내용<textarea id="content" name="content" row="3" cols="80" placeholder="내용입력"></textarea>
 </div>
 <div style="width:700px; text-align:center">
 	<button type="button" id="btnSave">확인</button>

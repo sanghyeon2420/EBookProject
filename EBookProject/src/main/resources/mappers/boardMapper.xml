@@ -19,6 +19,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			( )
 	</insert>
 	
+	<select id="boardlist" resultType="com.example.EBookProject.model.dto.BoardDTO">
+	select * from board order by board_no
+	</select>
+	
 	<!-- 레코드 갯수 계산 -->
 	<select id="countArticle" resultType="int">
 	select count(*) from board

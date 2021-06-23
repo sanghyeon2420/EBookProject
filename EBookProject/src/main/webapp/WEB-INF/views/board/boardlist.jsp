@@ -127,7 +127,10 @@ function list(page){
 <input name="keyword" value="${map.keyword}">
 <input type="submit" value="검색">
 </form>	
-
+<!-- 로그인 시 글쓰기 버튼 -->
+<c:if test="${sessionScope.member.user_no != null}">
+<button id="btnWrite">글쓰기</button>
+</c:if>
 
 
   </article>
