@@ -114,7 +114,7 @@ $(document).bind('keydown',function(e){
 	            <br>
 	            <p>
 	              ${memberlist.nickname }님을 탈회 처리 하시겠습니까?
-	              <p>
+	              <p><br>
 	       		 <a href="#close"><button>탈회</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
@@ -152,10 +152,10 @@ $(document).bind('keydown',function(e){
 			 <a href="#open${booklist.ebook_no}"><button>삭제</button></a>
 	         <div class="white_content" id="open${booklist.ebook_no}">
 	            <div>
-	            <br>
+	            <br><br>
 	            <p>
 	              ${booklist.b_name }을 삭제 처리 하시겠습니까?
-	              <p>
+	              <p><br>
 	       		 <a href="#close"><button>삭제</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
@@ -168,7 +168,8 @@ $(document).bind('keydown',function(e){
  	</c:when>
  	 	<c:when test="${listtype eq 'board'}">
  		<tr style="background-color: #5FD184">
-	  	<th width="10%">게시글제목</th>
+	  	<th width="5%">번호</th>
+	  	<th width="20%">게시글제목</th>
 	  	<th width="10%">글쓴이</th>
 	  	<th width="20%">회원IP</th>
 	  	<th width="10%">작성날짜</th>
@@ -176,6 +177,7 @@ $(document).bind('keydown',function(e){
    </tr>	
 		<c:forEach var="boardlist" items="${board_list}">
 	<tr>
+		<td>${boardlist.board_no }</td>
 		<td>${boardlist.b_title }</td>
 		<td>${boardlist.nickname }</td>
 		<td>${boardlist.user_ip }</td>
@@ -184,10 +186,10 @@ $(document).bind('keydown',function(e){
 			<a href="#open${boardlist.board_no }"><button>삭제</button></a>
 	         <div class="white_content" id="open${boardlist.board_no }">
 	            <div>
-	            <br>
+	            <br><br>
 	              <p>
-	              	해당 게시글을 삭제 처리 하시겠습니까?
-	              <p>
+	              	${boardlist.board_no }번 게시글을 삭제 처리 하시겠습니까?
+	              <p><br>
 	       		 <a href="#close"><button>삭제</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>

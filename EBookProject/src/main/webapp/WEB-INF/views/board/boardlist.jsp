@@ -8,7 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-
+<link href="resources/css/layout.css" rel="stylesheet">
+<link href="resources/css/servPage.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <title>Insert title here</title>
 <script>
@@ -18,6 +19,20 @@
 a:link { color: black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
  a:hover { color: black; text-decoration: none;}
+ 	 table {
+    width: 100%;
+    border: 1px solid #fff;
+    border-collapse: collapse;
+  	text-align: center;
+
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+	font-family: 'Jua', sans-serif;
+	font-size: 20px;
+	text-align: center;
+  }	
 </style>
 </head>
 <body>
@@ -45,7 +60,7 @@ function list(page){
 </script>
   
   <table border="1" width=600px>
-  <tr>
+  <tr style="background-color: #5FD184">
   	<th>번호</th>
   	<th>제목</th>
   	<th>작성자</th>
