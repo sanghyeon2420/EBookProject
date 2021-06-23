@@ -79,14 +79,14 @@ $(document).bind('keydown',function(e){
 				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
 			</c:when>
 			<c:when test="${listtype eq 'book'}">
-				<button style="width:30%; height:60px; background-color:#fff; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
-				<button  style="width:30%; height:60px; background-color:#5FD184; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
+				<button style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
+				<button  style="width:30%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
 				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
 			</c:when>
 			<c:when test="${listtype eq 'board'}">
-				<button style="width:30%; height:60px; background-color:#fff; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
+				<button style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
 				<button  style="width:30%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
-				<button  style="width:30%; height:60px; background-color:#5FD184; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
+				<button  style="width:30%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
 			</c:when>		
 		</c:choose>
 		
@@ -99,7 +99,7 @@ $(document).bind('keydown',function(e){
 	  	<th width="10%">회원ID</th>
 	  	<th width="10%">닉네임</th>
 	  	<th width="10%">쿠키잔고</th>
-	  	<th width="10%">관리</th>
+	  	<th width="20%">관리</th>
    </tr>	
    <c:forEach var="memberlist" items="${member_list}">
 	<tr>
@@ -115,21 +115,39 @@ $(document).bind('keydown',function(e){
  	</c:when>
  	<c:when test="${listtype eq 'book'}">
  		<tr style="background-color: #5FD184">
-	  	<th width="10%">북ID</th>
-	  	<th width="10%">닉네임</th>
-	  	<th width="10%">쿠키잔고</th>
-	  	<th width="10%">관리</th>
+	  	<th width="20%">책이름</th>
+	  	<th width="10%">장르</th>
+	  	<th width="10%">작가이름</th>
+	  	<th width="20%">관리</th>
    </tr>	
-
+ 		<c:forEach var="booklist" items="${book_list}">
+	<tr>
+		<td>${booklist.b_name }</td>
+		<td>${booklist.b_category }</td>
+		<td>${booklist.w_name }</td>
+		<td>
+			<button>삭제</button>
+			<button>쿠키관리</button>
+		</td>
+	</tr>
+		 </c:forEach>
  	</c:when>
  	 	<c:when test="${listtype eq 'board'}">
  		<tr style="background-color: #5FD184">
-	  	<th width="10%">보드ID</th>
-	  	<th width="10%">닉네임</th>
-	  	<th width="10%">쿠키잔고</th>
+	  	<th width="10%">게시글제목</th>
+	  	<th width="10%">글쓴이</th>
+	  	<th width="10%">작성날짜</th>
 	  	<th width="10%">관리</th>
    </tr>	
-
+		<c:forEach var="boardlist" items="${board_list}">
+	<tr>
+		<td>${boardlist.b_title }</td>
+		<td>${boardlist.nickname }</td>
+		<td>${boardlist.b_write_date }</td>
+		<td>
+			<button>삭제</button>
+		</td>
+		 </c:forEach>
  	</c:when>
 
  	</c:choose>
