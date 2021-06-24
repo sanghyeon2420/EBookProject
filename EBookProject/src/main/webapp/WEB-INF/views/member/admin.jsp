@@ -160,7 +160,7 @@ $(document).bind('keydown',function(e){
 	            <p>
 	              ${booklist.b_name }을 삭제 처리 하시겠습니까?
 	              <p><br>
-	       		 <a href="#close"><button>삭제</button></a>
+	       		 <a href="<%=request.getContextPath() %>/admin/deleteBook?ebook_no=${booklist.ebook_no}"><button>삭제</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>
@@ -194,7 +194,7 @@ $(document).bind('keydown',function(e){
 	              <p>
 	              	${boardlist.board_no }번 게시글을 삭제 처리 하시겠습니까?
 	              <p><br>
-	       		 <a href="#close"><button>삭제</button></a>
+	       		 <a href="<%=request.getContextPath() %>/admin/deleteboard?board_no=${boardlist.board_no}"><button>삭제</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>

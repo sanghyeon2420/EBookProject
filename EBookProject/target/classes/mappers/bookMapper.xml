@@ -79,5 +79,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="contentName" resultType="String">
 	 select content_name from content where ebook_no=#{ebook_no} and contentlist=#{contentlist}
 	</select>	
-
+	
+	<!-- 책 삭제 -->
+	<delete id="deleteBook" parameterType="com.example.EBookProject.model.dto.BookDTO">
+		delete from bookinfo where ebook_no = #{ebook_no}
+	</delete>
 </mapper>

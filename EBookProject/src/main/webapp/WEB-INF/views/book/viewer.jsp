@@ -298,7 +298,8 @@
         	
         	xhr.open("GET","resources/text/${b_category}/${b_name}/${content}.txt", "true");
         	
-        	xhr.setRequestHeader("Content-Type", "text/plain;charset=euc-kr");
+        	xhr.setRequestHeader("Content-Type", "text/plain;charset=euc-kr"); 
+        	//ajax로 url 요청시 한글로 인코딩 변경
         	
         	xhr.send();
         }

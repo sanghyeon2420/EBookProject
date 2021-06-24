@@ -10,5 +10,7 @@ public interface AdminService {
 	public List<MemberDTO> memberlist();
 	public List<BookDTO> booklist();
 	public List<BoardDTO> booadlist();
-	int delectMember(MemberDTO dto);
+	public void deleteMember(MemberDTO dto);
+	public void deleteBook(BookDTO dto);
+	public void deleteboard(BoardDTO dto);
 }

@@ -44,13 +44,30 @@ public class AdminController {
 		MemberDTO dto=new MemberDTO();
 		dto.setUser_no(user_no);
 		
-		service.delectMember(dto);
+		service.deleteMember(dto);
 		
 		return "redirect:/admin/list?listtype=member";
 	}
 	
-	
+	@RequestMapping("deleteBook")
+	public String deleteBook(int ebook_no) {
+		System.out.println("jsp에서 넘어온 책 번호 : " +ebook_no);
+		BookDTO dto = new BookDTO();
+		dto.setEbook_no(ebook_no);
+		
+		service.deleteBook(dto);
+		//int result=service.deleteBook(dto);
+		//System.out.println("결과수행 : "+result);
+		return "redirect:/admin/list?listtype=book";
+	}
 
-	
+	@RequestMapping("deleteboard")
+	public String deleteboard(int board_no) {
+		System.out.println("jsp에서 넘어온 게시판 번호 : " +board_no);
+		BoardDTO dto = new BoardDTO();
+		dto.setBoard_no(board_no);
+		service.deleteboard(dto);
+		return "redirect:/admin/list?listtype=board";
+	}
 
 }
