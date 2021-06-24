@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.dto.WriterDTO;
+import com.example.EBookProject.model.email.EmailDTO;
+import com.example.EBookProject.model.service.email.EmailService;
 import com.example.EBookProject.model.service.impl.MemberServiceImpl;
 import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
@@ -31,6 +33,8 @@ public class MemberController {
 	@Inject
 	WriterServiceImpl writerservice;
 	
+	@Inject
+	EmailService emailservice;
 	
 	@RequestMapping("login")
 	public String loin(Locale locale, Model model) {
@@ -153,9 +157,59 @@ public class MemberController {
 		return "member/setting";
 	}
 	
+	
 	@RequestMapping("search")
-	public String search(Model model) {
+	public String search() {
+		return "member/search";
+	}
+	
+	@RequestMapping("searchid")
+	public String searchid(String username, String nickname, String birthdate) throws Exception {
+		MemberDTO dto=new MemberDTO();
+		dto.setUsername(username);
+		dto.setNickname(nickname);
+		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
+		Date date = dateFormat.parse(birthdate);
+		dto.setBirthdate(date);
+		
+		MemberDTO searchDTO=service.searchID(dto); // DB에서 넘어온
+		EmailDTO emailDTO=new EmailDTO();
+		emailDTO.setSenderName("EBookProject");
+		emailDTO.setSenderMail("EBookProject@EBook.com");
+		emailDTO.setReceiveMail(searchDTO.getEmail());
+		emailDTO.setSubject("EBookProject 아이디찾기입니다.");
+		emailDTO.setMessage(searchDTO.getUsername()+"님의 아이디는 "+searchDTO.getUserid()+"입니다.");
+		
+		emailservice.sendMail(emailDTO);
+		
+		
 		return "member/search";
 	}
 
+	
+	@RequestMapping("searchpw")
+	public String searchpw(String userid, String username, String birthdate) throws Exception {
+		MemberDTO dto=new MemberDTO();
+		dto.setUserid(userid);
+		dto.setUsername(username);
+		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
+		Date date = dateFormat.parse(birthdate);
+		dto.setBirthdate(date);
+		
+		
+		MemberDTO searchDTO=service.searchPW(dto); // DB에서 넘어온 비밀번호
+		
+		EmailDTO emailDTO=new EmailDTO();
+		emailDTO.setSenderName("EBookProject");
+		emailDTO.setSenderMail("EBookProject@EBook.com");
+		emailDTO.setReceiveMail(searchDTO.getEmail());
+		emailDTO.setSubject("EBookProject 비밀번호찾기입니다.");
+		emailDTO.setMessage(searchDTO.getUsername()+"님의 비밀번호는 "+searchDTO.getUserpw()+"입니다.");
+		
+		emailservice.sendMail(emailDTO);
+		
+		
+		return "member/search";
+	}
+	
 }
