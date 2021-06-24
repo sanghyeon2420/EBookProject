@@ -84,6 +84,10 @@ function disableclick(event){
     	border:dotted 1px;
     }
     
+    input#nickname {
+      background-color: #eef5f0;
+      color: #968b8b;
+    }
 </style>
 </head>
 <body>
@@ -102,7 +106,7 @@ function disableclick(event){
 			작품명 <input type="text" id="wTitle" name="wTitle">
 		</div>
 		<div class="writer" id="writer">
-			작가이름 <input type="text" id="nickname" name="nickname">
+			작가이름 <input type="text" id="nickname" name="nickname" value="${dto.w_name}" readonly/>
 		</div>
 		<div class="category" id="category">
 			카테고리 
