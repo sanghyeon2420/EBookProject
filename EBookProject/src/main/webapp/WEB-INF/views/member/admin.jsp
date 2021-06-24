@@ -148,19 +148,6 @@ $(document).bind('keydown',function(e){
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>
-		 <%--  <a href="#open1${memberlist.user_no }"><button>쿠키관리</button></a>
-		 	<div class="white_content" id="open1${memberlist.user_no }">
-	            <div>
-	            <br>
-	            <p>
-	              ${memberlist.nickname }님 <br>
-	           	    현재 쿠키 ${memberlist.cash }입니다. <br> 
-	              <p>
-	              <a href="<%=request.getContextPath() %>/admin/user_no=${memberlist.user_no }">
-	       		 <button>수정하기</button></a>
-				 <a href="#close"><button>닫기</button></a> 
-	           </div>
-        	 </div> --%>
 	</td>
 	</tr>	  
 	 </c:forEach>

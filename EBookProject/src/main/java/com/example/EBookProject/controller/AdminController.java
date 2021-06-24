@@ -80,7 +80,6 @@ public class AdminController {
 		
 		service.cookiemanager(dto);
 		
-		
 		return "redirect:/admin/list?listtype=member";
 		
 	}
