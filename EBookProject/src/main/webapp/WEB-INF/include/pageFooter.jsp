@@ -23,13 +23,9 @@ a:link { color: black; text-decoration: none;}
   	⚠<strong>주의</strong>! 본 사이트에 등록된 컨텐츠는 사이트 및 원 저작권자에 권리가 있는 컨텐츠입니다. 무단 복제/전송/수정/배포는 법적 처벌을 받을 수 있습니다.
   	</section>
   	<div class="footer">
-  		<!-- footer_logo -->
- 		<div class="footer_logo">
- 			<img alt="" src="resources/images/logo_image.jpg">
- 		</div>
  		
  		<!-- footer_center -->
- 		<div class="footer_center">
+ 		<div class="footer_center1">
  			<!-- 이용약관 -->
  			<a href="terms">
  				<span style="width: 20px; display: inline-block; text-align: center; user-select: auto;">
@@ -37,6 +33,7 @@ a:link { color: black; text-decoration: none;}
  				</span>
  				이용약관
  			</a>
+ 			<br>
  			<!-- 개인정보취급방침 -->
  			<a href="privacy">
  				<span style="width: 20px; display: inline-block; text-align: center; user-select: auto;">
@@ -48,16 +45,25 @@ a:link { color: black; text-decoration: none;}
  			<!-- 회사정보 -->
  			<span style="color: black; font-size: 1.5vh; user-select: auto;">
 					주식회사 북 하우스 
-				<font style="color: black;">|</font>
+				<font style="color: black;"></font><br>
 					 사업자등록번호 : 210-00-00000
-				<font style="color: black;">|</font>
+				<font style="color: black;"></font><br>
 					 대표 : 김OO
 				<br>
 					통신판매업신고 : 제2021-서울왕십리-01010호 
+				<br>
 				<a href="http://www.mrhi.or.kr/" style="color: rgb(126, 126, 126);">[통신판매 사업자 확인]</a>
 				<br>
+			</span>
+			</div>
+ 			<div class="footer_center2">
+			<span style="color: black; font-size: 1.5vh; user-select: auto;">
 					주소 : 서울 성동구 왕십리로 303 우체국 , 4층
 				<br>
+			</span>
+			</div>
+ 			<div class="footer_center3">
+ 			<span style="color: black; font-size: 1.5vh; user-select: auto;">
 					제휴문의 : 1577-1588 (
 				<a href="http://www.mrhi.or.kr/" style="color: rgb(126, 126, 126);">c e o@bookHouse.com</a>
 				)
