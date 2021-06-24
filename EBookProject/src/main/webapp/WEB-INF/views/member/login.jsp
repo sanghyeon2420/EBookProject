@@ -129,7 +129,7 @@ body {
         <div class="form-group">
           <label for="userpw">비밀번호</label>
           <input type="password" class="form-control" id="userpw" name="userpw">
-          <a class="pull-right" href="#">Forgot password?</a> <!-- 비밀번호 찾기 -->
+          <a class="pull-right" href="search">아이디/비밀번호찾기</a> <!-- 아이디/비밀번호 찾기 -->
         </div>
 <!--         <div class="checkbox pull-right">
           <label>
