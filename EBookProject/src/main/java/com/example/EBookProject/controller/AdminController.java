@@ -77,7 +77,10 @@ public class AdminController {
 		MemberDTO dto = new MemberDTO();
 		dto.setUser_no(user_no);
 		dto.setCash(cash);
-		return "redierct:/admin/list?listtype=member";
+		
+		service.cookiemanager(dto);
+		
+		return "redirect:/admin/list?listtype=member";
 		
 	}
 
