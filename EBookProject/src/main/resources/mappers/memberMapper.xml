@@ -43,4 +43,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	insert into member(user_no,userid,userpw,username, nickname,email,birthdate,login_class) 
 	values (seq_userno.nextval,#{userid},#{userpw},#{username},#{nickname},#{email},#{birthdate},1)
 	</insert>
+	
+	<!-- 관리자페이지에서 쿠키 조절 -->
+	<update id="cookiemanager" parameterType="com.example.EBookProject.model.dto.MemberDTO">
+	update member set cash=#{cash} where user_no=#{user_no}
+	</update>
 </mapper>

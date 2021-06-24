@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <%@ include file="../../include/include.jsp" %>
@@ -26,6 +26,9 @@ $(document).ready(function(){
 		var userpw=prompt("비밀번호를 입력해주세요","");
 		console.log(userpw);
 	});
+	
+	
+
 });
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
@@ -38,6 +41,11 @@ function disableclick(event){
     } 
 }
 
+function cookieUpdate(userno){
+	console.log("html에서 넘어온 userno의 값 : "+ userno);
+	console.log("cash의 값 : "+ cash);
+	location.href="/EBookProject/admin/cookiemanager?user_no="+userno+"&cash="+cash;
+}
 
 //F12 버튼 방지 
 /* $(document).ready(function(){ 
@@ -102,14 +110,19 @@ $(document).bind('keydown',function(e){
  		<tr style="background-color: #5FD184">
 	  	<th width="10%">회원ID</th>
 	  	<th width="10%">닉네임</th>
-	  	<th width="10%">쿠키잔고</th>
-	  	<th width="20%">관리</th>
+	  	<th width="20%">쿠키잔고</th>
+	  	<th width="10%">관리</th>
    </tr>	
    <c:forEach var="memberlist" items="${member_list}">
 	<tr>
 	<td>${memberlist.userid }</td>
 	<td>${memberlist.nickname }</td>
-	<td>${memberlist.cash }</td>
+	<td>
+	${memberlist.cash }<br>
+	 <input type="number" value="${memberlist.cash }" id="cash${memberlist.user_no }">
+	 <a href="<%=request.getContextPath() %>/admin/cookiemanager?user_no=${memberlist.user_no },cash=${memberlist.cash}">
+	 <button>수정하기</button></a>
+	</td>
 	<td>
 	
 		  <a href="#open${memberlist.user_no }"><button>삭제</button></a>
@@ -119,21 +132,21 @@ $(document).bind('keydown',function(e){
 	            <p>
 	              ${memberlist.nickname }님을 탈회 처리 하시겠습니까?
 	              <p><br>
-	       		 <a href="<%=request.getContextPath() %>/admin/deleteMember?user_no=${memberlist.user_no }" id=""><button>탈회</button></a>
+	       		 <a href="<%=request.getContextPath() %>/admin/deleteMember?user_no=${memberlist.user_no }"><button>탈회</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>
-		 <a href="#open1${memberlist.user_no }"><button>쿠키관리</button></a>
+		<%--  <a href="#open1${memberlist.user_no }"><button>쿠키관리</button></a>
 		 	<div class="white_content" id="open1${memberlist.user_no }">
 	            <div>
 	            <br>
 	            <p>
 	              ${memberlist.nickname }님 <br>
 	           	    현재 쿠키 ${memberlist.cash }입니다. <br> 
-	        <textarea rows="1" cols="4"></textarea>으로 수정합니다.
 	              <p>
-	       		 <a href="#close"><button>수정</button></a>
-				 <a href="#close"><button>닫기</button></a>
+	              <a href="<%=request.getContextPath() %>/admin/user_no=${memberlist.user_no }">
+	       		 <button>수정하기</button></a>
+				 <a href="#close"><button>닫기</button></a> --%>
 	           </div>
         	 </div>
 	</td>
