@@ -21,29 +21,33 @@ public class AdminDAOImpl implements AdminDAO {
 	
 	@Override
 	public List<MemberDTO> memberlist() {
-		
 		return sqlSession.selectList("member.memberlist"); // namespace.id
 	}
-
 
 	@Override
 	public List<BookDTO> booklist() {
 		return sqlSession.selectList("book.booklist");
 	}
 
-
 	@Override
 	public List<BoardDTO> booadlist() {
 		return sqlSession.selectList("board.boardlist");
 	}
 
-
 	@Override
-	public int deleteMember(MemberDTO dto) {
-		return sqlSession.delete("member.deletemember", dto);
+	public void deleteMember(MemberDTO dto) {
+		sqlSession.delete("member.deletemember", dto);
 	
 	}
 
+	@Override
+	public void deleteBook(BookDTO dto) {
+		sqlSession.delete("book.deleteBook", dto);
+	}
 
+	@Override
+	public void deleteboard(BoardDTO dto) {
+		sqlSession.delete("board.deleteboard", dto);
+	}
 
 }

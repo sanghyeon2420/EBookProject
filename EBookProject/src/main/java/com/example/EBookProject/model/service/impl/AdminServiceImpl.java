@@ -19,20 +19,17 @@ public class AdminServiceImpl implements AdminService {
 	@Inject
 	AdminDAOImpl dao;
 	
-	
 	@Override
 	// 회원리스트 불러오기 
 	public List<MemberDTO> memberlist() {
 		return dao.memberlist();
 	}
 
-
 	@Override
 	// 책리스트 불러오기 
 	public List<BookDTO> booklist() {
 		return dao.booklist();
 	}
-
 
 	@Override
 	// 게시글리스트 불러오기 
@@ -42,9 +39,19 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override 
 	// 회원 탈퇴 
-	public int delectMember(MemberDTO dto) {
-		return dao.deleteMember(dto);
+	public void deleteMember(MemberDTO dto) {
+		dao.deleteMember(dto);
 		
+	}
+
+	@Override
+	public void deleteBook(BookDTO dto) {
+		dao.deleteBook(dto);
+	}
+
+	@Override
+	public void deleteboard(BoardDTO dto) {
+		dao.deleteboard(dto);
 	}
 	
 }
