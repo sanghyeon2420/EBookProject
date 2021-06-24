@@ -19,8 +19,8 @@ public class BoardDAOImpl implements BoardDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public void createBoard(BoardDTO board_no) throws Exception {
-		sqlSession.insert("board.insert", board_no);
+	public void insertBoard(BoardDTO dto) {
+		sqlSession.insert("board.insertBoard",dto);
 	}
 
 	@Override
@@ -65,6 +65,8 @@ public class BoardDAOImpl implements BoardDAO {
 		// TODO Auto-generated method stub
 
 	}
+
+
 
 
 }

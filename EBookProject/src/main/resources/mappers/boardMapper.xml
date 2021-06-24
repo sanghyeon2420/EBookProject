@@ -14,9 +14,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		order by board_no desc
 		<include refid="paging_footer" />
 	</select>
-	<insert id="insert">
-			insert into board (,,,) values
-			( )
+	
+	<!-- 게시글 쓰기 -->
+	<insert id="insertBoard">
+	insert into board(board_no, user_no, b_title, b_content, nickname, user_ip)
+	 values ((select nvl(max(board_no)+1,1) from board),#{user_no},#{b_title},#{b_content},(select nickname from member where user_no=#{user_no}),#{user_ip})
 	</insert>
 	
 	<select id="boardlist" resultType="com.example.EBookProject.model.dto.BoardDTO">

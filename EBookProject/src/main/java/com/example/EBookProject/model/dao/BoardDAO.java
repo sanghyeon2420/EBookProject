@@ -6,7 +6,7 @@ import com.example.EBookProject.model.dto.BoardDTO;
 
 public interface BoardDAO {
 	
-	public void createBoard(BoardDTO board_no) throws Exception;
+	public void insertBoard(BoardDTO dto); // 글등록
 	public void updateBoard(BoardDTO dto) throws Exception;	//글수정
 	public void deleteBoard(int board_no) throws Exception;	//글삭제
 	public BoardDTO read(int board_no);

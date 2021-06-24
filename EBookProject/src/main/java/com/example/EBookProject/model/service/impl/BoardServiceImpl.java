@@ -12,13 +12,14 @@ import com.example.EBookProject.model.service.BoardService;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-	
+
 	@Inject
 	BoardDAO boardDao;
 
 	@Override
-	public void createBoard(BoardDTO board_no) throws Exception {
-		boardDao.createBoard(board_no);
+	public void insertBoard(BoardDTO dto) {
+		boardDao.insertBoard(dto);
+
 	}
 
 	@Override
@@ -40,17 +41,15 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardDTO> listAll(int start, int end, String search_option, String keyword) throws Exception {
 		return boardDao.listAll(start, end, search_option, keyword);
 	}
-	
+
 	@Override
 	public int countArticle(String search_option, String keyword) {
 		return boardDao.countArticle(search_option, keyword);
 	}
-	
+
 	@Override
 	public void board_View_cnt(int board_no) throws Exception {
 
 	}
-
-
 
 }

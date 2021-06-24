@@ -8,13 +8,13 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.common.Pager;
 import com.example.EBookProject.model.dto.BoardDTO;
+import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.service.BoardService;
 
 @Controller
@@ -25,12 +25,14 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("insert")
-	public String insert(@ModelAttribute BoardDTO dto, HttpSession session) throws Exception{
-		//session.에 저장된 userid변수 값을 불러들임
-		String nickname=(String)session.getAttribute("userid");
-		dto.setNickname(nickname);
-		//record가 저장됨
-		boardService.createBoard(dto);
+	public String insert(BoardDTO dto, HttpSession session) {
+		session.getAttribute("member");
+		
+		
+		
+		
+		//boardService.insertBoard(dto);
+		
 		//목록 갱신
 		return "redirect:/board/list";
 		
