@@ -20,12 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.dto.WriterDTO;
-<<<<<<< HEAD
 import com.example.EBookProject.model.email.EmailDTO;
 import com.example.EBookProject.model.service.email.EmailService;
-=======
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 import com.example.EBookProject.model.service.impl.MemberServiceImpl;
 import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
@@ -40,11 +37,10 @@ public class MemberController {
 	WriterServiceImpl writerservice;
 	
 	@Inject
-<<<<<<< HEAD
 	EmailService emailservice;
-=======
+	
+	@Inject
 	BookServiceImpl bookservice;
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	
 	@RequestMapping("login")
 	public String loin(Locale locale, Model model) {
@@ -196,7 +192,6 @@ public class MemberController {
 		return "member/search";
 	}
 
-<<<<<<< HEAD
 	
 	@RequestMapping("searchpw")
 	public String searchpw(String userid, String username, String birthdate) throws Exception {
@@ -221,7 +216,7 @@ public class MemberController {
 		
 		
 		return "member/search";
-=======
+}
 	@RequestMapping("viewdetail")
 	public String viewWriter(HttpServletRequest request, HttpSession session) {
 		  MemberDTO memberDTO=(MemberDTO)session.getAttribute("member");
@@ -237,7 +232,6 @@ public class MemberController {
 		  
 		  request.setAttribute("list", list);
 		return "member/writerinfo";
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	}
 	
 }
