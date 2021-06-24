@@ -41,20 +41,23 @@ $(function(){
 </script>
 
 <h2>글등록</h2>
+<hr>
 <form id="form1" name="" method="post" action="${path}/board/insert.do">
 <div>
-	제목<input name="title" id="title" size="80" placeholder="제목입력">
+	<input name="title" id="title" size="80" placeholder="제목을 입력해주세요." class="form-control">
 </div>
-<div style="width:800px">
-	내용<textarea id="content" name="content" row="3" cols="80" placeholder="내용입력"></textarea>
+<div>
+	<textarea id="content" name="content" row="3" cols="80" placeholder="내용을 입력해주세요."></textarea>
 </div>
 <script>
 CKEDITOR.replace("content", {
+	placeholder:"내용을 입력해주세요",
 	height:"300px"
 });
 </script>
-<div style="width:700px; text-align:center">
-	<button type="button" id="btnSave">확인</button>
+<div style="text-align:right">
+	<button type="button" id="btnSave">취소</button>
+	<button type="button" id="btnSave">등록</button>
 </div>
 
   </article>

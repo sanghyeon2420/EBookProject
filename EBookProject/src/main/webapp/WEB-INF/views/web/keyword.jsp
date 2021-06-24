@@ -61,9 +61,15 @@ function disableclick(event){
 	float: left;
 	align-items: center;
 }
+.writer {
+	clear: both;
+	display: flex;
+}
 .writerlist {
 	height: 30vh;
 	clear: both;
+	display: block;
+	margin: 0 10px;
 }
 .writerimg {
 	width: 10vw;
@@ -72,12 +78,11 @@ function disableclick(event){
 .writerimg img { 
 	width: 10vw;
 	height: 25vh;
-	margin: 0 10px;
 	padding: 0;
 }
 .writerdetail {
 	height: 10vh;
-
+	margin: 0 10px;
 }
 #section3 {
 	width: 60vw;
@@ -91,9 +96,15 @@ function disableclick(event){
 	float: left;
 	align-items: center;
 }
+.book {
+	clear: both;
+	display: flex;
+}
 .booklist {
 	height: 30vh;
 	clear: both;
+	display: block;
+	margin: 0 10px;
 }
 .bookimg {
 	width: 10vw;
@@ -102,11 +113,11 @@ function disableclick(event){
 .bookimg img {
 	width: 10vw;
 	height: 25vh;
-	margin: 0 10px;
 	padding: 0;
 }
 .bookdetail {
 	height: 10vh;
+	margin: 0 10px;
 
 }
 </style>
@@ -128,37 +139,48 @@ function disableclick(event){
    
    <section id="section2"> 
    	  <div class="writerresult">
+   	  	<p><h4>작가 검색</h4></p>
    	  <c:choose>
-   	  	<c:when test="${ empty searchwrite }">
+   	  	<c:when test="${ empty searchwriter }">
    	  		검색 결과가 없습니다!
-   	  	</c:when>
-   	  	<c:when test="${ not empty searchwriter }">
-   	  	<p><h4>작가 검색 : 0건</h4></p>
    	  	</c:when>
    	  </c:choose>
     	
       </div>
+      <div class="writer">
+      <c:forEach var="searchwriter" items="${searchwriter }" >
       <div class="writerlist">
     	<div class="writerimg">
-    		<img src="resources/images/writer/writer1.png" alt="사진을 불러오고 있습니다">
+    		<img src="resources/images/writer/${searchwriter.imagefile_no }" alt="사진을 불러오고 있습니다">
     	</div>	
     	<div class="writerdetail">
-    		<a href="<%=request.getContextPath() %>/writer/viewdetail?writer_no=1"><b>작가이름</b></a>
+    		<a href="<%=request.getContextPath() %>/writer/viewdetail?writer_no=${searchwriter.writer_no}"><b>${searchwriter.w_name }</b></a>
     	</div>
+    	</div>
+    	</c:forEach>
       </div>
    </section>
     
    <section id="section3">
       <div class="bookresult">
-    	<p><h4>책 검색 : 0건</h4></p>
+    	<p><h4>책 검색</h4></p>
+    	<c:choose>
+   	  	<c:when test="${ empty searchbook }">
+   	  		검색 결과가 없습니다!
+   	  	</c:when>
+   	  </c:choose>
       </div>
+      <div class="book">
+        <c:forEach var="searchbook" items="${searchbook }">
       <div class="booklist">
     	<div class="bookimg">
-    		<img src="resources/images/무협지/bone.jpg" alt="사진을 불러오고 있습니다">
+    		<img src="resources/images/${searchbook.b_category }/${searchbook.imagefileName}" alt="사진을 불러오고 있습니다">
     	</div>
     	<div class="bookdetail">
-    		<a href="/EBookProject/book/detail?idx=3"><b>책 제목</b></a> 
+    		<a href="/EBookProject/book/detail?idx=${searchbook.ebook_no }"><b>${searchbook.b_name }</b></a> 
     	</div>
+    	</div>
+    	</c:forEach>
       </div>
    </section>
   </article>

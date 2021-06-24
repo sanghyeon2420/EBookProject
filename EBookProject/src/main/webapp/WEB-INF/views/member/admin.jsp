@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,15 +38,7 @@ function disableclick(event){
     } 
 }
 
-function deleteMember(var i){
-	$.ajax({
-		type:"get",
-		url:"<%=request.getContextPath() %>/admin/deleteMember?user_no=i",
-		success:function(data){
-			console.log(data);
-		};
-	});
-}
+
 //F12 버튼 방지 
 /* $(document).ready(function(){ 
 $(document).bind('keydown',function(e){ 
@@ -126,7 +119,7 @@ $(document).bind('keydown',function(e){
 	            <p>
 	              ${memberlist.nickname }님을 탈회 처리 하시겠습니까?
 	              <p><br>
-	       		 <a href="javascript:deleteMember('${memberlist.user_no }')" id=""><button>탈회</button></a>
+	       		 <a href="<%=request.getContextPath() %>/admin/deleteMember?user_no=${memberlist.user_no }" id=""><button>탈회</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>
@@ -182,8 +175,8 @@ $(document).bind('keydown',function(e){
 	  	<th width="5%">번호</th>
 	  	<th width="20%">게시글제목</th>
 	  	<th width="10%">글쓴이</th>
-	  	<th width="20%">회원IP</th>
-	  	<th width="10%">작성날짜</th>
+	  	<th width="20%">작성자IP</th>
+	  	<th width="10%">작성일</th>
 	  	<th width="10%">관리</th>
    </tr>	
 		<c:forEach var="boardlist" items="${board_list}">
@@ -192,7 +185,7 @@ $(document).bind('keydown',function(e){
 		<td>${boardlist.b_title }</td>
 		<td>${boardlist.nickname }</td>
 		<td>${boardlist.user_ip }</td>
-		<td>${boardlist.b_write_date }</td>
+		<td><fmt:formatDate value="${boardlist.b_write_date }" pattern="MM. dd" /></td>
 		<td>
 			<a href="#open${boardlist.board_no }"><button>삭제</button></a>
 	         <div class="white_content" id="open${boardlist.board_no }">
