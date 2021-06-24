@@ -1,5 +1,7 @@
 package com.example.EBookProject.controller;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -47,10 +49,8 @@ public class MainController {
 		List<WriterDTO> writer_enter = writerservice.writer_enter();
 
 		//List<NoticDTO> noticlist=noticservice.list();
-
 		// application 객체 사용 
 		// getServletContext() -> Returns: The ServletContext object for the web application
-		
 		request.getSession().getServletContext().setAttribute("booklist", booklist);
 		request.getSession().getServletContext().setAttribute("newbook", newbook);
 		request.getSession().getServletContext().setAttribute("ranklist", ranklist);
