@@ -13,4 +13,5 @@ public interface AdminService {
 	public void deleteMember(MemberDTO dto);
 	public void deleteBook(BookDTO dto);
 	public void deleteboard(BoardDTO dto);
+	public void cookiemanager(MemberDTO dto);
 }

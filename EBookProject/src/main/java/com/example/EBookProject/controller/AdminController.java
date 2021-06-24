@@ -69,5 +69,16 @@ public class AdminController {
 		service.deleteboard(dto);
 		return "redirect:/admin/list?listtype=board";
 	}
+	
+	@RequestMapping("cookiemanager") 
+	public String cookiemanager(int user_no, int cash) {
+		System.out.println("jsp에서 넘어온 고객 번호 : "+ user_no);
+		System.out.println("jsp에서 입력된 쿠키 값 : "+ cash);
+		MemberDTO dto = new MemberDTO();
+		dto.setUser_no(user_no);
+		dto.setCash(cash);
+		return "redierct:/admin/list?listtype=member";
+		
+	}
 
 }
