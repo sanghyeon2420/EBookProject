@@ -153,6 +153,9 @@ public class MemberController {
 		return "member/setting";
 	}
 	
-	
+	@RequestMapping("search")
+	public String search(Model model) {
+		return "member/search";
+	}
 
 }
