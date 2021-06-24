@@ -64,7 +64,7 @@ function list(page){
   	<th>번호</th>
   	<th>제목</th>
   	<th>작성자</th>
-  	<th>날짜</th>
+  	<th>작성일</th>
   	<th>조회수</th>
   </tr>
   <c:forEach var="row" items="${map.list}">
@@ -72,7 +72,7 @@ function list(page){
 	<td>${row.board_no}</td>
 	<td><a href="#" >${row.b_title}</a></td>
 	<td>${row.nickname}</td>
-	<td><fmt:formatDate value="${row.b_write_date}" pattern="MM/dd" /></td>
+	<td><fmt:formatDate value="${row.b_write_date}" pattern="MM.dd" /></td>
 	<!-- 조회수 --><td>${row.board_get}</td>
 </tr>
 

@@ -37,15 +37,16 @@ public class AdminController {
 		
 		return "member/admin";
 	}
-	@ResponseBody
+
 	@RequestMapping("deleteMember")
-	public List<MemberDTO> deleteMember(int user_no){
+	public String deleteMember(int user_no){
+		System.out.println("jsp에서 넘어온 유저넘버 번호 : "+user_no);
 		MemberDTO dto=new MemberDTO();
 		dto.setUser_no(user_no);
 		
 		service.delectMember(dto);
-		List<MemberDTO> list=service.memberlist();
-		return list;
+		
+		return "redirect:/admin/list?listtype=member";
 	}
 	
 	
