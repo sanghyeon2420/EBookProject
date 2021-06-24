@@ -1,6 +1,11 @@
+<%@page import="org.springframework.ui.Model"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,21 +27,6 @@ $(document).ready(function(){
 		console.log(userpw);
 	});
 	
-	$("#hits").click(function(){
-		var writer_no=${dto.writer_no};
-/* 		console.log(writer_no);
- */		
- 		$.ajax({
-			type:"post", // 전송방식
-			url:"${pageContext.request.contextPath}/writer/hits", // 요청주소
-			data:{"writer_no":writer_no}, // 보내줄 데이터
-			success: function(data){ // 비동기 통신 성공시, data ->  리턴받은 데이터
-					console.log(data); // f12 개발자도구 - > console창에 data가 출력됨
-					document.getElementById("span_hits").innerHTML=data;
-			}
-			
-		}); 
-	});
 });
 // 우측 클릭 방지 
 document.onmousedown=disableclick;
@@ -96,6 +86,50 @@ function disableclick(event){
 	.item:nth-child(1) {
     	background:#2bb33698;
 	}
+	.back {
+	background-color: #d9e7ff;
+	}
+.text {
+	margin: 0;
+	padding: 0;
+	height: 8vh;
+}
+.text p {
+	clear: both;
+	margin: 20px 20px;
+	height: 3vh;
+	font-size: 18px;
+	align-items: center;
+}
+#mainArticle .writerbooklist {
+	height: 35vh;
+	display: flex;
+	margin: 0;
+	clear: both;
+	justify-content: space-around;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	overflow: auto;
+	flex-flow: row nowrap;
+}
+#mainArticle .writerbookcover {
+	width: 14vw;
+	height: 22vh;
+	padding: 0;
+	margin: 0;
+}
+#mainArticle .writerbookcover img{
+	width: 12vw;
+	height: 22vh;
+	display: block;
+	margin: auto;
+}
+.writerbookcover a {
+	margin: 10px 0;
+	font-weight: 400;
+	text-align: center;
+}
 </style>
 </head>
 <body>
@@ -106,6 +140,8 @@ function disableclick(event){
   
   
   <article id="mainArticle">
+  
+
 			<div class="setTitle">
 				<div id="navPicture">
 					<img src="resources/images/writer/${dto.imagefile_no }" alt="작가 이미지 불러옵니다." width="240px"
@@ -141,7 +177,7 @@ function disableclick(event){
                     <div class="writerbookcover">
                        <div class="cover">
                            <img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
-                           <a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4>
+                           <a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4></a>
                        </div>
                    </div>
                    </c:forEach>

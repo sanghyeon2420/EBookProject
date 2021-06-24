@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -16,8 +17,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.dto.WriterDTO;
+import com.example.EBookProject.model.service.impl.BookServiceImpl;
 import com.example.EBookProject.model.service.impl.MemberServiceImpl;
 import com.example.EBookProject.model.service.impl.WriterServiceImpl;
 
@@ -31,6 +34,8 @@ public class MemberController {
 	@Inject
 	WriterServiceImpl writerservice;
 	
+	@Inject
+	BookServiceImpl bookservice;
 	
 	@RequestMapping("login")
 	public String loin(Locale locale, Model model) {
@@ -158,4 +163,21 @@ public class MemberController {
 		return "member/search";
 	}
 
+	@RequestMapping("viewdetail")
+	public String viewWriter(HttpServletRequest request, HttpSession session) {
+		  MemberDTO memberDTO=(MemberDTO)session.getAttribute("member");
+		  WriterDTO writerDTO=(WriterDTO)session.getAttribute("writer");
+		  
+		  System.out.println(memberDTO);
+		  System.out.println(writerDTO);
+		  
+		  request.setAttribute("memberDTO", memberDTO);
+		  request.setAttribute("dto", writerDTO);
+		  
+		  List<BookDTO> list=bookservice.writerbook(writerDTO.getWriter_no());
+		  
+		  request.setAttribute("list", list);
+		return "member/writerinfo";
+	}
+	
 }
