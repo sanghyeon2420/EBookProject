@@ -19,6 +19,12 @@
         font-weight: normal;
         font-style: normal;
     }
+    
+    // 스크롤 이동시 부드럽게 구현
+    html { 
+  		scroll-behavior: smooth; 
+	} 
+	
     body {
         margin:0;
     }
@@ -40,8 +46,8 @@
     .headline {
         width: 100%;
         height: 15vh;
-        background-color: black;
-        color: white;
+        background-color: #00AF5B;
+        color: #F7F7F7;
         grid-area: headline;
         top: 0;
         left: 0;
@@ -55,12 +61,17 @@
         justify-content: space-between;
         height: 15vh;
     }
+    
+    a:visited, a:link{
+    	text-decoration:none;
+    	color: #F7F7F7;
+    }
 
     .footline {
         width: 100%;
         height: 15vh;
-        background-color: black;
-        color: white;
+        background-color: #00AF5B;
+        color: #F7F7F7;
         grid-area: footline;
         bottom: 0;
         left: 0;
@@ -148,15 +159,19 @@
         font-family: 'Nanum Gothic', sans-serif;
         font-size: 18px;
         line-height: 2.4;
-        background-color: white;
-        color: black;
+        background-color: #F7F7F7;
+        color: #262626;
         font-weight: 100;
     } 
+    
+    .adsline, .navline {
+    	background-color: #F7F7F7;
+    }
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <script>
-        $(function () { // 헤더가리기
+       /* $(function () { // 헤더가리기
             var lastScrollTop = 0, delta = 15;
             $(window).scroll(function (event) {
                 var st = $(this).scrollTop();
@@ -176,7 +191,7 @@
                 lastScrollTop = st;
             });
         })
-
+*/
 // 우측 클릭 방지 
         document.onmousedown = disableclick;
         status = "마우스 우클릭 하지 말아주세요!!";
@@ -234,53 +249,81 @@
         function lH300() {
             document.getElementById("bookview").style.lineHeight = "3";
         }
+        function bggreen() {
+            document.getElementById("bookview").style.backgroundColor = "#00AF5B";
+            document.getElementById("navline").style.backgroundColor = "#00AF5B";
+            document.getElementById("adsline").style.backgroundColor = "#00AF5B";
+            document.getElementById("headline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("footline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("headline").style.color = "#262626";
+            document.getElementById("footline").style.color = "#262626";
+        }
         function bgwhite() {
-            document.getElementById("bookview").style.backgroundColor = "white";
-            document.getElementById("navline").style.backgroundColor = "white";
-            document.getElementById("adsline").style.backgroundColor = "white";
-            document.getElementById("headline").style.backgroundColor = "black";
-            document.getElementById("footline").style.backgroundColor = "black";
-            document.getElementById("headline").style.color = "white";
-            document.getElementById("footline").style.Color = "white";
+            document.getElementById("bookview").style.backgroundColor = "#F7F7F7";
+            document.getElementById("navline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("adsline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("headline").style.backgroundColor = "#00AF5B";
+            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("headline").style.color = "#F7F7F7";
+            document.getElementById("footline").style.color = "#F7F7F7";
         }
         function bgblack() {
-            document.getElementById("bookview").style.backgroundColor = "black";
-            document.getElementById("navline").style.backgroundColor = "black";
-            document.getElementById("adsline").style.backgroundColor = "black";
-            document.getElementById("headline").style.backgroundColor = "white";
-            document.getElementById("footline").style.backgroundColor = "white";
-            document.getElementById("headline").style.color = "black";
-            document.getElementById("footline").style.color = "black";
+            document.getElementById("bookview").style.backgroundColor = "#262626";
+            document.getElementById("navline").style.backgroundColor = "#262626";
+            document.getElementById("adsline").style.backgroundColor = "#262626";
+            document.getElementById("headline").style.backgroundColor = "#00AF5B";
+            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("headline").style.color = "#F7F7F7";
+            document.getElementById("footline").style.color = "#F7F7F7";
         }
         function bgbeige() {
             document.getElementById("bookview").style.backgroundColor = "beige";
             document.getElementById("navline").style.backgroundColor = "beige";
             document.getElementById("adsline").style.backgroundColor = "beige";
-            document.getElementById("headline").style.backgroundColor = "black";
-            document.getElementById("footline").style.backgroundColor = "black";
-            document.getElementById("headline").style.color = "white";
-            document.getElementById("footline").style.color = "white";
-        }
-        function bggray() {
-            document.getElementById("bookview").style.backgroundColor = "gray";
-            document.getElementById("navline").style.backgroundColor = "gray";
-            document.getElementById("adsline").style.backgroundColor = "gray";
-            document.getElementById("headline").style.backgroundColor = "black";
-            document.getElementById("footline").style.backgroundColor = "black";
-            document.getElementById("headline").style.color = "white";
-            document.getElementById("footline").style.color = "white";
+            document.getElementById("headline").style.backgroundColor = "#00AF5B";
+            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("headline").style.color = "#F7F7F7";
+            document.getElementById("footline").style.color = "#F7F7F7";
         }
         function tcblack() {
-            document.getElementById("bookview").style.color = "black";
+            document.getElementById("bookview").style.color = "#262626";
         }
         function tcwhite() {
-            document.getElementById("bookview").style.color = "white";
+            document.getElementById("bookview").style.color = "#F7F7F7";
         }
         function tcgray() {
             document.getElementById("bookview").style.color = "gray";
         }
         function tcbeige() {
             document.getElementById("bookview").style.color = "beige";
+        }
+        function bdnormal() {
+        	document.getElementById("bookview").style.fontWeight = "400";
+        }
+        function bolder() {
+        	document.getElementById("bookview").style.fontWeight = "700";
+        }
+        function darkmode() {
+        	document.getElementById("bookview").style.color = "#F7F7F7";
+        	document.getElementById("bookview").style.backgroundColor = "#3a3d3b";
+        	document.getElementById("navline").style.backgroundColor = "#3a3d3b";
+        	document.getElementById("adsline").style.backgroundColor = "#3a3d3b";
+        	document.getElementById("headline").style.backgroundColor = "#262626";
+        	document.getElementById("footline").style.backgroundColor = "#262626";	
+        }
+        function defaultmode() {
+        	document.getElementById("bookview").style.fontFamily = "Nanum Gothic";
+        	document.getElementById("bookview").style.fontSize = "18px";
+        	document.getElementById("bookview").style.lineHeight = "2.4";
+        	document.getElementById("bookview").style.backgroundColor = "#F7F7F7";
+            document.getElementById("navline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("adsline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("headline").style.backgroundColor = "#00AF5B";
+            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("bookview").style.color = "#262626";
+            document.getElementById("headline").style.color = "#F7F7F7";
+            document.getElementById("footline").style.color = "#F7F7F7";
+            document.getElementById("bookview").style.fontWeight = "400";
         }
         
         
@@ -373,6 +416,9 @@
                                 </tr>
                                 <tr>
                                     <th>배경색상</th>
+                                    <td><input type="radio" id="bggreen" name="bgcolor" onclick="bggreen()">
+                                        <label for="bggreen">녹색</label>
+                                    </td>
                                     <td><input type="radio" id="bgwhite" name="bgcolor" onclick="bgwhite()">
                                         <label for="bgwhite">흰색</label>
                                     </td>
@@ -381,9 +427,6 @@
                                     </td>
                                     <td><input type="radio" id="bgbeige" name="bgcolor" onclick="bgbeige()">
                                         <label for="bgbeige" selected="selected">베이지</label>
-                                    </td>
-                                    <td><input type="radio" id="bggray" name="bgcolor" onclick="bggray()">
-                                        <label for="bggray">회색</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -399,6 +442,21 @@
                                     </td>
                                     <td><input type="radio" id="tcbeige" name="textcolor" onclick="tcbeige()">
                                         <label for="tcbeige" selected="selected">베이지</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>기타</th>
+                                    <td><input type="radio" id="bdnormal" name="etc" onclick="bdnormal()">
+                                        <label for="bdnormal">보통</label>
+                                    </td>
+                                    <td><input type="radio" id="bolder" name="etc" onclick="bolder()">
+                                        <label for="bolder">굵게</label>
+                                    </td>
+                                    <td><input type="radio" id="darkmode" name="etc" onclick="darkmode()">
+                                        <label for="darkmode">다크모드</label>
+                                    </td>
+                                    <td><input type="radio" id="defaultmode" name="etc" onclick="defaultmode()">
+                                        <label for="defaultmode" selected="selected">초기화</label>
                                     </td>
                                 </tr>
                             </table>
