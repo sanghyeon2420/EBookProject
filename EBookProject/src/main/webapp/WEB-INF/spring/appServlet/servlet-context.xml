@@ -19,11 +19,18 @@
 	<resources mapping="/book/resources/**" location="/resources/" />
 	<resources mapping="/page/resources/**" location="/resources/" />
 	<resources mapping="/writer/resources/**" location="/resources/" />
+	<resources mapping="/web/resources/**" location="/resources/" />
 	<resources mapping="/admin/resources/**" location="/resources/" />
+	<resources mapping="/book/contentview/resources/**" location="/resources/" />
 	
 	<!-- 인터셉터 선언 -->
 	<beans:bean id="loginInterceptor" class="com.example.EBookProject.interceptor.LoginInterceptor" />
-	
+		<interceptors>
+		<interceptor>
+			<mapping path="/book/contentview/*"/>
+			<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+	</interceptors>
 
 	
 	<resources mapping="/notic/resources/**" location="/resources/" />

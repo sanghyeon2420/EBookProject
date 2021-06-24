@@ -88,17 +88,6 @@ public class BookController {
 		return mav;
 	}
 	
-
-	/*@ResponseBody
-	@RequestMapping("hits")
-	public String hits(String writer_no) {
-		int writer_num = Integer.parseInt(writer_no);
-		System.out.println("writer controller writer_no :====>>>"+writer_no);
-		writerservice.updateHits(writer_num); // 추천수 증가
-		WriterDTO dto=writerservice.writerbring(writer_num);
-		return String.valueOf(dto.getW_hits());
-	}*/
-	
 	@ResponseBody
 	@RequestMapping("hits")
 	public String hits(String ebook_no) {
@@ -120,6 +109,7 @@ public class BookController {
 		model.addAttribute("book",book);
 		model.addAttribute("content",content);
 		model.addAttribute("contentCount", contentCount);
+		model.addAttribute("b_category",dto.getB_category());
 		model.addAttribute("b_name",dto.getB_name());
 		model.addAttribute("content_name", service.contentName(book, content));
 		return "book/viewer"; // 이동할 페이지 지정

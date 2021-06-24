@@ -71,6 +71,12 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	@Override
+
+	public List<BookDTO> searchbook(String keyword) {
+		return sqlSession.selectList("book.searchbook", keyword);
+		
+	}
+
 	public int contentCount(int ebook_no) {
 		return sqlSession.selectOne("book.contentCount",ebook_no);
 	}
@@ -86,8 +92,4 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectOne("book.contentName", map);
 	}
 
-
-
-
-	
 }

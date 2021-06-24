@@ -9,4 +9,5 @@ public interface WriterDAO {
 	public List<WriterDTO> writer_enter();  //책 쓴 작가 조회
 	public WriterDTO writerbring(int writer_no); //작가 번호로 상세조회
 	public void updateHits(int writer_no);  //작가 번호로 조회수 증가
+	public List<WriterDTO> searchwriter(String keyword);  //검색
 }

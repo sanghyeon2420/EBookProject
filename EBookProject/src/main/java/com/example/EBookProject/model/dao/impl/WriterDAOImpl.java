@@ -37,4 +37,9 @@ public class WriterDAOImpl implements WriterDAO {
 		sqlSession.update("writer.updateHits",writer_no);
 		
 	}
+
+	@Override
+	public List<WriterDTO> searchwriter(String keyword) {
+		return sqlSession.selectList("writer.searchwriter", keyword);
+	}
 }

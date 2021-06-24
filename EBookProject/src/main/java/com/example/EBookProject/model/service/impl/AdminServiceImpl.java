@@ -21,20 +21,30 @@ public class AdminServiceImpl implements AdminService {
 	
 	
 	@Override
+	// 회원리스트 불러오기 
 	public List<MemberDTO> memberlist() {
 		return dao.memberlist();
 	}
 
 
 	@Override
+	// 책리스트 불러오기 
 	public List<BookDTO> booklist() {
 		return dao.booklist();
 	}
 
 
 	@Override
+	// 게시글리스트 불러오기 
 	public List<BoardDTO> booadlist() {
 		return dao.booadlist();
 	}
 
+	@Override 
+	// 회원 탈퇴 
+	public int delectMember(MemberDTO dto) {
+		return dao.deleteMember(dto);
+		
+	}
+	
 }
