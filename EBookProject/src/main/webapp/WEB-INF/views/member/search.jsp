@@ -13,8 +13,13 @@
     	position: relative;
     	display: flex;
 	}
+	form {
+		width: 100%;
+		display: flex;
+		position: relative;
+	}
 	.body {
-		width: 50%;
+		width: 100%;
 		display: flex;
 		flex-flow: column;
 		padding: 10px;
@@ -96,9 +101,9 @@ $(document).ready(function(){
   	
   	<article id="mainArticle">
 
-				<form method="post" action="<%=request.getContextPath()%>/member/searchid" name="form1">
 	<!-- 아이디 찾기 -->
 	<div class="search1">
+		<form method="post" action="<%=request.getContextPath()%>/member/searchid" name="form1">
 		<div class="body">
 			<h2>아이디 찾기</h2>
 			<div class="search2">
@@ -121,17 +126,15 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-		</div>
-				</form>
+		</form>
 
 
 
-				<form method="post" action="<%=request.getContextPath()%>/member/searchpw" name="form2">
 		<!-- 비밀번호 찾기 -->
-			<div class="search1">
-			<div class="search2">
+			<form method="post" action="<%=request.getContextPath()%>/member/searchpw" name="form2">
+			<div class="body">
 			<h2>비밀번호 찾기</h2>
-				<div class="body">
+			<div class="search2">
 				<div class="search_in">
 					<div class="form2">
 						<label for="userid">아이디:&nbsp;</label> <input type="text"
@@ -151,8 +154,8 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
+	</form>
 	</div>
-				</form>
 	</article>
 	
 	 <nav id="mainNav">

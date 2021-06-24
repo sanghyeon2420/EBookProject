@@ -49,5 +49,10 @@ public class AdminDAOImpl implements AdminDAO {
 	public void deleteboard(BoardDTO dto) {
 		sqlSession.delete("board.deleteboard", dto);
 	}
+	@Override
+	public void cookiemanager(MemberDTO dto) {
+		sqlSession.update("member.cookiemanager", dto);
+	}
+
 
 }
