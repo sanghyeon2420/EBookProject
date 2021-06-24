@@ -37,4 +37,13 @@ public class AdminDAOImpl implements AdminDAO {
 		return sqlSession.selectList("board.boardlist");
 	}
 
+
+	@Override
+	public int deleteMember(MemberDTO dto) {
+		return sqlSession.delete("member.deletemember", dto);
+	
+	}
+
+
+
 }

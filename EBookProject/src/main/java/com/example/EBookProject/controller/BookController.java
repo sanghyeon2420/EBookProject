@@ -109,6 +109,7 @@ public class BookController {
 		model.addAttribute("book",book);
 		model.addAttribute("content",content);
 		model.addAttribute("contentCount", contentCount);
+		model.addAttribute("b_category",dto.getB_category());
 		model.addAttribute("b_name",dto.getB_name());
 		model.addAttribute("content_name", service.contentName(book, content));
 		return "book/viewer"; // 이동할 페이지 지정

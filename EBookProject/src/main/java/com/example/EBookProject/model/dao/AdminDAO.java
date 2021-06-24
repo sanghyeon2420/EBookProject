@@ -10,4 +10,6 @@ public interface AdminDAO {
 	public List<MemberDTO> memberlist();
 	public List<BookDTO> booklist();
 	public List<BoardDTO> booadlist();
+	public int deleteMember(MemberDTO dto);
+	
 }

@@ -13,8 +13,11 @@
 
 	
 $(document).ready(function(){
-
-
+	console.log("${param.message}");
+	var message="${param.message}";
+	if(message=="nologin"){
+		alert("로그인 후 이용이 가능합니다.");
+	}
 	
 	$("#btnLogin").click(function(){
 		var userid=$("#userid").val();
