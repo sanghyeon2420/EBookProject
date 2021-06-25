@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.EBookProject.model.dto.BoardDTO;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.MemberDTO;
+import com.example.EBookProject.model.dto.NoticDTO;
 import com.example.EBookProject.model.service.impl.AdminServiceImpl;
 
 @Controller
@@ -26,11 +27,16 @@ public class AdminController {
 		System.out.println(listtype);
 		
 			List<MemberDTO> memberlist=service.memberlist();
-			request.setAttribute("member_list",memberlist);			
+			request.setAttribute("member_list",memberlist);	
+			
 			List<BookDTO> booklist=service.booklist();
 			request.setAttribute("book_list", booklist);
+			
 			List<BoardDTO> boardlist=service.booadlist();
 			request.setAttribute("board_list", boardlist);
+			
+			List<NoticDTO> noticlist=service.noticlist();
+			request.setAttribute("notic_list", noticlist);
 			
 			
 			request.setAttribute("listtype", listtype);
@@ -68,6 +74,16 @@ public class AdminController {
 		dto.setBoard_no(board_no);
 		service.deleteboard(dto);
 		return "redirect:/admin/list?listtype=board";
+	}
+	
+	
+	@RequestMapping("deletenotic")
+	public String deletenotic(int notic_no) {
+		System.out.println("jsp에서 넘어온 게시판 번호 : " +notic_no);
+		NoticDTO dto = new NoticDTO();
+		dto.setNotic_no(notic_no);
+		service.deletenotic(dto);
+		return "redirect:/admin/list?listtype=notic";
 	}
 	
 	@RequestMapping("cookiemanager") 

@@ -92,25 +92,25 @@ $(document).bind('keydown',function(e){
 				<button style="width:22%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
 				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
 				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>	
-				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">공지사항관리</button>					
+				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=notic'">공지사항관리</button>					
 			</c:when>
 			<c:when test="${listtype eq 'book'}">
 				<button style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
 				<button  style="width:22%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
 				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>	
-				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">공지사항관리</button>					
+				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=notic'">공지사항관리</button>					
 			</c:when>
 			<c:when test="${listtype eq 'board'}">
 				<button style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
 				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
 				<button  style="width:22%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>			
-				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">공지사항관리</button>				
+				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=notic'">공지사항관리</button>				
 			</c:when>	
 			<c:when test="${listtype eq 'notic'}">
 				<button style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;;" onclick="location.href='/EBookProject/admin/list?listtype=member'">회원관리</button>
 				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=book'">도서관리</button>
 				<button  style="width:22%; height:60px; background-color:#5FD184; color:#fff; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">게시판관리</button>
-				<button  style="width:22%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=board'">공지사항관리</button>				
+				<button  style="width:22%; height:60px; background-color:#fff; color:#5FD184; border-style:none;  font-size:25px; font-family: 'Sunflower', sans-serif; font-weight:bold; cursor:pointer;" onclick="location.href='/EBookProject/admin/list?listtype=notic'">공지사항관리</button>				
 			</c:when>	
 		</c:choose>
 		
@@ -243,6 +243,42 @@ $(document).bind('keydown',function(e){
 		</td>
 	</tr>
 		 </c:forEach>
+ 	</c:when>
+
+
+ 	 	<c:when test="${listtype eq 'notic'}">
+ 		<tr style="background-color: #5FD184">
+	  	<th width="5%">번호</th>
+	  	<th width="20%">게시글제목</th>
+	  	<th width="10%">작성일</th>
+	  	<th width="10%">관리</th>
+   </tr>	
+		<c:forEach var="noticlist" items="${notic_list}">
+	<tr>
+		<td>${noticlist.notic_no }</td>
+		<td>${noticlist.notic_title }</td>
+		<td><fmt:formatDate value="${noticlist.notic_regdate }" pattern="MM. dd" /></td>
+		<td>
+			<a href="#open${noticlist.notic_no}"><button>삭제</button></a>
+	         <div class="white_content" id="open${noticlist.notic_no }">
+	            <div>
+	            <br><br>
+	              <p>
+	              	${noticlist.notic_no }번 게시글을 삭제 처리 하시겠습니까?
+	              <p><br>
+	       		 <a href="<%=request.getContextPath() %>/admin/deletenotic?notic_no=${noticlist.notic_no}"><button>삭제</button></a>
+				 <a href="#close"><button>닫기</button></a>
+	           </div>
+        	 </div>
+		</td>
+		 </c:forEach>
+		 	 
+		<tr>
+			<td>
+			<button>글쓰기</button>
+			</td>
+			<td colspan="3"></td>		
+		</tr>
  	</c:when>
 
  	</c:choose>
