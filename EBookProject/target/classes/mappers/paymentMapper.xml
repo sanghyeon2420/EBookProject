@@ -8,6 +8,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="paymentbring" resultType="com.example.EBookProject.model.dto.PaymentDTO">
 		select * from payment where user_no=#{user_no}
 	</select>
+	
+	<!-- 상품 중복 체크 -->
+	<select id="paymentcheck" resultType="com.example.EBookProject.model.dto.PaymentDTO">
+		
+	</select>
+
+
+	
+	<!-- 컨텐츠 구매 -->
+	
+	<insert id="result" >
+	insert into payment values ((select nvl(max(payment_id),0)+1 from payment),#{contents_no},#{user_no},sysdate)
+	</insert>
+	
+	<update id="buy">
+	update member 
+	set cash=cash-((select viewcontent_price from content where contents_no=#{contents_no})) 
+	where (select cash from member where user_no=#{user_no}) >= (select viewcontent_price from content where contents_no=#{contents_no}) 
+	and  user_no=#{user_no}	
+	</update>
+
+	<!-- 컨텐츠 구매  end -->
 </mapper>
 
 
