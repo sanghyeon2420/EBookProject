@@ -56,23 +56,7 @@ $(document).ready(function(){
 		location.href="${pageContext.request.contextPath}/member/logout";
 	});
 });
-//게시물 삭제 확인
-function deleteB() {
-	swal({
-		 icon: "warning",
-		 text: "정말 게시글을 삭제하시겠습니까?",
-		 closeOnClickOutside : false,
-		 closeOnEsc : false, 
-		 buttons: ["돌아가기", "삭제하기"],
-		}).then(function(isConfirm) {
-		  if (isConfirm) {
-		    swal('삭제 완료!','게시글을 삭제했습니다.','success').then(function(isConfirm)
-		   		{
-					location.href='delete?notic_no='+${notic.notic_no};
-		    	});
-		  }
-		})
-}
+
 </script>
 <style>
 a#MOVE_TOP_BTN {
@@ -101,42 +85,34 @@ img {
   <article id="mainArticle">
  <div style="width:800px;">
 		
-		<script>
-		$("#list_btn").click(function(){
-			self.location="view?notic_no="
-					+ "searchOption=${searchOption}&keyword=${keyword}"
-					+ "&search=${search}&curPage=${curPage}";
-		});
-		</script>
-		
 		<br/><br/>
 	<form>
 		<!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->
-		<input type="hidden" name="notic_no" value="${notic.notic_no}">
+		<input type="hidden" name="notic_no" value="${noticdto.notic_no}">
 		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 			<td width="70">제목</td>
-			<td colspan='3' align="left">${notic.notic_title}</td>
+			<td colspan='3' align="left">${noticdto.notic_title}</td>
 			</tr>
 				
 			<tr>
 			<td>작성일</td>
 			<td colspan='3' align="left">
 			<div style="width:150px;float:left;">
-			${notic.regdate}  
+			${noticdto.notic_regdate}  
 			</div>
 			<div>
-			|&nbsp;&nbsp;&nbsp;조회수 : ${notic.notic_viewCnt}
+			|&nbsp;&nbsp;&nbsp;조회수 : ${noticdto.notic_viewCnt}
 			</div>
 			</td>
 			</tr>
 				
 			<tr valign="top">
-			<td colspan='4' height="500px">${notic.notic_content}</td>
+			<td colspan='4' height="500px">${noticdto.notic_content}</td>
 			</tr>
 		</table>
 	</form>
-	<div style="margin-top: 10px; margin-bottom:20px;">
+<%-- 	<div style="margin-top: 10px; margin-bottom:20px;">
 	<div align="center" style="float:left; ">
 			<c:if test="${map.previousB != null}">
 			<button class="previous" onClick="location.href='view?notic_no=${map.previousB.notic_no}&show=Y'">이전글</button>
@@ -145,27 +121,15 @@ img {
 			<button class="next" onClick="location.href='view?notic_no=${map.nextB.notic_no}&show=Y'">다음글</button>
 			</c:if>
 			&nbsp;&nbsp;&nbsp;게시글 번호 : ${notic.notic_no}
-		</div>
+		</div> --%>
  
-		<div style="float:right;">
-		<!-- 관리자만 공지 -->
-		<c:if test="${member.userid eq 'Admin'}">
-			<a href="write">글쓰기</a>&nbsp;&nbsp;&nbsp;
-		</c:if>
-		<!-- 관리자만 수정,삭제 버튼 표시 -->
-		<c:if test="${member.userid eq 'Admin'}">
-			<a href="updateWrite">수정</a>&nbsp;&nbsp;&nbsp;
-			<a href="#" onClick="deleteB()">삭제</a>&nbsp;&nbsp;&nbsp;
-		</c:if>
 		
-		<button type="button" id="list_btn" onClick="location.href='notic'">목록</button>
+		<button type="button" id="list_btn" onClick="location.href='list'">목록</button>
 		</div>
 		</div>
-		</div>
-	</div>
 	
 	
-	<br/><br/><br/>
+	<%-- <br/><br/><br/>
 	<!-- 현재 글을 기준으로 이전글,다음글 리스트 -->
 	<div align="center">
 		<table class="simpleView" width="800">
@@ -188,7 +152,7 @@ img {
 			</tr>
 			</c:if>
 		</table>
-	</div>
+	</div> --%>
   </article>
   
   <nav id="mainNav">
