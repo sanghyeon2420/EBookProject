@@ -71,7 +71,7 @@ function list(page){
   <c:forEach var="row" items="${map.list}">
 <tr>
 	<td>${row.board_no}</td>
-	<td><a href="${pageContext.request.contextPath}/board/detail?board_no=${row.board_no}" >${row.b_title}</a></td>
+	<td><a href="${pageContext.request.contextPath}/board/view?board_no=${row.board_no}" >${row.b_title}</a></td>
 	<td>${row.nickname}</td>
 	<td><fmt:formatDate value="${row.b_write_date}" pattern="MM.dd" /></td>
 	<!-- 조회수 --><td>${row.board_get}</td>
