@@ -41,7 +41,7 @@ function disableclick(event){
         "pic upload upload"
         "info info info"
         "Wsubmit Wsubmit Wsubmit";
-      grid-template-rows: 10% 10% 10% 10% 10% 35% 5%;
+      grid-template-rows: 10% 10% 10% 10% 10% 35% 7%;
       grid-template-columns: 20% 40% 40%;
       grid-gap: 10px;
       height: 60vh;
@@ -79,11 +79,14 @@ function disableclick(event){
     
     #Wsubmit {
       grid-area: Wsubmit;
+      display:flex;
+      justify-content: center;
+      align-items: center;
     }
     
-    #pic, #title, #writer, #category, #form, #upload, #info, #Wsubmit{
+    /* #pic, #title, #writer, #category, #form, #upload, #info, #Wsubmit{
     	border:dotted 1px;
-    }
+    } */
     
     input#nickname {
       background-color: #eef5f0;
@@ -114,22 +117,22 @@ function disableclick(event){
         </div>
         </div>
 		<div class="title" id="title">
-			작품명 <input type="text" id="wTitle" name="wTitle">
+			작품명 <input type="text" id="wTitle" name="wTitle" class="form-control">
 		</div>
 		<div class="writer" id="writer">
-			작가이름 <input type="text" id="nickname" name="nickname" value="${dto.w_name}" style="color:#3a3d3b" readonly/>
+			작가이름 <input type="text" id="nickname" name="nickname" class="form-control" value="${dto.w_name}" style="color:#3a3d3b" readonly/>
 		</div>
 		<div class="category" id="category">
-			카테고리 
+			카테고리 <br>
             <input type="radio" id="action" name="category" value="무협지" checked="checked">
-            <label for="action">무협지</label>
+            <label for="action" >무협지</label>
             <input type="radio" id="fantasy" name="category" value="판타지">
             <label for="fantasy">판타지</label>
             <input type="radio" id="romance" name="category" value="로맨스">
             <label for="romance">로맨스</label>
 		</div>
 		<div class="form" id="form">
-			연재형태
+			연재형태 <br>
             <input type="radio" id="continue" name="form" value="continue" checked="checked">
             <label for="action" >연재</label>
             <input type="radio" id="finish" name="form" value="finish">
@@ -143,11 +146,11 @@ function disableclick(event){
         </div>
 		<div class="info" id="info">
             <h3>책소개</h3>
-            <textarea class="textarea" style="height:70%; width:100%;" name="novel_story"></textarea>
+            <textarea class="textarea" style="height:70%; width:100%;" name="novel_story" class="form-control"></textarea>
         </div>
 		<div class="Wsubmit" id="Wsubmit">
-            <button id="btn btn-primary" type="submit" value="작성">작성</button>
-            <button id="btn btn-danger" type="reset" value="취소">취소</button>
+            <button class="btn btn-primary" type="submit">작품 등록</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			<button class="btn btn-danger" type="reset">밥이나먹어</button>
         </div>
 	</form>
 	<script type="text/javascript">

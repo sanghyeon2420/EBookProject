@@ -73,7 +73,7 @@
 			</div>
 			</c:if>
 			
-			<c:if test="${member != null}">
+			<c:if test="${member.isAdmin == 1}">
 			<div class="Ebook_icons_in">
 				<a href="${pageContext.request.contextPath}/member/viewdetail">${member.nickname}</a>
 				<a href="<%=path%>/member/setting" id="setting" title="회원정보"><i class="fas fa-cog"></i></a>
