@@ -37,7 +37,7 @@ public class AdminController {
 			
 			List<NoticDTO> noticlist=service.noticlist();
 			request.setAttribute("notic_list", noticlist);
-			
+	
 			
 			request.setAttribute("listtype", listtype);
 		

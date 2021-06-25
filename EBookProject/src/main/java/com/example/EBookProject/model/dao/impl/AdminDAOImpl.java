@@ -16,6 +16,7 @@ import com.example.EBookProject.model.dto.NoticDTO;
 @Repository // Spring bean으로 등록 서버가 올라올때 객체 생성
 public class AdminDAOImpl implements AdminDAO {
 	
+	
 	@Inject
 	SqlSession sqlSession; // null new로 안만듬
 	

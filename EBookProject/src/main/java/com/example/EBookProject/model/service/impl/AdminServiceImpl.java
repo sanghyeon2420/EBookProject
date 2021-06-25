@@ -46,8 +46,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override 
 	// 회원 탈퇴 
 	public void deleteMember(MemberDTO dto) {
-		dao.deleteMember(dto);
-		
+		dao.deleteMember(dto);	
 	}
 
 	@Override

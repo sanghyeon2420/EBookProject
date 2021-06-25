@@ -8,6 +8,7 @@ import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.dto.NoticDTO;
 
 public interface AdminService {
+	
 	// 목록 불러오기 
 		public List<MemberDTO> memberlist();
 		public List<BookDTO> booklist();

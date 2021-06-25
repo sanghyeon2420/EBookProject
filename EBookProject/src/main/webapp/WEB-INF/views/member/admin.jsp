@@ -280,9 +280,7 @@ $(document).bind('keydown',function(e){
 			<td colspan="3"></td>		
 		</tr>
  	</c:when>
-
  	</c:choose>
- 	
   	
   </table>
   </article>
