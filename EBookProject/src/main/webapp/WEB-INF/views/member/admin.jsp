@@ -147,7 +147,7 @@ $(document).bind('keydown',function(e){
 	       		 <a href="<%=request.getContextPath() %>/admin/deleteMember?user_no=${memberlist.user_no }"><button>탈회</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
-        	 </div>
+        	 </div> 
 	</td>
 	</tr>	  
 	 </c:forEach>

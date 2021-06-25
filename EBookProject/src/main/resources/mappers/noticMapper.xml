@@ -53,7 +53,7 @@
 		FROM 
 		NOTIC
 		WHERE
-		NOTIC_NO = #{notic_no} AND SHOW = 'Y'
+		NOTIC_NO = #{notic_no} 
 	</select>
 	
 	<!-- 이전글 -->

@@ -8,8 +8,11 @@
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link href="resources/css/servPage.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
@@ -56,23 +59,7 @@ $(document).ready(function(){
 		location.href="${pageContext.request.contextPath}/member/logout";
 	});
 });
-//게시물 삭제 확인
-function deleteB() {
-	swal({
-		 icon: "warning",
-		 text: "정말 게시글을 삭제하시겠습니까?",
-		 closeOnClickOutside : false,
-		 closeOnEsc : false, 
-		 buttons: ["돌아가기", "삭제하기"],
-		}).then(function(isConfirm) {
-		  if (isConfirm) {
-		    swal('삭제 완료!','게시글을 삭제했습니다.','success').then(function(isConfirm)
-		   		{
-					location.href='delete?notic_no='+${notic.notic_no};
-		    	});
-		  }
-		})
-}
+
 </script>
 <style>
 a#MOVE_TOP_BTN {
@@ -88,6 +75,20 @@ img {
   
   }
 
+	 table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  	text-align: center;
+
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+	font-family: 'Jua', sans-serif;
+	font-size: 20px;
+	text-align: center;
+  }
 
 </style>
 </head>
@@ -99,44 +100,35 @@ img {
    <%@ include file="../../include/pageHeader.jsp" %>
   </header>
   <article id="mainArticle">
- <div style="width:800px;">
-		
-		<script>
-		$("#list_btn").click(function(){
-			self.location="view?notic_no="
-					+ "searchOption=${searchOption}&keyword=${keyword}"
-					+ "&search=${search}&curPage=${curPage}";
-		});
-		</script>
-		
+	
 		<br/><br/>
-	<form>
 		<!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->
-		<input type="hidden" name="notic_no" value="${notic.notic_no}">
-		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%">
+		<input type="hidden" name="notic_no" value="${noticdto.notic_no}">
+		<table>
 			<tr>
-			<td width="70">제목</td>
-			<td colspan='3' align="left">${notic.notic_title}</td>
+			<td style="background-color: #5FD184;">제목</td>
+			<td colspan='4'>${noticdto.notic_title}</td>
 			</tr>
-				
 			<tr>
-			<td>작성일</td>
-			<td colspan='3' align="left">
-			<div style="width:150px;float:left;">
-			${notic.regdate}  
-			</div>
-			<div>
-			|&nbsp;&nbsp;&nbsp;조회수 : ${notic.notic_viewCnt}
-			</div>
+			<td colspan='4' style="background-color: #5FD184;"> 내용 </td>
+			<tr valign="top">
+			<td colspan='4'>
+			<br>
+			${noticdto.notic_content}
+			<br><br>
 			</td>
 			</tr>
-				
-			<tr valign="top">
-			<td colspan='4' height="500px">${notic.notic_content}</td>
+			<tr>
+			<td style="background-color: #5FD184;">작성일</td>
+			<td align="left">
+			${noticdto.notic_regdate} </td> 
+			<td style="background-color: #5FD184;">조회수</td>
+			 <td>${noticdto.notic_viewCnt}
+			</td>
 			</tr>
 		</table>
-	</form>
-	<div style="margin-top: 10px; margin-bottom:20px;">
+
+<%-- 	<div style="margin-top: 10px; margin-bottom:20px;">
 	<div align="center" style="float:left; ">
 			<c:if test="${map.previousB != null}">
 			<button class="previous" onClick="location.href='view?notic_no=${map.previousB.notic_no}&show=Y'">이전글</button>
@@ -145,27 +137,15 @@ img {
 			<button class="next" onClick="location.href='view?notic_no=${map.nextB.notic_no}&show=Y'">다음글</button>
 			</c:if>
 			&nbsp;&nbsp;&nbsp;게시글 번호 : ${notic.notic_no}
-		</div>
+		</div> --%>
  
-		<div style="float:right;">
-		<!-- 관리자만 공지 -->
-		<c:if test="${member.userid eq 'Admin'}">
-			<a href="write">글쓰기</a>&nbsp;&nbsp;&nbsp;
-		</c:if>
-		<!-- 관리자만 수정,삭제 버튼 표시 -->
-		<c:if test="${member.userid eq 'Admin'}">
-			<a href="updateWrite">수정</a>&nbsp;&nbsp;&nbsp;
-			<a href="#" onClick="deleteB()">삭제</a>&nbsp;&nbsp;&nbsp;
-		</c:if>
 		
-		<button type="button" id="list_btn" onClick="location.href='notic'">목록</button>
+		<button type="button" id="list_btn" onClick="location.href='list'">목록</button>
 		</div>
 		</div>
-		</div>
-	</div>
 	
 	
-	<br/><br/><br/>
+	<%-- <br/><br/><br/>
 	<!-- 현재 글을 기준으로 이전글,다음글 리스트 -->
 	<div align="center">
 		<table class="simpleView" width="800">
@@ -188,7 +168,7 @@ img {
 			</tr>
 			</c:if>
 		</table>
-	</div>
+	</div> --%>
   </article>
   
   <nav id="mainNav">

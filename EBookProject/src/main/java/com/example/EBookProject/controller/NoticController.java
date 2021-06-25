@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.common.Pager;
 import com.example.EBookProject.model.dto.NoticDTO;
@@ -100,14 +102,25 @@ public class NoticController {
 
 		// 게시글 상세보기
 		@RequestMapping("view")
-		public String readNotic(@RequestParam("notic_no") int notic_no, 
-								
+		public ModelAndView readNotic(
+				@RequestParam("notic_no") int notic_no,
+				HttpServletRequest request,
+				ModelAndView mav) throws Exception{
+			
+		/*						
 								@RequestParam(defaultValue = "notic_title") String searchOption,
 								@RequestParam(defaultValue = "") String keyword, 
 								@RequestParam(defaultValue = "") String search,
 								@RequestParam(defaultValue = "1") int curPage) throws Exception {
-
-			return "notic/view";
+*/
+				System.out.println(notic_no);
+				NoticDTO dto = noticService.readNotic(notic_no);
+				mav.addObject("noticdto",dto);
+				mav.setViewName("notic/view");
+				System.out.println(dto);
+				
+				
+			return mav;
 		}
 	}
 
