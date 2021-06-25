@@ -40,4 +40,14 @@ public class MemberServiceImpl implements MemberService {
 	public void SignUp(MemberDTO dto) {
 		dao.SignUp(dto);
 	}
+
+	@Override
+	public MemberDTO searchID(MemberDTO dto) {
+		return dao.searchID(dto);
+	}
+
+	@Override
+	public MemberDTO searchPW(MemberDTO dto) {
+		return dao.searchPW(dto);
+	}
 }

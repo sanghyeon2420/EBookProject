@@ -81,10 +81,7 @@ function disableclick(event){
     	margin: 7px 14px;
     	color:#262626;
     	font-size: 1.5vh;
-	}
-
-	.item:nth-child(1) {
-    	background:#2bb33698;
+	    background:#2bb33698;
 	}
 	.back {
 	background-color: #d9e7ff;
@@ -150,12 +147,14 @@ function disableclick(event){
 				<div id="headTitle">
 					<div class="name">
 						<h1>${dto.w_name} 님</h1>
-						<strong>추천수 :</strong><span id="span_hits">${dto.w_hits }</span><i class="far fa-heart"></i>
+						<strong>추천수 : </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i>
 					</div>
 				</div>
 				<div class="container" id="container">
 					<div class="item">
-						<i class="far fa-thumbs-up"></i><br> 내 작품 등록하기<br>
+					<a href="${pageContext.request.contextPath}/writer/insertBook">
+						<br><i class="fas fa-book-open"></i> 내 작품 등록하기<br>
+					</a>
 					</div>
 				</div>
 			</div>

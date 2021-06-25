@@ -45,13 +45,18 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
+	// 책 삭제 
 	public void deleteBook(BookDTO dto) {
 		dao.deleteBook(dto);
 	}
 
 	@Override
+	//게시글 삭제 
 	public void deleteboard(BoardDTO dto) {
 		dao.deleteboard(dto);
 	}
-	
+	@Override
+	public void cookiemanager(MemberDTO dto) {
+		dao.cookiemanager(dto);
+	}
 }
