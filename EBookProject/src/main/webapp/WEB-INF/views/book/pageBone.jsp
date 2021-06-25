@@ -51,8 +51,8 @@ $(document).ready(function(){
 						<%-- <a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no }">
 						<h4>&nbsp;${bookdto.w_name }</h4></a> --%>
 						<h4><a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
-						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수 <i
-							class="far fa-heart"></i><span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;<button id="hits" name="hits">추천</button>
+						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수<i class="fas fa-heart"></i>
+						<span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;<button id="hits" name="hits">추천</button>
 					</div>
 					<div class="blank"></div>
 					<div class="container">
