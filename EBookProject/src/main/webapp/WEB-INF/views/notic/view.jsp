@@ -8,8 +8,11 @@
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link href="resources/css/servPage.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
@@ -72,6 +75,20 @@ img {
   
   }
 
+	 table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  	text-align: center;
+
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+	font-family: 'Jua', sans-serif;
+	font-size: 20px;
+	text-align: center;
+  }
 
 </style>
 </head>
@@ -83,35 +100,34 @@ img {
    <%@ include file="../../include/pageHeader.jsp" %>
   </header>
   <article id="mainArticle">
- <div style="width:800px;">
-		
+	
 		<br/><br/>
-	<form>
 		<!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->
 		<input type="hidden" name="notic_no" value="${noticdto.notic_no}">
-		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%">
+		<table>
 			<tr>
-			<td width="70">제목</td>
-			<td colspan='3' align="left">${noticdto.notic_title}</td>
+			<td style="background-color: #5FD184;">제목</td>
+			<td colspan='4'>${noticdto.notic_title}</td>
 			</tr>
-				
 			<tr>
-			<td>작성일</td>
-			<td colspan='3' align="left">
-			<div style="width:150px;float:left;">
-			${noticdto.notic_regdate}  
-			</div>
-			<div>
-			|&nbsp;&nbsp;&nbsp;조회수 : ${noticdto.notic_viewCnt}
-			</div>
+			<td colspan='4' style="background-color: #5FD184;"> 내용 </td>
+			<tr valign="top">
+			<td colspan='4'>
+			<br>
+			${noticdto.notic_content}
+			<br><br>
 			</td>
 			</tr>
-				
-			<tr valign="top">
-			<td colspan='4' height="500px">${noticdto.notic_content}</td>
+			<tr>
+			<td style="background-color: #5FD184;">작성일</td>
+			<td align="left">
+			${noticdto.notic_regdate} </td> 
+			<td style="background-color: #5FD184;">조회수</td>
+			 <td>${noticdto.notic_viewCnt}
+			</td>
 			</tr>
 		</table>
-	</form>
+
 <%-- 	<div style="margin-top: 10px; margin-bottom:20px;">
 	<div align="center" style="float:left; ">
 			<c:if test="${map.previousB != null}">
