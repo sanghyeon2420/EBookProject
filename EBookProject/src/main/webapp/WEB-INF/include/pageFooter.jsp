@@ -36,31 +36,31 @@ a:link { color: black; text-decoration: none;}
  			</a>
  			
  			<!-- 여기에 고객센터 등등 -->
- 			<a href="privacy">
+ 			<a href="#">
  				<span style="width: 20px; padding: 3px 3px; display: inline-block; text-align: center; user-select: auto;">
- 					<i class="fas fa-clipboard-list"></i>
+ 					<i class="fas fa-phone-square"></i>
  				</span>
  				고객센터
  			</a>
  			
  			<!-- 여기는 뭐할까 -->
- 			<a href="privacy">
+ 			<a href="#">
  				<span style="width: 20px; padding: 3px 3px; display: inline-block; text-align: center; user-select: auto;">
- 					<i class="fas fa-clipboard-list"></i>
+ 					<i class="fas fa-handshake"></i>
  				</span>
  				협력사
  			</a>
  			<!-- 생각해내봐 -->
- 			<a href="privacy">
+ 			<a href="#">
  				<span style="width: 20px; padding: 3px 3px; display: inline-block; text-align: center; user-select: auto;">
- 					<i class="fas fa-clipboard-list"></i>
+ 					<i class="fas fa-ad"></i>
  				</span>
  				광고문의
  			</a>
  			<!-- 생각해내봐 -->
- 			<a href="privacy">
+ 			<a href="#">
  				<span style="width: 20px; padding: 3px 3px; display: inline-block; text-align: center; user-select: auto;">
- 					<i class="fas fa-clipboard-list"></i>
+ 					<i class="fas fa-address-book"></i>
  				</span>
  				채용정보
  			</a>

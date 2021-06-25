@@ -1,3 +1,4 @@
+<%@page import="com.example.EBookProject.model.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -41,11 +42,10 @@ function disableclick(event){
         "pic upload upload"
         "info info info"
         "Wsubmit Wsubmit Wsubmit";
-      grid-template-rows: 10% 10% 10% 10% 10% 35% 5%;
+      grid-template-rows: 8% 8% 8% 8% 8% 1fr 7%;
       grid-template-columns: 20% 40% 40%;
       grid-gap: 10px;
-      height: 60vh;
-      width: 60vw;
+      height: 90vh;
       margin: 0;
       }
     
@@ -54,45 +54,76 @@ function disableclick(event){
     }
     
     #title { 
-      grid-area: title;     
+      grid-area: title;
+      text-indent:3;    
+      line-height:1.7; 
     }
       
     #writer { 
       grid-area: writer;
+      text-indent:3;  
+      line-height:1.7;   
     }
     
     #category {
       grid-area: category;
+      text-indent:3;  
+      line-height:1.7;   
     }
     
     #form {
       grid-area: form;
+      text-indent:3;    
+      line-height:1.7; 
     }
     
     #upload {
       grid-area: upload;
+      text-indent:3;   
+      line-height:1.7;  
+    }
+    
+    #upload p{
+      padding-top:6px;
     }
     
     #info {
       grid-area: info;
+      text-indent:3;  
+      line-height:1.7; 
     }
     
     #Wsubmit {
       grid-area: Wsubmit;
+      display:flex;
+      justify-content: center;
+      align-items: center;
     }
     
-    #pic, #title, #writer, #category, #form, #upload, #info, #Wsubmit{
-    	border:dotted 1px;
+    .titlemessage {
+      padding:3px;
     }
+    
+    /* #pic, #title, #writer, #category, #form, #upload, #info, #Wsubmit{
+    	border:dotted 1px;
+    } */
     
     input#nickname {
       background-color: #eef5f0;
       color: #968b8b;
     }
     
+    input[type=radio] {
+        display: none;
+    }
+    
+    input[type=radio]:checked + label{
+    	background-color: #5a6268
+    }
+    
     #image_preview img{
-      width: 12vw;
-      height: 34vh;
+      width: 11vw;
+      height: 40vh;
     }
 </style>
 </head>
@@ -110,44 +141,44 @@ function disableclick(event){
 	<form class= "setWrite" action="GOGOGO!">
 		<div class="pic" id="pic">
           <div id="image_preview">
-            <img src="#" />
+            <img src="resources/images/nocover.jpg" alt= "북커버를 등록해주세요." />
         </div>
         </div>
 		<div class="title" id="title">
-			작품명 <input type="text" id="wTitle" name="wTitle">
+			작품명 <input type="text" id="wTitle" name="wTitle" class="form-control">
 		</div>
 		<div class="writer" id="writer">
-			작가이름 <input type="text" id="nickname" name="nickname" value="${dto.w_name}" style="color:#3a3d3b" readonly/>
+			작가이름 <input type="text" id="nickname" name="nickname" class="form-control" value="${sessionScope.member.nickname }" style="color:#3a3d3b" readonly/>
 		</div>
 		<div class="category" id="category">
-			카테고리 
+			카테고리 <br>
             <input type="radio" id="action" name="category" value="무협지" checked="checked">
-            <label for="action">무협지</label>
+            <label for="action" class="btn btn-secondary">무협지</label>
             <input type="radio" id="fantasy" name="category" value="판타지">
-            <label for="fantasy">판타지</label>
+            <label for="fantasy" class="btn btn-secondary">판타지</label>
             <input type="radio" id="romance" name="category" value="로맨스">
-            <label for="romance">로맨스</label>
+            <label for="romance" class="btn btn-secondary">로맨스</label>
 		</div>
 		<div class="form" id="form">
-			연재형태
+			연재형태 <br>
             <input type="radio" id="continue" name="form" value="continue" checked="checked">
-            <label for="action" >연재</label>
+            <label for="continue" class="btn btn-secondary">연재</label>
             <input type="radio" id="finish" name="form" value="finish">
-            <label for="action" >완결</label>
+            <label for="finish" class="btn btn-secondary">완결</label>
 		</div>
 		<div class="upload" id="upload">
           <p>
-            <label for="image">이미지등록</label> 
+            <label for="image" class="btn btn-danger">이미지등록</label> 
             <input type="file" name="image" id="image" style="display:none;" /> 
         </p>
         </div>
 		<div class="info" id="info">
             <h3>책소개</h3>
-            <textarea class="textarea" style="height:70%; width:100%;" name="novel_story"></textarea>
+            <textarea class="textarea" style="height:80%; width:100%;" name="novel_story" class="form-control"></textarea>
         </div>
 		<div class="Wsubmit" id="Wsubmit">
-            <button id="btn btn-primary" type="submit" value="작성">작성</button>
-            <button id="btn btn-danger" type="reset" value="취소">취소</button>
+            <button class="btn btn-primary" type="submit">작품 등록</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			<button class="btn btn-danger" type="reset">취소</button>
         </div>
 	</form>
 	<script type="text/javascript">

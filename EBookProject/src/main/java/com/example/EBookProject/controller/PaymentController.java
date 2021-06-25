@@ -12,12 +12,15 @@ import com.example.EBookProject.model.dto.PaymentDTO;
 import com.example.EBookProject.model.service.impl.PaymentServiceImpl;
 
 @Controller
-@RequestMapping("/payment/*")
+@RequestMapping("/pay/*")
 public class PaymentController {
 
 	@Inject
 	PaymentServiceImpl service;
 	
-	
+	@RequestMapping("productbuy")
+	public String Productbuy() {
+		return "pay/payment";
+	}
 	
 }

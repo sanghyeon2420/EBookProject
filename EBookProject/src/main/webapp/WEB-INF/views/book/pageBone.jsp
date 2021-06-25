@@ -1,6 +1,10 @@
+<%@page import="com.example.EBookProject.model.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% MemberDTO memberDTO =(MemberDTO)session.getAttribute("member"); %>
+<% request.setAttribute("usercash",memberDTO.getCash()); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +37,35 @@ $(document).ready(function(){
 		});
 	});
 });
+
+function BuyCheck(ebook_no,contentlist,viewcontent_price){
+	console.log("ebook_no =>  "+ebook_no+", contentlist => "+contentlist);
+	//alert(""); <= 경고문
+	// var v=prompt("a를 입력",""); 입력창
+	// console.log(v);
+	console.log(buycheck);
+	
+	var usercash= ${usercash}; 
+	console.log(${usercash});
+	console.log(viewcontent_price);
+	
+	if (viewcontent_price == 0){
+		alert("결제 완료");
+		location.href="${pageContext.request.contextPath}/book/contentview/?book="+ebook_no+"&content="+contentlist;
+	} else {
+		if (usercash >= viewcontent_price){
+			var buycheck=confirm("결제를 하시겠습니까?");	
+		} else {
+			var cookiecharge=confirm("쿠키가 부족합니다. 충전창으로 이동하시겠습니까?"); // 리턴값 true false
+			if(cookiecharge){
+				location.href="${pageContext.request.contextPath}/pay/productbuy";		
+			} 
+		}	
+	}
+	
+	
+	
+}
 </script>
 </head>
 <body>
@@ -86,7 +119,7 @@ $(document).ready(function(){
 				<div class="detail_list">
 					<ol>
 						<c:forEach var="list" items="${list}">
-							<li><a href="<%=request.getContextPath()%>/book/contentview/?book=${bookdto.ebook_no}&content=${list.contentlist}">
+							<li><a href="javascript:BuyCheck(${bookdto.ebook_no},${list.contentlist},${list.viewcontent_price })">
 								<p class="text">
 									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>
