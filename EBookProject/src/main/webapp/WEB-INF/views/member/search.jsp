@@ -13,8 +13,13 @@
     	position: relative;
     	display: flex;
 	}
+	form {
+		width: 100%;
+		display: flex;
+		position: relative;
+	}
 	.body {
-		width: 50%;
+		width: 100%;
 		display: flex;
 		flex-flow: column;
 		padding: 10px;
@@ -73,6 +78,20 @@
 	}
 </style>
 <title>아이디/비밀번호찾기</title>
+<script src="resources/js/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#search_id_btn").click(function(){
+		document.form1.submit();
+	});
+	
+	$("#search_pw_btn").click(function(){
+		document.form2.submit();
+	});
+});
+
+</script>
+
 </head>
 <body>
 	<header id="pageHeader">
@@ -84,6 +103,7 @@
 
 	<!-- 아이디 찾기 -->
 	<div class="search1">
+		<form method="post" action="<%=request.getContextPath()%>/member/searchid" name="form1">
 		<div class="body">
 			<h2>아이디 찾기</h2>
 			<div class="search2">
@@ -93,8 +113,8 @@
 							name="username" id="username" placeholder="이름을 입력하세요">
 					</div>
 					<div class="form2">
-						<label for="birthdate">생일  :&nbsp;</label> <input type="int"
-							name="birthdate" id="birthdate" placeholder="생일을 입력하세요">
+						<label for="birthdate">생일  :&nbsp;</label> <input type="text"
+							name="birthdate" id="birthdate" placeholder="ex) 931207">
 					</div>
 					<div class="form2">
 						<label for="nickname">닉네임:&nbsp;</label> <input type="text"
@@ -102,16 +122,17 @@
 					</div>
 				</div>
 				<div class="search_btn">
-					<button type="button" id="search_id_btn" name="search_id_btn"
-						onclick="search_id">찾기</button>
+					<button type="button" id="search_id_btn" name="search_id_btn">찾기</button>
 				</div>
 			</div>
 		</div>
+		</form>
 
 
 
 		<!-- 비밀번호 찾기 -->
-		<div class="body">
+			<form method="post" action="<%=request.getContextPath()%>/member/searchpw" name="form2">
+			<div class="body">
 			<h2>비밀번호 찾기</h2>
 			<div class="search2">
 				<div class="search_in">
@@ -124,16 +145,16 @@
 							name="username" id="username" placeholder="이름을 입력하세요">
 					</div>
 					<div class="form2">
-						<label for="birthdate">생일  :&nbsp;</label> <input type="int"
-							name="birthdate" id="birthdate" placeholder="생일을 입력하세요">
+						<label for="birthdate">생일  :&nbsp;</label> <input type="text"
+							name="birthdate" id="birthdate" placeholder="ex) 931207">
 					</div>
 				</div>
 				<div class="search_btn">
-					<button type="button" id="search_pw_btn" name="search_pw_btn"
-						onclick="search_pw">찾기</button>
+					<button type="button" id="search_pw_btn" name="search_pw_btn">찾기</button>
 				</div>
 			</div>
 		</div>
+	</form>
 	</div>
 	</article>
 	

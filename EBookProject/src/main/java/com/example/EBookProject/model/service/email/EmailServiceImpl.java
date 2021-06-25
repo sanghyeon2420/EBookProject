@@ -6,9 +6,11 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMessage.RecipientType;
 
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
 import com.example.EBookProject.model.email.EmailDTO;
 
+@Service
 public class EmailServiceImpl implements EmailService {
 
 	@Inject
@@ -27,8 +29,13 @@ public class EmailServiceImpl implements EmailService {
 			
 			// 이메일 제목
 			msg.setSubject(dto.getSubject(),"utf-8");
+			
+			// 이메일 내용
 			msg.setText(dto.getMessage(),"utf-8");
+			
+			// 이메일 전송
 			mailSender.send(msg);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

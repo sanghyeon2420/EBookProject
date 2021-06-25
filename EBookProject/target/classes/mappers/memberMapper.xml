@@ -44,6 +44,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	values (seq_userno.nextval,#{userid},#{userpw},#{username},#{nickname},#{email},#{birthdate},1)
 	</insert>
 	
+	<select id="searchID" resultType="com.example.EBookProject.model.dto.MemberDTO">
+	select * from member where username=#{username} and nickname=#{nickname} and birthdate=#{birthdate}
+	</select>
+	
+	
+	<select id="searchPW" resultType="com.example.EBookProject.model.dto.MemberDTO">
+	select * from member where username=#{username} and userid=#{userid} and birthdate=#{birthdate}
+	</select>
+	
 	<!-- 관리자페이지에서 쿠키 조절 -->
 	<update id="cookiemanager" parameterType="com.example.EBookProject.model.dto.MemberDTO">
 	update member set cash=#{cash} where user_no=#{user_no}

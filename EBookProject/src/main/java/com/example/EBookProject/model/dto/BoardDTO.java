@@ -1,6 +1,5 @@
 package com.example.EBookProject.model.dto;
 
-import java.util.Arrays;
 import java.util.Date;
 
 public class BoardDTO {
@@ -9,7 +8,7 @@ public class BoardDTO {
 	private int user_no;
 	private String b_title;		//board 제목	
 	private String b_content;	
-	private Date b_write_date;	//작성날자
+	private Date b_write_date;	//작성날짜
 	private String nickname;
 	private String user_ip;
 	private int board_get;		//board 조회수

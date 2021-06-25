@@ -1,10 +1,13 @@
 package com.example.EBookProject.controller;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -25,11 +28,23 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("insert")
-	public String insert(BoardDTO dto, HttpSession session) {
-		session.getAttribute("member");
+	public String insert(HttpServletRequest request,BoardDTO dto, HttpSession session) {
+		String ip=request.getRemoteAddr();
 		
+		if(ip.equals("0:0:0:0:0:0:0:1")) {
+			try {
+				ip=Inet4Address.getLocalHost().getHostAddress();
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			}
+		}
+		MemberDTO memberDTO=(MemberDTO)session.getAttribute("member");
+		dto.setUser_no(memberDTO.getUser_no());
+		dto.setUser_ip(ip);
 		
+		System.out.println(dto);
 		
+		boardService.insertBoard(dto);
 		
 		//boardService.insertBoard(dto);
 		

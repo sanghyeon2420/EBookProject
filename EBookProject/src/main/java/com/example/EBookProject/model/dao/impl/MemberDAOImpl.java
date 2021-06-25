@@ -53,4 +53,14 @@ public class MemberDAOImpl implements MemberDAO{
 		System.out.println(dto);
 		sqlSession.insert("member.signup", dto);
 	}
+
+	@Override
+	public MemberDTO searchID(MemberDTO dto) {
+		return sqlSession.selectOne("member.searchID",dto);
+	}
+
+	@Override
+	public MemberDTO searchPW(MemberDTO dto) {
+		return sqlSession.selectOne("member.searchPW",dto);
+	}
 }
