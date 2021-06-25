@@ -7,7 +7,11 @@
 <head>
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>pageMember.jsp</title>
+<title>setting.jsp</title>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(function(){ // 헤더가리기
     var lastScrollTop = 0, delta = 15;
