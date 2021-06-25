@@ -1,8 +1,8 @@
 <%@page import="org.springframework.ui.Model"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,31 +37,29 @@ function disableclick(event){
 }
 
 
-var acodian = {
-		  click: function(target) {
-		    var _self = this,
-		      $target = $(target);
-		    $target.on('click', function() {
-		      var $this = $(this);
-		      if ($this.next('dd').css('display') == 'none') {
-		        $('dd').slideUp();
-		        _self.onremove($target);
 
-		        $this.addClass('on');
-		        $this.next().slideDown();
-		      } else {
-		        $('dd').slideUp();
-		        _self.onremove($target);
+function BuyNow(buy){
+	console.log(buy);
 
-		      }
-		    });
-		  },
-		  onremove: function($target) {
-		    $target.removeClass('on');
-		  }
+	var buyinfo=confirm("쿠키충전을 하시겠습니까?");
+	
+	if(buyinfo){
+		$.ajax({
+			type:"post",
+			url:"${pageContext.request.contextPath}/pay/cookiecharge",
+			data:{"cookie":buy},
+			success:function(data){
+				console.log(data);
+			}
+		});	
+	}
+	
+}
 
-		};
-		acodian.click('dt');
+
+
+
+
 </script>
 <style>
 .list {
@@ -199,35 +197,42 @@ dd {
   	<div class="header">
   		<p><strong><h2>쿠키충전</h2></strong></p>
   	</div>
+  	<br>
   	<div class="title">
-  		<p>회원의 보유 쿠키 : 00쿠키</p>
+  		<p><strong>${sessionScope.member.nickname}</strong>&nbsp;회원의 보유 쿠키 : ${sessionScope.member.cash}쿠키</p>
   	</div>
   </div>
   <hr>
   <div class="list">
+  <c:set var="buy1" value="10" />
+  <c:set var="buy2" value="50" />
+  <c:set var="buy3" value="100" />
+  <c:set var="buy4" value="150" />
+  <c:set var="buy5" value="200" />
+  <c:set var="buy6" value="300" />
   	<div class="cookielist1">
-  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 10개</p> <button type="button" id="buy1">￦1,000</button>
+  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 10개</p><button type="button" onclick="javascript:BuyNow(${buy1})">￦1,000</button>
   	</div><hr>
   	<div class="cookielist2">
-  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 50개</p><button type="button" id="buy2">￦5,000</button>
+  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 50개</p><button type="button" onclick="javascript:BuyNow(${buy2})">￦5,000</button>
   	</div><hr>
   	<div class="cookielist3">
-  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 100개</p><button type="button" id="buy3">￦10,000</button>
+  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 100개</p><button type="button" onclick="javascript:BuyNow(${buy3})">￦10,000</button>
   	</div><hr>
   	<div class="cookielist4">
-  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 150개</p><button type="button" id="buy4">￦15,000</button>
+  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 150개</p><button type="button" onclick="javascript:BuyNow(${buy4})">￦15,000</button>
   	</div><hr>
   	<div class="cookielist5">
-  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 200개</p><button type="button" id="buy5">￦20,000</button>
+  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 200개</p><button type="button" onclick="javascript:BuyNow(${buy5})">￦20,000</button>
   	</div><hr>
   	<div class="cookielist6">
-  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 300개</p><button type="button" id="buy6">￦30,000</button>
+  		<p><i class="fas fa-cookie-bite"></i>&nbsp;쿠키 300개</p><button type="button" onclick="javascript:BuyNow(${buy6})">￦30,000</button>
   	</div>
   </div>
   <hr>
   	<section id="adverbanner">
 		<div class="adver">
-			<img src="resources/images/cookie.jpg" width=60vw; height=30vh; alt="광고를 불러오고 있습니다">
+			<img src="resources/images/cookie.jpg" width=60vw; height=16vh; alt="광고를 불러오고 있습니다">
 		</div>
 	</section>
 	<hr>

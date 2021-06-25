@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.example.EBookProject.model.dao.impl.PaymentDAOImpl;
+import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.dto.PaymentDTO;
 import com.example.EBookProject.model.service.PaymentService;
 
@@ -20,13 +21,10 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 
 	@Override
-	public int contentsBuy(int user_no, int contents_no) {
-		int result=0;			
+	public int contentsBuy(MemberDTO dto,int cookie) {
 		
-		int is_buy=dao.contentBuy(user_no, contents_no);		
-			dao.contentResult(user_no, contents_no);
 		
-		return result;
+		return dao.contentBuy(dto,cookie);
 	}
 
 

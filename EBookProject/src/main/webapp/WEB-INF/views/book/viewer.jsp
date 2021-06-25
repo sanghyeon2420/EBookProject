@@ -168,7 +168,7 @@
     }
     
     .table {
-    	background-image: radial-gradient(circle at 56.16% -20.44%, #ffffff 0, #fffff0 16.67%, #fcf2d3 33.33%, #f2deb5 50%, #e9c998 66.67%, #e3b67f 83.33%, #dea36b 100%);
+    	background-image: radial-gradient(circle at 50% -20.71%, #fef6d9 0, #f8eac7 25%, #f2deb5 50%, #edd2a3 75%, #e8c593 100%);
     	}
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
