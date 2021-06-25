@@ -21,7 +21,6 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.insertBoard(dto);
 
 	}
-
 	@Override
 	public void updateBoard(BoardDTO dto) throws Exception {
 
@@ -34,7 +33,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardDTO read(int board_no) {
-		return null;
+		return boardDao.read(board_no);
 	}
 
 	@Override

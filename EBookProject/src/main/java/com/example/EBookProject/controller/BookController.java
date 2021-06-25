@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.ContentDTO;
+import com.example.EBookProject.model.dto.LikebookDTO;
+import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.service.impl.BookServiceImpl;
 
 @Controller
@@ -89,12 +92,40 @@ public class BookController {
 	
 	@ResponseBody
 	@RequestMapping("hits")
-	public String hits(String ebook_no) {
+	public String hits(HttpSession session,String ebook_no) {
+		String result;
+		
 		int ebook_num = Integer.parseInt(ebook_no);
+		MemberDTO memberDTO=(MemberDTO)session.getAttribute("member");
+		
 		System.out.println("book controller ebook_no :====>>>"+ebook_no);
-		service.bookhits(ebook_num); //추천수 증가
+		
+		LikebookDTO likeDTO = new LikebookDTO();
+		likeDTO.setLike_bookno(ebook_num);
+		
+		
+		
+		if(memberDTO != null) {
+			likeDTO.setLike_id(memberDTO.getUser_no());
+		} else {
+			result="fail";
+		}
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		service.bookhits(ebook_num,likeDTO); //추천수 증가
 		BookDTO dto=service.Bookdetail(ebook_num);
-		return String.valueOf(dto.getBook_hits());
+		result =String.valueOf(dto.getBook_hits());
+		return result;
 	}
 	
 	@RequestMapping("contentview")
