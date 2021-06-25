@@ -46,7 +46,7 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	console.log(buycheck);
 	
 	var usercash= ${usercash}; 
-	console.log(${usercash});
+	console.log(usercash);
 	console.log(viewcontent_price);
 	
 	if (viewcontent_price == 0){
@@ -61,10 +61,7 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 				location.href="${pageContext.request.contextPath}/pay/productbuy";		
 			} 
 		}	
-	}
-	
-	
-	
+	}	
 }
 </script>
 </head>
