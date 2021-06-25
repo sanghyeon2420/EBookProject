@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.example.EBookProject.model.dao.PaymentDAO;
+import com.example.EBookProject.model.dto.MemberDTO;
 import com.example.EBookProject.model.dto.PaymentDTO;
 
 @Repository
@@ -19,14 +20,14 @@ public class PaymentDAOImpl implements PaymentDAO{
 
 	@Override
 	public PaymentDTO paymentbring(int user_no) {
-		return sqlSession.selectOne("payment.paymentbring", user_no);
+		return sqlSession.selectOne("payment.paymentbring",user_no);
 	}
 
 	@Override
-	public int contentBuy(int user_no, int contents_no) {
+	public int contentBuy(MemberDTO dto,int cookie) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("user_no",user_no);
-		map.put("contents_no", contents_no);
+		map.put("dto", dto);
+		map.put("cookie", cookie);
 		return sqlSession.update("payment.buy",map);
 		
 	}
