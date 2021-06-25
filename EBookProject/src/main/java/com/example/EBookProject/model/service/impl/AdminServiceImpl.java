@@ -10,6 +10,7 @@ import com.example.EBookProject.model.dao.impl.AdminDAOImpl;
 import com.example.EBookProject.model.dto.BoardDTO;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.MemberDTO;
+import com.example.EBookProject.model.dto.NoticDTO;
 import com.example.EBookProject.model.service.AdminService;
 
 
@@ -36,12 +37,16 @@ public class AdminServiceImpl implements AdminService {
 	public List<BoardDTO> booadlist() {
 		return dao.booadlist();
 	}
+	
+	@Override
+	public List<NoticDTO> noticlist() {
+		return dao.noticlist();
+	}
 
 	@Override 
 	// 회원 탈퇴 
 	public void deleteMember(MemberDTO dto) {
-		dao.deleteMember(dto);
-		
+		dao.deleteMember(dto);	
 	}
 
 	@Override
@@ -55,8 +60,17 @@ public class AdminServiceImpl implements AdminService {
 	public void deleteboard(BoardDTO dto) {
 		dao.deleteboard(dto);
 	}
+	
+	@Override
+	// 공지사항 삭제 
+	public void deletenotic(NoticDTO dto) {
+		dao.deletenotic(dto);
+		
+	}
+	
 	@Override
 	public void cookiemanager(MemberDTO dto) {
 		dao.cookiemanager(dto);
 	}
+
 }

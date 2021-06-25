@@ -147,7 +147,7 @@ function disableclick(event){
 				<div id="headTitle">
 					<div class="name">
 						<h1>${dto.w_name} 님</h1>
-						<strong>추천수  </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i>
+						<strong>받은 추천수  </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i>
 					</div>
 				</div>
 				<div class="container" id="container">
