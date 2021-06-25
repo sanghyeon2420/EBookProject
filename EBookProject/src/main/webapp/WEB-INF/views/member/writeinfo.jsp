@@ -10,6 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
 //로그아웃
 $(document).ready(function(){
@@ -40,7 +41,7 @@ function disableclick(event){
         "pic upload upload"
         "info info info"
         "Wsubmit Wsubmit Wsubmit";
-      grid-template-rows: 10% 10% 10% 10% 10% 45% 5%;
+      grid-template-rows: 10% 10% 10% 10% 10% 35% 5%;
       grid-template-columns: 20% 40% 40%;
       grid-gap: 10px;
       height: 60vh;
@@ -80,13 +81,18 @@ function disableclick(event){
       grid-area: Wsubmit;
     }
     
-    #pic, #title, #writer, #category, #form, #upload, #info {
+    #pic, #title, #writer, #category, #form, #upload, #info, #Wsubmit{
     	border:dotted 1px;
     }
     
     input#nickname {
       background-color: #eef5f0;
       color: #968b8b;
+    }
+    
+    #image_preview img{
+      width: 12vw;
+      height: 34vh;
     }
 </style>
 </head>
@@ -98,15 +104,20 @@ function disableclick(event){
   
   
   <article id="mainArticle">
+  	<div class="titlemessage">
+      <h3>신규 소설 등록</h3>
+    </div>
 	<form class= "setWrite" action="GOGOGO!">
 		<div class="pic" id="pic">
-			<p>북커버 업로딩 이미지</p>
-		</div>
+          <div id="image_preview">
+            <img src="#" />
+        </div>
+        </div>
 		<div class="title" id="title">
 			작품명 <input type="text" id="wTitle" name="wTitle">
 		</div>
 		<div class="writer" id="writer">
-			작가이름 <input type="text" id="nickname" name="nickname" value="${dto.w_name}" readonly/>
+			작가이름 <input type="text" id="nickname" name="nickname" value="${dto.w_name}" style="color:#3a3d3b" readonly/>
 		</div>
 		<div class="category" id="category">
 			카테고리 
@@ -125,18 +136,45 @@ function disableclick(event){
             <label for="action" >완결</label>
 		</div>
 		<div class="upload" id="upload">
-			이미지등록
-            <input type="file" name="imagefile" accept="image/*">
-		</div>
+          <p>
+            <label for="image">이미지등록</label> 
+            <input type="file" name="image" id="image" style="display:none;" /> 
+        </p>
+        </div>
 		<div class="info" id="info">
-			<h3>책소개</h3>
-            <textarea class="textarea" style="height:180px; width:60vw;" name="novel_story"></textarea>
-		</div>
+            <h3>책소개</h3>
+            <textarea class="textarea" style="height:70%; width:100%;" name="novel_story"></textarea>
+        </div>
 		<div class="Wsubmit" id="Wsubmit">
             <button id="Wsubmit" type="submit" value="작성">작성</button>
             <button id="Wsubmit" type="reset" value="취소">취소</button>
         </div>
 	</form>
+	<script type="text/javascript">
+      $('#image').on('change', function() {
+          
+          ext = $(this).val().split('.').pop().toLowerCase(); //확장자
+          
+          //배열에 추출한 확장자가 존재하는지 체크
+          if($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+              resetFormElement($(this)); //폼 초기화
+              window.alert('이미지 파일이 아닙니다! (gif, png, jpg, jpeg 만 업로드 가능)');
+          } else {
+              file = $('#image').prop("files")[0];
+              blobURL = window.URL.createObjectURL(file);
+              $('#image_preview img').attr('src', blobURL);
+              $('#image_preview').slideDown(); //업로드한 이미지 미리보기 
+              $(this).slideUp(); //파일 양식 감춤
+          }
+      });
+      function resetFormElement(e) {
+          e.wrap('<form>').closest('form').get(0).reset(); 
+          //리셋하려는 폼양식 요소를 폼(<form>) 으로 감싸고 (wrap()) , 
+          //요소를 감싸고 있는 가장 가까운 폼( closest('form')) 에서 Dom요소를 반환받고 ( get(0) ),
+          //DOM에서 제공하는 초기화 메서드 reset()을 호출
+          e.unwrap(); //감싼 <form> 태그를 제거
+      }
+      </script>
   </article>
 
 
