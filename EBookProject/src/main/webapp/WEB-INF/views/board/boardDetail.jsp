@@ -106,9 +106,9 @@ img {
 		<table>
 			<tr>
 			<td style="background-color: #5FD184;">제목</td>
-			<td >$${boarddto.b_title }</td>
+			<td >${boarddto.b_title }</td>
 			<td style="background-color: #5FD184;">작성자명</td>
-			 <td>${boarddto.nickname }
+			 <td>${boarddto.nickname }(${boarddto.user_ip })
 			</td>
 			</tr>
 			<tr>
@@ -125,7 +125,7 @@ img {
 			<td align="left">
 			${boarddto.b_write_date } </td> 
 			<td style="background-color: #5FD184;">조회수</td>
-			 <td>${noticdto.board_get}
+			 <td>${boarddto.board_get}
 			</td>
 		</table>	
 		<button type="button" id="list_btn" onClick="location.href='list'">목록</button>
