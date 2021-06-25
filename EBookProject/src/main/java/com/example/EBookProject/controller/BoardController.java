@@ -85,4 +85,10 @@ public class BoardController {
 		//return "board/boardlist";
 		return mav;
 	}
+	
+	@RequestMapping("detail")
+	public String detail(int board_no) {
+		
+		return "board/boardDetail";
+	}
 }

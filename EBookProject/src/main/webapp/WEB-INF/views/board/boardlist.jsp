@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -58,7 +59,7 @@ function list(page){
 			+"&keyword=${map.keyword}";
 }
 </script>
-  
+  <c:set var="today" value="<%=new Date() %>" />
   <table border="1" width=600px>
   <tr style="background-color: #5FD184">
   	<th>번호</th>
@@ -70,7 +71,7 @@ function list(page){
   <c:forEach var="row" items="${map.list}">
 <tr>
 	<td>${row.board_no}</td>
-	<td><a href="#" >${row.b_title}</a></td>
+	<td><a href="${pageContext.request.contextPath}/board/detail?board_no=${row.board_no}" >${row.b_title}</a></td>
 	<td>${row.nickname}</td>
 	<td><fmt:formatDate value="${row.b_write_date}" pattern="MM.dd" /></td>
 	<!-- 조회수 --><td>${row.board_get}</td>
