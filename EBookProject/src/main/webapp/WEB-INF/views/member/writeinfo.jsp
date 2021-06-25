@@ -146,8 +146,8 @@ function disableclick(event){
             <textarea class="textarea" style="height:70%; width:100%;" name="novel_story"></textarea>
         </div>
 		<div class="Wsubmit" id="Wsubmit">
-            <button id="Wsubmit" type="submit" value="작성">작성</button>
-            <button id="Wsubmit" type="reset" value="취소">취소</button>
+            <button id="btn btn-primary" type="submit" value="작성">작성</button>
+            <button id="btn btn-danger" type="reset" value="취소">취소</button>
         </div>
 	</form>
 	<script type="text/javascript">
