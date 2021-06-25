@@ -28,8 +28,8 @@
 	</update>
 
 	<!-- 글 삭제 -->
-	<delete id="deleteNotic">
-		UPDATE NOTIC SET SHOW='N' WHERE NOTIC_NO = #{notic_no}
+	<delete id="deletenotic">
+		delete from NOTIC where notic_no=#{notic_no}
 	</delete>
 
 	<!-- 글 삭제 체크 -->
@@ -81,6 +81,10 @@
 		WHERE RN BETWEEN #{start} AND #{end}  -->
 		 SELECT * FROM NOTIC
 		ORDER BY NOTIC_REGDATE DESC 
+	</select>
+	
+	<select id="noticlist" resultType="com.example.EBookProject.model.dto.NoticDTO">
+	select * from NOTIC order by notic_no
 	</select>
 	
 	<!-- 게시글 갯수 -->

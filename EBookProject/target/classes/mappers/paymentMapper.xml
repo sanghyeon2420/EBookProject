@@ -23,10 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<update id="buy">
-	update member 
-	set cash=cash-((select viewcontent_price from content where contents_no=#{contents_no})) 
-	where (select cash from member where user_no=#{user_no}) >= (select viewcontent_price from content where contents_no=#{contents_no}) 
-	and  user_no=#{user_no}	
+	update member set cash=cash+${cookie} where user_no=#{dto.user_no}
 	</update>
 
 	<!-- 컨텐츠 구매  end -->

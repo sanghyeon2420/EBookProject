@@ -127,6 +127,10 @@ function disableclick(event){
 	font-weight: 400;
 	text-align: center;
 }
+
+.addnovel{
+	text-align: center;
+	}
 </style>
 </head>
 <body>
@@ -147,7 +151,7 @@ function disableclick(event){
 				<div id="headTitle">
 					<div class="name">
 						<h1>${dto.w_name} 님</h1>
-						<strong>추천수  </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i>
+						<strong>받은 추천수  </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i>
 					</div>
 				</div>
 				<div class="container" id="container">
@@ -169,7 +173,7 @@ function disableclick(event){
 			</div>
 			<div class="back">
                 <div class="text">
-                    <p><strong>${dto.w_name }</strong>님의 주요 연재 소설</p>
+                    <p><strong>${dto.w_name }</strong>님의 연재 소설</p>
                 </div>
                 <div class="writerbooklist">
                     <c:forEach var="list" items="${list }">
@@ -177,6 +181,9 @@ function disableclick(event){
                        <div class="cover">
                            <img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
                            <a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4></a>
+                           <div class="addnovel">
+                           <button class="btn btn-primary" onclick="#" >회차 등록</button> &nbsp;
+                           </div>
                        </div>
                    </div>
                    </c:forEach>

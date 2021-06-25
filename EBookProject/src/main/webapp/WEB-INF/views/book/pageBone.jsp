@@ -44,6 +44,7 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	console.log(buycheck);
 	
 	var usercash= ${sessionScope.member.cash}; 
+
 	console.log(viewcontent_price);
 	
 	if (viewcontent_price == 0){
@@ -52,6 +53,8 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	} else {
 		if (usercash >= viewcontent_price){
 			var buycheck=confirm("결제를 하시겠습니까?");	
+			alert("결제 완료");
+			location.href="${pageContext.request.contextPath}/book/contentview/?book="+ebook_no+"&content="+contentlist;
 		} else {
 			var cookiecharge=confirm("쿠키가 부족합니다. 충전창으로 이동하시겠습니까?"); // 리턴값 true false
 			if(cookiecharge){

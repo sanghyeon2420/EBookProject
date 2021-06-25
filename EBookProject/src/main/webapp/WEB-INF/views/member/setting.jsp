@@ -7,13 +7,13 @@
 <head>
 <%@ include file="../../include/include.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>setting.jsp</title>
+<title>회원정보</title>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
-$(function(){ // 헤더가리기
+/* $(function(){ // 헤더가리기
     var lastScrollTop = 0, delta = 15;
     $(window).scroll(function(event){
        var st = $(this).scrollTop();
@@ -30,7 +30,7 @@ $(function(){ // 헤더가리기
    }
        lastScrollTop = st;
     });
-});
+}); */
 // scroll_top_btn script 
 $(function() {
     $(window).scroll(function() {
@@ -87,72 +87,108 @@ $(document).bind('keydown',function(e){
     }
 });
 }); */
+function a(){
+	location.href="/EBookProject/pay/productbuy";
+}
 </script>
 <style type="text/css">
-	.userProfiles {
-  		width: 55vw;
-    	height: 70vh;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-    .profile {
-    	width: 45vw;
-    	height: 65vh;
-    	border-radius: 50px;
-    	background-color: beige;
-    }
+.userProfiles {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
 
-    .profileHeader {
-         width: 44vw;
-         height: 7vh;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-     }
+.profile {
+	width: 70%;
+}
 
-     .profileHeader span {
-         width: 7vw;
-         height: 4vh;
-         text-align: center;
-         font-size: 1.4vw;
-     }
+.profileHeader {
+	
+}
 
-     .profileBody {
-         width: 41vw;
-         height: 55vh;
-         display: flex;
-         margin: 0;
-         flex-direction: column;
-         justify-content: space-around;
-     }
+.line-box {
+	position: relative;
+	width: 100%;
+	height: 2px;
+	background: #BCBCBC;
+}
 
-     .profileBody li {
-         width: 40vw;
-         height: 5vh;
-         border: 1px solid #17232e98;
-         display: flex;
-         list-style: none;
-         font-size: medium;
-         align-items: center;
-         border-radius: 50px;
-     }
+.line {
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #8BC34A;
+	transition: ease .6s;
+}
 
-     .profileBody li>a {
-         width: 6vw;
-         height: 5vh;
-         display: flex;
-         color: black;
-         align-items: center;
-         border-radius: 50px;
-         justify-content: center;
-         text-decoration-line: none;
-     }
+ul.profileBody {
+	padding: 0;
+}
 
-     .profileBody li>a:hover {
-         background-color: #DEEDF0;
-     }
-   
+.profileBody li{
+    width: 55%;
+    height: 5vh;
+    display: flex;
+    padding: 10px;
+	list-style: none;
+    align-items: center;
+}
+
+.bodyline {
+	display: flex;
+}
+
+.first {
+    width: 30%;
+    height: 5vh;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.ct {
+	width:3%;
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	
+}
+
+.ctn {
+	width: 2px;
+	height: 3vh;
+    display: flex;
+	background: #BCBCBC;
+    justify-content: center;
+}
+
+.bt {
+	width: 12%;
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-secondary {
+	width: 65%;
+	height: 4vh;
+}
+
+.footerline {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.footerline a {
+	margin: 10px;
+}
 </style>
 </head>
 <body>
@@ -165,21 +201,68 @@ $(document).bind('keydown',function(e){
      <!-- Body -->
      <div class="userProfiles">
             <div class="profile">
+            <!-- 회원 정보 헤더 -->
                 <div class="profileHeader">
-                    <span>회원정보</span>
+                    <h1>회원정보</h1>
+					<br>                    
+                    <h5>회원께서 가입하신 북 하우스의 회원정보입니다.</h5>
+					<br>                    
+					<h3>필수 회원 정보</h3>                    
                 </div>
+                <!-- 분기선 -->
+                <div class="line-box">
+                	<div class="line"></div>
+                </div>
+                <!-- 회원 정보 -->
                 <ul class="profileBody">
-                    <li>&nbsp;아이디 :${member.userid}</li>
-                    <li>&nbsp;이메일 :${member.email}</li>
-                    <li>&nbsp;닉네임 :${member.nickname}</li>
-                    <li>&nbsp;생년월일 :<fmt:formatDate value="${member.birthdate}" pattern="yyyy년MM월dd일"/>
-                    </li>
-                    <li>&nbsp;내 쿠키 정보 :&nbsp;${member.cash}&nbsp;<button type="button" onclick="#">충전</button></li>
-                    <li><a href="#">내가 봐온 소설</a></li>
-                    <li><a href="#">신규 소설등록</a></li>
-                    <li><a href="#" id="change">회원 정보 수정</a></li> <!-- 작가등록 포함 -->
-                    
-                    
+                	<div class="bodyline">
+                    	<div class="first">아이디 </div>
+                    	<div class="ct">
+                    		<div class="ctn"></div>
+                    	</div>
+                    	<li>${member.userid}</li>
+                	</div>
+                	<div class="bodyline">
+                    	<div class="first">이메일 </div>
+                    	<div class="ct">
+                    		<div class="ctn"></div>
+                    	</div>
+                    	<li>${member.email}</li>
+                	</div>
+                	<div class="bodyline">
+                    	<div class="first">닉네임 </div>
+                    	<div class="ct">
+                    		<div class="ctn"></div>
+                    	</div>
+                    	<li>${member.nickname}</li>
+                	</div>
+                	<div class="bodyline">
+                    	<div class="first">생년월일 </div>
+                    	<div class="ct">
+                    		<div class="ctn"></div>
+                    	</div>
+                    	<li><fmt:formatDate value="${member.birthdate}" pattern="yyyy년MM월dd일"/></li>
+                	</div>
+                	<div class="bodyline">
+                    	<div class="first">내 쿠키 정보 </div>
+                    	<div class="ct">
+                    		<div class="ctn"></div>
+                    	</div>
+                    	<li>${member.cash}</li>
+                    	<div class="bt">
+ 	                   		<button type="button" onclick="javascript:a()" class="btn btn-secondary">충전</button>
+                    	</div>
+                	</div>
+                    <!-- 분기선 -->
+	                <div class="line-box">
+	                	<div class="line"></div>
+	                </div>
+                    <!-- 하단 버튼 -->
+                    <div class="footerline">
+	                    <a href="#" type="button" class="btn btn-primary">내가 봐온 소설</a>
+	                    <a href="${pageContext.request.contextPath}/writer/insertBook" type="button" class="btn btn-primary">신규 소설등록</a>
+	                    <a href="#" id="change" type="button" class="btn btn-primary">회원 정보 수정</a>
+                    </div>
                 </ul>
             </div>
         </div>
