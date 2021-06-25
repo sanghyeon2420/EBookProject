@@ -169,7 +169,7 @@ function disableclick(event){
 			</div>
 			<div class="back">
                 <div class="text">
-                    <p><strong>${dto.w_name }</strong>님의 주요 연재 소설</p>
+                    <p><strong>${dto.w_name }</strong>님의 연재 소설</p>
                 </div>
                 <div class="writerbooklist">
                     <c:forEach var="list" items="${list }">
@@ -177,6 +177,10 @@ function disableclick(event){
                        <div class="cover">
                            <img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
                            <a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4></a>
+                           <button class="btn btn-primary" onclick="#" >회차 등록</button> &nbsp;
+                           <button class="btn btn-primary" onclick="#" >소설 수정</button> &nbsp;
+                           <button class="btn btn-primary" onclick="#" >회차 삭제</button> &nbsp;
+                           <button class="btn btn-primary" onclick="#" >소설 삭제</button> &nbsp;
                        </div>
                    </div>
                    </c:forEach>
