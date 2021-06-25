@@ -29,7 +29,10 @@ $(document).ready(function(){
 			data:{"ebook_no":ebook_no}, //보내줄 데이터
 			success: function(data){  //비동기 통신 성공시, data -> 리턴받은 데이터
 				console.log(data);  //console창에 data가 출력됨
-				document.getElementById("span_hits").innerHTML=data;
+				document.getElementById("span_hits").innerHTML=data; // 추천수가 넘어오면
+				
+				// 하트 색깔을 변경
+				document.getElementById("hits").innerHTML="<i class='fas fa-heart'></i>";
 			}
 		});
 	});
@@ -84,8 +87,11 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 						<%-- <a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no }">
 						<h4>&nbsp;${bookdto.w_name }</h4></a> --%>
 						<h4><a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
-						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수<i class="fas fa-heart"></i>
-						<span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;<button id="hits" name="hits">추천</button>
+						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수
+						<a id="hits" name="hits">
+						<i class="far fa-heart"></i>
+						</a>
+						<span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;
 					</div>
 					<div class="blank"></div>
 					<div class="container">
