@@ -96,7 +96,7 @@ $(document).ready(function(){
 								</p>
 						</a></li>
 							
-							<!-- <a href="<%=request.getContextPath()%>/payment/payment"> 이거 어디에 넣어??ㅠㅠ -->					
+							<!-- <a href="<%=request.getContextPath()%>/pay/payment"> 이거 어디에 넣어??ㅠㅠ -->					
 						
 						</c:forEach>
 					</ol>

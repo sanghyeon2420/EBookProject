@@ -19,5 +19,15 @@ public class PaymentServiceImpl implements PaymentService {
 		return dao.paymentbring(user_no);
 	}
 
+	@Override
+	public int contentsBuy(int user_no, int contents_no) {
+		int result=0;			
+		
+		int is_buy=dao.contentBuy(user_no, contents_no);		
+			dao.contentResult(user_no, contents_no);
+		
+		return result;
+	}
+
 
 }

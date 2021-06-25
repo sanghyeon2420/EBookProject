@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
+<mapper namespace="likebook">
+	<!-- 추천여부 확인 count-->
+	<select id="countLike" resultType="int">
+	select count(*) from likebook where like_id=(select user_no from member where user_no=#{like_id}) and like_bookno=(select ebook_no from bookinfo where ebook_no=#{like_bookno})
+	</select>
+	
+	<!-- 게시물에 대한 추천 -->
+	<insert id="insertLike" parameterType="com.example.EBookProject.model.dto.LikebookDTO">
+	insert into likebook values ((select nvl(max(likeno),0)+1 from likebook),#{like_id},#{like_bookno})
+	
+	</insert>
+	
+	<!-- 게시물에 대한 비추천 -->
+	<delete id="deleteLike" parameterType="com.example.EBookProject.model.dto.LikebookDTO">
+	delete from likebook where like_id=#{like_id} and like_bookno=#{like_bookno}
+	</delete>
+</mapper>
