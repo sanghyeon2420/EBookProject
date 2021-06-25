@@ -46,7 +46,7 @@
     .headline {
         width: 100%;
         height: 15vh;
-        background-color: #00AF5B;
+        background-color: #262626;
         color: #F7F7F7;
         grid-area: headline;
         top: 0;
@@ -70,7 +70,7 @@
     .footline {
         width: 100%;
         height: 15vh;
-        background-color: #00AF5B;
+        background-color: #262626;
         color: #F7F7F7;
         grid-area: footline;
         bottom: 0;
@@ -128,7 +128,7 @@
 
     nav#setup {
         display: none;
-        color: pink;    
+        color : #262626;
     }
 
     nav#setup li{
@@ -139,8 +139,8 @@
         display: block;
     }
 
-    input[type=radio]:checked + label {
-        color: purple;
+    input[type=radio]:hover + label {
+        color: #F7F7F7;
     }
 
     input[type=radio] {
@@ -151,8 +151,7 @@
         width: 5vw;
         height: 5vh;
         text-align: center;
-        background-color: beige;
-        
+       
     }
 
     .bookview {
@@ -167,6 +166,10 @@
     .adsline, .navline {
     	background-color: #F7F7F7;
     }
+    
+    .table {
+    	background-image: radial-gradient(circle at 56.16% -20.44%, #ffffff 0, #fffff0 16.67%, #fcf2d3 33.33%, #f2deb5 50%, #e9c998 66.67%, #e3b67f 83.33%, #dea36b 100%);
+    	}
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -253,17 +256,17 @@
             document.getElementById("bookview").style.backgroundColor = "#00AF5B";
             document.getElementById("navline").style.backgroundColor = "#00AF5B";
             document.getElementById("adsline").style.backgroundColor = "#00AF5B";
-            document.getElementById("headline").style.backgroundColor = "#F7F7F7";
-            document.getElementById("footline").style.backgroundColor = "#F7F7F7";
-            document.getElementById("headline").style.color = "#262626";
-            document.getElementById("footline").style.color = "#262626";
+            document.getElementById("headline").style.backgroundColor = "#262626";
+            document.getElementById("footline").style.backgroundColor = "#262626";
+            document.getElementById("headline").style.color = "#F7F7F7";
+            document.getElementById("footline").style.color = "#F7F7F7";
         }
         function bgwhite() {
             document.getElementById("bookview").style.backgroundColor = "#F7F7F7";
             document.getElementById("navline").style.backgroundColor = "#F7F7F7";
             document.getElementById("adsline").style.backgroundColor = "#F7F7F7";
-            document.getElementById("headline").style.backgroundColor = "#00AF5B";
-            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("headline").style.backgroundColor = "#262626";
+            document.getElementById("footline").style.backgroundColor = "#262626";
             document.getElementById("headline").style.color = "#F7F7F7";
             document.getElementById("footline").style.color = "#F7F7F7";
         }
@@ -271,17 +274,17 @@
             document.getElementById("bookview").style.backgroundColor = "#262626";
             document.getElementById("navline").style.backgroundColor = "#262626";
             document.getElementById("adsline").style.backgroundColor = "#262626";
-            document.getElementById("headline").style.backgroundColor = "#00AF5B";
-            document.getElementById("footline").style.backgroundColor = "#00AF5B";
-            document.getElementById("headline").style.color = "#F7F7F7";
-            document.getElementById("footline").style.color = "#F7F7F7";
+            document.getElementById("headline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("footline").style.backgroundColor = "#F7F7F7";
+            document.getElementById("headline").style.color = "#262626";
+            document.getElementById("footline").style.color = "#262626";
         }
         function bgbeige() {
-            document.getElementById("bookview").style.backgroundColor = "beige";
-            document.getElementById("navline").style.backgroundColor = "beige";
-            document.getElementById("adsline").style.backgroundColor = "beige";
-            document.getElementById("headline").style.backgroundColor = "#00AF5B";
-            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("bookview").style.backgroundColor = "#f5f5dc";
+            document.getElementById("navline").style.backgroundColor = "#f5f5dc";
+            document.getElementById("adsline").style.backgroundColor = "#f5f5dc";
+            document.getElementById("headline").style.backgroundColor = "#262626";
+            document.getElementById("footline").style.backgroundColor = "#262626";
             document.getElementById("headline").style.color = "#F7F7F7";
             document.getElementById("footline").style.color = "#F7F7F7";
         }
@@ -295,7 +298,7 @@
             document.getElementById("bookview").style.color = "gray";
         }
         function tcbeige() {
-            document.getElementById("bookview").style.color = "beige";
+            document.getElementById("bookview").style.color = "#f5f5dc";
         }
         function bdnormal() {
         	document.getElementById("bookview").style.fontWeight = "400";
@@ -318,8 +321,8 @@
         	document.getElementById("bookview").style.backgroundColor = "#F7F7F7";
             document.getElementById("navline").style.backgroundColor = "#F7F7F7";
             document.getElementById("adsline").style.backgroundColor = "#F7F7F7";
-            document.getElementById("headline").style.backgroundColor = "#00AF5B";
-            document.getElementById("footline").style.backgroundColor = "#00AF5B";
+            document.getElementById("headline").style.backgroundColor = "#262626";
+            document.getElementById("footline").style.backgroundColor = "#262626";
             document.getElementById("bookview").style.color = "#262626";
             document.getElementById("headline").style.color = "#F7F7F7";
             document.getElementById("footline").style.color = "#F7F7F7";
@@ -366,7 +369,7 @@
                     <input id="menu" type="checkbox">
                     <nav id="setup">
                         <ul>
-                            <table border="1">
+                            <table border="1" class="table">
                                 <tr>
                                     <th>글꼴</th>
                                     <td><input type="radio" id="Jua" name="fontfamily" onclick="FontJua()">
