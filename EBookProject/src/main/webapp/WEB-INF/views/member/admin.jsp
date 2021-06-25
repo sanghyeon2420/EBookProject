@@ -135,7 +135,7 @@ $(document).bind('keydown',function(e){
 	       		 <a href="#close"><button>수정</button></a>
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
-        	 </div>
+        	 </div> 
 	</td>
 	</tr>	  
 	 </c:forEach>
