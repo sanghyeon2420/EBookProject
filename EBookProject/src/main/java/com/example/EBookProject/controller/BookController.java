@@ -68,25 +68,7 @@ public class BookController {
 		
 			
 		
-		// 조회수 증가 처리
 		
-/*		// 쿠키 생성
-		Cookie[] cookies=request.getCookies();
-		
-		// 비교하기 위해 새로운 쿠키
-		Cookie viewCookie = null;
-		
-		// 쿠키가 있을 경우
-		if(cookies != null && cookies.length > 0) {
-			for(int i=0;i<cookies.length;i++) {
-				
-				// Cookie의 name이 cookie + ebook_no와 일치하는 쿠키를 viewCookie에 넣어줌
-				if(cookies[i].getName().equals("cookie"+ebook_no)) {
-					System.out.println("처음 쿠키가 생성한 뒤 들어옴.");
-					viewCookie = cookies[i];
-				}
-			}
-		}*/
 		return mav;
 	}
 	
@@ -129,12 +111,32 @@ public class BookController {
 	}
 	
 	@RequestMapping("contentview")
-	public String contentview(Model model,int book,int content) {
+	public String contentview(HttpSession session,Model model,int book,int content) {
 		System.out.println("book = ebook_no =>"+book);
 		System.out.println("content = contentlist =>"+content);
 		
+
+		
+		// 조회수 증가처리
+		// 타이머 설정
+		long update_time = 0;
+
+		if (session.getAttribute("update_time_" + book) != null) {
+			// 최근에 조회수를 올린 시간
+			update_time = (Long) session.getAttribute("update_time_" + book);
+		}
+		long current_time = System.currentTimeMillis();
+		// 일정 시간이 경과한 후 조회수 증가 처리
+		if (current_time - update_time > 5 * 10000) {
+			// 조회수 증가 처리
+			service.bookget(book);
+			// 조회수를 올린 시간 저장
+			session.setAttribute("update_time_" + book, current_time);
+		}
+		
 		int contentCount=service.contentCount(book);
 		BookDTO dto =service.Bookdetail(book);
+		
 		
 		model.addAttribute("book",book);
 		model.addAttribute("content",content);
