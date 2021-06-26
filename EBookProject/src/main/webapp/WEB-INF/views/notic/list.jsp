@@ -16,25 +16,6 @@
 <title>공지사항</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-$(function(){
-    var lastScrollTop = 0, delta = 15;
-    $(window).scroll(function(event){
-       var st = $(this).scrollTop();
-       
-        if(Math.abs(lastScrollTop - st) <= delta)
-          return; // 스크롤값을 받아서 리턴한다.
-        if ((st > lastScrollTop) && (lastScrollTop>0)) {
-       // downscroll code
-      $("#pageHeader").css("top","-550px"); // 스크롤을 내렸을때 #header의 CSS 속성중 top 값을 -50px로 변경한다.
-  
-   } else {
-      // upscroll code
-      $("#pageHeader").css("top","0px"); // 스크롤을 올렸을때 #header의 CSS 속성중 top 값을 0px로 변경한다.
-   }
-       lastScrollTop = st;
-    });
-});
-
 $(function() {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 500) { // 스크롤 위치에 따라 화면에서 맨위로 올라가는 버튼이 나타나고, 사라지도록 설정

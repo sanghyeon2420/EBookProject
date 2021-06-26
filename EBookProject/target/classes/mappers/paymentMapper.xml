@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
+<mapper namespace="payment">
+	<!-- 회원 번호로 구매 조회 -->
+	<select id="paymentbring" resultType="com.example.EBookProject.model.dto.PaymentDTO">
+		select * from payment where user_no=#{user_no}
+	</select>
+	
+	<!-- 상품 중복 체크 -->
+	<select id="paymentcheck" resultType="com.example.EBookProject.model.dto.PaymentDTO">
+		
+	</select>
+
+
+	
+	<!-- 컨텐츠 구매 -->
+	
+	<insert id="result" >
+	insert into payment values ((select nvl(max(payment_id),0)+1 from payment),#{contents_no},#{user_no},sysdate)
+	</insert>
+	
+	<update id="buy">
+	update member set cash=cash+${cookie} where user_no=#{dto.user_no}
+	</update>
+
+	<!-- 컨텐츠 구매  end -->
+</mapper>
+
+
+

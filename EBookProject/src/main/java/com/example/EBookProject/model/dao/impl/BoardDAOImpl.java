@@ -15,6 +15,7 @@ import com.example.EBookProject.model.dto.BoardDTO;
 @Repository
 public class BoardDAOImpl implements BoardDAO {
 	
+	
 	@Inject
 	SqlSession sqlSession;
 
@@ -38,7 +39,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public BoardDTO read(int board_no) {
 		// TODO Auto-generated method stub
-		return null;
+		return (BoardDTO) sqlSession.selectOne("board.read", board_no);
 	}
 
 	@Override

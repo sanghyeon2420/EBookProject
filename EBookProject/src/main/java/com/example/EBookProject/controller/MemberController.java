@@ -69,13 +69,11 @@ public class MemberController {
 		System.out.println("dto:"+dto.getUserpw());
 		
 		MemberDTO loginDTO=service.LoginInfo(dto); 
-		session.setAttribute("member", loginDTO);
 		
 		WriterDTO writerdto=writerservice.writerinfo(loginDTO.getUser_no());
-		
-		if (dto != null) {
+			
+			session.setAttribute("member", loginDTO);
 			session.setAttribute("writer", writerdto);
-		}
 		
 		return "redirect:/";
 	}

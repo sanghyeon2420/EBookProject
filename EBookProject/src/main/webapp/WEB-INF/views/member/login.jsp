@@ -19,6 +19,12 @@ $(document).ready(function(){
 		alert("로그인 후 이용이 가능합니다.");
 	}
 	
+	$("#login_form").keypress(function (e) {
+        if (e.keyCode === 13) {
+            Login();
+        }
+    });
+	
 	$("#btnLogin").click(function(){
 		var userid=$("#userid").val();
 		var userpw=$("#userpw").val();

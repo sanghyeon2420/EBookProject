@@ -7,9 +7,11 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.example.EBookProject.model.dao.impl.BookDAOImpl;
+import com.example.EBookProject.model.dao.impl.LikebookDAOImpl;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 import com.example.EBookProject.model.dto.ContentDTO;
+import com.example.EBookProject.model.dto.LikebookDTO;
 import com.example.EBookProject.model.service.BookService;
 
 @Service
@@ -18,6 +20,8 @@ public class BookServiceImpl implements BookService {
 	@Inject
 	BookDAOImpl dao;
 	
+	@Inject
+	LikebookDAOImpl likedao;
 	
 	@Override
 	public List<BookcategoryDTO> bookcategory() {
@@ -70,8 +74,15 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public void bookhits(int ebook_no) {
-		dao.bookhits(ebook_no);
+	public void bookhits(int ebook_no,LikebookDTO dto) {
+		
+		int like_check=likedao.countLike(dto);
+		
+		if(like_check == 0) { // 추천을 안했을때
+			likedao.insertLike(dto); // 추천하기
+			dao.bookhits(ebook_no); // 추천수 올리기
+		}
+		
 	}
 
 	@Override

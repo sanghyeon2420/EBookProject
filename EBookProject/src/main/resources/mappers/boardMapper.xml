@@ -30,6 +30,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select count(*) from board
 	<include refid="search" />
 	</select>
+	
+	<!-- 게시글 상세 보기 -->
+	<select id="read" resultType="com.example.EBookProject.model.dto.BoardDTO">
+		SELECT * FROM board WHERE board_no = #{board_no} 
+	</select>
 
 	<sql id="search">
 		<choose>

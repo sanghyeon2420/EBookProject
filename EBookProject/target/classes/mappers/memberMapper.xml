@@ -57,4 +57,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="cookiemanager" parameterType="com.example.EBookProject.model.dto.MemberDTO">
 	update member set cash=#{cash} where user_no=#{user_no}
 	</update>
+	
+	
+
 </mapper>

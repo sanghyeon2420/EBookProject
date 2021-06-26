@@ -22,8 +22,7 @@ import com.example.EBookProject.model.service.BoardService;
 
 @Controller
 @RequestMapping("/board/*") // board/ list <- 첫화면
-public class BoardController {
-	
+public class BoardController {	
 	@Inject
 	BoardService boardService;
 	
@@ -85,4 +84,19 @@ public class BoardController {
 		//return "board/boardlist";
 		return mav;
 	}
+	
+	@RequestMapping("view")
+	public ModelAndView read(
+			@RequestParam("board_no") int board_no,
+			HttpServletRequest request,
+			ModelAndView mav) throws Exception{
+		System.out.println(board_no);
+		BoardDTO dto = boardService.read(board_no);
+		mav.addObject("boarddto",dto);
+		mav.setViewName("board/boardDetail");
+		System.out.println(dto);
+		
+		return mav;
+	}
+			
 }

@@ -23,26 +23,30 @@ font-family: 'Sunflower', sans-serif; */
 }
 
 .Ebook_logo {
-	width: 15vw;
+	width: 15%;
 	height: 11vh;
 	text-align: center;
 }
 
 .Ebook_logo img {
 	border-radius: 50px;
-	width: 13vw;
+	width: 11vw;
 	height: 10vh;
 }
 
 .center {
-	width: 50vw;
-	height: 5vh;
-	text-align: center;
+	width: 60%;
+	height: 12vh;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	
 	
 }
 
 .search {
   width: 100%;
+  height: 4vh;
   position: relative;
   display: flex;
 }
@@ -52,7 +56,7 @@ font-family: 'Sunflower', sans-serif; */
   border: 3px solid #61dea2;
   border-right: none;
   padding: 15px;
-  height: 20px;
+  height: 3vh;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
@@ -76,32 +80,73 @@ font-family: 'Sunflower', sans-serif; */
 
 /*검색창 */
 .wrap{
-  width: 40%;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 60%;
+ 	
 }
 
 .searchButton:hover {
 	background-color: #7683e8;
 }
 
-.menu_list {
-	margin: 1;
-	padding: 0;
-	list-style: none;
+.menu {
+	width: 100%;
+	height: 80%;
 	display: flex;
-	justify-content: space-between;
-	width: 66%;
+	align-items: center;
 }
 
+ul.menu_list {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 6vh;
+	display: flex;
+	list-style: none;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+
+.menu_list_in {
+	width: 10%;
+	height: 7vh;
+}
+
+li {
+	width: 100%;
+	height: 100%;
+}
+
+.out_button {
+	width: 5vw;
+    height: 5vh;
+    background-color: inherit;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: 'Gugi', cursive;
+}
+
+.out_button:hover {
+	background-color: #fff;
+	color: #00AF5B; 
+	transition: all .5s ease;
+}
+
+
+a.btn.btn-sm.animated-button.victoria-three {
+	margin: 10px;
+    padding: 0;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: block;
 	color: #000;
-	margin: 12px auto 0;
 	padding: 14px 15px;
 	font-size:14px;
 	font-family: 'Gugi', cursive;
@@ -181,12 +226,29 @@ a.animated-button.victoria-three:hover:after {
 
 
 .Ebook_icons {
-	height: 5vh;
+	width: 15%;
+	height: 8vh;
 	text-align: center;
 }
 
+.Ebook_icons_in {
+	width: 100%;
+	height: 55%;
+	display: flex;
+	padding-left: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.Ebook_icons_in2 {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .fa-cog {
-	height: 5vh;
+	height: 2vh;
 }
 
 #login {
