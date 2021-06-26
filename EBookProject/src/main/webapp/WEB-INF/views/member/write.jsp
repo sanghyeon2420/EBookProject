@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 <h2>글등록</h2>
 <hr>
-<form name="form1" method="post" action="${pageContext.request.contextPath}/insert.do">
+<form name="form1" method="post" action="${pageContext.request.contextPath}/admin/insert.do">
 <div>
 	<input name="notic_title" id="notic_title" size="80" placeholder="제목을 입력해주세요." class="form-control">
 </div>
@@ -51,7 +51,7 @@ $(document).ready(function(){
 	<button type="button" id="btnInsert">등록</button>
 </div>
 <script>
-CKEDITOR.replace("b_content", {
+CKEDITOR.replace("notic_content", {
 	placeholder:"내용을 입력해주세요",
 	height:"300px"
 });

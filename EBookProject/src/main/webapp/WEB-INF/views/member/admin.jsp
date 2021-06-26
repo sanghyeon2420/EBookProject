@@ -53,7 +53,7 @@ function cookieUpdate(userno){
 $(function(){
 	$("#btnWrite").click(function(){
 		//jsp로 곧바로 링크 못시키기때문에 boardcontroller.java 에서 requestmapping("write")로 
-		location.href="<%=request.getContextPath() %>/write";
+		location.href="<%=request.getContextPath() %>/admin/write";
 	});
 });
 

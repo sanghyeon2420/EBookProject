@@ -105,7 +105,7 @@ public class AdminController {
 	@RequestMapping("write")
 	public String write() {
 		System.out.println("write===>insert");
-		return "write";
+		return "member/write";
 	}
 	
 	@RequestMapping("insert")
