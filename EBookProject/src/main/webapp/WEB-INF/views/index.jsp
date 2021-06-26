@@ -12,6 +12,12 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <title>BOOK HOUSE</title>
 <script>
+$(document).ready(function(){
+	var message="${param.message}";
+	if(message=="isadmin"){
+		alert("관리자만 이용이 가능합니다.");
+	}
+});
 $(function(){ // 헤더가리기
     var lastScrollTop = 0, delta = 15;
     $(window).scroll(function(event){
