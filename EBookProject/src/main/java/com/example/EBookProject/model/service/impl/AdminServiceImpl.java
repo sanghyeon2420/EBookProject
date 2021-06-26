@@ -73,4 +73,10 @@ public class AdminServiceImpl implements AdminService {
 		dao.cookiemanager(dto);
 	}
 
+	@Override
+	public void insertNotic(NoticDTO dto) {
+		dao.insertNotic(dto);
+		
+	}
+
 }

@@ -26,7 +26,7 @@ public class NoticController {
 	@Inject
 	NoticServiceImpl noticService;
 	
-	// 게시글 등록 뷰
+	/*// 게시글 등록 뷰
 		@RequestMapping("write")
 		public String write(NoticDTO vo) throws Exception {
 			return "notic/write";
@@ -55,7 +55,7 @@ public class NoticController {
 				return "notic/write";
 			}
 			// return "redirect:/board";
-		}
+		}*/
 
 		// 게시글 삭제
 		@RequestMapping("/delete")
