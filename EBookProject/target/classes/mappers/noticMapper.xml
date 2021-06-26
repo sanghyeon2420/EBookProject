@@ -7,14 +7,19 @@
 	<!-- 글쓰기 -->
 	<insert id="createNotic">
 		INSERT INTO NOTIC (
-			NOTIC_NO, 
-			NOTIC_TITLE, 
-			NOTIC_CONTENT, 
-		) VALUES(
-			NOTIC_SEQ.NEXTVAL, 
-			#{notic_title}, 
-			#{notic_content}, 
-		)
+                NOTIC_NO, 
+                NOTIC_TITLE, 
+                NOTIC_CONTENT,
+                NOTIC_REGDATE, 
+                NOTIC_VIEWCNT
+                ) 
+        VALUES (
+                (SELECT NVL(MAX(NOTIC_NO)+1,0) FROM NOTIC),
+                #{notic_title},
+                #{notic_content},
+                TO_DATE(SYSDATE), 
+                '0' 
+                )
 	</insert>
 
 	<!-- 글 수정 -->

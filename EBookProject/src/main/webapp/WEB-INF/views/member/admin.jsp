@@ -50,6 +50,13 @@ function cookieUpdate(userno){
 	location.href="/EBookProject/admin/cookiemanager?user_no="+userno+"&cash="+result;
 }
 
+$(function(){
+	$("#btnWrite").click(function(){
+		//jsp로 곧바로 링크 못시키기때문에 boardcontroller.java 에서 requestmapping("write")로 
+		location.href="<%=request.getContextPath() %>/write";
+	});
+});
+
 //F12 버튼 방지 
 /* $(document).ready(function(){ 
 $(document).bind('keydown',function(e){ 
@@ -275,7 +282,7 @@ $(document).bind('keydown',function(e){
 		 	 
 		<tr>
 			<td>
-			<button>글쓰기</button>
+			<button id="btnWrite">글쓰기</button>
 			</td>
 			<td colspan="3"></td>		
 		</tr>
