@@ -24,10 +24,10 @@ a:link { color: black; text-decoration: none;}
 
 <section id="section1" class="visual">
 	<!-- width=1200px; height=700px -> width=890px; height=450px -->
-	<div><img src="resources/images/banner3.png" width=1200px; height=700px;></div>
-    <div><img src="resources/images/banner4.png" width=1200px; height=700px;></div>
-    <div><img src="resources/images/banner1.jpg" width=1200px; height=700px;></div>
-    <div><img src="resources/images/banner2.jpg" width=1200px; height=700px;></div>
+	<div><a href="/EBookProject/notic/view?notic_no=1 "><img src="resources/images/banner3.png" width=1200px; height=700px;></a></div>
+    <div><a href="/EBookProject/notic/view?notic_no=2 "><img src="resources/images/banner4.png" width=1200px; height=700px;></a></div>
+    <div><a href="/EBookProject/book/detail?idx=17 "><img src="resources/images/banner1.jpg" width=1200px; height=700px;></a></div>
+    <div><a href="/EBookProject/book/detail?idx=18 "><img src="resources/images/banner2.jpg" width=1200px; height=700px;></a></div>
 </section>
 
 <section id="section3">
@@ -98,7 +98,7 @@ a:link { color: black; text-decoration: none;}
 
 <section id="adverbanner">
 <div class="adver">
-	<img src="resources/images/1.png" width=60vw; height=30vh; alt="광고를 불러오고 있습니다">
+	<a href="/EBookProject/notic/view?notic_no=6 "><img src="resources/images/1.png" width=60vw; height=30vh; alt="광고를 불러오고 있습니다"></a>
 </div>
 </section>
 

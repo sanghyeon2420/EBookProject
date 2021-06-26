@@ -23,4 +23,7 @@ public interface AdminService {
 		
 		// 관리자 쿠키 수정 
 		public void cookiemanager(MemberDTO dto);
+		
+		// 공지사항 쓰기 
+		public void insertNotic(NoticDTO dto); 
 }
