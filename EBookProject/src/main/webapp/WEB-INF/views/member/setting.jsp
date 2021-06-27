@@ -130,7 +130,7 @@ ul.profileBody {
 }
 
 .profileBody li{
-    width: 55%;
+    width: 40%;
     height: 5vh;
     display: flex;
     padding: 10px;
