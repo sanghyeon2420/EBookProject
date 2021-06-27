@@ -118,7 +118,7 @@ function disableclick(event){
     }
     
     input[type=radio]:checked + label{
-    	background-color: #5a6268
+    	background-color: #526eff;
     }
     
     #image_preview img{
