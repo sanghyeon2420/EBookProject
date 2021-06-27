@@ -232,7 +232,9 @@ dd {
   <hr>
   	<section id="adverbanner">
 		<div class="adver">
+		  <a href="/EBookProject/notic/view?notic_no=3 ">
 			<img src="resources/images/cookie.jpg" width=60vw; height=16vh; alt="광고를 불러오고 있습니다">
+		  </a>
 		</div>
 	</section>
 	<hr>
