@@ -98,4 +98,9 @@ public class BookServiceImpl implements BookService {
 	public String contentName(int ebook_no, int contentlist) {
 		return dao.contentName(ebook_no, contentlist);
 	}
+
+	@Override
+	public void bookget(int ebook_no) {
+		dao.bookget(ebook_no);
+	}
 }

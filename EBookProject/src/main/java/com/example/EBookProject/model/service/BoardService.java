@@ -22,4 +22,5 @@ public interface BoardService {
 	public void boardDelete(int board_no); // 게시판 게시물 삭제
 	public BoardDTO boardUpdate(int board_no); // 게시판 게시물 수정
 	public void updateResult(BoardDTO dto); // 게시물 수정 등록
+	public void boardget(int board_no); // 조회수 증가 처리
 }

@@ -88,10 +88,31 @@ public class BoardController {
 	}
 
 	@RequestMapping("view")
-	public ModelAndView read(@RequestParam("board_no") int board_no, HttpServletRequest request, ModelAndView mav)
+	public ModelAndView read(HttpSession session,@RequestParam("board_no") int board_no, HttpServletRequest request, ModelAndView mav)
 			throws Exception {
 		System.out.println(board_no);
+		
+		// 조회수 증가처리
+		// 타이머 설정
+		long update_time = 0;
+
+		if (session.getAttribute("update_time_" + board_no) != null) {
+			// 최근에 조회수를 올린 시간
+			update_time = (Long) session.getAttribute("update_time_" + board_no);
+		}
+		long current_time = System.currentTimeMillis();
+		// 일정 시간이 경과한 후 조회수 증가 처리
+		if (current_time - update_time > 5 * 10000) {
+			// 조회수 증가 처리
+			boardService.boardget(board_no);
+			
+			// 조회수를 올린 시간 저장
+			session.setAttribute("update_time_" + board_no, current_time);
+		}
+
 		BoardDTO dto = boardService.read(board_no);
+		
+		
 		mav.addObject("boarddto", dto);
 		mav.setViewName("board/boardDetail");
 		System.out.println(dto);

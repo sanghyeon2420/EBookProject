@@ -54,7 +54,7 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public void deleteboard(BoardDTO dto) {
-		sqlSession.delete("board.deleteboard", dto);
+		sqlSession.update("board.deleteboard", dto);
 	}
 	
 	@Override
