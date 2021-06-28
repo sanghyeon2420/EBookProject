@@ -68,12 +68,11 @@ a#MOVE_TOP_BTN {
     bottom: 50px;/*버튼 위치 설정*/
     display: none;/*기본 값 화면에서 숨김 */
 }
-img {
 
-  width: 50px;
-  height: 50px;
-  
-  }
+.icon_img {
+  width:50px;
+  height:50px;
+}
 
 	 table {
     width: 100%;
@@ -88,6 +87,15 @@ img {
 	font-family: 'Jua', sans-serif;
 	font-size: 20px;
 	text-align: center;
+  }
+  
+  #text-left {
+  	text-align: left;
+  }
+  
+  #text-left img {
+  	width : 100%;
+  	height : 100%;
   }
 
 </style>
@@ -115,7 +123,7 @@ img {
 			<tr>
 			<td colspan='6' style="background-color: #5FD184;"> 내용 </td>
 			<tr valign="top">
-			<td colspan='6'>
+			<td colspan='6' id="text-left">
 			<br>
 			${noticdto.notic_content}
 			<br><br>
