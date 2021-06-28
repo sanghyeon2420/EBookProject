@@ -50,4 +50,22 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDTO searchPW(MemberDTO dto) {
 		return dao.searchPW(dto);
 	}
+	
+	@Override
+	//회원 정보 수정을 위한 정보 출력
+	public MemberDTO memberUpdate(int user_no) {
+		return dao.memberUpdate(user_no);
+	}
+	
+	@Override
+	//회원 정보 수정
+	public void updateMember(MemberDTO dto) {
+		dao.updateMember(dto);
+	}
+	
+	@Override 
+	// 회원 탈퇴 
+	public void deleteMember(MemberDTO dto) {
+		dao.deleteMember(dto);	
+	}
 }

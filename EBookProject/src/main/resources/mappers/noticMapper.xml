@@ -5,7 +5,7 @@
 <mapper namespace="NoticDAO">
 
 	<!-- 글쓰기 -->
-	<insert id="createNotic">
+	<insert id="insertNotic">
 		INSERT INTO NOTIC (
                 NOTIC_NO, 
                 NOTIC_TITLE, 
@@ -23,7 +23,12 @@
 	</insert>
 
 	<!-- 글 수정 -->
-	<update id="updateNotic">
+	<select id="update" resultType="com.example.EBookProject.model.dto.NoticDTO">
+	select * from NOTIC where notic_no = #{notic_no}
+	</select>
+
+	
+	<update id="updateResult" parameterType="com.example.EBookProject.model.dto.NoticDTO">
 		UPDATE NOTIC
 		SET
 		NOTIC_TITLE = #{notic_title},

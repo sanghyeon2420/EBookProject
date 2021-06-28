@@ -18,9 +18,15 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
+<<<<<<< HEAD
 
 	$("#hits").change(function(){
 		var count=${count};
+=======
+	memo_list();
+	
+	$("#hits").click(function(){
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		var ebook_no=${bookdto.ebook_no};
 			alert("속성변경"+count+", "+ebook_no);
 			
@@ -38,6 +44,21 @@ $(document).ready(function(){
         	
     });
 });
+
+
+function memo_list(){
+	$.ajax({
+		type: "post",
+		url: "<%=request.getContextPath() %>/memo/list",
+		data:{"idx":${bookdto.ebook_no }},
+		success: function( data ){
+			console.log(data);
+			$("#memoResult").html( data );
+		}
+	});
+}
+
+
 
 function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	console.log("ebook_no =>  "+ebook_no+", contentlist => "+contentlist);
@@ -65,10 +86,56 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 			} 
 		}	
 	}
-	
-	
-	
 }
+
+
+
+
+<%-- $(document).ready( function() { //onload 이벤트
+	memo_list();
+	$("#btnWrite").click(function(){ //버튼클릭이벤트
+		memo_insert();		
+	});
+});
+function memo_insert(){
+	var memo = $("#memo").val();
+	var param = "&memo="+memo;
+	$.ajax({
+		type: "post",
+		data: param,
+		url: "<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }",
+		success: function(){
+			//메모목록 갱신
+			memo_list();
+			//폼입력값 초기화
+			$("#memo").val("");
+		}
+	});
+}
+
+function memo_list(){
+	$.ajax({
+		type: "post",
+		url: "<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }",
+		success: function( data ){
+			$("#list").html( data );
+		}
+	});
+}
+
+
+$(document).ready( function(){
+	$("#btnUpdate").click(function(){
+		$("#form1").attr("action","<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }");
+		$("#form1").submit();
+	});
+	$("#btnDelete").click( function(){
+		if( confirm("삭제하시겠습니까?")) {
+			$("#form1").attr("action", "<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }");
+			$("#form1").submit();
+		}
+	});
+}); --%>
 </script>
 
 <style>
@@ -151,21 +218,57 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 									</c:if>
 									</span>
 								</p>
+<<<<<<< HEAD
 						</a></li>
 							
 						
+=======
+						</a></li>	
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 						</c:forEach>
 					</ol>
 				</div>
 			</div>
+			<div id="comment">
+				<h2>한 줄 후기</h2>
+			  <div id="memoInput">
+			  	    메모 <input type="text" name="memo" id="memo" size="50" />
+					<input type="button" id="btnWrite" value="확인" />
+			  </div><br>
+			<!--  출력하는 부분  -->
+			<div id="memoResult">
+				
+				
+			</div>			  
+			  <%-- <table border="1" style="width:700px">
+			  <tr>
+				<td>No</td>
+				<td>user_no</td>
+				<td>메모</td>
+				<td>날짜</td>
+			  </tr>
+			<c:forEach var="list" items="${list}">
+		  	  <tr>
+				<td>${list.idx}</td>
+				<td>${list.user_no}</td>
+				<td>${list.memo}</td>
+				<td>${list.post_date}</td>
+			  </tr>
+			</c:forEach>	
+			</table> --%>
+			
+			</div>
 		</div>
 	</article>
+	
 	<nav id="mainNav">
  	<%@ include file="../../include/mainNav.jsp" %>
  	</nav>
+ 	
 	<div id="siteAds">
 	<%@ include file="../../include/siteAds.jsp" %>
 	</div>
+	
 	<footer id="pageFooter">
 	<%@ include file="../../include/pageFooter.jsp" %>
 	</footer>

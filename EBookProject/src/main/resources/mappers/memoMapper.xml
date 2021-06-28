@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 다른 mapper와 중복되지 않도록 네임 스페이스 기재 -->
+<mapper namespace="memo">
+	<!-- 최신순으로 댓글 보기 -->
+	<select id="memoList" resultType="com.example.EBookProject.model.dto.MemoDTO">
+		select idx, memo, nickname, post_date, ebook_no from memo m, member b where m.user_no=b.user_no and ebook_no=#{ebook_no} order by idx desc
+	</select>
+	
+	<!-- 누르면 상세보기 -->
+	<select id="memoDetail" resultType="com.example.EBookProject.model.dto.MemoDTO">
+		select * from memo where idx=#{idx}
+	</select>
+
+	<!-- 댓글 입력 -->
+	<insert id="memoInsert">
+		insert into memo (idx, user_no, memo ) values
+		( (select nvl(max(idx)+1,1) from memo), #{user_no}, #{memo} )
+	</insert>
+
+	<!-- 댓글 생성 -->
+	<update id="memoUpdate">
+		update memo set user_no=#{user_no}, memo=#{memo} where idx=#{idx}
+	</update>
+
+	<!-- 댓글 삭제 -->
+	<delete id="memoDelete">
+		delete from memo where idx=#{idx}
+	</delete>
+	
+	<!-- nickname 불러오기 -->
+	<select id="nickname" resultType="com.example.EBookProject.model.dto.MemoDTO">
+select idx, memo, nickname, post_date from memo m, member b where m.user_no=b.user_no and ebook_no=#{ebook_no}	
+	</select>
+</mapper>

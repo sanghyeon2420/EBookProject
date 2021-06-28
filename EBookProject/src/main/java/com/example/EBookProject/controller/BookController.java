@@ -28,9 +28,12 @@ public class BookController {
 	@Inject
 	BookServiceImpl service;
 
+<<<<<<< HEAD
 	@Inject
 	LikebookDAOImpl likedao;
 
+=======
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	@RequestMapping("list")
 	public ModelAndView BookList(ModelAndView mav, int idx) {
 		mav.setViewName("book/booklist");
@@ -40,12 +43,17 @@ public class BookController {
 
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
+<<<<<<< HEAD
 		}
 		String category = list.get(0).getB_category();
 		System.out.println("카테고리: =====>>>>>" + category);
 		mav.addObject("category", category);
 		mav.addObject("list", list);
 
+=======
+		}	
+		
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		return mav;
 	}
 
@@ -95,8 +103,29 @@ public class BookController {
 		
 		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+countLike);
 		
+<<<<<<< HEAD
 		if (countLike== 0) { // 추천을 안함
 			likedao.insertLike(likeDTO); // 추천테이블에 정보저장
+=======
+		
+		if(memberDTO != null) {
+			likeDTO.setLike_id(memberDTO.getUser_no());
+		} else {
+			result="fail";
+		}
+					
+		service.bookhits(ebook_num,likeDTO); //추천수 증가
+		BookDTO dto=service.Bookdetail(ebook_num);
+		result =String.valueOf(dto.getBook_hits());
+		return result;
+	}
+	
+	@RequestMapping("contentview")
+	public String contentview(HttpSession session,Model model,int book,int content) {
+		System.out.println("book = ebook_no =>"+book);
+		System.out.println("content = contentlist =>"+content);
+		
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 
 		}
 
@@ -136,16 +165,27 @@ public class BookController {
 			// 조회수를 올린 시간 저장
 			session.setAttribute("update_time_" + book, current_time);
 		}
+<<<<<<< HEAD
 
 		int contentCount = service.contentCount(book);
 		BookDTO dto = service.Bookdetail(book);
 
 		model.addAttribute("book", book);
 		model.addAttribute("content", content);
+=======
+		
+		int contentCount=service.contentCount(book);
+		BookDTO dto =service.Bookdetail(book);
+		
+		model.addAttribute("ebook_no",dto.getEbook_no());
+		model.addAttribute("book",book);
+		model.addAttribute("content",content);
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		model.addAttribute("contentCount", contentCount);
 		model.addAttribute("b_category", dto.getB_category());
 		model.addAttribute("b_name", dto.getB_name());
 		model.addAttribute("content_name", service.contentName(book, content));
+		model.addAttribute("ebook_no",dto.getEbook_no());
 		return "book/viewer"; // 이동할 페이지 지정
 	}
 

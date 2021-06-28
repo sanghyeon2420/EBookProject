@@ -21,6 +21,7 @@
 	<resources mapping="/writer/resources/**" location="/resources/" />
 	<resources mapping="/web/resources/**" location="/resources/" />
 	<resources mapping="/admin/resources/**" location="/resources/" />
+	<resources mapping="/memo/resources/**" location="/resources/" />
 	<resources mapping="/pay/resources/**" location="/resources/" />
 	<resources mapping="/book/contentview/resources/**" location="/resources/" />
 	

@@ -87,4 +87,6 @@ public class MainController {
 		return "member/privacy_policy";
 	}
 	
+	
+	
 }
