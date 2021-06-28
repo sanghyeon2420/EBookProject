@@ -5,7 +5,7 @@
 <mapper namespace="NoticDAO">
 
 	<!-- 글쓰기 -->
-	<insert id="createNotic">
+	<insert id="insertNotic">
 		INSERT INTO NOTIC (
                 NOTIC_NO, 
                 NOTIC_TITLE, 
