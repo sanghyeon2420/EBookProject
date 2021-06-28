@@ -145,7 +145,7 @@
     }
 
     input[type=radio]:hover + label {
-        color: #F7F7F7;
+        color: #ffeb7a;
     }
 
     input[type=radio] {
@@ -178,7 +178,7 @@
     	}
     	
     #setup label{
-        border : 1px #262626;
+        border : 0px #262626;
         border-radius: 20px; 
         box-sizing: border-box;
     }
@@ -293,9 +293,9 @@
             document.getElementById("footline").style.color = "#262626";
         }
         function bgbeige() {
-            document.getElementById("bookview").style.backgroundColor = "#f5f5dc";
-            document.getElementById("navline").style.backgroundColor = "#f5f5dc";
-            document.getElementById("adsline").style.backgroundColor = "#f5f5dc";
+            document.getElementById("bookview").style.backgroundColor = "#ffeb7a";
+            document.getElementById("navline").style.backgroundColor = "#ffeb7a";
+            document.getElementById("adsline").style.backgroundColor = "#ffeb7a";
             document.getElementById("headline").style.backgroundColor = "#262626";
             document.getElementById("footline").style.backgroundColor = "#262626";
             document.getElementById("headline").style.color = "#F7F7F7";
@@ -311,7 +311,7 @@
             document.getElementById("bookview").style.color = "gray";
         }
         function tcbeige() {
-            document.getElementById("bookview").style.color = "#f5f5dc";
+            document.getElementById("bookview").style.color = "#ffeb7a";
         }
         function bdnormal() {
         	document.getElementById("bookview").style.fontWeight = "400";
@@ -432,31 +432,31 @@
                                 <tr>
                                     <th>배경색상</th>
                                     <td><input type="radio" id="bggreen" name="bgcolor" onclick="bggreen()">
-                                        <label for="bggreen" style="background-color : #00AF5B; color: #00AF5B" >색상</label>
+                                        <label for="bggreen" style="background-color : #00AF5B; color: #00AF5B" >색</label>
                                     </td>
                                     <td><input type="radio" id="bgwhite" name="bgcolor" onclick="bgwhite()">
-                                        <label for="bgwhite" style="background-color : #F7F7F7; color: #F7F7F7" >색상</label>
+                                        <label for="bgwhite" style="background-color : #F7F7F7; color: #F7F7F7" >색</label>
                                     </td>
                                     <td><input type="radio" id="bgblack" name="bgcolor" onclick="bgblack()">
-                                        <label for="bgblack" style="background-color : #262626; color: #262626" >색상</label>
+                                        <label for="bgblack" style="background-color : #262626; color: #262626" >색</label>
                                     </td>
                                     <td><input type="radio" id="bgbeige" name="bgcolor" onclick="bgbeige()">
-                                        <label for="bgbeige" style="background-color : #f5f5dc; color:#f5f5dc" >색상</label>
+                                        <label for="bgbeige" style="background-color : #f5f5dc; color:#ffeb7a" >색</label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>글자색상</th>
                                     <td><input type="radio" id="tcblack" name="textcolor" onclick="tcblack()">
-                                        <label for="tcblack" style="background-color : #262626; color: #262626" >색상</label>
+                                        <label for="tcblack" style="background-color : #262626; color: #262626" >색</label>
                                     </td>
                                     <td><input type="radio" id="tcwhite" name="textcolor" onclick="tcwhite()">
-                                        <label for="tcwhite" style="background-color : #F7F7F7; color: #F7F7F7" >색상</label>
+                                        <label for="tcwhite" style="background-color : #F7F7F7; color: #F7F7F7" >색</label>
                                     </td>
                                     <td><input type="radio" id="tcgray" name="textcolor" onclick="tcgray()">
-                                        <label for="tcgray" style="background-color : gray; color: gray" >색상</label>
+                                        <label for="tcgray" style="background-color : gray; color: gray" >색</label>
                                     </td>
                                     <td><input type="radio" id="tcbeige" name="textcolor" onclick="tcbeige()">
-                                        <label for="tcbeige" style="background-color : #f5f5dc; color:#f5f5dc" >색상</label>
+                                        <label for="tcbeige" style="background-color : #f5f5dc; color:#ffeb7a" >색</label>
                                     </td>
                                 </tr>
                                 <tr>
