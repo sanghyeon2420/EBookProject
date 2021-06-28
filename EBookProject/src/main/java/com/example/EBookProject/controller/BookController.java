@@ -24,9 +24,7 @@ public class BookController {
 	
 	@Inject
 	BookServiceImpl service;
-	
-	
-	
+
 	@RequestMapping("list")
 	public ModelAndView BookList(ModelAndView mav,int idx) {
 			mav.setViewName("book/booklist");
