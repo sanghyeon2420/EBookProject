@@ -49,7 +49,8 @@ $(document).ready(function(){
 	<textarea id="notic_content" name="notic_content" row="3" cols="80" >${dto.notic_content }</textarea>
 </div>
 <div style="text-align:right">
-	<button type="button" id="btnCanel">취소</button>
+	<a href="list?listtype=notic">
+	<button type="button" id="btnCanel">취소</button></a>
 	<button type="button" id="btnSubmit">수정</button>
 </div>
 <script>
