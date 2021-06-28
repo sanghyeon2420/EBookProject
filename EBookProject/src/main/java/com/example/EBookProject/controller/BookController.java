@@ -137,7 +137,7 @@ public class BookController {
 		int contentCount=service.contentCount(book);
 		BookDTO dto =service.Bookdetail(book);
 		
-		
+		model.addAttribute("ebook_no",dto.getEbook_no());
 		model.addAttribute("book",book);
 		model.addAttribute("content",content);
 		model.addAttribute("contentCount", contentCount);

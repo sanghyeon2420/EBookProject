@@ -170,6 +170,14 @@
     .table {
     	background-image: radial-gradient(circle at 50% -20.71%, #fef6d9 0, #f8eac7 25%, #f2deb5 50%, #edd2a3 75%, #e8c593 100%);
     	}
+    	
+    #setup label{
+        border : 1px solid #262626;
+        border-radius: 20px;
+        font-size: 20px; 
+        box-sizing: border-box;
+    }
+    
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -357,7 +365,7 @@
         <div class="headline" id="headline">
             <div class="fixline">
                 <div class="homeline">
-                    <i class="fas fa-home fa-2x" onclick="location.href='<%=request.getContextPath() %>/'"
+                    <i class="fas fa-home fa-2x" onclick="location.href='<%=request.getContextPath() %>/book/detail?idx=${ebook_no }'"
                         style="cursor:pointer;"></i>
                 </div>
                 <div class="titlename">
@@ -373,18 +381,18 @@
                                 <tr>
                                     <th>글꼴</th>
                                     <td><input type="radio" id="Jua" name="fontfamily" onclick="FontJua()">
-                                        <label for="Jua">주아</label>
+                                        <label for="Jua" style="font-family : 'Jua'">주아</label>
                                     </td>
                                     <td><input type="radio" id="AritaDotum" name="fontfamily"
                                             onclick="FontAritaDotum()">
-                                        <label for="AritaDotum">돋움</label>
+                                        <label for="AritaDotum" style="font-family : 'Arita-dotum-Medium'">돋움</label>
                                     </td>
                                     <td><input type="radio" id="NanumGothic" name="fontfamily" onclick="NanumGothic()">
-                                        <label for="NanumGothic" selected="selected">나눔고딕</label>
+                                        <label for="NanumGothic" style="font-family : 'Nanum Gothic'">고딕</label>
                                     </td>
                                     <td><input type="radio" id="NanumMyeongjo" name="fontfamily"
                                             onclick="NanumMyeongjo()">
-                                        <label for="NanumMyeongjo">나눔명조</label>
+                                        <label for="NanumMyeongjo" style="font-family : 'Nanum Myeongjo'">명조</label>
                                     </td>
                                 </tr>
                                 <tr>

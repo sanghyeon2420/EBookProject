@@ -178,7 +178,7 @@ function disableclick(event){
         </div>
 		<div class="Wsubmit" id="Wsubmit">
             <button class="btn btn-primary" type="submit">작품 등록</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-			<button class="btn btn-danger" type="reset">취소</button>
+			<button class="btn btn-danger" type="reset" onclick="history.back(-1)">취소</button>
         </div>
 	</form>
 	<script type="text/javascript">
