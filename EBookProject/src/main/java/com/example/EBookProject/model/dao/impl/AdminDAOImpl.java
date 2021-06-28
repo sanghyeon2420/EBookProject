@@ -74,6 +74,17 @@ public class AdminDAOImpl implements AdminDAO {
 		
 	}
 
+	@Override
+	public NoticDTO update(int notic_no) {
+		return sqlSession.selectOne("NoticDAO.update", notic_no);
+	}
+	
+	@Override
+	public void updateResult(NoticDTO dto) {
+		sqlSession.update("NoticDAO.updateResult",dto);
+		
+	}
+
 	
 
 

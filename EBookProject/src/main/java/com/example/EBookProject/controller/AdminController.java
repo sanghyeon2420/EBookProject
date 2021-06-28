@@ -114,4 +114,21 @@ public class AdminController {
 		service.insertNotic(dto);
 		return "redirect:/admin/list?listtype=notic";
 	}
+	
+	@RequestMapping("update")
+	public String update (HttpServletRequest request, int notic_no) {
+		NoticDTO dto = service.update(notic_no);
+		request.setAttribute("dto", dto);
+		return "notic/update";
+	}
+	
+	@RequestMapping("updateResult")
+	public String updateResult(String notic_content, String notic_title, int notic_no) { // jsp에서 넘어온 noticDTO dto
+		NoticDTO dto = service.update(notic_no); // 수정할 게시글의 정보
+		dto.setNotic_content(notic_content);// 수정한 내용을 dto타입으로 저장
+		dto.setNotic_title(notic_title); // 수정한 제목을 dto타입으로 저장
+		System.out.println("aa" + dto);
+		service.updateResult(dto);
+		return "redirect:/admin/list?listtype=notic";
+	}
 }
