@@ -31,24 +31,6 @@
        lastScrollTop = st;
     });
 }); */
-// scroll_top_btn script 
-$(function() {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 500) { // 스크롤 위치에 따라 화면에서 맨위로 올라가는 버튼이 나타나고, 사라지도록 설정
-            $('#MOVE_TOP_BTN').fadeIn();
-        } else {
-            $('#MOVE_TOP_BTN').fadeOut();
-        }
-    });
-  
-    $("#MOVE_TOP_BTN").click(function() {//버튼 클릭 이벤트
-        $('html, body').animate({ // animation을 걸어서 화면 맨위로 이동하도록 설정
-            scrollTop : 0
-        }, 400);
-        return false;
-    });
-});
-
 
 // 로그아웃
 $(document).ready(function(){
@@ -259,7 +241,6 @@ ul.profileBody {
 	                </div>
                     <!-- 하단 버튼 -->
                     <div class="footerline">
-	                    <a href="#" type="button" class="btn btn-primary">내가 봐온 소설</a>
 	                    <a href="${pageContext.request.contextPath}/writer/insertBook" type="button" class="btn btn-primary">신규 소설등록</a>
 	                    <a href="update" id="change" type="button" class="btn btn-primary">회원 정보 수정</a>
                     </div>
