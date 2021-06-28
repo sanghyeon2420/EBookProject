@@ -13,6 +13,7 @@ import com.example.EBookProject.model.dao.BookDAO;
 import com.example.EBookProject.model.dto.BookDTO;
 import com.example.EBookProject.model.dto.BookcategoryDTO;
 import com.example.EBookProject.model.dto.ContentDTO;
+import com.example.EBookProject.model.dto.LikebookDTO;
 
 @Repository
 public class BookDAOImpl implements BookDAO {
@@ -90,6 +91,21 @@ public class BookDAOImpl implements BookDAO {
 		
 		
 		return sqlSession.selectOne("book.contentName", map);
+	}
+
+	@Override
+	public void bookget(int ebook_no) {
+		sqlSession.update("book.bookget",ebook_no);
+	}
+
+	@Override
+	public int countLikebook(LikebookDTO dto) {
+		return sqlSession.selectOne("book.countLikebook",dto);
+	}
+
+	@Override
+	public void bookunhits(int ebook_no) {
+		sqlSession.update("book.bookunhits", ebook_no);
 	}
 
 }

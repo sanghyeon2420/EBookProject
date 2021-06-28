@@ -74,17 +74,18 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public void bookhits(int ebook_no,LikebookDTO dto) {
+	public void bookhits(int ebook_no) {
 		
-		int like_check=likedao.countLike(dto);
-		
-		if(like_check == 0) { // 추천을 안했을때
-			likedao.insertLike(dto); // 추천하기
+
 			dao.bookhits(ebook_no); // 추천수 올리기
-		}
 		
 	}
-
+	
+	@Override
+	public void bookunhits(int ebook_no) {
+		dao.bookunhits(ebook_no); // 추천수 내리기
+	}
+	
 	@Override
 	public List<BookDTO> searchbook(String keyword) {
 		return dao.searchbook(keyword);
@@ -98,4 +99,16 @@ public class BookServiceImpl implements BookService {
 	public String contentName(int ebook_no, int contentlist) {
 		return dao.contentName(ebook_no, contentlist);
 	}
+
+	@Override
+	public void bookget(int ebook_no) {
+		dao.bookget(ebook_no);
+	}
+
+	@Override
+	public int countLikebook(LikebookDTO dto) {
+		return dao.countLikebook(dto);
+	}
+
+
 }

@@ -21,6 +21,7 @@
 	<resources mapping="/writer/resources/**" location="/resources/" />
 	<resources mapping="/web/resources/**" location="/resources/" />
 	<resources mapping="/admin/resources/**" location="/resources/" />
+	<resources mapping="/memo/resources/**" location="/resources/" />
 	<resources mapping="/pay/resources/**" location="/resources/" />
 	<resources mapping="/book/contentview/resources/**" location="/resources/" />
 	
@@ -28,8 +29,13 @@
 	<beans:bean id="loginInterceptor" class="com.example.EBookProject.interceptor.LoginInterceptor" />
 		<interceptors>
 		<interceptor>
-			<mapping path="/book/contentview/*"/>
-			<mapping path="/member/viewdetail"/>
+			<mapping path="/book/**"/>
+			<mapping path="/board/**"/>
+			<mapping path="/page/**"/>
+			<mapping path="/writer/**"/>
+			<mapping path="/web/**"/>
+			<mapping path="/admin/**"/>
+			<mapping path="/pay/**"/>
 			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 	</interceptors>
@@ -37,7 +43,7 @@
 	<beans:bean id="AdminInterceptor" class="com.example.EBookProject.interceptor.AdminInterceptor" />
 		<interceptors>
 		<interceptor>
-			<mapping path="/admin/*"/>
+			<mapping path="/admin/**"/>
 			<beans:ref bean="AdminInterceptor"/>
 		</interceptor>
 	</interceptors>

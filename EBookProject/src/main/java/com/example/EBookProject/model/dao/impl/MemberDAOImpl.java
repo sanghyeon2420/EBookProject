@@ -63,4 +63,22 @@ public class MemberDAOImpl implements MemberDAO{
 	public MemberDTO searchPW(MemberDTO dto) {
 		return sqlSession.selectOne("member.searchPW",dto);
 	}
+	
+	@Override
+	//회원 정보 수정을 위한 정보 출력
+	public MemberDTO memberUpdate(int user_no) {
+		return sqlSession.selectOne("member.memberUpdate",user_no);
+	}
+	
+	@Override
+	//회원 정보 수정
+	public void updateMember(MemberDTO dto) {
+		sqlSession.update("member.updateMember", dto);
+	}
+	
+	@Override 
+	// 회원 정보 탈퇴 
+	public void deleteMember(MemberDTO dto) {
+		sqlSession.delete("member.deletemember", dto);
+	}
 }

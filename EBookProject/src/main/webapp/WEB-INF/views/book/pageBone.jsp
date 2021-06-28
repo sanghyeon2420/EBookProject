@@ -18,23 +18,45 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
+<<<<<<< HEAD
+
+	$("#hits").change(function(){
+=======
+	memo_list();
+	
 	$("#hits").click(function(){
 		var ebook_no=${bookdto.ebook_no};
-		
-		$.ajax({
-			type:"post", //전송 방식
-			url:"${pageContext.request.contextPath}/book/hits", //요청주소
-			data:{"ebook_no":ebook_no}, //보내줄 데이터
-			success: function(data){  //비동기 통신 성공시, data -> 리턴받은 데이터
-				console.log(data);  //console창에 data가 출력됨
-				document.getElementById("span_hits").innerHTML=data; // 추천수가 넘어오면
-				
-				// 하트 색깔을 변경
-				document.getElementById("hits").innerHTML="<i class='fas fa-heart'></i>";
-			}
-		});
-	});
+			alert("속성변경"+count+", "+ebook_no);
+			
+			$.ajax({
+				type:'post',
+				url:'${pageContext.request.contextPath}/book/hits',
+				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count}},
+				contentType:'application/json',
+				success:function(data){
+					document.getElementById("span_hits").innerHTML=data.map.result;
+					count = data.map.count;
+				}
+			});
+        	
+        	
+    });
 });
+
+
+function memo_list(){
+	$.ajax({
+		type: "post",
+		url: "<%=request.getContextPath() %>/memo/list",
+		data:{"idx":${bookdto.ebook_no }},
+		success: function( data ){
+			console.log(data);
+			$("#memoResult").html( data );
+		}
+	});
+}
+
+
 
 function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	console.log("ebook_no =>  "+ebook_no+", contentlist => "+contentlist);
@@ -62,11 +84,62 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 			} 
 		}	
 	}
-	
-	
-	
 }
+
+
+
+
+<%-- $(document).ready( function() { //onload 이벤트
+	memo_list();
+	$("#btnWrite").click(function(){ //버튼클릭이벤트
+		memo_insert();		
+	});
+});
+function memo_insert(){
+	var memo = $("#memo").val();
+	var param = "&memo="+memo;
+	$.ajax({
+		type: "post",
+		data: param,
+		url: "<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }",
+		success: function(){
+			//메모목록 갱신
+			memo_list();
+			//폼입력값 초기화
+			$("#memo").val("");
+		}
+	});
+}
+
+function memo_list(){
+	$.ajax({
+		type: "post",
+		url: "<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }",
+		success: function( data ){
+			$("#list").html( data );
+		}
+	});
+}
+
+
+$(document).ready( function(){
+	$("#btnUpdate").click(function(){
+		$("#form1").attr("action","<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }");
+		$("#form1").submit();
+	});
+	$("#btnDelete").click( function(){
+		if( confirm("삭제하시겠습니까?")) {
+			$("#form1").attr("action", "<%=request.getContextPath() %>/book/detail?idx=${bookdto.ebook_no }");
+			$("#form1").submit();
+		}
+	});
+}); --%>
 </script>
+
+<style>
+
+
+</style>
 </head>
 <body>
 <header id="pageHeader">
@@ -88,9 +161,19 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 						<h4>&nbsp;${bookdto.w_name }</h4></a> --%>
 						<h4><a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
 						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수
-						<a id="hits" name="hits">
-						<i class="far fa-heart"></i>
-						</a>
+						
+						<c:choose>
+							<c:when test="${count == 0 }">
+								<input type="checkbox" id="hits" name="hits">																											
+							</c:when>
+							<c:when test="${count == 1 }">
+								<input type="checkbox" id="hits" name="hits" checked="checked">																											
+							</c:when>
+						
+						</c:choose>
+
+						
+						
 						<span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;
 					</div>
 					<div class="blank"></div>
@@ -135,20 +218,52 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 								</p>
 						</a></li>
 							
-							<!-- <a href="<%=request.getContextPath()%>/pay/payment"> 이거 어디에 넣어??ㅠㅠ -->					
 						
+						</a></li>	
 						</c:forEach>
 					</ol>
 				</div>
 			</div>
+			<div id="comment">
+				<h2>한 줄 후기</h2>
+			  <div id="memoInput">
+			  	    메모 <input type="text" name="memo" id="memo" size="50" />
+					<input type="button" id="btnWrite" value="확인" />
+			  </div><br>
+			<!--  출력하는 부분  -->
+			<div id="memoResult">
+				
+				
+			</div>			  
+			  <%-- <table border="1" style="width:700px">
+			  <tr>
+				<td>No</td>
+				<td>user_no</td>
+				<td>메모</td>
+				<td>날짜</td>
+			  </tr>
+			<c:forEach var="list" items="${list}">
+		  	  <tr>
+				<td>${list.idx}</td>
+				<td>${list.user_no}</td>
+				<td>${list.memo}</td>
+				<td>${list.post_date}</td>
+			  </tr>
+			</c:forEach>	
+			</table> --%>
+			
+			</div>
 		</div>
 	</article>
+	
 	<nav id="mainNav">
  	<%@ include file="../../include/mainNav.jsp" %>
  	</nav>
+ 	
 	<div id="siteAds">
 	<%@ include file="../../include/siteAds.jsp" %>
 	</div>
+	
 	<footer id="pageFooter">
 	<%@ include file="../../include/pageFooter.jsp" %>
 	</footer>

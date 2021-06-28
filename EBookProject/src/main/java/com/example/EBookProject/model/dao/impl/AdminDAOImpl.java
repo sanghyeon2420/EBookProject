@@ -54,7 +54,7 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public void deleteboard(BoardDTO dto) {
-		sqlSession.delete("board.deleteboard", dto);
+		sqlSession.update("board.deleteboard", dto);
 	}
 	
 	@Override
@@ -71,6 +71,17 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public void insertNotic(NoticDTO dto) {
 		sqlSession.insert("NoticDAO.insertNotic", dto);
+		
+	}
+
+	@Override
+	public NoticDTO update(int notic_no) {
+		return sqlSession.selectOne("NoticDAO.update", notic_no);
+	}
+	
+	@Override
+	public void updateResult(NoticDTO dto) {
+		sqlSession.update("NoticDAO.updateResult",dto);
 		
 	}
 

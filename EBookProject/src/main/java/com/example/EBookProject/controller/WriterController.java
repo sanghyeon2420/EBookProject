@@ -50,17 +50,13 @@ public class WriterController {
 
 	@RequestMapping("insertBook")
 	public String insertBook(HttpServletRequest request,HttpSession session) {
-		
-		
+				
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member"); // session객체 "member"키값으로 값 가져오기
 		WriterDTO writerDTO = (WriterDTO) session.getAttribute("writer");
 		
-		
-		
 		request.setAttribute("memberDTO", memberDTO); // request 객체에 memberDTO 저장
 		request.setAttribute("writerDTO", writerDTO);
-		
-		
+			
 		return "member/writeinfo";
 	}
 }

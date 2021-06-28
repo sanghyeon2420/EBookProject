@@ -15,10 +15,10 @@ public interface BoardDAO {
 	//(start, end 페이지나누기 , 검색기능)
 	public List<BoardDTO> listAll(int start, int end, String search_option, String keyword) throws Exception;
 	
-	//조회수 증가처리
-	public void board_View_cnt(int board_no) throws Exception;
 	
 	public void boardDelete(int board_no); // 게시판 게시물 삭제
 	public BoardDTO boardUpdate(int board_no); // 게시판 게시물 수정
 	public void updateResult(BoardDTO dto);
+	
+	public void boardget(int board_no); // 조회수 증가 처리
 }
