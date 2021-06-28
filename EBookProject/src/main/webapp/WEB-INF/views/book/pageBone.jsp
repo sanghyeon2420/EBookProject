@@ -21,12 +21,10 @@ $(document).ready(function(){
 <<<<<<< HEAD
 
 	$("#hits").change(function(){
-		var count=${count};
 =======
 	memo_list();
 	
 	$("#hits").click(function(){
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 		var ebook_no=${bookdto.ebook_no};
 			alert("속성변경"+count+", "+ebook_no);
 			
@@ -218,13 +216,10 @@ $(document).ready( function(){
 									</c:if>
 									</span>
 								</p>
-<<<<<<< HEAD
 						</a></li>
 							
 						
-=======
 						</a></li>	
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 						</c:forEach>
 					</ol>
 				</div>
