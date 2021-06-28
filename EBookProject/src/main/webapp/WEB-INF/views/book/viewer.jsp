@@ -129,6 +129,11 @@
     nav#setup {
         display: none;
         color : #262626;
+        text-align: right;
+    }
+    
+    nav#setup ul{
+    	display: inline-table;
     }
 
     nav#setup li{
@@ -148,10 +153,11 @@
     }
 
     tr, td, th {
-        width: 5vw;
-        height: 5vh;
+        width: 4vw;
+        height: 4vh;
         text-align: center;
-       
+        border : none;
+        padding :0;
     }
 
     .bookview {
@@ -172,9 +178,8 @@
     	}
     	
     #setup label{
-        border : 1px solid #262626;
-        border-radius: 20px;
-        font-size: 20px; 
+        border : 1px #262626;
+        border-radius: 20px; 
         box-sizing: border-box;
     }
     
@@ -427,46 +432,46 @@
                                 <tr>
                                     <th>배경색상</th>
                                     <td><input type="radio" id="bggreen" name="bgcolor" onclick="bggreen()">
-                                        <label for="bggreen">녹색</label>
+                                        <label for="bggreen" style="background-color : #00AF5B; color: #00AF5B" >색상</label>
                                     </td>
                                     <td><input type="radio" id="bgwhite" name="bgcolor" onclick="bgwhite()">
-                                        <label for="bgwhite">흰색</label>
+                                        <label for="bgwhite" style="background-color : #F7F7F7; color: #F7F7F7" >색상</label>
                                     </td>
                                     <td><input type="radio" id="bgblack" name="bgcolor" onclick="bgblack()">
-                                        <label for="bgblack">검정색</label>
+                                        <label for="bgblack" style="background-color : #262626; color: #262626" >색상</label>
                                     </td>
                                     <td><input type="radio" id="bgbeige" name="bgcolor" onclick="bgbeige()">
-                                        <label for="bgbeige" selected="selected">베이지</label>
+                                        <label for="bgbeige" style="background-color : #f5f5dc; color:#f5f5dc" >색상</label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>글자색상</th>
                                     <td><input type="radio" id="tcblack" name="textcolor" onclick="tcblack()">
-                                        <label for="tcblack">검정색</label>
+                                        <label for="tcblack" style="background-color : #262626; color: #262626" >색상</label>
                                     </td>
                                     <td><input type="radio" id="tcwhite" name="textcolor" onclick="tcwhite()">
-                                        <label for="tcwhite">흰색</label>
+                                        <label for="tcwhite" style="background-color : #F7F7F7; color: #F7F7F7" >색상</label>
                                     </td>
                                     <td><input type="radio" id="tcgray" name="textcolor" onclick="tcgray()">
-                                        <label for="tcgray">회색</label>
+                                        <label for="tcgray" style="background-color : gray; color: gray" >색상</label>
                                     </td>
                                     <td><input type="radio" id="tcbeige" name="textcolor" onclick="tcbeige()">
-                                        <label for="tcbeige" selected="selected">베이지</label>
+                                        <label for="tcbeige" style="background-color : #f5f5dc; color:#f5f5dc" >색상</label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>기타</th>
                                     <td><input type="radio" id="bdnormal" name="etc" onclick="bdnormal()">
-                                        <label for="bdnormal">보통</label>
+                                        <label for="bdnormal" style="font-weight: 400;">보통</label>
                                     </td>
                                     <td><input type="radio" id="bolder" name="etc" onclick="bolder()">
-                                        <label for="bolder">굵게</label>
+                                        <label for="bolder" style="font-weight: 700;">굵게</label>
                                     </td>
                                     <td><input type="radio" id="darkmode" name="etc" onclick="darkmode()">
-                                        <label for="darkmode">다크모드</label>
+                                        <label for="darkmode">다크</label>
                                     </td>
                                     <td><input type="radio" id="defaultmode" name="etc" onclick="defaultmode()">
-                                        <label for="defaultmode" selected="selected">초기화</label>
+                                        <label for="defaultmode">초기화</label>
                                     </td>
                                 </tr>
                             </table>
