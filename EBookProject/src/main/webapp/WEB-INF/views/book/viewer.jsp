@@ -371,7 +371,7 @@
         <div class="headline" id="headline">
             <div class="fixline">
                 <div class="homeline">
-                    <i class="fas fa-home fa-2x" onclick="location.href='<%=request.getContextPath() %>/book/detail?idx=${ebook_no }'" style="cursor:pointer;"></i>
+                    <i class="fas fa-arrow-alt-circle-left fa-2x" onclick="location.href='<%=request.getContextPath() %>/book/detail?idx=${ebook_no }'" style="cursor:pointer;"></i>
                 </div>
                 <div class="titlename">
                     <h2>${b_name }</h2>
