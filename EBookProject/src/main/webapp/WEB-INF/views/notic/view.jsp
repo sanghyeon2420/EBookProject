@@ -107,23 +107,23 @@ img {
 		<table>
 			<tr>
 			<td style="background-color: #5FD184;">제목</td>
-			<td colspan='4'>${noticdto.notic_title}</td>
+			<td>${noticdto.notic_title}</td>
+			<td style="background-color: #5FD184;">작성일</td>
+			<td >
+			${noticdto.notic_regdate} </td> 
 			</tr>
 			<tr>
-			<td colspan='4' style="background-color: #5FD184;"> 내용 </td>
+			<td colspan='6' style="background-color: #5FD184;"> 내용 </td>
 			<tr valign="top">
-			<td colspan='4'>
+			<td colspan='6'>
 			<br>
 			${noticdto.notic_content}
 			<br><br>
 			</td>
 			</tr>
-			<tr>
-			<td style="background-color: #5FD184;">작성일</td>
-			<td align="left">
-			${noticdto.notic_regdate} </td> 
-			<td style="background-color: #5FD184;">조회수</td>
-			 <td>${noticdto.notic_viewCnt}
+		
+			
+
 			</td>
 			</tr>
 		</table>
