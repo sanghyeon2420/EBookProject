@@ -170,7 +170,7 @@ function enroll(){
 				<div class="container" id="container">
 					<div class="item">
 					<a href="${pageContext.request.contextPath}/writer/insertBook">
-						<br><i class="fas fa-book-open"></i> 내 작품 등록하기<br>
+						<br><i class="fas fa-book-open"></i> 새 작품 등록하기<br>
 					</a>
 					</div>
 				</div>

@@ -287,7 +287,7 @@ function Signup() {
 	  <!-- Body -->
 <h2>회원가입</h2>
 <div>
-<textarea rows="20" cols="90" style="resize: none;" readonly >
+<textarea rows="20" cols="120" style="resize: none;" readonly >
 제1조(목적)
 
 본 회원약관은 PLAYGROUND(이하 '갑'라 한다)이 운영하는 인터넷관련 서비스(이하 '서비스'라 한다)를 이용함에 있어 관리자와 이용자(이하 '회원'라 한다)의 권리, 의무 및 책임사항을 규정함을 목적으로 한다.
@@ -453,7 +453,7 @@ function Signup() {
 		<input type="checkbox" id="req" name="req">
 		</span></p>
 
-</div>
+</div><br>
 <div>
 	<form name="form1" method="post" action="#">
 		<p><label for="userid">아이디</label></p>

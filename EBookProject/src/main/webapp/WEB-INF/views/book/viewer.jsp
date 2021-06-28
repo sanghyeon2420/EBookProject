@@ -365,7 +365,11 @@
         <div class="headline" id="headline">
             <div class="fixline">
                 <div class="homeline">
+<<<<<<< HEAD
                     <i class="fas fa-home fa-2x" onclick="location.href='<%=request.getContextPath() %>/book/detail?idx=${ebook_no }'"
+=======
+                    <i class="fas fa-home fa-2x" onclick="location.href='<%=request.getContextPath()%>/book/detail?idx=${ebook_no }'"
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
                         style="cursor:pointer;"></i>
                 </div>
                 <div class="titlename">

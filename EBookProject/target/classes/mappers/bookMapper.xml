@@ -85,7 +85,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from bookinfo where ebook_no = #{ebook_no}
 	</delete>
 	
-	
 	<!-- 조회수 증가 -->
 	<update id="bookget" parameterType="com.example.EBookProject.model.dto.BookDTO">
 		update bookinfo set book_get=book_get+1 where ebook_no=#{ebook_no}	
