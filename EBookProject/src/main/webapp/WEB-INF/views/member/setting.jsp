@@ -87,7 +87,7 @@ $(document).bind('keydown',function(e){
     }
 });
 }); */
-function a(){
+function cash(){
 	location.href="/EBookProject/pay/productbuy";
 }
 </script>
@@ -130,7 +130,7 @@ ul.profileBody {
 }
 
 .profileBody li{
-    width: 40%;
+    width: 55%;
     height: 5vh;
     display: flex;
     padding: 10px;
@@ -250,7 +250,7 @@ ul.profileBody {
                     	</div>
                     	<li>${member.cash}</li>
                     	<div class="bt">
- 	                   		<button type="button" onclick="javascript:a()" class="btn btn-secondary">충전</button>
+ 	                   		<button type="button" onclick="javascript:cash()" class="btn btn-secondary">충전</button>
                     	</div>
                 	</div>
                     <!-- 분기선 -->
@@ -261,7 +261,7 @@ ul.profileBody {
                     <div class="footerline">
 	                    <a href="#" type="button" class="btn btn-primary">내가 봐온 소설</a>
 	                    <a href="${pageContext.request.contextPath}/writer/insertBook" type="button" class="btn btn-primary">신규 소설등록</a>
-	                    <a href="#" id="change" type="button" class="btn btn-primary">회원 정보 수정</a>
+	                    <a href="update" id="change" type="button" class="btn btn-primary">회원 정보 수정</a>
                     </div>
                 </ul>
             </div>

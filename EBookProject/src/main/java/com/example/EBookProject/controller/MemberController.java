@@ -167,12 +167,6 @@ public class MemberController {
 		return "member/search";
 	}
 	
-	@RequestMapping("writenovel")
-	public String writenovel() {
-		return "member/writenovel";
-	}
-	
-	
 	@RequestMapping("searchid")
 	public String searchid(String username, String nickname, String birthdate) throws Exception {
 		MemberDTO dto=new MemberDTO();
@@ -238,4 +232,43 @@ public class MemberController {
 		return "member/writerinfo";
 	}
 	
+	@RequestMapping("update")
+	public String update() {
+		return "member/settingUpdate";
+	}
+	
+	@RequestMapping("memberUpdate")
+	public String memberUpdate(HttpServletRequest request, int user_no) {
+		MemberDTO dto = service.memberUpdate(user_no);
+		request.setAttribute("dto", dto);
+		return "member/memberUpdate";
+	}
+	
+	
+	
+	@RequestMapping("updateMember")
+	public String updateMember(String userpw, String nickname, String email, String birthdate, int user_no) throws ParseException {
+		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
+		Date date = dateFormat.parse(birthdate);
+		MemberDTO dto = service.memberUpdate(user_no);
+		dto.setBirthdate(date);
+		dto.setUserpw(userpw);
+		dto.setNickname(nickname);
+		dto.setEmail(email);
+		System.out.println(dto);
+		service.updateMember(dto); 
+		return "member/setting"; // view페이지 지정
+	}
+	
+	@RequestMapping("deleteMember")
+	public String deleteMember(HttpServletRequest request,int user_no){
+		System.out.println("jsp에서 넘어온 유저넘버 번호 : "+user_no);
+		MemberDTO dto=new MemberDTO();
+		dto.setUser_no(user_no);
+		HttpSession session=request.getSession();
+		session.invalidate(); // 세션 초기화
+		service.deleteMember(dto);
+		
+		return "redirect:/";
+	}
 }
