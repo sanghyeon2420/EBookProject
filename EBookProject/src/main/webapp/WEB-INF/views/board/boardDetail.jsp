@@ -55,11 +55,21 @@ $(function() {
 
 // 로그아웃
 $(document).ready(function(){
+	
+	
+	
 	$("#logout").click(function(){
 		location.href="${pageContext.request.contextPath}/member/logout";
 	});
 });
 
+function deleteCheck(boardno){
+	var check=confirm("정말로 삭제하시겠습니까?");
+	console.log(boardno);
+	if(check){
+		location.href="${pageContext.request.contextPath}/board/deleteBoard?board_no="+boardno;
+	}
+}
 </script>
 <style>
 a#MOVE_TOP_BTN {
@@ -129,7 +139,10 @@ img {
 			</td>
 		</table>	
 		<button type="button" id="list_btn" onClick="location.href='list'">목록</button>
-	
+		<c:if test="${sessionScope.member.nickname eq boarddto.nickname }">
+		<button type="button" onClick="location.href='/EBookProject/board/boardUpdate?board_no=${boarddto.board_no }'">수정</button>
+		<button type="button" onClick="javascript:deleteCheck(${boarddto.board_no })">삭제</button>
+		</c:if>	
   </article>
   
   <nav id="mainNav">

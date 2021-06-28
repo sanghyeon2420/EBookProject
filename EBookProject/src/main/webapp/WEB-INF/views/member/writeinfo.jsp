@@ -42,8 +42,8 @@ function disableclick(event){
         "pic upload upload"
         "info info info"
         "Wsubmit Wsubmit Wsubmit";
-      grid-template-rows: 8% 8% 8% 8% 8% 1fr 7%;
-      grid-template-columns: 20% 40% 40%;
+      grid-template-rows: 12% 12% 12% 12% 12% 1fr 10%;
+      grid-template-columns: 25% 40% 35%;
       grid-gap: 10px;
       height: 90vh;
       margin: 0;
@@ -118,12 +118,12 @@ function disableclick(event){
     }
     
     input[type=radio]:checked + label{
-    	background-color: #5a6268
+    	background-color: #526eff;
     }
     
     #image_preview img{
-      width: 11vw;
-      height: 40vh;
+      width: 13vw;
+      height: 53vh;
     }
 </style>
 </head>
@@ -173,7 +173,7 @@ function disableclick(event){
         </p>
         </div>
 		<div class="info" id="info">
-            <h3>책소개</h3>
+            <h4>책소개</h4>
             <textarea class="textarea" style="height:80%; width:100%;" name="novel_story" class="form-control"></textarea>
         </div>
 		<div class="Wsubmit" id="Wsubmit">

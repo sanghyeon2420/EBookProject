@@ -20,4 +20,5 @@ public interface BookDAO {
 	public List<BookDTO> searchbook(String keyword); //검색창에서 검색 불러오기
 	public int contentCount(int ebook_no); // 책 번호로 컨텐츠 최대값 출력
 	public String contentName(int ebook_no,int contentlist); // 책 번호와 컨텐트리스트번호로 컨텐트 제목 출력
+	public void bookget(int ebook_no); //책 번호로 조회수 증가
 }

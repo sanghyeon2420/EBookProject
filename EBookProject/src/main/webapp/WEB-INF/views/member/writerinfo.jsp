@@ -38,6 +38,10 @@ function disableclick(event){
         return false; 
     } 
 }
+
+function enroll(){
+	location.href="/EBookProject/member/writenovel";
+}
 </script>
 <style>
 .setTitle { 
@@ -45,33 +49,44 @@ function disableclick(event){
       grid-template-areas: 
         "nav header header"
         "nav article article";
-      grid-template-rows: 45% 55%;
-      grid-template-columns: 20% 40% 40%;
+      grid-template-rows: 50% 50%;
+      grid-template-columns: 30% 35% 35%;
       grid-gap: 20px;
-      height: 40vh;
+      height: 30vh;
       margin: 0;
       }
     
     #navPicture {
       grid-area: nav;
+      height: 21vh;
+      width: 10vw;
     }
     
     #headTitle { 
       grid-area: header;  
-      margin-left:20px;
-      width:41.3vw;
+      margin: 0;
+      padding: 0;
+      width:30vw;
       height:32vh;    
     }
+    
+    .name {
+      margin: 0px;
+      padding: 10px;
+    }
+    
       
     #container { 
       grid-area: article;
       display: flex;
       text-align: center;
       height:8vh;
+      margin: 0;
+      padding: 0;
     }
       
 	.detail {
-  	margin-left:0.8rem;
+  	margin-left:0rem;
 	}
 
 	.item {
@@ -93,7 +108,7 @@ function disableclick(event){
 }
 .text p {
 	clear: both;
-	margin: 20px 20px;
+	margin: 0px;
 	height: 3vh;
 	font-size: 18px;
 	align-items: center;
@@ -141,17 +156,15 @@ function disableclick(event){
   
   
   <article id="mainArticle">
-  
-
 			<div class="setTitle">
 				<div id="navPicture">
-					<img src="resources/images/writer/${dto.imagefile_no }" alt="작가 이미지 불러옵니다." width="240px"
-						height="300px">
+					<img src="resources/images/writer/${dto.imagefile_no }" alt="작가 이미지 불러옵니다.">
 				</div>
 				<div id="headTitle">
 					<div class="name">
-						<h1>${dto.w_name} 님</h1>
-						<strong>받은 추천수  </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i>
+						<h2>${dto.w_name} 님</h2> 
+						<strong>받은 추천수  </strong><span id="span_hits">${dto.w_hits }</span> <i class="far fa-heart"></i><br>
+						<strong>가지고 있는 쿠키</strong>&nbsp;${memberDTO.cash }&nbsp;<i class="fas fa-cookie-bite"></i>
 					</div>
 				</div>
 				<div class="container" id="container">
@@ -182,7 +195,7 @@ function disableclick(event){
                            <img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
                            <a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4></a>
                            <div class="addnovel">
-                           <button class="btn btn-primary" onclick="#" >회차 등록</button> &nbsp;
+                           <button class="btn btn-primary" onclick="javascript:enroll()" >회차 등록</button> &nbsp;
                            </div>
                        </div>
                    </div>

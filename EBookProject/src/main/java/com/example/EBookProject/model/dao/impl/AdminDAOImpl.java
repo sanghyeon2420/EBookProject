@@ -54,18 +54,24 @@ public class AdminDAOImpl implements AdminDAO {
 
 	@Override
 	public void deleteboard(BoardDTO dto) {
-		sqlSession.delete("board.deleteboard", dto);
+		sqlSession.update("board.deleteboard", dto);
 	}
 	
 	@Override
 	public void deletenotic(NoticDTO dto) {
-		sqlSession.delete("notic.deletenotic", dto);
+		sqlSession.delete("NoticDAO.deletenotic", dto);
 		
 	}
 	
 	@Override
 	public void cookiemanager(MemberDTO dto) {
 		sqlSession.update("member.cookiemanager", dto);
+	}
+
+	@Override
+	public void insertNotic(NoticDTO dto) {
+		sqlSession.insert("NoticDAO.insertNotic", dto);
+		
 	}
 
 	

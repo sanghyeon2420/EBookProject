@@ -87,6 +87,9 @@ $(document).bind('keydown',function(e){
     }
 });
 }); */
+function a(){
+	location.href="/EBookProject/pay/productbuy";
+}
 </script>
 <style type="text/css">
 .userProfiles {
@@ -127,7 +130,7 @@ ul.profileBody {
 }
 
 .profileBody li{
-    width: 55%;
+    width: 40%;
     height: 5vh;
     display: flex;
     padding: 10px;
@@ -247,7 +250,7 @@ ul.profileBody {
                     	</div>
                     	<li>${member.cash}</li>
                     	<div class="bt">
- 	                   		<button type="button" onclick="#" class="btn btn-secondary">충전</button>
+ 	                   		<button type="button" onclick="javascript:a()" class="btn btn-secondary">충전</button>
                     	</div>
                 	</div>
                     <!-- 분기선 -->
