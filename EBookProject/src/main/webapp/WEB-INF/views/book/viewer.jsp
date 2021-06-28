@@ -145,7 +145,8 @@
     }
 
     input[type=radio]:hover + label {
-        color: #ffeb7a;
+        color: #4b4e6c;
+        font-weight: 700;
     }
 
     input[type=radio] {
