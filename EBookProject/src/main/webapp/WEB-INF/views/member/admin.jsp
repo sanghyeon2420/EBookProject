@@ -277,6 +277,8 @@ $(document).bind('keydown',function(e){
 				 <a href="#close"><button>닫기</button></a>
 	           </div>
         	 </div>
+        	 <a href="<%=request.getContextPath() %>/admin/update?notic_no=${noticlist.notic_no}">
+        	 <button>수정</button></a>
 		</td>
 		 </c:forEach>
 		 	 

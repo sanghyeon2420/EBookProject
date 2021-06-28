@@ -26,4 +26,8 @@ public interface AdminDAO {
 	
 	// 공지사항 쓰기 
 	public void insertNotic(NoticDTO dto); 
+	
+	//공지사항 수정 
+	public NoticDTO update(int notic_no) throws Exception;
+	public void updateResult(NoticDTO dto);
 }
