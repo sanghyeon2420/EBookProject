@@ -94,8 +94,8 @@ a#MOVE_TOP_BTN {
   }
   
   #text-left img {
-  	width : 60vw;
-  	height : 70vh;
+  	width : 100%;
+  	height : 100%;
   }
 
 </style>
