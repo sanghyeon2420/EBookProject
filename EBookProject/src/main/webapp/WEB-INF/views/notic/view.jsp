@@ -69,7 +69,7 @@ a#MOVE_TOP_BTN {
     display: none;/*기본 값 화면에서 숨김 */
 }
 
-.icon_img img{
+.icon_img {
   width:50px;
   height:50px;
 }
@@ -93,6 +93,10 @@ a#MOVE_TOP_BTN {
   	text-align: left;
   }
   
+  #text-left img {
+  	width : 60vw;
+  	height : 70vh;
+  }
 
 </style>
 </head>
