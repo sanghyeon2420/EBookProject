@@ -34,6 +34,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member order by user_no
 	</select>
 	
+	<!-- 회원정보 출력 -->
+	<select id="memberUpdate" resultType="com.example.EBookProject.model.dto.MemberDTO">
+	select * from member where user_no=#{user_no}
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateMember" parameterType="com.example.EBookProject.model.dto.MemberDTO">
+		UPDATE member SET userpw=#{userpw}, nickname=#{nickname},
+			email=#{email}, birthdate=#{birthdate} WHERE user_no=#{user_no}
+	</update>
+	
 	<!-- 회원 탈회  -->
 	<delete id="deletemember" parameterType="com.example.EBookProject.model.dto.MemberDTO">
 	DELETE FROM member WHERE user_no = #{user_no}
