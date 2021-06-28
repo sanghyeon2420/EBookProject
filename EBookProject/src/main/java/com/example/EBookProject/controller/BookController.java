@@ -64,10 +64,7 @@ public class BookController {
 		mav.addObject("list",list);
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
-		}
-		
-			
-		
+		}	
 		
 		return mav;
 	}
@@ -92,18 +89,7 @@ public class BookController {
 		} else {
 			result="fail";
 		}
-			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+					
 		service.bookhits(ebook_num,likeDTO); //추천수 증가
 		BookDTO dto=service.Bookdetail(ebook_num);
 		result =String.valueOf(dto.getBook_hits());
@@ -137,13 +123,14 @@ public class BookController {
 		int contentCount=service.contentCount(book);
 		BookDTO dto =service.Bookdetail(book);
 		
-		
+		model.addAttribute("ebook_no",dto.getEbook_no());
 		model.addAttribute("book",book);
 		model.addAttribute("content",content);
 		model.addAttribute("contentCount", contentCount);
 		model.addAttribute("b_category",dto.getB_category());
 		model.addAttribute("b_name",dto.getB_name());
 		model.addAttribute("content_name", service.contentName(book, content));
+		model.addAttribute("ebook_no",dto.getEbook_no());
 		return "book/viewer"; // 이동할 페이지 지정
 	}
 

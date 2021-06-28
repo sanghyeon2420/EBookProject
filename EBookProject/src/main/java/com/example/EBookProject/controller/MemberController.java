@@ -167,6 +167,12 @@ public class MemberController {
 		return "member/search";
 	}
 	
+	@RequestMapping("writenovel")
+	public String writenovel() {
+		return "member/writenovel";
+	}
+	
+	
 	@RequestMapping("searchid")
 	public String searchid(String username, String nickname, String birthdate) throws Exception {
 		MemberDTO dto=new MemberDTO();

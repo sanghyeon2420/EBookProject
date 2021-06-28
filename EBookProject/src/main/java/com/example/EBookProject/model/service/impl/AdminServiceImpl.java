@@ -78,5 +78,14 @@ public class AdminServiceImpl implements AdminService {
 		dao.insertNotic(dto);
 		
 	}
+	@Override
+	public NoticDTO update(int notic_no) {
+		return dao.update(notic_no);
+	}
+
+	public void updateResult(NoticDTO dto) {
+		dao.updateResult(dto);
+		
+	}
 
 }

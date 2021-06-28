@@ -47,7 +47,8 @@ $(document).ready(function(){
 	<textarea id="notic_content" name="notic_content" row="3" cols="80" placeholder="내용을 입력해주세요."></textarea>
 </div>
 <div style="text-align:right">
-	<button type="button" id="btnCanel">취소</button>
+	<a href="list?listtype=notic">
+	<button type="button" id="btnCanel">취소</button></a>
 	<button type="button" id="btnInsert">등록</button>
 </div>
 <script>
