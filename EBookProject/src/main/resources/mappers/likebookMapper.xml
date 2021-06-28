@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="likebook">
 	<!-- 추천여부 확인 count-->
 	<select id="countLike" resultType="int">
-	select count(*) from likebook where like_id=(select user_no from member where user_no=#{like_id}) and like_bookno=(select ebook_no from bookinfo where ebook_no=#{like_bookno})
+		select count(*) from likebook where like_id=#{like_id} and like_bookno=#{like_bookno}
 	</select>
 	
 	<!-- 게시물에 대한 추천 -->
