@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from board 
 		<!-- where -->
 		<include refid="search" />
-		order by board_no desc
+		and is_view=1 order by board_no desc
 		<include refid="paging_footer" />
 	</select>
 	
@@ -61,8 +61,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	) where rn between #{start} and #{end}
 	</sql>
 	
-	<!-- 게시글 삭제 -->
-	<delete id="deleteboard" parameterType="com.example.EBookProject.model.dto.BoardDTO">
-		delete from board where board_no = #{board_no}
-	</delete>
+	<!-- 관리자 게시글 삭제 -->
+	<update id="deleteboard" parameterType="com.example.EBookProject.model.dto.BoardDTO">
+		update board set is_view=2 where board_no=#{board_no}
+	</update>
+	
+	<!-- 작성자 게시글 삭제 -->
+	<update id="boardDelete" parameterType="com.example.EBookProject.model.dto.BoardDTO">
+	update board set is_view=2 where board_no=#{board_no}
+	</update>
+	
+	<!-- 작성자 게시글 수정 -->
+	<select id="boardUpdate" resultType="com.example.EBookProject.model.dto.BoardDTO">
+	select * from board where board_no=#{board_no}
+	</select>
+	
+	<!-- 수정글 업데이트 -->
+	<update id="updateResult" parameterType="com.example.EBookProject.model.dto.BoardDTO">
+	update board set b_title=#{b_title}, b_content=#{b_content} where board_no=#{board_no}
+	</update>
+	
+	<!-- 조회수 증가 처리 -->
+	<update id="boardget" parameterType="com.example.EBookProject.model.dto.BoardDTO">
+	update board set board_get=board_get+1 where board_no=#{board_no}
+	</update>
 </mapper>

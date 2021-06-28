@@ -50,5 +50,23 @@ public class BoardServiceImpl implements BoardService {
 	public void board_View_cnt(int board_no) throws Exception {
 
 	}
+	@Override
+	public void boardDelete(int board_no) {
+		boardDao.boardDelete(board_no);
+	}
+	@Override
+	public BoardDTO boardUpdate(int board_no) {
+		return boardDao.boardUpdate(board_no);
+		
+	}
+	@Override
+	public void updateResult(BoardDTO dto) {
+		boardDao.updateResult(dto);
+		
+	}
+	@Override
+	public void boardget(int board_no) {
+		boardDao.boardget(board_no);
+	}
 
 }

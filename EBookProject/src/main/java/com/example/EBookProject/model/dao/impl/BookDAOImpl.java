@@ -92,4 +92,9 @@ public class BookDAOImpl implements BookDAO {
 		return sqlSession.selectOne("book.contentName", map);
 	}
 
+	@Override
+	public void bookget(int ebook_no) {
+		sqlSession.update("book.bookget",ebook_no);
+	}
+
 }

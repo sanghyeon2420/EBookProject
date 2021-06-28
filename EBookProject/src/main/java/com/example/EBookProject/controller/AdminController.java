@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -100,4 +101,17 @@ public class AdminController {
 		
 	}
 
+	
+	@RequestMapping("write")
+	public String write() {
+		System.out.println("write===>insert");
+		return "member/write";
+	}
+	
+	@RequestMapping("insert")
+	public String insert(HttpServletRequest request,NoticDTO dto, HttpSession session) {
+		System.out.println("===>insert");
+		service.insertNotic(dto);
+		return "redirect:/admin/list?listtype=notic";
+	}
 }

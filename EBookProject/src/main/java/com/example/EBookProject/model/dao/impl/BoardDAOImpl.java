@@ -61,10 +61,28 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectOne("board.countArticle", map);
 	}
 	
-	@Override
-	public void board_View_cnt(int board_no) throws Exception {
-		// TODO Auto-generated method stub
 
+
+	@Override
+	public void boardDelete(int board_no) {
+		sqlSession.update("board.boardDelete",board_no);
+		
+	}
+
+	@Override
+	public BoardDTO boardUpdate(int board_no) {
+		return sqlSession.selectOne("board.boardUpdate",board_no);
+		
+	}
+
+	@Override
+	public void updateResult(BoardDTO dto) {
+		sqlSession.update("board.updateResult", dto);
+	}
+
+	@Override
+	public void boardget(int board_no) {
+		sqlSession.update("board.boardget",board_no);
 	}
 
 

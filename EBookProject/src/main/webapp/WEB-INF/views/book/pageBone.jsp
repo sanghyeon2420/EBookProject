@@ -2,8 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<% MemberDTO memberDTO =(MemberDTO)session.getAttribute("member"); %>
-<% request.setAttribute("usercash",memberDTO.getCash()); %>
 
 <!DOCTYPE html>
 <html>
@@ -45,8 +43,8 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	// console.log(v);
 	console.log(buycheck);
 	
-	var usercash= ${usercash}; 
-	console.log(usercash);
+	var usercash= ${sessionScope.member.cash}; 
+
 	console.log(viewcontent_price);
 	
 	if (viewcontent_price == 0){
@@ -63,7 +61,10 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 				location.href="${pageContext.request.contextPath}/pay/productbuy";		
 			} 
 		}	
-	}	
+	}
+	
+	
+	
 }
 </script>
 </head>

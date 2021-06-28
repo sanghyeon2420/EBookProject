@@ -65,7 +65,7 @@
 			</c:if>
 			
 
-			<c:if test="${member == null}">
+			<c:if test="${ empty member }">
 			<div class="Ebook_icons_in2">
 			<a href="<%=path%>/member/login" id="login" title="로그인"><i
         	 class="fas fa-user"></i></a> <a href="<%=path%>/member/join" id="join"
