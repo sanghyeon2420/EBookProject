@@ -231,15 +231,7 @@ ul.profileBody {
                     		<div class="ctn"></div>
                     	</div>
                     	<li>
-                    	<c:choose>
-                    		<c:when test="${empty sessionScope.result }">
-                    		${member.cash}
-                    		</c:when>
-                    		<c:when test="${not empty sessionScope.result }">
-                    		${sessionScope.result}
-                    		</c:when>
-                    	</c:choose>
-                    	
+                    		${member.cash}                    	
                     	</li>
                     	<div class="bt">
  	                   		<button type="button" onclick="javascript:cash()" class="btn btn-secondary">충전</button>

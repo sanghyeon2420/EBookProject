@@ -49,12 +49,10 @@ function BuyNow(buy){
 			type:"post",
 			url:"${pageContext.request.contextPath}/pay/cookiecharge",
 			data:{"cookie":buy},
-			success:function(data){
-				data = parseInt(data);
-				console.log(buy+data);
-				var result = buy+data;
-				document.getElementById("return").innerHTML=result;
+			success:function(){
+
 				alert("결제가 완료되었습니다");
+				location.href="${pageContext.request.contextPath}/pay/productbuy";
 			}
 		});	
 	} else {
