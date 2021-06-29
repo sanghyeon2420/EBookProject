@@ -38,4 +38,17 @@ public class PaymentController {
 		session.setAttribute("member", updateMemberDTO);
 		
 	}
+	
+	@ResponseBody
+	@RequestMapping("pay")
+	public void pay(HttpSession session, String contents_no) {
+		int contents_num=Integer.parseInt(contents_no);
+		MemberDTO dto = (MemberDTO) session.getAttribute("member");
+		service.cashPay(contents_num, dto.getUser_no()); //cashPay 실행
+		MemberDTO updateMemberDTO = memberService.memberUpdate(dto.getUser_no());  //실행된걸 다시 불러옴
+		service.contentResult(dto.getUser_no(), contents_num); //contentResult 실행
+		session.setAttribute("member", updateMemberDTO);  //불러온걸 다시 출력
+	}
+	
+	
 }

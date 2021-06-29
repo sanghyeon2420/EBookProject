@@ -14,20 +14,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</select>
 
-
-	
-	<!-- 컨텐츠 구매 -->
 	
 	<insert id="result" >
 	insert into payment values ((select nvl(max(payment_id),0)+1 from payment),#{contents_no},#{user_no},sysdate)
 	</insert>
 	
+	<!-- 쿠키 구매시 -->
 	<update id="buy">
 	update member set cash=cash+${cookie} where user_no=#{dto.user_no}
 	</update>
 
-	<!-- 컨텐츠 구매  end -->
+	<!-- 컨텐츠 구매 -->
+	<update id="cashpay">
+	update member set cash=cash-(select viewcontent_price 
+	from content where contents_no=#{contents_no}) where user_no=#{user_no}
+	</update> 
+
 </mapper>
+
 
 
 

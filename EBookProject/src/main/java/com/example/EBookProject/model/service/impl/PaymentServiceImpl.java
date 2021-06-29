@@ -29,4 +29,9 @@ public class PaymentServiceImpl implements PaymentService {
 	public int contentsBuy(MemberDTO dto,int cookie) {
 		return dao.contentBuy(dto,cookie);
 	}
+
+	@Override
+	public int cashPay(int contents_no, int user_no) {
+		return dao.cashPay(contents_no, user_no);
+	}
 }
