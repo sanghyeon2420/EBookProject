@@ -1,5 +1,9 @@
 package com.example.EBookProject.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,10 +12,13 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dao.impl.LikebookDAOImpl;
@@ -82,33 +89,37 @@ public class BookController {
 		return mav;
 	}
 
-	@ResponseBody
-	@RequestMapping("hits")
-	public JSO hits(HttpSession session, String ebook_no, String count) {
+	@RequestMapping(value="hits",  produces="application/json")
+	public ResponseEntity hits(HttpSession session, @RequestBody Map<String,Object> objectMap) {
 		String result;
 
-		int ebook_num = Integer.parseInt(ebook_no);
-		int countLike = Integer.parseInt(count);
+		System.out.println(objectMap);
+		int ebook_no=Integer.parseInt((String) objectMap.get("ebook_no"));
+		int count = Integer.parseInt((String)objectMap.get("count"));
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
 
 		LikebookDTO likeDTO = new LikebookDTO();
-		likeDTO.setLike_bookno(ebook_num);
+		likeDTO.setLike_bookno(ebook_no);
 		likeDTO.setLike_id(memberDTO.getUser_no());
 		
-		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+countLike);
+		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+count);
 		
 
-		if (countLike== 0) { // 추천을 안함
+		if (count== 0) { // 추천을 안함
 			likedao.insertLike(likeDTO); // 추천테이블에 정보저장
 		}
 		
-		if (countLike == 1) { // 추천을 함
+		if (count == 1) { // 추천을 함
 			likedao.deleteLike(likeDTO);
 		}
 					
-		BookDTO dto=service.Bookdetail(ebook_num);
+		BookDTO dto=service.Bookdetail(ebook_no);
 		result =String.valueOf(dto.getBook_hits());
-		return "a";
+		
+		Map<String, Object> map=new HashMap<>();
+		map.put("result", result);
+		map.put("count", count);
+		return new ResponseEntity<>(map,HttpStatus.OK);
 	}
 	
 
@@ -150,5 +161,57 @@ public class BookController {
 		model.addAttribute("ebook_no",dto.getEbook_no());
 		return "book/viewer"; // 이동할 페이지 지정
 	}
+	
+	
+	@RequestMapping("bookinsert")
+	public String bookinsert(String b_name,String b_category,String b_intro,String nickname,String completion, @RequestParam("image") File  file) {
+		System.out.println(file.getName()); // 파일 이름 가져오기
+		
+		File src = new File("C:\\projectimage\\"+file.getName()); //원본파일 경로명
+		
+		
+		 File dest = new File("C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\images\\"+b_category+"\\"+file.getName()); // 복사할 파일 경로, 이름
+		 
+		  int c;
+	      try {
+	         FileInputStream fi = new FileInputStream(src); //파일 입력 바이트 스트림 생성
+	         FileOutputStream fo = new FileOutputStream(dest); //파일 출력 바이트 스트림 생성
+	         
+	         while((c = fi.read()) != -1) {
+	            fo.write((byte)c);
+	         }
+	         fi.close();
+	         fo.close();
+	         System.out.println(src.getPath() + "를 " + dest.getPath() + "로 복사하였습니다.");
+	      } catch (IOException e) {
+	         System.out.println("파일 오류 복사");
+	      }
 
+		 
+		 
+		// 도서명으로된 디렉토리 생성
+		File mkdirFile=new File("C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\text\\"+b_category+"\\"+b_name);
+		mkdirFile.mkdir();
+		
+		System.out.println(b_name); // 도서명
+		System.out.println(b_category); // 카테고리
+		System.out.println(b_intro); // 작품 소개
+		System.out.println(nickname); // 닉네임, 작가명 
+		System.out.println(completion); // 연재 continue 완결 finish
+		
+		
+		BookDTO dto=new BookDTO();
+		dto.setB_name(b_name);
+		dto.setB_category(b_category);
+		dto.setB_intro(b_intro);
+		dto.setW_name(nickname);
+		dto.setImagefileName(file.getName());
+		
+		// bookinfo 테이블에 저장
+		service.insertBook(dto);
+		
+		
+		return "redirect:/member/viewdetail";
+		
+	}
 }

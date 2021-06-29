@@ -18,20 +18,18 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
-<<<<<<< HEAD
 
-	$("#hits").change(function(){
-=======
-	memo_list();
+	//memo_list();
 	
-	$("#hits").click(function(){
+	$("#hits").change(function(){
 		var ebook_no=${bookdto.ebook_no};
+		var count=${count};
 			alert("속성변경"+count+", "+ebook_no);
-			
+			var json ={'ebook_no':${bookdto.ebook_no}, 'count':${count}};
 			$.ajax({
 				type:'post',
 				url:'${pageContext.request.contextPath}/book/hits',
-				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count}},
+				data:JSON.stringify(json),
 				contentType:'application/json',
 				success:function(data){
 					document.getElementById("span_hits").innerHTML=data.map.result;

@@ -50,4 +50,7 @@ class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <constructor-arg name="sqlSessionFactory"
             ref="sqlSessionFactory" />
     </bean>	
+    
+    
+
 </beans>

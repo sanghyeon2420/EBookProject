@@ -138,32 +138,32 @@ function disableclick(event){
   	<div class="titlemessage">
       <h3>신규 소설 등록</h3>
     </div>
-	<form class= "setWrite" action="GOGOGO!">
+	<form class= "setWrite" action="<%=request.getContextPath() %>/book/bookinsert" enctype="multipart/form-data">
 		<div class="pic" id="pic">
           <div id="image_preview">
             <img src="resources/images/nocover.jpg" alt= "북커버를 등록해주세요." />
         </div>
         </div>
 		<div class="title" id="title">
-			작품명 <input type="text" id="wTitle" name="wTitle" class="form-control">
+			작품명 <input type="text" id="b_name" name="b_name" class="form-control">
 		</div>
 		<div class="writer" id="writer">
 			작가이름 <input type="text" id="nickname" name="nickname" class="form-control" value="${sessionScope.member.nickname }" style="color:#3a3d3b" readonly/>
 		</div>
 		<div class="category" id="category">
 			카테고리 <br>
-            <input type="radio" id="action" name="category" value="무협지" checked="checked">
+            <input type="radio" id="action" name="b_category" value="무협지" checked="checked">
             <label for="action" class="btn btn-secondary">무협지</label>
-            <input type="radio" id="fantasy" name="category" value="판타지">
+            <input type="radio" id="fantasy" name="b_category" value="판타지">
             <label for="fantasy" class="btn btn-secondary">판타지</label>
-            <input type="radio" id="romance" name="category" value="로맨스">
+            <input type="radio" id="romance" name="b_category" value="로맨스">
             <label for="romance" class="btn btn-secondary">로맨스</label>
 		</div>
 		<div class="form" id="form">
 			연재형태 <br>
-            <input type="radio" id="continue" name="form" value="continue" checked="checked">
+            <input type="radio" id="continue" name="completion" value="continue" checked="checked">
             <label for="continue" class="btn btn-secondary">연재</label>
-            <input type="radio" id="finish" name="form" value="finish">
+            <input type="radio" id="finish" name="completion" value="finish">
             <label for="finish" class="btn btn-secondary">완결</label>
 		</div>
 		<div class="upload" id="upload">
@@ -174,7 +174,7 @@ function disableclick(event){
         </div>
 		<div class="info" id="info">
             <h4>책소개</h4>
-            <textarea class="textarea" style="height:80%; width:100%;" name="novel_story" class="form-control"></textarea>
+            <textarea class="textarea" style="height:80%; width:100%;" name="b_intro" class="form-control"></textarea>
         </div>
 		<div class="Wsubmit" id="Wsubmit">
             <button class="btn btn-primary" type="submit">작품 등록</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 

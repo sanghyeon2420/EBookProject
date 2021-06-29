@@ -59,4 +59,6 @@ public class WriterController {
 			
 		return "member/writeinfo";
 	}
+	
+	
 }

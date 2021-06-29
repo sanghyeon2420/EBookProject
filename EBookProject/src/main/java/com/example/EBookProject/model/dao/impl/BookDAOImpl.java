@@ -108,4 +108,10 @@ public class BookDAOImpl implements BookDAO {
 		sqlSession.update("book.bookunhits", ebook_no);
 	}
 
+	@Override
+	public void insertBook(BookDTO dto) {
+		sqlSession.insert("book.insertBook",dto);
+		
+	}
+
 }
