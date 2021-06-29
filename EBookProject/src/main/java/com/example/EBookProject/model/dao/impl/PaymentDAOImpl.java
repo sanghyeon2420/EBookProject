@@ -39,4 +39,12 @@ public class PaymentDAOImpl implements PaymentDAO{
 		return sqlSession.update("payment.buy",map);
 		
 	}
+
+	@Override
+	public int cashPay(int contents_no, int user_no) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("contents_no", contents_no);
+		map.put("user_no", user_no);
+		return sqlSession.update("payment.cashpay",map);
+	}
 }
