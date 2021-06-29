@@ -10,7 +10,7 @@
 <title>회원정보</title>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-
+<link href="resources/css/modal.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 /* $(function(){ // 헤더가리기
@@ -39,12 +39,12 @@ $(document).ready(function(){
 	});
 	
 	$("#change").click(function(){
-		var userpw=prompt("비밀번호를 입력해주세요","");
-		console.log(userpw);
+		var userpw = $("#userpw").val();
 		if(userpw == ${member.userpw}){
 			alert("비밀번호맞음");
-		} else {
-			alert("비밀번호틀림");
+		}else{
+			alert("틀린 비밀번호 입니다 ");
+			return false;
 		}
 	});
 });
@@ -244,7 +244,20 @@ ul.profileBody {
                     <!-- 하단 버튼 -->
                     <div class="footerline">
 	                    <a href="${pageContext.request.contextPath}/writer/insertBook" type="button" class="btn btn-primary">신규 소설등록</a>
-	                    <a href="update" id="change" type="button" class="btn btn-primary">회원 정보 수정</a>
+	                  <a href="#open${member.user_no }" type="button" class="btn btn-primary">수정</a>
+				         <div class="white_content" id="open${member.user_no }">
+				            <div>
+				            <br>
+				            <p>
+				           	  비밀번호를 입럭해주세요 <br>
+				             <input type="password" id="userpw" name="userpw">
+				            <p><br>
+				       		 <a href="update" id="change" type="button" class="btn btn-primary">
+				       		확인</a>
+				       	
+							 <a href="#close" type="button" class="btn btn-primary">닫기</a>
+				           </div>
+			        	 </div> 
                     </div>
                 </ul>
             </div>
