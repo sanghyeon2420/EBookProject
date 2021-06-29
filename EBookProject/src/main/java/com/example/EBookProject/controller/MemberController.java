@@ -247,7 +247,7 @@ public class MemberController {
 	
 	
 	@RequestMapping("updateMember")
-	public String updateMember(String userpw, String nickname, String email, String birthdate, int user_no) throws ParseException {
+	public String updateMember(HttpSession session,String userpw, String nickname, String email, String birthdate, int user_no) throws ParseException {
 		DateFormat dateFormat = new SimpleDateFormat ("yyMMdd");
 		Date date = dateFormat.parse(birthdate);
 		MemberDTO dto = service.memberUpdate(user_no);
@@ -256,7 +256,10 @@ public class MemberController {
 		dto.setNickname(nickname);
 		dto.setEmail(email);
 		System.out.println(dto);
-		service.updateMember(dto); 
+		service.updateMember(dto); // 회원정보 수정
+		MemberDTO updatememberDTO=service.memberUpdate(user_no); // 수정된 회원정보를 갖고온다
+		session.setAttribute("member", updatememberDTO); // 세션 "member"라는 key값으로 수정된 회원정보 저장!
+		
 		return "member/setting"; // view페이지 지정
 	}
 	
