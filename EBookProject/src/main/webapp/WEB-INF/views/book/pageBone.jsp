@@ -18,24 +18,29 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
+<<<<<<< HEAD
+
+	$("#hits").change(function(){
+=======
 	memo_list();
 	
 	$("#hits").click(function(){
 		var ebook_no=${bookdto.ebook_no};
-		
-		$.ajax({
-			type:"post", //전송 방식
-			url:"${pageContext.request.contextPath}/book/hits", //요청주소
-			data:{"ebook_no":ebook_no}, //보내줄 데이터
-			success: function(data){  //비동기 통신 성공시, data -> 리턴받은 데이터
-				console.log(data);  //console창에 data가 출력됨
-				document.getElementById("span_hits").innerHTML=data; // 추천수가 넘어오면
-				
-				// 하트 색깔을 변경
-				document.getElementById("hits").innerHTML="<i class='fas fa-heart'></i>";
-			}
-		});
-	});
+			alert("속성변경"+count+", "+ebook_no);
+			
+			$.ajax({
+				type:'post',
+				url:'${pageContext.request.contextPath}/book/hits',
+				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count}},
+				contentType:'application/json',
+				success:function(data){
+					document.getElementById("span_hits").innerHTML=data.map.result;
+					count = data.map.count;
+				}
+			});
+        	
+        	
+    });
 });
 
 
@@ -130,6 +135,11 @@ $(document).ready( function(){
 	});
 }); --%>
 </script>
+
+<style>
+
+
+</style>
 </head>
 <body>
 <header id="pageHeader">
@@ -151,9 +161,19 @@ $(document).ready( function(){
 						<h4>&nbsp;${bookdto.w_name }</h4></a> --%>
 						<h4><a href="/EBookProject/writer/viewdetail?writer_no=${bookdto.writer_no}">&nbsp;${bookdto.w_name }</a></h4>
 						&nbsp;조회수 <i class="fas fa-check-circle"></i>${bookdto.book_get } &nbsp;추천수
-						<a id="hits" name="hits">
-						<i class="far fa-heart"></i>
-						</a>
+						
+						<c:choose>
+							<c:when test="${count == 0 }">
+								<input type="checkbox" id="hits" name="hits">																											
+							</c:when>
+							<c:when test="${count == 1 }">
+								<input type="checkbox" id="hits" name="hits" checked="checked">																											
+							</c:when>
+						
+						</c:choose>
+
+						
+						
 						<span id="span_hits">${bookdto.book_hits }</span>&nbsp;&nbsp;
 					</div>
 					<div class="blank"></div>
@@ -196,6 +216,9 @@ $(document).ready( function(){
 									</c:if>
 									</span>
 								</p>
+						</a></li>
+							
+						
 						</a></li>	
 						</c:forEach>
 					</ol>

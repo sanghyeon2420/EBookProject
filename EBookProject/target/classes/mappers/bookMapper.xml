@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 도서번호로 책 조회 -->
 	<select id="bookdetail" resultType="com.example.EBookProject.model.dto.BookDTO">
-		select * from bookinfo where ebook_no=#{ebook_no}
+		select ebook_no, writer_no, category_no, b_name, b_category, w_name, b_intro, book_get, insertdate, imagefilename, (select count(*) from likebook where like_bookno=b.ebook_no) book_hits from bookinfo b where ebook_no=#{ebook_no}
 	</select>
 	
 	<!-- 도서 번호로 콘텐츠 조회 -->
@@ -51,9 +51,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from bookinfo where writer_no=#{writer_no}
 	</select>
 	
-	<!-- 책 조회수 증가 -->
+	<!-- 책 추천수 증가 -->
 	<update id="bookhits">
 		update bookinfo set book_hits= book_hits + 1 where ebook_no=#{ebook_no}
+	</update>
+	
+	<!-- 책 추천수 감소 -->
+	<update id="bookunhits">
+		update bookinfo set book_hits= book_hits - 1 where ebook_no=#{ebook_no}
 	</update>
 	
 	<!-- 헤더 책 검색
@@ -89,4 +94,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="bookget" parameterType="com.example.EBookProject.model.dto.BookDTO">
 		update bookinfo set book_get=book_get+1 where ebook_no=#{ebook_no}	
 	</update>
+	
+	<!-- 추천여부 체크 -->
+	<select id="countLikebook" resultType="int">
+	select count(*) from likebook where like_id=#{like_id} and like_bookno=#{like_bookno}
+	</select>
 </mapper>
