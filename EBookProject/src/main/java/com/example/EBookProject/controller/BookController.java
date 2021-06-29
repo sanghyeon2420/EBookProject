@@ -150,5 +150,17 @@ public class BookController {
 		model.addAttribute("ebook_no",dto.getEbook_no());
 		return "book/viewer"; // 이동할 페이지 지정
 	}
+	
+	// 이용약관 연결
+	@RequestMapping("terms")
+	public String terms() {
+		return "member/termsOfMember";
+	}
 
+	// 개인정보취급방침 연결
+	@RequestMapping("privacy")
+	public String privacy() {
+		return "member/privacy_policy";
+	}
+	
 }
