@@ -9,6 +9,10 @@
    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
    crossorigin="anonymous">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <title>privacy_policy.jsp</title>
 <style type="text/css">
 	
