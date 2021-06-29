@@ -42,7 +42,7 @@ $(document).ready(function(){
 		var userpw = $("#userpw").val();
 		if(userpw == ${member.userpw}){
 			alert("비밀번호맞음");
-		}else {
+		}else{
 			alert("틀린 비밀번호 입니다 ");
 			return false;
 		}
@@ -244,7 +244,7 @@ ul.profileBody {
                     <!-- 하단 버튼 -->
                     <div class="footerline">
 	                    <a href="${pageContext.request.contextPath}/writer/insertBook" type="button" class="btn btn-primary">신규 소설등록</a>
-	                  <a href="#open${member.user_no }"><button>수정</button></a>
+	                  <a href="#open${member.user_no }" type="button" class="btn btn-primary">수정</a>
 				         <div class="white_content" id="open${member.user_no }">
 				            <div>
 				            <br>
@@ -253,8 +253,8 @@ ul.profileBody {
 				             <input type="password" id="userpw" name="userpw">
 				            <p><br>
 				       		 <a href="update" id="change" type="button" class="btn btn-primary">
-				       		 <button>회원정보수정</button></a>
-							 <a href="#close"><button>닫기</button></a>
+				       		확인</a>
+							 <a href="#close" type="button" class="btn btn-primary">닫기</a>
 				           </div>
 			        	 </div> 
                     </div>
