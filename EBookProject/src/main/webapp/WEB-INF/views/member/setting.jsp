@@ -254,6 +254,7 @@ ul.profileBody {
 				            <p><br>
 				       		 <a href="update" id="change" type="button" class="btn btn-primary">
 				       		확인</a>
+				       	
 							 <a href="#close" type="button" class="btn btn-primary">닫기</a>
 				           </div>
 			        	 </div> 
