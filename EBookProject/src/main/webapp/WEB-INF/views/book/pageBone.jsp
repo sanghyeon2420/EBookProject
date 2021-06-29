@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
-	memo_list();
+/* 	memo_list(); */
 	
 	
 	$("#hits").click(function(){
@@ -38,7 +38,7 @@ $(document).ready(function(){
   	 	 });
 	  });
 
-$(document).ready(function(){
+/* $(document).ready(function(){
 	$("#btnWrite").click(function(){ //버튼클릭이벤트
 		memo_insert();		
 	});	
@@ -58,9 +58,9 @@ function memo_insert(){
 		}
 	});
   }
-});
+}); */
 
-function memo_list(){
+<%-- function memo_list(){
 	$.ajax({
 		type: "post",
 		url: "<%=request.getContextPath() %>/memo/list",
@@ -70,7 +70,7 @@ function memo_list(){
 			$("#memoResult").html( data );
 		}
 	});
-}
+} --%>
 
 
 
@@ -242,23 +242,20 @@ $(document).ready( function(){
 									</span>
 								</p>
 						</a></li>
-							
-						
-						</a></li>	
 						</c:forEach>
 					</ol>
 				</div>
 			</div>
-			<div id="comment">
+			<!-- <div id="comment">
 				<h2>한 줄 후기</h2>
 			  <div id="memoInput">
 			  	    메모 <input type="text" name="memo" id="memo" size="50" />
 					<input type="button" id="btnWrite" value="확인" />
 			  </div><br>
-			<!--  출력하는 부분  -->
+			 출력하는 부분 
 			<div id="memoResult">
 			</div>					
-			</div>
+			</div> -->
 		</div>
 	</article>
 	
