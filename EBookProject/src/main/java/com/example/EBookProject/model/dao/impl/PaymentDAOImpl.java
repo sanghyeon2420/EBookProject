@@ -24,6 +24,14 @@ public class PaymentDAOImpl implements PaymentDAO{
 	}
 
 	@Override
+	public void contentResult(int user_no, int contents_no) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("user_no",user_no);
+		map.put("contents_no", contents_no);
+		sqlSession.insert("payment.result",map);		
+	}
+	
+	@Override
 	public int contentBuy(MemberDTO dto,int cookie) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("dto", dto);
@@ -31,15 +39,4 @@ public class PaymentDAOImpl implements PaymentDAO{
 		return sqlSession.update("payment.buy",map);
 		
 	}
-
-	@Override
-	public void contentResult(int user_no, int contents_no) {
-		Map<String, Object> map = new HashMap<>();
-		map.put("user_no",user_no);
-		map.put("contents_no", contents_no);
-		sqlSession.insert("payment.result",map);		
-	}
-
-	
-
 }

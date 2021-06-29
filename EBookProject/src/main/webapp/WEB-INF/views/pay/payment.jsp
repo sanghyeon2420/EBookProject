@@ -42,6 +42,7 @@ function BuyNow(buy){
 	console.log(buy);
 
 	var buyinfo=confirm("쿠키충전을 하시겠습니까?");
+	buy = parseInt(buy);
 	
 	if(buyinfo){
 		$.ajax({
@@ -49,9 +50,16 @@ function BuyNow(buy){
 			url:"${pageContext.request.contextPath}/pay/cookiecharge",
 			data:{"cookie":buy},
 			success:function(data){
-				console.log(data);
+				data = parseInt(data);
+				console.log(buy+data);
+				var result = buy+data;
+				document.getElementById("return").innerHTML=result;
+				alert("결제가 완료되었습니다");
 			}
 		});	
+	} else {
+		alert("결제가 취소되었습니다");
+		location.href="${pageContext.request.contextPath}/pay/productbuy";
 	}
 }
 
@@ -211,7 +219,7 @@ dd {
   	</div>
   	<br>
   	<div class="title">
-  		<p><strong>${sessionScope.member.nickname}</strong>&nbsp;회원님의 보유 쿠키 : ${sessionScope.member.cash}쿠키</p>
+  		<p><strong>${sessionScope.member.nickname}</strong>&nbsp;회원님의 보유 쿠키 : <span id="return">${sessionScope.member.cash}</span>쿠키</p>
   	</div>
   </div>
   <hr>

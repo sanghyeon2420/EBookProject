@@ -25,13 +25,14 @@ public class PaymentController {
 	@ResponseBody
 	@RequestMapping("cookiecharge")
 	public String Cookiecharge(HttpSession session,int cookie) {
-		int result=13;
+		int result=0;
 		System.out.println(cookie);
 		MemberDTO dto = (MemberDTO) session.getAttribute("member");
 		
 		service.contentsBuy(dto,cookie);
 		
 		result = dto.getCash();
+		session.setAttribute("result", cookie+result);
 		return String.valueOf(result);
 	}
 }
