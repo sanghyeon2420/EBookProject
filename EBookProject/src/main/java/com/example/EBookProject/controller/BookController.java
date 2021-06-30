@@ -170,7 +170,7 @@ public class BookController {
 		File src = new File("C:\\projectimage\\"+file.getName()); //원본파일 경로명
 		
 		
-		 File dest = new File("C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\images\\"+b_category+"\\"+file.getName()); // 복사할 파일 경로, 이름
+		 File dest = new File("http://localhost:8181/EBookProject/resources/images/"+b_category+"/"+file.getName()); // 복사할 파일 경로, 이름
 		 
 		  int c;
 	      try {
