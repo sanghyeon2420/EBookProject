@@ -154,34 +154,8 @@ public class BookController {
 		model.addAttribute("ebook_no", dto.getEbook_no());
 		return "book/viewer"; // 이동할 페이지 지정
 	}
-<<<<<<< HEAD
-=======
 	
 	
-	@RequestMapping("bookinsert")
-	public String bookinsert(String b_name,String b_category,String b_intro,String nickname,String completion, @RequestParam("image") File  file) {
-		System.out.println(file.getName()); // 파일 이름 가져오기
-		
-		File src = new File("C:\\projectimage\\"+file.getName()); //원본파일 경로명
-		
-		
-		 File dest = new File("\\\\192.168.0.42\\Users\\mrhi04-12\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\images\\"+b_category+"\\"+file.getName()); // 복사할 파일 경로, 이름
-		 
-		  int c;
-	      try {
-	         FileInputStream fi = new FileInputStream(src); //파일 입력 바이트 스트림 생성
-	         FileOutputStream fo = new FileOutputStream(dest); //파일 출력 바이트 스트림 생성
-	         
-	         while((c = fi.read()) != -1) {
-	            fo.write((byte)c);
-	         }
-	         fi.close();
-	         fo.close();
-	         System.out.println(src.getPath() + "를 " + dest.getPath() + "로 복사하였습니다.");
-	      } catch (IOException e) {
-	         System.out.println("파일 오류 복사");
-	      }
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 
 	@RequestMapping("bookinsert")
 	public String bookinsert(String b_name, String b_category, String b_intro, String nickname, String completion,
