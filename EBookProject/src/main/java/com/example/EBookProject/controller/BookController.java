@@ -89,15 +89,8 @@ public class BookController {
 		return mav;
 	}
 
-<<<<<<< HEAD
-	@RequestMapping(value="hits",  produces="application/json")
+/*	@RequestMapping(value="hits",  produces="application/json")
 	public ResponseEntity hits(HttpSession session, @RequestBody Map<String,Object> objectMap) {
-=======
-	/*@ResponseBody
-	@RequestMapping("hits")
-	public JSO hits(HttpSession session, String ebook_no, String count) {
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
-		String result;
 
 		System.out.println(objectMap);
 		int ebook_no=Integer.parseInt((String) objectMap.get("ebook_no"));
@@ -121,18 +114,14 @@ public class BookController {
 					
 		BookDTO dto=service.Bookdetail(ebook_no);
 		result =String.valueOf(dto.getBook_hits());
-<<<<<<< HEAD
 		
 		Map<String, Object> map=new HashMap<>();
 		map.put("result", result);
 		map.put("count", count);
 		return new ResponseEntity<>(map,HttpStatus.OK);
-	}
-=======
 		return "a";
-	}*/
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
-	
+	}
+*/	
 
 
 	@RequestMapping("contentview")
@@ -173,7 +162,6 @@ public class BookController {
 		return "book/viewer"; // 이동할 페이지 지정
 	}
 	
-<<<<<<< HEAD
 	
 	@RequestMapping("bookinsert")
 	public String bookinsert(String b_name,String b_category,String b_intro,String nickname,String completion, @RequestParam("image") File  file) {
@@ -198,15 +186,7 @@ public class BookController {
 	      } catch (IOException e) {
 	         System.out.println("파일 오류 복사");
 	      }
-=======
-	// 이용약관 연결
-	@RequestMapping("terms")
-	public String terms() {
-		return "member/termsOfMember";
-	}
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 
-<<<<<<< HEAD
 		 
 		 
 		// 도서명으로된 디렉토리 생성
@@ -234,12 +214,18 @@ public class BookController {
 		return "redirect:/member/viewdetail";
 		
 	}
-=======
+
 	// 개인정보취급방침 연결
 	@RequestMapping("privacy")
 	public String privacy() {
 		return "member/privacy_policy";
 	}
+
+	// 이용약관 연결
+	@RequestMapping("terms")
+	public String terms() {
+		return "member/termsOfMember";
+	}
+
 	
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 }

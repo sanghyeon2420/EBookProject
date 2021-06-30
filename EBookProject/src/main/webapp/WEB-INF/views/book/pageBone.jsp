@@ -18,13 +18,9 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
-<<<<<<< HEAD
 
 	//memo_list();
-=======
-/* 	memo_list(); */
 	
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	
 	$("#hits").change(function(){
 		var ebook_no=${bookdto.ebook_no};
@@ -34,11 +30,8 @@ $(document).ready(function(){
 			$.ajax({
 				type:'post',
 				url:'${pageContext.request.contextPath}/book/hits',
-<<<<<<< HEAD
 				data:JSON.stringify(json),
-=======
 				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count} },
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 				contentType:'application/json',
 				success:function(data){
 					document.getElementById("span_hits").innerHTML=data.map.result;
