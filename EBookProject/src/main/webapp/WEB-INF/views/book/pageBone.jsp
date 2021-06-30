@@ -18,21 +18,20 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
-/* 	memo_list(); */
+
+	//memo_list();
 	
 	
-	$("#hits").click(function(){
+	$("#hits").change(function(){
 		var ebook_no=${bookdto.ebook_no};
-			alert("속성변경"+count+", "+ebook_no);
-			
+		var count=${count};
+
 			$.ajax({
 				type:'post',
 				url:'${pageContext.request.contextPath}/book/hits',
 				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count} },
-				contentType:'application/json',
-				success:function(data){
-					document.getElementById("span_hits").innerHTML=data.map.result;
-					count = data.map.count;
+				success:function(){
+					location.href="${pageContext.request.contextPath}/book/detail?idx="+${bookdto.ebook_no};
 				}
 			});  	
   	 	 });

@@ -24,4 +24,5 @@ public interface BookDAO {
 	public String contentName(int ebook_no,int contentlist); // 책 번호와 컨텐트리스트번호로 컨텐트 제목 출력
 	public void bookget(int ebook_no); //책 번호로 조회수 증가
 	public int countLikebook(LikebookDTO dto); // 추천여부 체크
+	public void insertBook(BookDTO dto); // 도서 추가
 }

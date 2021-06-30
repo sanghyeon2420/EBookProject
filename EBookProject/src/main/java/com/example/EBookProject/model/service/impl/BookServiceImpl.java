@@ -110,5 +110,10 @@ public class BookServiceImpl implements BookService {
 		return dao.countLikebook(dto);
 	}
 
+	@Override
+	public void insertBook(BookDTO dto) {
+		dao.insertBook(dto);
+	}
+
 
 }
