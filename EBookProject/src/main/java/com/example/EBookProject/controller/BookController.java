@@ -1,8 +1,10 @@
 package com.example.EBookProject.controller;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -54,8 +56,6 @@ public class BookController {
 		mav.addObject("category", category);
 		mav.addObject("list", list);
 
-	
-		
 		return mav;
 	}
 
@@ -92,37 +92,32 @@ public class BookController {
 
 	@ResponseBody
 	@RequestMapping("hits")
-	public void hits(HttpServletRequest request,HttpSession session, String ebook_no, String count) {
-		
+	public void hits(HttpServletRequest request, HttpSession session, String ebook_no, String count) {
 
-		int ebook_num=Integer.parseInt(ebook_no);
+		int ebook_num = Integer.parseInt(ebook_no);
 		int countLike = Integer.parseInt(count);
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
 
 		LikebookDTO likeDTO = new LikebookDTO();
 		likeDTO.setLike_bookno(ebook_num);
 		likeDTO.setLike_id(memberDTO.getUser_no());
-		
-		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+countLike);
-		
 
-		if (countLike== 0) { // 추천을 안함
+		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + countLike);
+
+		if (countLike == 0) { // 추천을 안함
 			likedao.insertLike(likeDTO); // 추천테이블에 정보저장
 		}
-		
-		if (countLike== 1) { // 추천을 함
+
+		if (countLike == 1) { // 추천을 함
 			likedao.deleteLike(likeDTO);
 		}
-		
-		int result=likedao.countLike(likeDTO);
-					
-		
-		BookDTO dto=service.Bookdetail(ebook_num);
+
+		int result = likedao.countLike(likeDTO);
+
+		BookDTO dto = service.Bookdetail(ebook_num);
 		request.setAttribute("bookdto", dto);
 		request.setAttribute("count", result);
 	}
-	
-
 
 	@RequestMapping("contentview")
 	public String contentview(HttpSession session, Model model, int book, int content) {
@@ -146,73 +141,70 @@ public class BookController {
 			session.setAttribute("update_time_" + book, current_time);
 		}
 
-
 		int contentCount = service.contentCount(book);
 		BookDTO dto = service.Bookdetail(book);
 
-		
-		model.addAttribute("ebook_no",dto.getEbook_no());
-		model.addAttribute("book",book);
-		model.addAttribute("content",content);
+		model.addAttribute("ebook_no", dto.getEbook_no());
+		model.addAttribute("book", book);
+		model.addAttribute("content", content);
 		model.addAttribute("contentCount", contentCount);
 		model.addAttribute("b_category", dto.getB_category());
 		model.addAttribute("b_name", dto.getB_name());
 		model.addAttribute("content_name", service.contentName(book, content));
-		model.addAttribute("ebook_no",dto.getEbook_no());
+		model.addAttribute("ebook_no", dto.getEbook_no());
 		return "book/viewer"; // 이동할 페이지 지정
 	}
-	
-	
-	@RequestMapping("bookinsert")
-	public String bookinsert(String b_name,String b_category,String b_intro,String nickname,String completion, @RequestParam("image") File  file) {
-		System.out.println(file.getName()); // 파일 이름 가져오기
-		
-		File src = new File("C:\\projectimage\\"+file.getName()); //원본파일 경로명
-		
-		
-		 File dest = new File("http://localhost:8181/EBookProject/resources/images/"+b_category+"/"+file.getName()); // 복사할 파일 경로, 이름
-		 
-		  int c;
-	      try {
-	         FileInputStream fi = new FileInputStream(src); //파일 입력 바이트 스트림 생성
-	         FileOutputStream fo = new FileOutputStream(dest); //파일 출력 바이트 스트림 생성
-	         
-	         while((c = fi.read()) != -1) {
-	            fo.write((byte)c);
-	         }
-	         fi.close();
-	         fo.close();
-	         System.out.println(src.getPath() + "를 " + dest.getPath() + "로 복사하였습니다.");
-	      } catch (IOException e) {
-	         System.out.println("파일 오류 복사");
-	      }
 
-		 
-		 
+	@RequestMapping("bookinsert")
+	public String bookinsert(String b_name, String b_category, String b_intro, String nickname, String completion,
+			@RequestParam("image") File file) {
+		System.out.println(file.getName()); // 파일 이름 가져오기
+
+		File src = new File("C:\\projectimage\\" + file.getName()); // 원본파일 경로명
+
+		File dest = new File(
+				"C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\images\\"
+						+ b_category + "\\" + file.getName()); // 복사할 파일 경로, 이름
+
+		int c;
+		try {
+			FileInputStream fi = new FileInputStream(src); // 파일 입력 바이트 스트림 생성
+			FileOutputStream fo = new FileOutputStream(dest); // 파일 출력 바이트 스트림 생성
+
+			while ((c = fi.read()) != -1) {
+				fo.write((byte) c);
+			}
+			fi.close();
+			fo.close();
+			System.out.println(src.getPath() + "를 " + dest.getPath() + "로 복사하였습니다.");
+		} catch (IOException e) {
+			System.out.println("파일 오류 복사");
+		}
+
 		// 도서명으로된 디렉토리 생성
-		File mkdirFile=new File("C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\text\\"+b_category+"\\"+b_name);
+		File mkdirFile = new File(
+				"C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\text\\"
+						+ b_category + "\\" + b_name);
 		mkdirFile.mkdir();
-		
+
 		System.out.println(b_name); // 도서명
 		System.out.println(b_category); // 카테고리
 		System.out.println(b_intro); // 작품 소개
-		System.out.println(nickname); // 닉네임, 작가명 
+		System.out.println(nickname); // 닉네임, 작가명
 		System.out.println(completion); // 연재 continue 완결 finish
-		
-		
-		BookDTO dto=new BookDTO();
+
+		BookDTO dto = new BookDTO();
 		dto.setB_name(b_name);
 		dto.setB_category(b_category);
 		dto.setB_intro(b_intro);
 		dto.setW_name(nickname);
 		dto.setImagefileName(file.getName());
-		
+
 		// bookinfo 테이블에 저장
 		service.insertBook(dto);
-		
-		
+
 		return "redirect:/member/viewdetail";
-		
+
 	}
 
 	// 개인정보취급방침 연결
@@ -227,5 +219,41 @@ public class BookController {
 		return "member/termsOfMember";
 	}
 
+	@RequestMapping
+	public String contentInsert(ContentDTO dto, String b_content, String b_title) {
+
+		BookDTO bookDTO = service.Bookdetail(dto.getEbook_no());
+			
+		// 텍스트파일로 내용 쓰기
+		dto.setContent_name(b_title);
+
+		String fileName = "C:\\Users\\Kimsanghyeon\\git\\EBookProject\\EBookProject\\src\\main\\webapp\\resources\\text\\"
+				+ bookDTO.getB_category() + "\\" + bookDTO.getB_name() + "\\" + service.selectContentlist(dto.getEbook_no()) + ".txt";
+
+		System.out.println(b_content);
+
+		System.out.println(dto);
+		
+		// DB에 추가
+		service.insertContent(dto);
+		
+		try {
+
+			// BufferedWriter 와 FileWriter를 조합하여 사용 (속도 향상)
+			BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
+
+			// 파일안에 문자열 쓰기
+			fw.write(b_content);
+			fw.flush();
+
+			// 객체 닫기
+			fw.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	
+		return "aaaaaaaaaaaaaaaaaaaa";
+	}
 }

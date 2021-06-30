@@ -98,7 +98,7 @@ a:link { color: black; text-decoration: none;}
 
 <section id="adverbanner">
 <div class="adver">
-	<a href="/EBookProject/notic/view?notic_no=6 "><img src="resources/images/1.png" width=60vw; height=30vh; alt="광고를 불러오고 있습니다"></a>
+	<a href="/EBookProject/notic/view?notic_no=8 "><img src="resources/images/1.png" width=60vw; height=30vh; alt="광고를 불러오고 있습니다"></a>
 </div>
 </section>
 

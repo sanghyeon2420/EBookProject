@@ -25,4 +25,6 @@ public interface BookDAO {
 	public void bookget(int ebook_no); //책 번호로 조회수 증가
 	public int countLikebook(LikebookDTO dto); // 추천여부 체크
 	public void insertBook(BookDTO dto); // 도서 추가
+	public void insertContent(ContentDTO dto); // 회차 등록
+	public int selectContentlist(int ebook_no); // 회차 번호
 }

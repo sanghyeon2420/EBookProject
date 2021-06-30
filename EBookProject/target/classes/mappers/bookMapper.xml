@@ -104,4 +104,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertBook" parameterType="com.example.EBookProject.model.dto.BookDTO">
 	insert into bookinfo(ebook_no,writer_no,category_no,b_name,b_category,w_name,b_intro,imagefileName) values ((select nvl(max(ebook_no), 0)+1 from bookinfo),(select writer_no from writer where w_name=#{w_name}),(select category_no from book_category where category_name=#{b_category}),#{b_name},#{b_category},#{w_name},#{b_intro},#{imagefileName})
 	</insert>
+	
+	
+	<!-- 회차 등록 -->
+	<insert id="insertContent">
+	 insert into content(contents_no,ebook_no,viewcontent_price,completion,content_date,content_name,contentlist)
+ values ((select nvl(max(contents_no), 0)+1 from content),#{ebook_no},20,1,sysdate,#{content_name},(select nvl(max(contentlist), 0)+1 from (select * from content where ebook_no=20)))
+	</insert>
+	
+	<!-- 회차 번호 -->
+	<select id="selectContentlist" resultType="int">
+	select nvl(max(contentlist), 0)+1 count from (select * from content where ebook_no=#{ebook_no})
+	</select>
 </mapper>

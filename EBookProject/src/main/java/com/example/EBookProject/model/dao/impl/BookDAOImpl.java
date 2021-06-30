@@ -114,4 +114,20 @@ public class BookDAOImpl implements BookDAO {
 		
 	}
 
+	@Override
+	public void insertContent(ContentDTO dto) {
+		System.out.println("dao에서 "+dto);
+		Map<String, Object> map=new HashMap<>();
+		map.put("ebook_no", dto.getEbook_no());
+		map.put("content_name", dto.getContent_name());
+		
+		
+		sqlSession.insert("book.insertContent",dto);
+	}
+
+	@Override
+	public int selectContentlist(int ebook_no) {
+		return sqlSession.selectOne("book.selectContentlist",ebook_no);
+	}
+
 }

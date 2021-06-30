@@ -115,5 +115,15 @@ public class BookServiceImpl implements BookService {
 		dao.insertBook(dto);
 	}
 
+	@Override
+	public void insertContent(ContentDTO dto) {
+		dao.insertContent(dto);
+	}
+
+	@Override
+	public int selectContentlist(int ebook_no) {
+		return dao.selectContentlist(ebook_no);
+	}
+
 
 }

@@ -39,8 +39,8 @@ function disableclick(event){
     } 
 }
 
-function enroll(){
-	location.href="/EBookProject/member/writenovel";
+function enroll(idx){
+	location.href="/EBookProject/member/writenovel?ebook_no="+idx;
 }
 </script>
 <style>
@@ -195,7 +195,7 @@ function enroll(){
                            <img src="resources/images/${list.b_category }/${list.imagefileName }" alt="북커버 이미지를 불러옵니다." /><br>
                            <a href="/EBookProject/book/detail?idx=${list.ebook_no }"><h4> <b>${list.b_name}</b> </h4></a>
                            <div class="addnovel">
-                           <button class="btn btn-primary" onclick="javascript:enroll()" >회차 등록</button> &nbsp;
+                           <button class="btn btn-primary" onclick="javascript:enroll(${list.ebook_no })" >회차 등록</button> &nbsp;
                            </div>
                        </div>
                    </div>

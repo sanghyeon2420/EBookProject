@@ -286,4 +286,12 @@ public class MemberController {
 	public String privacy() {
 		return "member/privacy_policy";
 	}
+	
+	@RequestMapping("writenovel")
+	public String writenovel(HttpServletRequest request,int ebook_no) {
+		System.out.println(ebook_no);
+		
+		request.setAttribute("ebook_no", ebook_no);
+		return "member/writenovel";
+	}
 }
