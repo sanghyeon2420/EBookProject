@@ -116,8 +116,8 @@ a:link { color: black; text-decoration: none;}
  		
  		<!-- footer_icons -->
  		<div class="footer_icons">
- 			<img src="resources/images/facebook.png" onclick="location='https://www.instagram.com/';">
-    		<img src="resources/images/twitter.png" onclick="location='https://www.instagram.com/';" >
+ 			<img src="resources/images/facebook.png" onclick="location='https://www.facebook.com/';">
+    		<img src="resources/images/twitter.png" onclick="location='https://twitter.com/?lang=ko';" >
     		<img src="resources/images/instagram.png" onclick="location='https://www.instagram.com/';" >
  		</div>
   	</div>
