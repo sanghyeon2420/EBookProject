@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EBookProject.model.dao.impl.LikebookDAOImpl;
@@ -89,39 +90,38 @@ public class BookController {
 		return mav;
 	}
 
-/*	@RequestMapping(value="hits",  produces="application/json")
-	public ResponseEntity hits(HttpSession session, @RequestBody Map<String,Object> objectMap) {
+	@ResponseBody
+	@RequestMapping("hits")
+	public void hits(HttpServletRequest request,HttpSession session, String ebook_no, String count) {
+		
 
-		System.out.println(objectMap);
-		int ebook_no=Integer.parseInt((String) objectMap.get("ebook_no"));
-		int count = Integer.parseInt((String)objectMap.get("count"));
+		int ebook_num=Integer.parseInt(ebook_no);
+		int countLike = Integer.parseInt(count);
 		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
 
 		LikebookDTO likeDTO = new LikebookDTO();
-		likeDTO.setLike_bookno(ebook_no);
+		likeDTO.setLike_bookno(ebook_num);
 		likeDTO.setLike_id(memberDTO.getUser_no());
 		
-		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+count);
+		System.err.println("카운트!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+countLike);
 		
 
-		if (count== 0) { // 추천을 안함
+		if (countLike== 0) { // 추천을 안함
 			likedao.insertLike(likeDTO); // 추천테이블에 정보저장
 		}
 		
-		if (count == 1) { // 추천을 함
+		if (countLike== 1) { // 추천을 함
 			likedao.deleteLike(likeDTO);
 		}
-					
-		BookDTO dto=service.Bookdetail(ebook_no);
-		result =String.valueOf(dto.getBook_hits());
 		
-		Map<String, Object> map=new HashMap<>();
-		map.put("result", result);
-		map.put("count", count);
-		return new ResponseEntity<>(map,HttpStatus.OK);
-		return "a";
+		int result=likedao.countLike(likeDTO);
+					
+		
+		BookDTO dto=service.Bookdetail(ebook_num);
+		request.setAttribute("bookdto", dto);
+		request.setAttribute("count", result);
 	}
-*/	
+	
 
 
 	@RequestMapping("contentview")

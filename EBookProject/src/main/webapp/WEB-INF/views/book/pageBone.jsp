@@ -25,17 +25,13 @@ $(document).ready(function(){
 	$("#hits").change(function(){
 		var ebook_no=${bookdto.ebook_no};
 		var count=${count};
-			alert("속성변경"+count+", "+ebook_no);
-			var json ={'ebook_no':${bookdto.ebook_no}, 'count':${count}};
+
 			$.ajax({
 				type:'post',
 				url:'${pageContext.request.contextPath}/book/hits',
-				data:JSON.stringify(json),
 				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count} },
-				contentType:'application/json',
-				success:function(data){
-					document.getElementById("span_hits").innerHTML=data.map.result;
-					count = data.map.count;
+				success:function(){
+					location.href="${pageContext.request.contextPath}/book/detail?idx="+${bookdto.ebook_no};
 				}
 			});  	
   	 	 });
