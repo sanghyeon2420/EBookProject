@@ -254,6 +254,6 @@ public class BookController {
 		}
 
 	
-		return "aaaaaaaaaaaaaaaaaaaa";
+		return "redirect:/book/detail?idx="+dto.getEbook_no();
 	}
 }
