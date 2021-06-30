@@ -188,10 +188,10 @@ $(document).ready( function(){
 						
 						<c:choose>
 							<c:when test="${count == 0 }">
-								<input type="checkbox" id="hits" name="hits">																											
+								<input type="checkbox" id="hits" name="hits" >																							
 							</c:when>
 							<c:when test="${count == 1 }">
-								<input type="checkbox" id="hits" name="hits" checked="checked">																											
+								<input type="checkbox" id="hits" name="hits" checked="checked">																										
 							</c:when>
 						
 						</c:choose>
