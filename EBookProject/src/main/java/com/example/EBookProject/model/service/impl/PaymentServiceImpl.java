@@ -21,11 +21,17 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 
 	@Override
+	public void contentResult(int user_no, int contents_no) {
+		dao.contentResult(user_no, contents_no);
+	}
+	
+	@Override
 	public int contentsBuy(MemberDTO dto,int cookie) {
-		
-		
 		return dao.contentBuy(dto,cookie);
 	}
 
-
+	@Override
+	public int cashPay(int contents_no, int user_no) {
+		return dao.cashPay(contents_no, user_no);
+	}
 }

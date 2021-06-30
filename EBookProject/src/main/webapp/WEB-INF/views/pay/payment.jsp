@@ -48,28 +48,31 @@ function BuyNow(buy){
 			type:"post",
 			url:"${pageContext.request.contextPath}/pay/cookiecharge",
 			data:{"cookie":buy},
-			success:function(data){
-				console.log(data);
+			success:function(){
+				alert("결제가 완료되었습니다");
+				location.href="${pageContext.request.contextPath}/pay/productbuy";
 			}
 		});	
+	} else {
+		alert("결제가 취소되었습니다");
+		location.href="${pageContext.request.contextPath}/pay/productbuy";
 	}
 }
 
+$(document).ready(function(){
+	$('dt').on('click', function () {
 
-$('dt').on('click', function() {
-
-	  function slideDown(target) {
-	    slideUp();
-	    $(target).addClass('on').next().slideDown();
-	  }
-
-	  function slideUp() {
-	    $('dt').removeClass('on').next().slideUp();
-	  }
-
-	  $(this).hasClass('on') ? slideUp() : slideDown(this);
-
-	});
+    if ($(this).hasClass('on')) {
+        slideUp();
+    } else {
+        slideUp();
+        $(this).addClass('on').next().slideDown();
+    }
+    function slideUp() {
+        $('dt').removeClass('on').next().slideUp();
+    };
+  });
+});
 
 
 </script>
@@ -211,7 +214,7 @@ dd {
   	</div>
   	<br>
   	<div class="title">
-  		<p><strong>${sessionScope.member.nickname}</strong>&nbsp;회원님의 보유 쿠키 : ${sessionScope.member.cash}쿠키</p>
+  		<p><strong>${sessionScope.member.nickname}</strong>&nbsp;회원님의 보유 쿠키 : <span id="return">${sessionScope.member.cash}</span>쿠키</p>
   	</div>
   </div>
   <hr>
@@ -254,14 +257,14 @@ dd {
   	<div class="detailcookie">
   		<dl>
   		<dt><span></span>쿠키 이용안내</dt>
-  			<dd>ebook 작품은 쿠키를 사용하여 대여/구매하실 수 있습니다.</dd>
-  			<dd>충전한 쿠키는 ebook의 모든 플랫폼에서 사용할 수 있습니다.</dd>
-  			<dd>쿠키 구매 시 지급되는 보너스 쿠키의 수량은 변경될 수 있으며, 유효기간은 변도 표시한 기준에 따릅니다.</dd>
-  			<dd>IOS앱에서 충전한 쿠키의 구매취소는 ebook 정책 상 고객센터를 통해서만 가능합니다.</dd>
-  			<dd>쿠키 구매 시 지급되는 보너스 쿠키와 이벤트로 받은 무료 쿠키는 구매 취소 및 환불 대상이 아닙니다.</dd>
-  			<dd>쿠키가 사용될 때는 이벤트로 받은 무료 쿠키가 우선 사용되며, 구매한 쿠키 패키지 내에서는 보너스 쿠키가 유료 쿠키보다 먼저 사용됩니다.</dd>
-  			<dd>쿠키 충전 금액은 쿠키샵 테이블에 표시되는 금액 기준이며, 실제 결제금액과 차이가 있슬 수 있습니다.</dd>
-  			<dd>쿠키 가격은 부가가치세가 포함되지 않은 가격입니다.</dd>
+  			<dd>- ebook 작품은 쿠키를 사용하여 대여/구매하실 수 있습니다.<br>
+  				- 충전한 쿠키는 ebook의 모든 플랫폼에서 사용할 수 있습니다.<br>
+  				- 쿠키 구매 시 지급되는 보너스 쿠키의 수량은 변경될 수 있으며, 유효기간은 변도 표시한 기준에 따릅니다.<br>
+  				- IOS앱에서 충전한 쿠키의 구매취소는 ebook 정책 상 고객센터를 통해서만 가능합니다.<br>
+  				- 쿠키 구매 시 지급되는 보너스 쿠키와 이벤트로 받은 무료 쿠키는 구매 취소 및 환불 대상이 아닙니다.<br>
+  				- 쿠키가 사용될 때는 이벤트로 받은 무료 쿠키가 우선 사용되며, 구매한 쿠키 패키지 내에서는 보너스 쿠키가 유료 쿠키보다 먼저 사용됩니다.<br>
+  				- 쿠키 충전 금액은 쿠키샵 테이블에 표시되는 금액 기준이며, 실제 결제금액과 차이가 있슬 수 있습니다.<br>
+  				- 쿠키 가격은 부가가치세가 포함되지 않은 가격입니다.</dd>
   		 </dl>
   	</div>
   </div>

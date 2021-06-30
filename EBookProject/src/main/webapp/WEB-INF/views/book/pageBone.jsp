@@ -18,8 +18,13 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <script>
 $(document).ready(function(){
+<<<<<<< HEAD
 
 	//memo_list();
+=======
+/* 	memo_list(); */
+	
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 	
 	$("#hits").change(function(){
 		var ebook_no=${bookdto.ebook_no};
@@ -29,20 +34,43 @@ $(document).ready(function(){
 			$.ajax({
 				type:'post',
 				url:'${pageContext.request.contextPath}/book/hits',
+<<<<<<< HEAD
 				data:JSON.stringify(json),
+=======
+				data:{'ebook_no':${bookdto.ebook_no}, 'count':${count} },
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 				contentType:'application/json',
 				success:function(data){
 					document.getElementById("span_hits").innerHTML=data.map.result;
 					count = data.map.count;
 				}
-			});
-        	
-        	
-    });
-});
+			});  	
+  	 	 });
+	  });
 
+/* $(document).ready(function(){
+	$("#btnWrite").click(function(){ //버튼클릭이벤트
+		memo_insert();		
+	});	
 
-function memo_list(){
+function memo_insert(){
+	var memo = $("#memo").val();
+	var param = "&memo="+memo;
+	$.ajax({
+		type: "post",
+		data: param,
+		url: '${pageContext.request.contextPath}/memo/insert',
+		success: function(){
+			//메모목록 갱신
+			memo_list();
+			//폼입력값 초기화
+			$("#memo").val("");
+		}
+	});
+  }
+}); */
+
+<%-- function memo_list(){
 	$.ajax({
 		type: "post",
 		url: "<%=request.getContextPath() %>/memo/list",
@@ -52,11 +80,11 @@ function memo_list(){
 			$("#memoResult").html( data );
 		}
 	});
-}
+} --%>
 
 
 
-function BuyCheck(ebook_no,contentlist,viewcontent_price){
+function BuyCheck(ebook_no,contentlist,viewcontent_price,contents_no){
 	console.log("ebook_no =>  "+ebook_no+", contentlist => "+contentlist);
 	//alert(""); <= 경고문
 	// var v=prompt("a를 입력",""); 입력창
@@ -68,14 +96,23 @@ function BuyCheck(ebook_no,contentlist,viewcontent_price){
 	console.log(viewcontent_price);
 	
 	if (viewcontent_price == 0){
-		alert("결제 완료");
 		location.href="${pageContext.request.contextPath}/book/contentview/?book="+ebook_no+"&content="+contentlist;
 	} else {
-		if (usercash >= viewcontent_price){
-			var buycheck=confirm("결제를 하시겠습니까?");	
-			alert("결제 완료");
-			location.href="${pageContext.request.contextPath}/book/contentview/?book="+ebook_no+"&content="+contentlist;
-		} else {
+		if (usercash >= viewcontent_price){ // 유저 캐쉬가 많을때
+			var buycheck=confirm("결제를 하시겠습니까?");
+			if (buycheck){
+				$.ajax({
+					type:"post",
+					url:"${pageContext.request.contextPath}/pay/pay",
+					data:{"contents_no":contents_no},
+					success:function(){
+						alert("결제 완료");
+						location.href="${pageContext.request.contextPath}/book/contentview/?book="+ebook_no+"&content="+contentlist;
+					}
+				});
+			}
+			
+		} else { // 적을 때
 			var cookiecharge=confirm("쿠키가 부족합니다. 충전창으로 이동하시겠습니까?"); // 리턴값 true false
 			if(cookiecharge){
 				location.href="${pageContext.request.contextPath}/pay/productbuy";		
@@ -200,7 +237,7 @@ $(document).ready( function(){
 				<div class="detail_list">
 					<ol>
 						<c:forEach var="list" items="${list}">
-							<li><a href="javascript:BuyCheck(${bookdto.ebook_no},${list.contentlist},${list.viewcontent_price })">
+							<li><a href="javascript:BuyCheck(${bookdto.ebook_no},${list.contentlist},${list.viewcontent_price },${list.contents_no })">
 								<p class="text">
 									<strong> ${list.contentlist}. ${list.content_name}</strong> <span>${list.content_date}</span>
 								</p>
@@ -215,42 +252,20 @@ $(document).ready( function(){
 									</span>
 								</p>
 						</a></li>
-							
-						
-						</a></li>	
 						</c:forEach>
 					</ol>
 				</div>
 			</div>
-			<div id="comment">
+			<!-- <div id="comment">
 				<h2>한 줄 후기</h2>
 			  <div id="memoInput">
 			  	    메모 <input type="text" name="memo" id="memo" size="50" />
 					<input type="button" id="btnWrite" value="확인" />
 			  </div><br>
-			<!--  출력하는 부분  -->
+			 출력하는 부분 
 			<div id="memoResult">
-				
-				
-			</div>			  
-			  <%-- <table border="1" style="width:700px">
-			  <tr>
-				<td>No</td>
-				<td>user_no</td>
-				<td>메모</td>
-				<td>날짜</td>
-			  </tr>
-			<c:forEach var="list" items="${list}">
-		  	  <tr>
-				<td>${list.idx}</td>
-				<td>${list.user_no}</td>
-				<td>${list.memo}</td>
-				<td>${list.post_date}</td>
-			  </tr>
-			</c:forEach>	
-			</table> --%>
-			
-			</div>
+			</div>					
+			</div> -->
 		</div>
 	</article>
 	
