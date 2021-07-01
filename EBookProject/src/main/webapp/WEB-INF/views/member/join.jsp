@@ -285,9 +285,11 @@ function Signup() {
   
   <article id="mainArticle">
 	  <!-- Body -->
-<h2>회원가입</h2>
+	  <br>
+<h2><b>회원가입</b></h2>
+<br>
 <div>
-<textarea rows="20" cols="120" style="resize: none;" readonly >
+<textarea rows="20" cols="165%" style="resize: none;" readonly >
 제1조(목적)
 
 본 회원약관은 PLAYGROUND(이하 '갑'라 한다)이 운영하는 인터넷관련 서비스(이하 '서비스'라 한다)를 이용함에 있어 관리자와 이용자(이하 '회원'라 한다)의 권리, 의무 및 책임사항을 규정함을 목적으로 한다.
@@ -456,30 +458,32 @@ function Signup() {
 </div><br>
 <div>
 	<form name="form1" method="post" action="#">
-		<p><label for="userid">아이디</label></p>
+		<p><label for="userid"><b>아이디</b></label></p>
 		<p><input type="text" class="form-control" id="userid" name="userid" placeholder="아이디를 입력하세요."></p>
 		<p id="userid_message"></p>
-		<p><label for="userpw" >비밀번호</label></p>
+		<p><label for="userpw" ><b>비밀번호</b></label></p>
 		<p><input type="password" class="form-control" id="userpw" name="userpw" placeholder="최소 8자리의 최소 한개의 숫자 혹은 특수문자를 포함하여주세요."></p>
 		<p id="userpw_message"></p>
-		<p><label for="userpw_check"  >비밀번호 확인</label></p>
+		<p><label for="userpw_check"  ><b>비밀번호 확인</b></label></p>
 		<p><input type="password" id="userpw_check" name="userpw_check" class="form-control"></p>
 		<p id="userpw_check_message"></p>
-		<p><label for="username">이름</label></p>
+		<p><label for="username"><b>이름</b></label></p>
 		<p><input type="text" id="username" name="username" class="form-control"></p>
 		<p id="username_message"></p>
-		<p><label for="nickname">닉네임</label></p>
+		<p><label for="nickname"><b>닉네임</b></label></p>
 		<p><input type="text" id="nickname" name="nickname" class="form-control" placeholder="글 등록시 작가 이름으로 사용됩니다."></p>
 		<p id="nickname_message"></p>
-		<p><label for="email">이메일<em> 비밀번호 찾기 시 이메일로 비밀번호가 발송됩니다.</em></label></p>
+		<p><label for="email"><b>이메일</b><em> 비밀번호 찾기 시 이메일로 비밀번호가 발송됩니다.</em></label></p>
 		<p><input type="text" id="email" name="email" class="form-control" oninput="checkEmail()" placeholder="ex) EBook2222@naver.com"></p>
 		<p id="email_message"></p>		
-		<p><label for="birthdate">생년월일</label></p>
+		<p><label for="birthdate"><b>생년월일</b></label></p>
 		<p><input type="text" id="birthdate" name="birthdate" class="form-control" oninput="checkBirth()" placeholder="ex) 931207"></p>
 		<p id="birthdate_message"></p>
 		<button type="button" class="btn btn-primary" onclick = "Signup()">회원가입</button>
 		<button type="button" class="btn btn-danger" onclick="cancel()">취소</button>
+		
 	</form>
+	<br>
 
 </div>
 

@@ -12,7 +12,16 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <title>termsOfMember.jsp</title>
 <style type="text/css">
-	
+.home_btn{
+	width: 12%;
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		color: #fff;
+	background-color: #007bff;
+	border-color: #007bff
+}	
 </style>
 </head>
 <body>
@@ -23,12 +32,19 @@
   <article id="mainArticle">
      <!-- Body -->
 
-     <h5>
+     <h3>
      	<i class="fas fa-check-square"></i>
+<<<<<<< HEAD
   		사이트 이용약관
      </h5>
      
      <div style="overflow-y: scroll; max-height: 48vh;">
+=======
+  		<b>사이트 이용약관</b>
+     </h3>
+     <br>
+     <div style="overflow-y: scroll; max-height: 450px;">
+>>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 목차<br>
 북 하우스 서비스 이용약관<br>
 [제1장 총칙]<br>
@@ -320,7 +336,7 @@
 <br>
 부칙<br>
 이 약관은 2021년 06월 07일부터 시행합니다.</div>
-     
+     <br>
 <button type="button" onclick="location.href='<%=path%>/'" class="home_btn">돌아가기</button>
      
   </article>
