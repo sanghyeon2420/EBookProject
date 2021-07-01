@@ -161,7 +161,9 @@ $(document).ready( function(){
 </script>
 
 <style>
-
+.detail p {
+	margin-bottom: 15px;
+}
 
 </style>
 </head>
@@ -219,7 +221,7 @@ $(document).ready( function(){
 					<h4>책 소개</h4>
 					<p>
 						${bookdto.b_intro } <br>
-					</p>
+					</p>	
 				</div>
 			</div>
 			<div id="footerList">

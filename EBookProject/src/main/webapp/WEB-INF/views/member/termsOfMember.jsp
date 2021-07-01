@@ -34,17 +34,13 @@
 
      <h3>
      	<i class="fas fa-check-square"></i>
-<<<<<<< HEAD
   		사이트 이용약관
      </h5>
      
      <div style="overflow-y: scroll; max-height: 48vh;">
-=======
   		<b>사이트 이용약관</b>
      </h3>
      <br>
-     <div style="overflow-y: scroll; max-height: 450px;">
->>>>>>> branch 'main' of https://github.com/sanghyeon2420/EBookProject.git
 목차<br>
 북 하우스 서비스 이용약관<br>
 [제1장 총칙]<br>

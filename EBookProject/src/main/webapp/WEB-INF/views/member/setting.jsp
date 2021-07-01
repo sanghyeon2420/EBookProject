@@ -169,7 +169,7 @@ ul.profileBody {
 }
 
 .footerline a {
-	margin: 10px;
+	margin: 25px 15px;
 }
 </style>
 </head>
@@ -189,7 +189,7 @@ ul.profileBody {
 					<br>                    
                     <h5>회원께서 가입하신 북 하우스의 회원정보입니다.</h5>
 					<br>                    
-					<h3>필수 회원 정보</h3>                    
+					<h3 style="margin-bottom:20px;">필수 회원 정보</h3>                    
                 </div>
                 <!-- 분기선 -->
                 <div class="line-box">

@@ -50,10 +50,10 @@ function enroll(idx){
         "nav header header"
         "nav article article";
       grid-template-rows: 50% 50%;
-      grid-template-columns: 30% 35% 35%;
+      grid-template-columns: 25% 35% 35%;
       grid-gap: 20px;
       height: 30vh;
-      margin: 0;
+      margin: 40px 0;
       }
     
     #navPicture {
@@ -61,7 +61,10 @@ function enroll(idx){
       height: 21vh;
       width: 10vw;
     }
-    
+    #navPicture img {
+      width: 14vw;
+      height: 26vh;
+    }
     #headTitle { 
       grid-area: header;  
       margin: 0;
@@ -104,7 +107,7 @@ function enroll(idx){
 .text {
 	margin: 0;
 	padding: 0;
-	height: 8vh;
+	height: 10vh;
 }
 .text p {
 	clear: both;
@@ -146,6 +149,10 @@ function enroll(idx){
 .addnovel{
 	text-align: center;
 	}
+	
+	.detail {
+	background-color: #d9e7ff;
+	}
 </style>
 </head>
 <body>
@@ -177,16 +184,16 @@ function enroll(idx){
 			</div>
 			<div id="mainDetail">
 				<div class="detail">
-					<h4>공지하기</h4>
+					<h4><strong>공지하기</strong></h4>
 					<p id=writerNotice>
-						일신상의 사정으로 인해 7월~8월 휴재예정입니다. <br>
+						<br>일신상의 사정으로 인해 7월~8월 휴재예정입니다. <br>
 						9월에 다시 찾아뵙겠습니다. 감사합니다.  <br>
 					</p>
 				</div>
 			</div>
 			<div class="back">
                 <div class="text">
-                    <p><strong>${dto.w_name }</strong>님의 연재 소설</p>
+                    <p style="text-align: center; font-size: 30px;"><strong>${dto.w_name }</strong>님의 연재 소설</p>
                 </div>
                 <div class="writerbooklist">
                     <c:forEach var="list" items="${list }">

@@ -20,11 +20,12 @@
 }
 .white_content > div {
     position: absolute;
-    top: 25%;
-    left: 35%;
-    width: 30%;
+    top:30%;
+    left: 40%;
+    width: 20%;
     height:  25%;
     padding: 16px;
+    padding-left: 100px;
     background-color: white;
     overflow: scroll;   
    

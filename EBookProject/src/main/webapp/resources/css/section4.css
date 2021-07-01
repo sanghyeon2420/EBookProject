@@ -324,7 +324,7 @@
 }
 #section6 .books {
 	width: 60vw;
-	height: 43vh;
+	height: 35vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

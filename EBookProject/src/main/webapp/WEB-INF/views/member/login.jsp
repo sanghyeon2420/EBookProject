@@ -116,10 +116,10 @@ body {
       <h3>LogIn</h3>
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+          <a href="https://www.facebook.com/" class="btn btn-lg btn-primary btn-block">Facebook</a>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
+          <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="btn btn-lg btn-info btn-block">Google</a>
         </div>
       </div>
       <div class="login-or">
@@ -142,10 +142,11 @@ body {
             <input type="checkbox">
             Remember me </label>
         </div> -->
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
         <button type="button" id="btnLogin" name="btnLogin" class="btn btn btn-primary">
           로그인
         </button>
-        
+         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
         <button type="button" onclick="join()" class="btn btn btn-primary">
           회원가입
         </button>
