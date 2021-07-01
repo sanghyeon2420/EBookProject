@@ -103,13 +103,13 @@ img {
 					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
 				</c:if>
 			<br/>
-			<table>
+			<table style="width: 80%">
 				<tr>
 					<th colspan="4" style="text-align: left; font-size: 25px;"> 공지사항</th>
 				<tr height="50" style="background-color: #5FD184;">
-					<th class="list1" width="10%">번호</th>
-					<th class="list1" width="65%">제목</th>
-					<th class="list1" width="20%">작성일</th>
+					<th class="list1" width="20%">번호</th>
+					<th class="list1" width="55%">제목</th>
+					<th class="list1" width="25%">작성일</th>
 				</tr>
 				<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
