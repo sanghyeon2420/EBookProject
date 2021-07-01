@@ -15,7 +15,16 @@
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 <title>privacy_policy.jsp</title>
 <style type="text/css">
-	
+	.home_btn{
+	width: 12%;
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		color: #fff;
+	background-color: #007bff;
+	border-color: #007bff
+}	
 </style>
 </head>
 <body>
@@ -27,14 +36,15 @@
   <article id="mainArticle">
      <!-- Body -->
      <!-- 개인정보취급방침  -->
-     <h5>
+     <h3>
      	<i class="fas fa-clipboard-list"></i>
-		개인정보취급방침
-     </h5>
+		<b>개인정보취급방침</b>
+     </h3>
+     <br>
      <hr>
      
      <!-- 개인정보취급방침 내용부분 -->
-     <div style="overflow-y: scroll; max-height: 300px;">
+     <div style="overflow-y: scroll; max-height: 450px;">
 주식회사 북 하우스('이하 '회사')는 회사의 북 하우스 서비스(이하 ‘북 하우스’)를 제공함에 있어 고객님의 개인정보를 중요시하며, '정보통신망 이용촉진 및 정보보호 등에 관한 법률' 및 '개인정보보호법'등 회사가 준수하여야 할 개인정보 보호 법령을 준수하고 있습니다. 회사는 개인정보 처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보 보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다. 회사는 개인정보 처리방침을 개정하는 경우 개별공지를 통하여 공지할 것입니다.<br>
 <br>
 1. 개인정보의 수집목적 및 보유기간<br>
@@ -190,6 +200,7 @@ NHN한국사이버결제 주식회사                                           
 - 공고일자: 2021년 01월 03일<br>
 - 시행일자: 2021년 02월 05일</div>
 		<!--  -->
+		<br>
 	<button type="button" onclick="location.href='<%=path%>/'" class="home_btn">돌아가기</button>
 
   </article>
