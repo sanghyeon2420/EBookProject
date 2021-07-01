@@ -19,16 +19,16 @@
     pointer-events: auto;
 }
 .white_content > div {
-    position: absolute;
     top:30%;
     left: 40%;
     width: 20%;
     height:  25%;
     padding: 16px;
-    padding-left: 100px;
-    background-color: white;
+	display: flex;
     overflow: scroll;   
-   
+    position: absolute;
+	flex-direction: column;   
+    background-color: white;
 }
 .white_content > div> button {
     margin: auto;
