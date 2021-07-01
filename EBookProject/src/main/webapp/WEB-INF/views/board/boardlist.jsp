@@ -34,9 +34,7 @@ a:link { color: black; text-decoration: none;}
 	font-size: 20px;
 	text-align: center;
   }	
-  #mainArticle {
-  	margin-top: 30px;
-  }
+
 </style>
 </head>
 <body>
