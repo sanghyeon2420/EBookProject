@@ -28,7 +28,7 @@
   		사이트 이용약관
      </h5>
      
-     <div style="overflow-y: scroll; max-height: 300px;">
+     <div style="overflow-y: scroll; max-height: 48vh;">
 목차<br>
 북 하우스 서비스 이용약관<br>
 [제1장 총칙]<br>
