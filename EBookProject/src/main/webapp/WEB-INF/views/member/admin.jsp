@@ -283,10 +283,10 @@ $(document).bind('keydown',function(e){
 		 </c:forEach>
 		 	 
 		<tr>
-			<td>
+			<td style="border: #fff;">
 			<button id="btnWrite">글쓰기</button>
 			</td>
-			<td colspan="3"></td>		
+			<td colspan="3" style="border: #fff;"></td>		
 		</tr>
  	</c:when>
  	</c:choose>

@@ -12,7 +12,7 @@
 <link href="resources/css/layout.css" rel="stylesheet">
 <link href="resources/css/servPage.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
-<title>Insert title here</title>
+<title>커뮤니티</title>
 <script>
 
 </script>
@@ -34,9 +34,8 @@ a:link { color: black; text-decoration: none;}
 	font-size: 20px;
 	text-align: center;
   }	
-  #mainArticle {
-  	margin-top: 30px;
-  }
+   form{display:inline}
+
 </style>
 </head>
 <body>
@@ -46,6 +45,7 @@ a:link { color: black; text-decoration: none;}
 </header>
   
   <article id="mainArticle">
+  <br>
   <!-- 여기서 board 작성 -->
   
   <script>
@@ -64,6 +64,9 @@ function list(page){
 </script>
   <c:set var="today" value="<%=new Date() %>" />
   <table border="1" width=600px>
+  <tr>
+  <th colspan="5" style="text-align: left; font-size: 25px;">커뮤니티</th>
+  </tr>
   <tr style="background-color: #5FD184">
   	<th>번호</th>
   	<th>제목</th>
@@ -83,7 +86,7 @@ function list(page){
 </c:forEach>
 <!-- 페이지 네비게이션 -->
 	<tr>
-		<td colspan="5" align="center">
+		<td colspan="5" align="center" style="border: #fff;">
 			<c:if test="${map.pager.curBlock > 1}">
 			<a href="javascript:list('1')">[처음]</a>
 			</c:if>
@@ -111,8 +114,9 @@ function list(page){
   </table>
 	
 	
-	
+<br>	
 <!-- 검색 -->
+
 <form method="post" name="form1" action="<%=path%>/board/list">
 <select name="search_option">
 <c:choose>
@@ -143,15 +147,15 @@ function list(page){
 </c:choose>
 
 </select>
-<input name="keyword" value="${map.keyword}">
+<input name="keyword" value="${map.keyword}" style="width: 50%">
 <input type="submit" value="검색">
 </form>	
 <!-- 로그인 시 글쓰기 버튼 -->
 <c:if test="${sessionScope.member.user_no != null}">
-<button id="btnWrite">글쓰기</button>
+<button id="btnWrite" style="float: right;">글쓰기</button>
 </c:if>
 
-
+<br>
   </article>
   
   
