@@ -82,10 +82,12 @@
 <script>
 $(document).ready(function(){
 	$("#search_id_btn").click(function(){
+		alert("이메일로 아이디가 발송되었습니다.");
 		document.form1.submit();
 	});
 	
 	$("#search_pw_btn").click(function(){
+		alert("이메일로 비밀번호가 발송되었습니다.");
 		document.form2.submit();
 	});
 });
